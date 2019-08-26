@@ -1,0 +1,115 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroPonto.aspx.cs" Inherits="Ecardmark1.index" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="StylePonto.css"/>
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+           <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
+            <ol>
+                <li>Menu</li>
+                <li>Page 2</li>
+                <li>Page 3</li>
+                <li>Page 4</li> 
+                <li class="menu-user">Daniel Victor</li>
+            </ol>
+        </div>
+        <div class="container">
+            <div class="box1">
+                <div class="box1-header">
+                    <div class="box1-title">
+                       <i class="fas fa-map-marked-alt"></i>
+                       <p>Pontos de recarga</p>
+                    </div>
+                    <div class="box1-button">
+                        <asp:Button runat="server" CssClass="btnAdd" Text="Novo" PostBackUrl="~/CadastroPontoEdit.aspx" />
+                    </div>
+                </div>
+                <div class="help">
+                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
+                        <ItemTemplate>
+                            <div class="pontoItem">
+                                <div class="pontoItem-nome">
+                                    <p class="ponto-nome"><%#Eval("nome_ponto")%></p>
+                                    <p class="ponto-rua">Logradouro: <%#Eval("endereco_logradouro")%></p>
+                                </div>
+                                <div class="vl"></div> <!-- vertical line -->
+                                <div class="pontoItem-bairro">
+                                    <p class="ponto-bairro-title">Bairro</p>
+                                    <p><%#Eval("endereco_bairro")%></p>
+                                </div>
+                                <div class="ponto-but">
+                                   <asp:LinkButton runat="server"><a href="#modal" class="action-button shadow animate blue" id="show-modal">Mais</a></asp:LinkButton>
+                                    <asp:LinkButton CssClass="link-but" runat="server"  PostBackUrl="~/EditarPonto.aspx"> <i class="fas fa-pen-square"></i> </asp:LinkButton>
+                                  </div>
+                            </div> 
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" DataObjectTypeName="Ecardmark1.Modelo.Ponto_recarga" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecardmark1.DAL.DALPonto_recarga" UpdateMethod="Update"></asp:ObjectDataSource>
+                </div>
+              </div>
+            <div class="box2">
+                <div class="box2-user-container">
+                    <div class="box2-user">
+                         <i class="fas fa-user-circle"></i>
+                         <div class="user-name"> 
+                            <h1>User</h1>
+                            <p>Administrador</p>
+                        </div>
+                    </div>
+                    <div class="box2-button">
+                         <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" />
+                    </div>
+                </div>
+
+                <div class="box2-ponto">
+                    <div class="ponto">
+                        <p>Pontos de recarga</p>
+                    </div>
+                    <div class="ponto2">
+                        <i class="fas fa-search"></i>
+                        <p>Pesquisar</p>
+                    </div>
+                </div>
+            </div>
+            <div>   <!-- Modal -->
+                    <aside id="modal" class="modal">
+		            <div class="content-modal">
+			            <header>
+				            <a href="#" class="close-modal">X</a>
+				            <h2>Mais informações</h2>	
+			            </header>
+			            <article>
+                            <div class="help-modal">
+                                <asp:Repeater runat="server">
+                                    <ItemTemplate>
+                                        <div class="ponto-modal">
+                                            <div class="ponto-modal-nome">
+                                                <p class="ponto-nume">N° <%#Eval("endereco_numero")%></p>
+                                                <p class="ponto-cep">CEP: <%#Eval("endereco_cep")%></p>
+                                            </div>
+                                            <div class="vl"></div> <!-- vertical line -->
+                                            <div class="pontoItem-muni">
+                                                <p class="ponto-muni-title">Municipio</p>
+                                                <p><%#Eval("endereco_municipio")%></p>
+                                            </div> 
+                                        
+                                    </ItemTemplate> 
+                                </asp:Repeater>
+                           </div>
+			            </article>
+		            </div>
+		            <a href="#" class="btn-close-modal"></a>
+	            </aside>
+                </div>
+           </div>
+    </form>
+</body>
+</html>
