@@ -22,5 +22,13 @@ namespace Ecardmark1
             Response.Redirect("~//CadastroPonto.aspx");
 
         }
-    }
+        /* {
+                DAL.DALBAtividades aDALBAtividades;
+                aDALBAtividades = new DAL.DALBAtividades();
+                atv_data.Text = aDALBAtividades.SelectByAtv(Session["ATV_ID"].ToString()).ElementAt(0).atv_data;
+                atv_horario.Text = aDALBAtividades.SelectByAtv(Session["ATV_ID"].ToString()).ElementAt(0).atv_horario;
+                atv_descricao.Text = aDALBAtividades.SelectByAtv(Session["ATV_ID"].ToString()).ElementAt(0).atv_descricao;
+         }*/
+
+}
 }

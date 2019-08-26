@@ -88,22 +88,20 @@
 			            </header>
 			            <article>
                             <div class="help-modal">
-                                <asp:Repeater runat="server">
-                                    <ItemTemplate>
+                                
                                         <div class="ponto-modal">
                                             <div class="ponto-modal-nome">
-                                                <p class="ponto-nume">N° <%#Eval("endereco_numero")%></p>
-                                                <p class="ponto-cep">CEP: <%#Eval("endereco_cep")%></p>
+                                                <p class="ponto-nume">N° </p>
+                                                <p class="ponto-cep">CEP: </p>
                                             </div>
-                                            <div class="vl"></div> <!-- vertical line -->
+                                            <div class="vl"></div>
+                                            <!-- vertical line -->
                                             <div class="pontoItem-muni">
                                                 <p class="ponto-muni-title">Municipio</p>
-                                                <p><%#Eval("endereco_municipio")%></p>
-                                            </div> 
-                                        
-                                    </ItemTemplate> 
-                                </asp:Repeater>
-                           </div>
+                                                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                            </div>
+                                        </div>
+                            </div>
 			            </article>
 		            </div>
 		            <a href="#" class="btn-close-modal"></a>
