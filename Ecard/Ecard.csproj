@@ -67,11 +67,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CadastroBairro.aspx" />
+    <Content Include="CadastroBairroEdit.aspx" />
     <Content Include="CadastroPonto.aspx" />
     <Content Include="CadastroPontoEdit.aspx" />
+    <Content Include="CadastroPontoReferencia.aspx" />
+    <Content Include="CadastroPontoReferenciaEdit.aspx" />
     <Content Include="CadastroRota.aspx" />
     <Content Include="CadastroRotaEdit.aspx" />
+    <Content Include="EditarBairro.aspx" />
     <Content Include="EditarPonto.aspx" />
+    <Content Include="EditarPontoReferencia.aspx" />
     <Content Include="EditarRota.aspx" />
     <Content Include="Imagens\ECard.png" />
     <Content Include="Imagens\lupa.jpg" />
@@ -86,6 +92,20 @@
     <Content Include="WebFormTelaPrincipalAdm.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CadastroBairro.aspx.cs">
+      <DependentUpon>CadastroBairro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroBairro.aspx.designer.cs">
+      <DependentUpon>CadastroBairro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroBairroEdit.aspx.cs">
+      <DependentUpon>CadastroBairroEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroBairroEdit.aspx.designer.cs">
+      <DependentUpon>CadastroBairroEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CadastroPonto.aspx.cs">
       <DependentUpon>CadastroPonto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -99,6 +119,20 @@
     </Compile>
     <Compile Include="CadastroPontoEdit.aspx.designer.cs">
       <DependentUpon>CadastroPontoEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroPontoReferencia.aspx.cs">
+      <DependentUpon>CadastroPontoReferencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroPontoReferencia.aspx.designer.cs">
+      <DependentUpon>CadastroPontoReferencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroPontoReferenciaEdit.aspx.cs">
+      <DependentUpon>CadastroPontoReferenciaEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroPontoReferenciaEdit.aspx.designer.cs">
+      <DependentUpon>CadastroPontoReferenciaEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="CadastroRota.aspx.cs">
       <DependentUpon>CadastroRota.aspx</DependentUpon>
@@ -124,12 +158,26 @@
     <Compile Include="DAL\DALRecarga.cs" />
     <Compile Include="DAL\DALRota.cs" />
     <Compile Include="DAL\DALTelefone.cs" />
+    <Compile Include="EditarBairro.aspx.cs">
+      <DependentUpon>EditarBairro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarBairro.aspx.designer.cs">
+      <DependentUpon>EditarBairro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditarPonto.aspx.cs">
       <DependentUpon>EditarPonto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EditarPonto.aspx.designer.cs">
       <DependentUpon>EditarPonto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarPontoReferencia.aspx.cs">
+      <DependentUpon>EditarPontoReferencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarPontoReferencia.aspx.designer.cs">
+      <DependentUpon>EditarPontoReferencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditarRota.aspx.cs">
       <DependentUpon>EditarRota.aspx</DependentUpon>

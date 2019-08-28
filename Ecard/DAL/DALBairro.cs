@@ -37,9 +37,9 @@ namespace Ecardmark1.DAL
                 while (dr.Read())
                 {
                     aBairro = new Modelo.Bairro(
-                        Convert.ToInt32(dr["Id"].ToString()),
                         dr["Nome"].ToString()
                         );
+                    aBairro.Id = int.Parse(dr["id"].ToString());
                     aListBairro.Add(aBairro);
                 }
             }
@@ -73,9 +73,8 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Bairro (Id, Nome) VALUES (@Id, @Nome)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Bairro (Nome) VALUES (@Nome)", conn);
 
-            cmd.Parameters.AddWithValue("@Id", obj.Id);
             cmd.Parameters.AddWithValue("@Nome", obj.Nome);
 
             cmd.ExecuteNonQuery();
@@ -101,10 +100,10 @@ namespace Ecardmark1.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Bairro> Select(string Id)
+        public Modelo.Bairro Select(int Id)
         {
             Modelo.Bairro aBairro;
-            List<Modelo.Bairro> aListBairro = new List<Modelo.Bairro>();
+            Modelo.Bairro aListBairro = new Modelo.Bairro();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
@@ -116,10 +115,10 @@ namespace Ecardmark1.DAL
                 while (dr.Read())
                 {
                     aBairro = new Modelo.Bairro(
-                        Convert.ToInt32(dr["Id"].ToString()),
                         dr["Nome"].ToString()
                         );
-                    aListBairro.Add(aBairro);
+                    aBairro.Id = int.Parse(dr["id"].ToString());
+                    aListBairro = aBairro;
                 }
             }
 

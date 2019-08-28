@@ -13,14 +13,13 @@ namespace Ecardmark1.Modelo
 
         public Ponto_referencia()
         {
-            this.Id = 0;
-            this.Nome = "";
+            Id = 0;
+            Nome = "";
         }
 
-        public Ponto_referencia(int id, string nome)
+        public Ponto_referencia(string nome)
         {
-            this.Id = id;
-            this.Nome = nome;
+            Nome = nome;
         }
     }
 }

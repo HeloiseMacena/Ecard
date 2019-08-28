@@ -7,19 +7,19 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Ecardmark1 {
+namespace Ecard {
     
     
-    public partial class EditarRota {
+    public partial class EditarPontoReferencia {
         
         /// <summary>
-        /// Controle form1.
+        /// Controle form2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
         
         /// <summary>
         /// Controle TextBox1.
@@ -31,12 +31,12 @@ namespace Ecardmark1 {
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
-        /// Controle iconTeste.
+        /// Controle i1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl iconTeste;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl i1;
     }
 }
