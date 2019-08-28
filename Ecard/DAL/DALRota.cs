@@ -99,7 +99,7 @@ namespace Ecardmark1.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public Modelo.Rota Select(string id)
+        public Modelo.Rota Select(int id)
         {
             Modelo.Rota aRota;
             Modelo.Rota aListRota = new Modelo.Rota();
