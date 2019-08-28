@@ -52,7 +52,9 @@
                             </div> 
                         </ItemTemplate>
                     </asp:Repeater>
+                    
                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Ecardmark1.Modelo.Ponto_recarga" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecardmark1.DAL.DALPonto_recarga" UpdateMethod="Update"></asp:ObjectDataSource>
+                    
                 </div>
               </div>
             <div class="box2">

@@ -48,7 +48,9 @@
                             </div> 
                         </ItemTemplate>
                     </asp:Repeater>
+                       
                          <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Ecardmark1.Modelo.Rota" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecardmark1.DAL.DALRota" UpdateMethod="Update"></asp:ObjectDataSource>
+                       
                 </div>
             </div>
 
