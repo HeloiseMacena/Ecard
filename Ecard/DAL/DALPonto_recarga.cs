@@ -114,10 +114,10 @@ namespace Ecardmark1.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Ponto_recarga> Select(string Id)
+        public Modelo.Ponto_recarga Select(string Id)
         {
             Modelo.Ponto_recarga aPonto_recarga;
-            List<Modelo.Ponto_recarga> aListPonto_recarga = new List<Modelo.Ponto_recarga>();
+            Modelo.Ponto_recarga aListPonto_recarga = new Modelo.Ponto_recarga();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
@@ -137,7 +137,7 @@ namespace Ecardmark1.DAL
                         dr["endereco_municipio"].ToString()
                         );
                     aPonto_recarga.id = Convert.ToInt32(dr["id"].ToString());
-                    aListPonto_recarga.Add(aPonto_recarga);
+                    aListPonto_recarga = aPonto_recarga;
                 }
             }
 

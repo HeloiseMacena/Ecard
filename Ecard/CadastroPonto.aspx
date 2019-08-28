@@ -47,12 +47,12 @@
                                 </div>
                                 <div class="ponto-but">
                                    <asp:LinkButton runat="server"><a href="#modal" class="action-button shadow animate blue" id="show-modal">Mais</a></asp:LinkButton>
-                                    <asp:LinkButton CssClass="link-but" runat="server"  PostBackUrl='<%#"~/EditarPonto.aspx?id=" +  Eval("id") %>'> <i class="fas fa-pen-square"></i> </asp:LinkButton>
+                                   <asp:LinkButton CssClass="link-but" runat="server"  PostBackUrl='<%#"~/EditarPonto.aspx?id=" +  Eval("id") %>'> <i class="fas fa-pen-square"></i> </asp:LinkButton>
                                   </div>
                             </div> 
                         </ItemTemplate>
                     </asp:Repeater>
-                    <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" DataObjectTypeName="Ecardmark1.Modelo.Ponto_recarga" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecardmark1.DAL.DALPonto_recarga" UpdateMethod="Update"></asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Ecardmark1.Modelo.Ponto_recarga" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecardmark1.DAL.DALPonto_recarga" UpdateMethod="Update"></asp:ObjectDataSource>
                 </div>
               </div>
             <div class="box2">

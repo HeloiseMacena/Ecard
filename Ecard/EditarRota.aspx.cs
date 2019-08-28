@@ -11,7 +11,10 @@ namespace Ecardmark1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string id = Request.QueryString["id"];
+            DAL.DALRota p = new DAL.DALRota();
+            Modelo.Rota rota = p.Select(id);
+            TextBox2.Text = rota.nome;
         }
         
     }

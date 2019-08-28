@@ -99,10 +99,10 @@ namespace Ecardmark1.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Rota> Select(string id)
+        public Modelo.Rota Select(string id)
         {
             Modelo.Rota aRota;
-            List<Modelo.Rota> aListRota = new List<Modelo.Rota>();
+            Modelo.Rota aListRota = new Modelo.Rota();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
@@ -117,13 +117,12 @@ namespace Ecardmark1.DAL
                         dr["nome"].ToString()
                         );
                     aRota.id = Convert.ToInt32(dr["id"].ToString()); 
-                    aListRota.Add(aRota);
+                    aListRota = aRota;
                 }
             }
 
             dr.Close();
             conn.Close();
-
             return aListRota;
         }
     }
