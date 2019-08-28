@@ -38,17 +38,7 @@
                         <asp:Button class="btn-close" runat="server" Text="Excluir"  />
                         <asp:Button class="btn-save" runat="server" Text="Atualizar" />
                     </div>  
-                   <!-- <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" DataKeyNames="id">
-                        <Fields>
-                            <asp:BoundField DataField="nome" HeaderText="Informações" SortExpression="nome"></asp:BoundField>
-                            <asp:CommandField ShowEditButton="True" ShowDeleteButton="True"></asp:CommandField>
-                        </Fields>
-                    </asp:DetailsView>
-                    <asp:ObjectDataSource runat="server" ID="ObjectDataSource1" DataObjectTypeName="Ecardmark1.Modelo.Rota" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="Select" TypeName="Ecardmark1.DAL.DALRota" UpdateMethod="Update">
-                        <SelectParameters>
-                            <asp:SessionParameter SessionField="Id" Name="Id" Type="String"></asp:SessionParameter>
-                        </SelectParameters>
-                    </asp:ObjectDataSource>-->
+                   
                 </div>
            </div>
         </div>
