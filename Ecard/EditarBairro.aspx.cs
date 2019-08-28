@@ -12,14 +12,20 @@ namespace Ecard
         int id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            id = int.Parse(Request.QueryString["id"]);
-            Ecardmark1.DAL.DALBairro p = new Ecardmark1.DAL.DALBairro();
-            Ecardmark1.Modelo.Bairro bairro = p.Select(id);
-            //TextBox1.Text = bairro.Nome;
+            if (!IsPostBack)
+            {
+                id = int.Parse(Request.QueryString["id"]);
+                Ecardmark1.DAL.DALBairro p = new Ecardmark1.DAL.DALBairro();
+                Ecardmark1.Modelo.Bairro bairro = p.Select(id);
+                TextBox1.Text = bairro.Nome;
+            }
+            
         }
 
         protected void Unnamed2_Click(object sender, EventArgs e)
         {
+            id = int.Parse(Request.QueryString["id"]);
+
             Ecardmark1.DAL.DALBairro p = new Ecardmark1.DAL.DALBairro();
             Ecardmark1.Modelo.Bairro bairro = p.Select(id);
             bairro.Nome = TextBox1.Text;
