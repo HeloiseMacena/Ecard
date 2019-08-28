@@ -15,7 +15,7 @@ namespace Ecardmark1.DAL
 
         public DALPonto_referencia()
         {
-            connectionString = ConfigurationManager.ConnectionStrings[""].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["PubsConnectionString"].ConnectionString;
         }
 
 
@@ -35,9 +35,9 @@ namespace Ecardmark1.DAL
                 while (c.Read())
                 {
                     Ponto_referencia = new Modelo.Ponto_referencia(
-                        Convert.ToInt32(c["Id"].ToString()),
                         c["Nome"].ToString()
                         );
+                    Ponto_referencia.Id = int.Parse(c["Id"].ToString());
                     ListPonto_referencias.Add(Ponto_referencia);
                 }
             }
@@ -71,9 +71,8 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Ponto_referencia (Id, Nome) VALUES (@Id, @Nome)", conn);
-
-            cmd.Parameters.AddWithValue("@Id", obj.Id);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Ponto_referencia (Nome,rotas_id) VALUES (@Nome,1)", conn);
+        
             cmd.Parameters.AddWithValue("@Nome", obj.Nome);
 
             cmd.ExecuteNonQuery();
@@ -99,10 +98,9 @@ namespace Ecardmark1.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Ponto_referencia> Select(string Id)
+        public Modelo.Ponto_referencia Select(int Id)
         {
-            Modelo.Ponto_referencia aPonto_referencia;
-            List<Modelo.Ponto_referencia> aListPonto_referencia = new List<Modelo.Ponto_referencia>();
+            Modelo.Ponto_referencia aPonto_referencia = new Modelo.Ponto_referencia();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
@@ -114,17 +112,15 @@ namespace Ecardmark1.DAL
                 while (dr.Read())
                 {
                     aPonto_referencia = new Modelo.Ponto_referencia(
-                        Convert.ToInt32(dr["Id"].ToString()),
                         dr["Nome"].ToString()
                         );
-                    aListPonto_referencia.Add(aPonto_referencia);
+                    aPonto_referencia.Id = int.Parse(dr["Id"].ToString());
                 }
             }
 
             dr.Close();
             conn.Close();
-
-            return aListPonto_referencia;
+            return aPonto_referencia;
         }
     }
 }

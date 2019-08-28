@@ -38,8 +38,7 @@
                         <ItemTemplate>
                             <div class="rotaItem">
                                 <div class="rotaItem-nome">
-                                    <p class="rota-nome">07</p>
-                                    <p class="rota-referencia">Alvorada IV / Cidade Jardim via Av. Paulistana</p>
+                                    <p class="rota-nome"><%#Eval("nome")%></p>
                                 </div>
                                 
                                 <div class="rota-but">

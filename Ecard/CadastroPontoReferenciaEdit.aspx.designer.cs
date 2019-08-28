@@ -7,10 +7,10 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Ecardmark1 {
+namespace Ecard {
     
     
-    public partial class EditarRota {
+    public partial class CadastroPontoReferenciaEdit {
         
         /// <summary>
         /// Controle form1.

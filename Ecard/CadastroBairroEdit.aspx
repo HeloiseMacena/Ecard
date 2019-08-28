@@ -1,18 +1,19 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarRota.aspx.cs" Inherits="Ecardmark1.EditarRota" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroBairroEdit.aspx.cs" Inherits="Ecard.CadastroBairroEdit" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="StyleEditarRota.css"/>
+<link rel="stylesheet" type="text/css" href="StyleCadastroPonto.css"/>
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="header">
-             <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a><br />
-&nbsp;<ol>
+            <img src="Imagens/ECard.png" />
+            <ol>
                 <li>Menu</li>
                 <li>Page 2</li>
                 <li>Page 3</li>
@@ -25,25 +26,21 @@
                 <div class="box1-header">
                     <div class="box1-title">
                        <i class="fas fa-map-marked-alt"></i>
-                       <p>Rotas de Ônibus</p>
+                       <p>Pontos de recarga</p>
                     </div>
                 </div>
                 <div class="box1-midi">
-                      <h1>Editar</h1>
+                      <h1>Cadastro</h1>
                       <asp:TextBox ID="TextBox1" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>
                     <div class="btn-b2">
-                        <asp:Button class="btn-close" runat="server" Text="Excluir"  />
-                        <asp:Button class="btn-save" runat="server" Text="Atualizar" />
-                    </div>                     
-                </div>
-           </div>
+                        <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroBairro.aspx" />
+                        <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed2_Click" />
 
-       
+                    </div>
+                </div>
+            </div>
 
             <div class="box2">
-
-           <div class="box2">
-
                 <div class="box2-user-container">
                     <div class="box2-user">
                          <i class="fas fa-user-circle"></i>
@@ -56,19 +53,18 @@
                          <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" />
                     </div>
                 </div>
-                <div class="box2-rota">
-                    <div class="rota"><p>Rotas de Ônibus</p></div>
-                    <div class="rota2">
+
+                <div class="box2-ponto">
+                    <div class="ponto">
+                        <p>Pontos de recarga</p>
+                    </div>
+                    <div class="ponto2">
                         <i runat="server" id="iconTeste" class="fas fa-search"></i>
                         <p>Pesquisar</p>
                     </div>
                 </div>
             </div>
-
-             </div>
-
-        </div>          
-
+          </div>
     </form>
 </body>
 </html>

@@ -14,7 +14,7 @@ namespace Ecardmark1
             string id = Request.QueryString["id"];
             DAL.DALRota p = new DAL.DALRota();
             Modelo.Rota rota = p.Select(id);
-            TextBox2.Text = rota.nome;
+            TextBox1.Text = rota.nome;
         }
         
     }

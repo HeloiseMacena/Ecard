@@ -17,7 +17,11 @@ namespace Ecardmark1
             Modelo.Rota rota = new Modelo.Rota(nome);
             DAL.DALRota d = new DAL.DALRota();
             d.Insert(rota);
+<<<<<<< HEAD
             Response.Redirect("~\\CadastroRotaEdit.aspx");
+=======
+            Response.Redirect("~//CadastroRota.aspx");
+>>>>>>> bia
         }
     }
 }

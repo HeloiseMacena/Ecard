@@ -17,9 +17,8 @@ namespace Ecardmark1.Modelo
             this.Nome = "";
         }
 
-        public Bairro(int id, string nome)
+        public Bairro(string nome)
         {
-            this.Id = id;
             this.Nome = nome;
         }
     }
