@@ -148,7 +148,7 @@ form#form1 {
     cursor: pointer;
 }
 
-.btn-b2 {
+.btn-add {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -156,6 +156,29 @@ form#form1 {
     width: 100%;
     margin-top: 20px;
     margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+.btn-nov {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.btn-nov > .btn-add-1 {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 2px;
+    background-color: #17A2B8;
+    color: #EBEBEB;
+    border-bottom-color: #13899C;
+    margin-right: 30px;
     cursor: pointer;
 }
 
@@ -295,6 +318,18 @@ form#form1 {
     border-style: none;
     border-radius: 3px;
 }
+
+.box1-mid-1 {
+    margin-top: 20px;
+    margin-right: 100px;
+    width: 80%;
+    padding: 15px 20px;
+    background-color: white;
+    color: #a1a1a1;
+    border-style: none;
+    border-radius: 3px;
+}
+
 .show {
     display: initial;
 }

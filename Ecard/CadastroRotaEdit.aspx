@@ -32,16 +32,16 @@
                 <div class="box1-midi">
                       <h1>Cadastro</h1>
                       <asp:TextBox ID="TextBoxNome" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>
-                      <asp:TextBox ID="TextBoxRua" runat="server" CssClass="box1-mid" placeholder="Rua"></asp:TextBox>
-                      <asp:TextBox ID="TextBoxBairro" runat="server" CssClass="box1-mid" placeholder="Bairro"></asp:TextBox>
-                      <asp:TextBox ID="TextBoxReferencia" runat="server" CssClass="box1-mid" placeholder="Ponto de Referência"></asp:TextBox>
+                     <!-- <asp:TextBox ID="TextBoxRua" runat="server" CssClass="box1-mid" placeholder="Rua"></asp:TextBox> -->   
+                      <asp:TextBox ID="TextBoxBairro" runat="server" CssClass="box1-mid-1" placeholder="Bairro"></asp:TextBox> <asp:Button ID="Button10" class="btn-add-1" runat="server" Text="Adicionar"/>
+                      <asp:TextBox ID="TextBoxReferencia" runat="server" CssClass="box1-mid-1" placeholder="Ponto de Referência"></asp:TextBox> <asp:Button ID="Button3" class="btn-add-1" runat="server" Text="Adicionar"/>
                       
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroRota.aspx" />
                         <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed2_Click" />
-                    </div>
-                    <div id="divPrincipal" runat="server" class="show">
-                        <asp:Button ID="btnOk" runat="server" Text="Alterar CSS" OnClick="btnOk_Click" />
+                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource1" DataTextField="nome" DataValueField="id"></asp:DropDownList>
+                        <!-- <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="Ecardmark1.DAL.DALRota"></asp:ObjectDataSource> 
+                        <asp:Button   class="btn-save" ID="Button1" runat="server" Text="Adicionar" /> -->
                     </div>
                 </div>
             </div>

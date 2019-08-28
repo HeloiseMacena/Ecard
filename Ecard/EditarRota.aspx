@@ -5,7 +5,7 @@
 <head runat="server">
 <script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="StyleEditarPonto.css"/>
+<link rel="stylesheet" type="text/css" href="StyleEditarRota.css"/>
     <title></title>
 </head>
 <body>
@@ -41,7 +41,7 @@
                    
                 </div>
            </div>
-        </div>
+       
 
             <div class="box2">
                 <div class="box2-user-container">
@@ -67,6 +67,7 @@
                     </div>
                 </div>
             </div>
+             </div>
     </form>
 </body>
 </html>

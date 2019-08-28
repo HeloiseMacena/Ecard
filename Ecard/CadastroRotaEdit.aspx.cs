@@ -9,11 +9,7 @@ namespace Ecardmark1
 {
     public partial class CadastroRotaEdit : System.Web.UI.Page
     {
-        protected void btnOk_Click(object sender, EventArgs e)
-        {
-            divPrincipal.Attributes["class"] = "hide";
-            
-        }
+        
 
         protected void Unnamed2_Click(object sender, EventArgs e)
         {
@@ -21,6 +17,7 @@ namespace Ecardmark1
             Modelo.Rota rota = new Modelo.Rota(nome);
             DAL.DALRota d = new DAL.DALRota();
             d.Insert(rota);
+            Response.Redirect("~\\CadastroRotaEdit.aspx");
         }
     }
 }
