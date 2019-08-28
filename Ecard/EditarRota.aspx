@@ -37,13 +37,16 @@
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Excluir"  />
                         <asp:Button class="btn-save" runat="server" Text="Atualizar" />
-                    </div>  
-                   
+                    </div>                     
                 </div>
            </div>
+
        
 
             <div class="box2">
+
+           <div class="box2">
+
                 <div class="box2-user-container">
                     <div class="box2-user">
                          <i class="fas fa-user-circle"></i>
@@ -56,18 +59,19 @@
                          <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" />
                     </div>
                 </div>
-
                 <div class="box2-rota">
-                    <div class="rota">
-                        <p>Rotas de Ônibus</p>
-                    </div>
+                    <div class="rota"><p>Rotas de Ônibus</p></div>
                     <div class="rota2">
                         <i runat="server" id="iconTeste" class="fas fa-search"></i>
                         <p>Pesquisar</p>
                     </div>
                 </div>
             </div>
+
              </div>
+
+        </div>          
+
     </form>
 </body>
 </html>

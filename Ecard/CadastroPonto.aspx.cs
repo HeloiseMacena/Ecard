@@ -13,17 +13,5 @@ namespace Ecardmark1
         {
 
         }
-
-        /* protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            if (e.CommandName == "Editar")
-            {
-                string codigo;
-                int index = Convert.ToInt32(e.CommandArgument);
-                codigo = GridView1.Rows[index].Cells[0].Text;
-                Session["id"] = codigo;
-                Response.Redirect("~\\EditarPonto.aspx");
-            }
-        } */
     }
 }
