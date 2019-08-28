@@ -15,14 +15,13 @@ namespace Ecardmark1.DAL
 
         public DALRota()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["PubsConnectionString"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
         }
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Rota> SelectAll()
         {
-            Modelo.Rota aRota;
             List<Modelo.Rota> aListRota = new List<Modelo.Rota>();
 
             SqlConnection conn = new SqlConnection(connectionString);
@@ -35,7 +34,7 @@ namespace Ecardmark1.DAL
 
                 while (dr.Read())
                 {
-                    aRota = new Modelo.Rota(
+                    Modelo.Rota aRota = new Modelo.Rota(
                         dr["nome"].ToString()
                         );
                     aRota.id = Convert.ToInt32(dr["id"].ToString());
@@ -99,10 +98,9 @@ namespace Ecardmark1.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public Modelo.Rota Select(string id)
+        public List<Modelo.Rota> Select(string id)
         {
-            Modelo.Rota aRota;
-            Modelo.Rota aListRota = new Modelo.Rota();
+            List<Modelo.Rota> aListRota = new List<Modelo.Rota>();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
@@ -113,16 +111,17 @@ namespace Ecardmark1.DAL
             {
                 while (dr.Read())
                 {
-                    aRota = new Modelo.Rota(
+                    Modelo.Rota aRota = new Modelo.Rota(
                         dr["nome"].ToString()
                         );
-                    aRota.id = Convert.ToInt32(dr["id"].ToString()); 
-                    aListRota = aRota;
+                    aRota.id = Convert.ToInt32(dr["id"].ToString());
+                    aListRota.Add(aRota);
                 }
             }
 
             dr.Close();
             conn.Close();
+
             return aListRota;
         }
     }
