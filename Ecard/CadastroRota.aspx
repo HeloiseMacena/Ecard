@@ -46,6 +46,10 @@
                                     <p class="rota-bairro-title">Ponto de Referência</p>
                                     <p>Alvorada IV / Cidade Jardim via Av. Paulistana</p>
                                 </div>-->
+                                <div class="rota-but">
+                                   <asp:LinkButton runat="server"><a href="#modal" class="action-button shadow animate blue" id="show-modal">Mais</a></asp:LinkButton>
+                                   <asp:LinkButton CssClass="link-but" runat="server" PostBackUrl="~/EditarRota.aspx"> <i class="fas fa-pen-square"></i> </asp:LinkButton>
+                                 </div>
                             </div> 
                         </ItemTemplate>
                     </asp:Repeater>
@@ -78,6 +82,25 @@
                         <p>Pesquisar</p>
                     </div>
                 </div>
+                <!-- Modal -->
+                <aside id="modal" class="modal">
+		            <div class="content-modal">
+			            <header>
+				            <a href="#" class="close-modal">X</a>
+				            <h2>Mais informações</h2>	
+			            </header>
+			            <article>
+                          <div class="help-modal">                                
+                                        <div class="rota-modal">
+                                            <div class="rota-modal-nome">
+                                                <p class="ponto-ref">Pontos de Referência:</p>
+                                            </div>
+                                        </div>
+                            </div>
+			            </article>
+                    </div>
+		            <a href="#" class="btn-close-modal"></a>
+	            </aside>
             </div>
         </div>
     </form>

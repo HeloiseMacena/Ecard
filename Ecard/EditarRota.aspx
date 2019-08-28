@@ -5,7 +5,7 @@
 <head runat="server">
 <script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="StyleCadastroPonto.css"/>
+<link rel="stylesheet" type="text/css" href="StyleEditarPonto.css"/>
     <title></title>
 </head>
 <body>
@@ -25,12 +25,20 @@
                 <div class="box1-header">
                     <div class="box1-title">
                        <i class="fas fa-map-marked-alt"></i>
-                       <p>Pontos de recarga</p>
+                       <p>Rotas de Ônibus</p>
                     </div>
                 </div>
                 <div class="box1-midi">
-                      <h1>Cadastro</h1>
-                    <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" DataKeyNames="id">
+                      <h1>Editar</h1>
+                      <asp:TextBox ID="TextBox1" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>
+                      <asp:TextBox ID="TextBox2" runat="server" CssClass="box1-mid" placeholder="Rua"></asp:TextBox>
+                      <asp:TextBox ID="TextBox3" runat="server" CssClass="box1-mid" placeholder="Bairro"></asp:TextBox>
+                      <asp:TextBox ID="TextBox4" runat="server" CssClass="box1-mid" placeholder="Ponto de Referência"></asp:TextBox>
+                    <div class="btn-b2">
+                        <asp:Button class="btn-close" runat="server" Text="Excluir"  />
+                        <asp:Button class="btn-save" runat="server" Text="Atualizar" />
+                    </div>  
+                   <!-- <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" DataSourceID="ObjectDataSource1" DataKeyNames="id">
                         <Fields>
                             <asp:BoundField DataField="nome" HeaderText="Informações" SortExpression="nome"></asp:BoundField>
                             <asp:CommandField ShowEditButton="True" ShowDeleteButton="True"></asp:CommandField>
@@ -40,10 +48,10 @@
                         <SelectParameters>
                             <asp:SessionParameter SessionField="Id" Name="Id" Type="String"></asp:SessionParameter>
                         </SelectParameters>
-                    </asp:ObjectDataSource>
+                    </asp:ObjectDataSource>-->
                 </div>
-                </div>
-            </div>
+           </div>
+        </div>
 
             <div class="box2">
                 <div class="box2-user-container">
@@ -59,17 +67,16 @@
                     </div>
                 </div>
 
-                <div class="box2-ponto">
-                    <div class="ponto">
-                        <p>Pontos de recarga</p>
+                <div class="box2-rota">
+                    <div class="rota">
+                        <p>Rotas de Ônibus</p>
                     </div>
-                    <div class="ponto2">
+                    <div class="rota2">
                         <i runat="server" id="iconTeste" class="fas fa-search"></i>
                         <p>Pesquisar</p>
                     </div>
                 </div>
             </div>
-          </div>
     </form>
 </body>
 </html>

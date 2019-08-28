@@ -78,6 +78,7 @@
     <Content Include="StyleCadastroPonto.css" />
     <Content Include="StyleCadastroRota.css" />
     <Content Include="StyleEditarPonto.css" />
+    <Content Include="StyleEditarRota.css" />
     <Content Include="StylePonto.css" />
     <Content Include="StyleRota.css" />
     <Content Include="StyleTelaPrincipalAdm.css" />
