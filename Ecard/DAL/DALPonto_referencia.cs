@@ -13,9 +13,10 @@ namespace Ecardmark1.DAL
         string connectionString = "";
 
 
+
         public DALPonto_referencia()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["PubsConnectionString"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
         }
 
 
@@ -23,21 +24,20 @@ namespace Ecardmark1.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Ponto_referencia> SelectAll()
         {
-            Modelo.Ponto_referencia Ponto_referencia;
             List<Modelo.Ponto_referencia> ListPonto_referencias = new List<Modelo.Ponto_referencia>();
             SqlConnection a = new SqlConnection(connectionString);
             a.Open();
             SqlCommand b = a.CreateCommand();
-            b.CommandText = "Select * from Ponto_referencia";
+            b.CommandText = "Select * from Ponto_Referencia";
             SqlDataReader c = b.ExecuteReader();
             if (c.HasRows)
             {
                 while (c.Read())
                 {
-                    Ponto_referencia = new Modelo.Ponto_referencia(
-                        c["Nome"].ToString()
+                    Modelo.Ponto_referencia Ponto_referencia = new Modelo.Ponto_referencia(
+                        c["nome"].ToString()
                         );
-                    Ponto_referencia.Id = int.Parse(c["Id"].ToString());
+                    Ponto_referencia.id = Convert.ToInt32(c["id"].ToString());
                     ListPonto_referencias.Add(Ponto_referencia);
                 }
             }
@@ -55,9 +55,9 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("DELETE FROM Ponto_referencia WHERE Id = @Id", conn);
+            SqlCommand cmd = new SqlCommand("DELETE FROM Ponto_Referencia WHERE id = @id", conn);
 
-            cmd.Parameters.AddWithValue("@Id", obj.Id);
+            cmd.Parameters.AddWithValue("@id", obj.id);
 
             cmd.ExecuteNonQuery();
 
@@ -71,9 +71,9 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Ponto_referencia (Nome,rotas_id) VALUES (@Nome,1)", conn);
-        
-            cmd.Parameters.AddWithValue("@Nome", obj.Nome);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Ponto_Referencia (nome, rotas_id) VALUES (@nome, 1)", conn);
+
+            cmd.Parameters.AddWithValue("@nome", obj.nome);
 
             cmd.ExecuteNonQuery();
 
@@ -87,10 +87,10 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Ponto_referencia SET Nome = @Nome WHERE Id = @Id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Ponto_Referencia SET nome = @nome WHERE id = @id", conn);
 
-            cmd.Parameters.AddWithValue("@Id", obj.Id);
-            cmd.Parameters.AddWithValue("@Nome", obj.Nome);
+            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.Parameters.AddWithValue("@nome", obj.nome);
 
             cmd.ExecuteNonQuery();
         }
@@ -98,29 +98,31 @@ namespace Ecardmark1.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public Modelo.Ponto_referencia Select(int Id)
+        public List<Modelo.Ponto_referencia> Select(int id)
         {
-            Modelo.Ponto_referencia aPonto_referencia = new Modelo.Ponto_referencia();
+            List<Modelo.Ponto_referencia> aListPonto_referencia = new List<Modelo.Ponto_referencia>();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Ponto_referencia Where Id = @Id";
-            cmd.Parameters.AddWithValue("@Id", Id);
+            cmd.CommandText = "Select * from Ponto_Referencia Where id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
                 while (dr.Read())
                 {
-                    aPonto_referencia = new Modelo.Ponto_referencia(
-                        dr["Nome"].ToString()
+                    Modelo.Ponto_referencia aPonto_referencia = new Modelo.Ponto_referencia(
+                        dr["nome"].ToString()
                         );
-                    aPonto_referencia.Id = int.Parse(dr["Id"].ToString());
+                    aPonto_referencia.id = Convert.ToInt32(dr["id"].ToString());
+                    aListPonto_referencia.Add(aPonto_referencia);
                 }
             }
 
             dr.Close();
             conn.Close();
-            return aPonto_referencia;
+
+            return aListPonto_referencia;
         }
     }
 }
