@@ -7,8 +7,7 @@ namespace Ecardmark1.Modelo
 {
     public class Instituicao
     {
-        public class Instituicao
-        {
+       
             public int id { get; set; }
             public string nome { get; set; }
             public string email { get; set; }
@@ -52,5 +51,6 @@ namespace Ecardmark1.Modelo
                 this.endereco_logradouro = endereco_logradouro;
                 this.endereco_numero = endereco_numero;
             }
-        }
+        
+    }
 }
