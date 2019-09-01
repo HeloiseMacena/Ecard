@@ -13,7 +13,7 @@ namespace Ecardmark1
 
         protected void Unnamed2_Click(object sender, EventArgs e)
         {
-            string nome = TextBoxNome.Text + ":  " + TextBoxRua.Text + ", " + TextBoxBairro.Text + ", " + TextBoxReferencia.Text + ".";
+            string nome = TextBoxNome.Text + ":  " + TextBoxBairro.Text + ", " + TextBoxReferencia.Text + ".";
             Modelo.Rota rota = new Modelo.Rota(nome);
             DAL.DALRota d = new DAL.DALRota();
             d.Insert(rota);
