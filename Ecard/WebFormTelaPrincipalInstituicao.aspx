@@ -25,10 +25,9 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
+                        <asp:LinkButton ID="LinkButton1" CssClass="link-2" runat="server">Novo Estudante</asp:LinkButton>
                       <i class="fas fa-plus"></i>
-                       <p>Novo Estudante</p>
-                    </div>
-                    <d
+                    
                     </div>
                </div>
                <div class="princi">
@@ -50,7 +49,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
     </form>
 </body>
 </html>
