@@ -7,19 +7,17 @@ namespace Ecardmark1.Modelo
 {
     public class Telefone
     {
-        public int Id { get; set; }
-        public string Numero { get; set; }
+        public int id { get; set; }
+        public string numero { get; set; }
 
         public Telefone()
         {
-            this.Id = 0;
-            this.Numero = "";
+            this.numero = "";
         }
 
-        public Telefone(int id, string numero)
+        public Telefone(string numero)
         {
-            this.Id = id;
-            this.Numero = numero;
+            this.numero = numero;
         }
     }
 }
