@@ -16,7 +16,7 @@ namespace Ecardmark1.DAL
 
         public DALLista_alunos()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["PubsConnectionString"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
         }
 
 

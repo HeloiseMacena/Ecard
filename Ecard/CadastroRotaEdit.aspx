@@ -32,18 +32,18 @@
                 <div class="box1-midi">
                       <h1>Cadastro</h1>
                       <asp:TextBox ID="TextBoxNome" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>   
-                      <asp:TextBox ID="TextBoxBairro" runat="server" CssClass="box1-mid-1" placeholder="Bairro"></asp:TextBox> <asp:Button ID="Button10" class="btn-add-1" runat="server" Text="Adicionar"/>
-                      <asp:TextBox ID="TextBoxReferencia" runat="server" CssClass="box1-mid-1" placeholder="Ponto de Referência"></asp:TextBox> <asp:Button ID="Button3" class="btn-add-1" runat="server" Text="Adicionar"/>
-                     <div class="btn-nov">
-                        <asp:Button ID="Button11" class="btn-add-1" runat="server" Text="Adicionar"/>
-                        <asp:Button ID="Button22" class="btn-add-1" runat="server" Text="Adicionar"/> 
+                    <div class="org-1">
+                        <asp:TextBox ID="TextBoxBairro" runat="server" CssClass="box1-mid-1" placeholder="Bairro"></asp:TextBox>
+                        <asp:Button ID="Button11" class="btn-add-1" runat="server" Text="Adicionar" />
+                    </div> 
+                    <div class="org-1">
+                        <asp:TextBox ID="TextBoxReferencia" runat="server" CssClass="box1-mid-1" placeholder="Ponto de Referência"></asp:TextBox>
+                        <asp:Button ID="Button22" class="btn-add-1" runat="server" Text="Adicionar" />
                     </div>
-                      
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroRota.aspx" />
                         <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed2_Click" />
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource1" DataTextField="nome" DataValueField="id"></asp:DropDownList>
-                        
+
                     </div>
                 </div>
             </div>

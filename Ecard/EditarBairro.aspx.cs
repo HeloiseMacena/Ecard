@@ -9,7 +9,7 @@ namespace Ecard
 {
     public partial class EditarBairro : System.Web.UI.Page
     {
-        int id;
+        /*int id;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,6 +38,6 @@ namespace Ecard
             Ecardmark1.Modelo.Bairro bairro = p.Select(id);
             p.Delete(bairro);
             Response.Redirect("~//CadastroBairro.aspx");
-        }
+        }*/
     }
 }

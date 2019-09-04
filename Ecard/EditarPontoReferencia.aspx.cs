@@ -9,7 +9,7 @@ namespace Ecard
 {
     public partial class EditarPontoReferencia : System.Web.UI.Page
     {
-        int id;
+       /* int id;
         protected void Page_Load(object sender, EventArgs e)
         {
             id = int.Parse(Request.QueryString["id"]);
@@ -33,6 +33,6 @@ namespace Ecard
             Ecardmark1.Modelo.Ponto_referencia ponto = p.Select(id);
             p.Delete(ponto);
             Response.Redirect("~//CadastroPontoReferencia.aspx");
-        }
+        }*/
     }
 }

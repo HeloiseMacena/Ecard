@@ -160,26 +160,31 @@ form#form1 {
 }
 
 
-.btn-nov {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+.org-1 {
     flex-direction: row;
-    width: 100%;
+    width: 42%;
+    display: flex;
+    align-items: center;
     margin-top: 20px;
-    margin-bottom: 10px;
-    cursor: pointer;
+    justify-content: space-between;
 }
 
-.btn-nov > .btn-add-1 {
+
+
+.btn-add-1 {
     padding: 10px 20px;
     border: none;
     border-radius: 2px;
     background-color: #17A2B8;
     color: #EBEBEB;
     border-bottom-color: #13899C;
-    margin-right: 30px;
+    margin-left: 64px;
+    margin-top: 20px;
     cursor: pointer;
+}
+
+.btn-b2{
+    margin-top:30px;
 }
 
     .btn-b2 > .btn-close {
@@ -323,14 +328,25 @@ form#form1 {
 
 .box1-mid-1 {
     margin-top: 20px;
-    margin-right: 100px;
-    width: 80%;
+    margin-left: -149px;
+    min-width: 164%;
     padding: 15px 20px;
     background-color: white;
     color: #a1a1a1;
     border-style: none;
     border-radius: 3px;
 }
+
+.box1-mid-2 {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: white;
+    color: #a1a1a1;
+    border-style: none;
+    border-radius: 3px;
+}
+
 
 .show {
     display: initial;

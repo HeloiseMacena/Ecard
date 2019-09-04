@@ -16,7 +16,7 @@ namespace Ecardmark1.DAL
 
         public DALPonto_recarga()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["PubsConnectionString"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
         }
 
 
