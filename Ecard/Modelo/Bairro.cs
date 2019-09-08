@@ -13,11 +13,13 @@ namespace Ecardmark1.Modelo
 
         public Bairro()
         {
+            this.id = 0;
             this.nome = "";
         }
 
-        public Bairro(string nome)
+        public Bairro(int id, string nome)
         {
+            this.id = id;
             this.nome = nome;
         }
     }

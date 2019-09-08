@@ -36,6 +36,7 @@ namespace Ecardmark1.DAL
                 while (dr.Read())
                 {
                     Modelo.Bairro aBairro = new Modelo.Bairro(
+                        int.Parse(dr["id"].ToString()),
                         dr["nome"].ToString()
                         );
                     aBairro.id = Convert.ToInt32(dr["id"].ToString());
@@ -113,6 +114,7 @@ namespace Ecardmark1.DAL
                 while (dr.Read())
                 {
                     Modelo.Bairro aBairro = new Modelo.Bairro(
+                        int.Parse(dr["id"].ToString()),
                         dr["nome"].ToString()
                         );
                     aBairro.id = Convert.ToInt32(dr["id"].ToString());
