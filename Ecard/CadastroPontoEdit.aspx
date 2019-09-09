@@ -30,12 +30,12 @@
                 </div>
                 <div class="box1-midi">
                       <h1>Cadastro</h1>
-                      <asp:TextBox ID="TextBox1" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>
-                      <asp:TextBox ID="TextBox2" runat="server" CssClass="box1-mid" placeholder="Rua"></asp:TextBox>
-                      <asp:TextBox ID="TextBox3" runat="server" CssClass="box1-mid" placeholder="Bairro"></asp:TextBox>
-                      <asp:TextBox ID="TextBox4" runat="server" CssClass="box1-mid" placeholder="Número"></asp:TextBox>
-                      <asp:TextBox ID="TextBox5" runat="server" CssClass="box1-mid" placeholder="CEP"></asp:TextBox>
-                      <asp:TextBox ID="TextBox6" runat="server" CssClass="box1-mid" placeholder="Município"></asp:TextBox>
+                      <asp:TextBox ID="TextPonto" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>
+                      <asp:TextBox ID="TextRua" runat="server" CssClass="box1-mid" placeholder="Rua"></asp:TextBox>
+                      <asp:TextBox ID="TextBairro" runat="server" CssClass="box1-mid" placeholder="Bairro"></asp:TextBox>
+                      <asp:TextBox ID="TextNumero" runat="server" CssClass="box1-mid" placeholder="Número"></asp:TextBox>
+                      <asp:TextBox ID="TextCEP" runat="server" CssClass="box1-mid" placeholder="CEP"></asp:TextBox>
+                      <asp:TextBox ID="TextMunicipio" runat="server" CssClass="box1-mid" placeholder="Município"></asp:TextBox>
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroPonto.aspx" />
                         <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed2_Click" />

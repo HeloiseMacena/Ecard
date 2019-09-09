@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroPonto.aspx.cs" Inherits="Ecardmark1.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroPonto.aspx.cs" Inherits="Ecardmark1.CadastroPonto" %>
 
 <!DOCTYPE html>
 
@@ -46,8 +46,9 @@
                                     <p><%#Eval("endereco_bairro")%></p>
                                 </div>
                                 <div class="ponto-but">
-                                   <asp:LinkButton runat="server"><a href="#modal" class="action-button shadow animate blue" id="show-modal">Mais</a></asp:LinkButton>
-                                   <asp:LinkButton CssClass="link-but" runat="server"  PostBackUrl='<%#"~/EditarPonto.aspx?id=" +  Eval("id") %>'> <i class="fas fa-pen-square"></i> </asp:LinkButton>
+
+                                    <asp:LinkButton runat="server" OnClick="pModal_Click" ID="btnModal" CommandArgument='<%#Eval("id") %>'><a href="#modal" class="action-button shadow animate blue" id="show-modal">Mais</a></asp:LinkButton>
+                                    <asp:LinkButton CssClass="link-but" runat="server" PostBackUrl='<%#"~/EditarPonto.aspx?id=" +  Eval("id") %>'> <i class="fas fa-pen-square"></i> </asp:LinkButton>
                                   </div>
                             </div> 
                         </ItemTemplate>
@@ -93,14 +94,16 @@
                                 
                                         <div class="ponto-modal">
                                             <div class="ponto-modal-nome">
-                                                <p class="ponto-nume">N° </p>
-                                                <p class="ponto-cep">CEP: </p>
+                                                <p class="ponto-nume">N°:</p>
+                                                <asp:Label runat="server" ID="lblModalNumero"></asp:Label>
+                                                <p class="ponto-cep">CEP:</p>
+                                                <asp:Label runat="server" ID="lblModalCEP"></asp:Label>
                                             </div>
                                             <div class="vl"></div>
                                             <!-- vertical line -->
                                             <div class="pontoItem-muni">
-                                                <p class="ponto-muni-title">Municipio</p>
-                                                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                                <p class="ponto-muni-title">Municipio:</p>
+                                                <asp:Label runat="server" ID="lblModalMunicipio"></asp:Label>
                                             </div>
                                         </div>
                             </div>
