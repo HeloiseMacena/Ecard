@@ -36,8 +36,8 @@
                       <asp:TextBox ID="TextBox5" runat="server" CssClass="box1-mid" placeholder="CEP"></asp:TextBox>
                       <asp:TextBox ID="TextBox6" runat="server" CssClass="box1-mid" placeholder="Município"></asp:TextBox>
                     <div class="btn-b2">
-                        <asp:Button class="btn-close" runat="server" Text="Excluir"  />
-                        <asp:Button class="btn-save" runat="server" Text="Atualizar" />
+                        <asp:Button class="btn-close" runat="server" Text="Excluir" OnClick="Unnamed1_Click"  />
+                        <asp:Button class="btn-save" runat="server" Text="Atualizar" OnClick="Unnamed2_Click" />
                     </div>
                 </div>
             </div>

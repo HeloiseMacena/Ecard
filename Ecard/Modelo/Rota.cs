@@ -11,6 +11,8 @@ namespace Ecardmark1.Modelo
         public int id { get; set; }
         public string nome { get; set; }
 
+        public static int globalRotaId;
+
         public Rota()
         {
             this.nome = "";
@@ -18,7 +20,7 @@ namespace Ecardmark1.Modelo
 
         public Rota(string nome)
         {
-
+          
             this.nome = nome;
         }
     }

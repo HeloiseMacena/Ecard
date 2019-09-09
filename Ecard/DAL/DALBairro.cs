@@ -16,7 +16,7 @@ namespace Ecardmark1.DAL
 
         public DALBairro()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["PubsConnectionString"].ConnectionString;
         }
 
 
@@ -24,6 +24,7 @@ namespace Ecardmark1.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Bairro> SelectAll()
         {
+            Modelo.Bairro aBairro;
             List<Modelo.Bairro> aListBairro = new List<Modelo.Bairro>();
 
             SqlConnection conn = new SqlConnection(connectionString);
@@ -35,10 +36,10 @@ namespace Ecardmark1.DAL
             {
                 while (dr.Read())
                 {
-                    Modelo.Bairro aBairro = new Modelo.Bairro(
-                        dr["nome"].ToString()
+                    aBairro = new Modelo.Bairro(
+                        dr["Nome"].ToString()
                         );
-                    aBairro.id = Convert.ToInt32(dr["id"].ToString());
+                    aBairro.Id = int.Parse(dr["id"].ToString());
                     aListBairro.Add(aBairro);
                 }
             }
@@ -56,9 +57,9 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("DELETE FROM Bairro WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("DELETE FROM Bairro WHERE Id = @Id", conn);
 
-            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.Parameters.AddWithValue("@Id", obj.Id);
 
             cmd.ExecuteNonQuery();
 
@@ -72,9 +73,9 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Bairro (nome) VALUES (@nome)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Bairro (Nome) VALUES (@Nome)", conn);
 
-            cmd.Parameters.AddWithValue("@nome", obj.nome);
+            cmd.Parameters.AddWithValue("@Nome", obj.Nome);
 
             cmd.ExecuteNonQuery();
 
@@ -88,10 +89,10 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Bairro SET nome = @nome WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Bairro SET Nome = @Nome WHERE Id = @Id", conn);
 
-            cmd.Parameters.AddWithValue("@id", obj.id);
-            cmd.Parameters.AddWithValue("@nome", obj.nome);
+            cmd.Parameters.AddWithValue("@Id", obj.Id);
+            cmd.Parameters.AddWithValue("@Nome", obj.Nome);
 
             cmd.ExecuteNonQuery();
         }
@@ -99,24 +100,25 @@ namespace Ecardmark1.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Bairro> Select(string id)
+        public Modelo.Bairro Select(int Id)
         {
-            List<Modelo.Bairro> aListBairro = new List<Modelo.Bairro>();
+            Modelo.Bairro aBairro;
+            Modelo.Bairro aListBairro = new Modelo.Bairro();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Bairro Where id = @id";
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "Select * from Bairro Where Id = @Id";
+            cmd.Parameters.AddWithValue("@Id", Id);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
                 while (dr.Read())
                 {
-                    Modelo.Bairro aBairro = new Modelo.Bairro(
-                        dr["nome"].ToString()
+                    aBairro = new Modelo.Bairro(
+                        dr["Nome"].ToString()
                         );
-                    aBairro.id = Convert.ToInt32(dr["id"].ToString());
-                    aListBairro.Add(aBairro);
+                    aBairro.Id = int.Parse(dr["id"].ToString());
+                    aListBairro = aBairro;
                 }
             }
 

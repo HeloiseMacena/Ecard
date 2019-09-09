@@ -114,7 +114,7 @@ namespace Ecardmark1.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public Modelo.Ponto_recarga Select(string Id)
+        public Modelo.Ponto_recarga Select(int Id)
         {
             Modelo.Ponto_recarga aPonto_recarga;
             Modelo.Ponto_recarga aListPonto_recarga = new Modelo.Ponto_recarga();

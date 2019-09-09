@@ -16,7 +16,7 @@ namespace Ecardmark1
 
         protected void Unnamed2_Click(object sender, EventArgs e)
         {
-            Modelo.Ponto_recarga pr = new Modelo.Ponto_recarga(TextBox1.Text, "teste", TextBox2.Text, "teste", TextBox3.Text, "teste");
+            Modelo.Ponto_recarga pr = new Modelo.Ponto_recarga(TextBox1.Text, TextBox4.Text, TextBox2.Text, TextBox5.Text, TextBox3.Text, TextBox6.Text);
             DAL.DALPonto_recarga dal = new DAL.DALPonto_recarga();
             dal.Insert(pr);
             Response.Redirect("~//CadastroPonto.aspx");
