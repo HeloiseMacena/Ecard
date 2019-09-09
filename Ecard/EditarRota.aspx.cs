@@ -15,10 +15,12 @@ namespace Ecardmark1
             id = int.Parse(Request.QueryString["id"].ToString());
             DAL.DALRota p = new DAL.DALRota();
             Modelo.Rota rota = p.Select(id);
-            //TextBox1.Text = rota.nome;
+            if (!IsPostBack) TextBox1.Text = rota.nome;
         }
         protected void Unnamed2_Click(object sender, EventArgs e)
         {
+            id = int.Parse(Request.QueryString["id"].ToString());
+
             Ecardmark1.DAL.DALRota p = new Ecardmark1.DAL.DALRota();
             Ecardmark1.Modelo.Rota ponto = p.Select(id);
             ponto.nome = TextBox1.Text;

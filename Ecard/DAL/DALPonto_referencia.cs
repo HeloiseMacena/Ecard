@@ -71,7 +71,7 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Ponto_referencia (Nome,rotas_id) VALUES (@Nome,1)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Ponto_referencia (Nome,rotas_id) VALUES (@Nome,3)", conn);
         
             cmd.Parameters.AddWithValue("@Nome", obj.Nome);
 
