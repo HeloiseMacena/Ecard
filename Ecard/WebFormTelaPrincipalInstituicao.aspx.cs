@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Ecard
 {
-    public partial class WebFormTelaPrincipalAdm : System.Web.UI.Page
+    public partial class WebFormTelaPrincipalInstituicao : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

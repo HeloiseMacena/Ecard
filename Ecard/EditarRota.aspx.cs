@@ -36,6 +36,5 @@ namespace Ecardmark1
             p.Delete(ponto);
             Response.Redirect("~//CadastroRota.aspx");
         }
-
     }
 }

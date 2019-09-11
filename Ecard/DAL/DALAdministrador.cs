@@ -12,7 +12,7 @@ namespace Ecardmark1.DAL
     {
         string connectionString = "";
 
-        public DALAdministrador() => connectionString = ConfigurationManager.ConnectionStrings["PubsConnectionString"].ConnectionString;
+        public DALAdministrador() => connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
 
 
 

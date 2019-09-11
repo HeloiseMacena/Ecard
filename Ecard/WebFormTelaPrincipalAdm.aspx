@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormTelaPrincipalAdm.aspx.cs" Inherits="Ecardmark1.WebFormTelaPrincipalAdm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormTelaPrincipalAdm.aspx.cs" Inherits="Ecard.WebFormTelaPrincipalAdm" %>
 
 <!DOCTYPE html>
 

@@ -116,6 +116,7 @@ namespace Ecardmark1.DAL
                 {
                     aBairro = new Modelo.Bairro(
                         dr["Nome"].ToString()
+
                         );
                     aBairro.Id = int.Parse(dr["id"].ToString());
                     aListBairro = aBairro;
