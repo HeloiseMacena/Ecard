@@ -1,0 +1,16 @@
+﻿body {
+    background-color: #212121;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box1 {
+    background-color: #EBEBEB;
+    width: 1000px;
+    height: 500px;
+}
