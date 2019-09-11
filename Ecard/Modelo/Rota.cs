@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Web;
 
-namespace Ecardmark1.Modelo
+namespace Ecard.Modelo
 {
     public class Rota
     {

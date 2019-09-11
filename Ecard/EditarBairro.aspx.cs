@@ -15,9 +15,9 @@ namespace Ecard
             if (!IsPostBack)
             {
                 id = int.Parse(Request.QueryString["id"]);
-                Ecardmark1.DAL.DALBairro p = new Ecardmark1.DAL.DALBairro();
-                Ecardmark1.Modelo.Bairro bairro = p.Select(id);
-                txtNome.Text = aDALBairro.Select(id).ElementAt(0).nome;
+                Ecard.DAL.DALBairro p = new Ecard.DAL.DALBairro();
+                Ecard.Modelo.Bairro bairro = p.Select(id);
+                txtNome.Text = bairro.Nome;
             }
             
         }
@@ -26,9 +26,9 @@ namespace Ecard
         {
             id = int.Parse(Request.QueryString["id"]);
 
-            Ecardmark1.DAL.DALBairro p = new Ecardmark1.DAL.DALBairro();
-            Ecardmark1.Modelo.Bairro bairro = p.Select(id);
-            bairro.Nome = TextBox1.Text;
+            Ecard.DAL.DALBairro p = new Ecard.DAL.DALBairro();
+            Ecard.Modelo.Bairro bairro = p.Select(id);
+            bairro.Nome = txtNome.Text;
             p.Update(bairro);
             Response.Redirect("~//CadastroBairro.aspx");
         }
@@ -36,8 +36,8 @@ namespace Ecard
         protected void Delete_Click(object sender, EventArgs e)
         {
             id = int.Parse(Request.QueryString["id"]);
-            Ecardmark1.DAL.DALBairro p = new Ecardmark1.DAL.DALBairro();
-            Ecardmark1.Modelo.Bairro bairro = p.Select(id);
+            Ecard.DAL.DALBairro p = new Ecard.DAL.DALBairro();
+            Ecard.Modelo.Bairro bairro = p.Select(id);
             p.Delete(bairro);
             Response.Redirect("~//CadastroBairro.aspx");
         }

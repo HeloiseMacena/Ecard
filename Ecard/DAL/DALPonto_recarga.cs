@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace Ecardmark1.DAL
+namespace Ecard.DAL
 {
     public class DALPonto_recarga
     {
@@ -118,7 +118,7 @@ namespace Ecardmark1.DAL
         public Modelo.Ponto_recarga Select(int Id)
         {
             Modelo.Ponto_recarga aPonto_recarga;
-            List< Modelo.Ponto_recarga> aListPonto_recarga = new List<Modelo.Ponto_recarga>();
+            Modelo.Ponto_recarga aListPonto_recarga = new Modelo.Ponto_recarga();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
@@ -139,13 +139,12 @@ namespace Ecardmark1.DAL
                         dr["endereco_municipio"].ToString()
                         );
                     aPonto_recarga.id = Convert.ToInt32(dr["id"].ToString());
-                    aListPonto_recarga.Add(aPonto_recarga);
+                    aListPonto_recarga = aPonto_recarga;
                 }
             }
 
             dr.Close();
             conn.Close();
-
             return aListPonto_recarga;
         }
     }

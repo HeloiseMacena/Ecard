@@ -49,7 +49,7 @@
                     
                     
                     
-                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Ecardmark1.Modelo.Ponto_referencia" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecardmark1.DAL.DALPonto_referencia" UpdateMethod="Update"></asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Ecard.Modelo.Ponto_referencia" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALPonto_referencia" UpdateMethod="Update"></asp:ObjectDataSource>
                     
                     
                     

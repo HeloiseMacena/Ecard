@@ -7,7 +7,7 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Ecardmark1 {
+namespace Ecard {
     
     
     public partial class EditarRota {

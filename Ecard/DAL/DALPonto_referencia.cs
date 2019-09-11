@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace Ecardmark1.DAL
+namespace Ecard.DAL
 {
     public class DALPonto_referencia
     {
@@ -15,7 +15,7 @@ namespace Ecardmark1.DAL
 
         public DALPonto_referencia()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["PubsConnectionString"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
         }
 
 

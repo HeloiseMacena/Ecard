@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarRota.aspx.cs" Inherits="Ecardmark1.EditarRota" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarRota.aspx.cs" Inherits="Ecard.EditarRota" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Ecardmark1.Modelo
+namespace Ecard.Modelo
 {
     public class Estudante
     {

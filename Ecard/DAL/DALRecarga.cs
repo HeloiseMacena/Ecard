@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace Ecardmark1.DAL
+namespace Ecard.DAL
 {
     public class DALRecarga
     {

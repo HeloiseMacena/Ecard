@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="CadastroRotaEdit.aspx.cs" Inherits="Ecardmark1.CadastroRotaEdit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="CadastroRotaEdit.aspx.cs" Inherits="Ecard.CadastroRotaEdit" %>
 
 <!DOCTYPE html>
 
@@ -34,11 +34,11 @@
                       <asp:TextBox ID="TextBoxNome" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>   
                     <div class="org-1">
                         <asp:TextBox ID="TextBoxBairro" runat="server" CssClass="box1-mid-1" placeholder="Bairro"></asp:TextBox>
-                        <asp:Button ID="Button11" class="btn-add-1" runat="server" Text="Adicionar" />
+                        <asp:Button ID="Button11" class="btn-add-1" runat="server" Text="Adicionar" PostBackUrl="~/CadastroBairroEdit.aspx"/>
                     </div> 
                     <div class="org-1">
                         <asp:TextBox ID="TextBoxReferencia" runat="server" CssClass="box1-mid-1" placeholder="Ponto de Referência"></asp:TextBox>
-                        <asp:Button ID="Button22" class="btn-add-1" runat="server" Text="Adicionar" />
+                        <asp:Button ID="Button22" class="btn-add-1" runat="server" Text="Adicionar" PostBackUrl="~/CadastroPontoReferenciaEdit.aspx"/>
                     </div>
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroRota.aspx" />
