@@ -30,6 +30,7 @@ namespace Ecardmark1
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
+            id = int.Parse(Request.QueryString["id"]);
             Ecardmark1.DAL.DALRota p = new Ecardmark1.DAL.DALRota();
             Ecardmark1.Modelo.Rota ponto = p.Select(id);
             p.Delete(ponto);

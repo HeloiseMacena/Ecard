@@ -43,6 +43,7 @@ namespace Ecardmark1
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
+            id = int.Parse(Request.QueryString["id"]);
             DAL.DALPonto_recarga p = new DAL.DALPonto_recarga();
             Modelo.Ponto_recarga ponto = p.Select(id);
             p.Delete(ponto);

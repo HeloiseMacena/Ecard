@@ -36,6 +36,7 @@ namespace Ecard
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
+            id = int.Parse(Request.QueryString["id"]);
             Ecardmark1.DAL.DALBairro p = new Ecardmark1.DAL.DALBairro();
             Ecardmark1.Modelo.Bairro bairro = p.Select(id);
             p.Delete(bairro);

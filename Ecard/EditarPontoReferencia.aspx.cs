@@ -30,6 +30,7 @@ namespace Ecard
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
+            id = int.Parse(Request.QueryString["id"]); id = int.Parse(Request.QueryString["id"]);
             Ecardmark1.DAL.DALPonto_referencia p = new Ecardmark1.DAL.DALPonto_referencia();
             Ecardmark1.Modelo.Ponto_referencia ponto = p.Select(id);
             p.Delete(ponto);
