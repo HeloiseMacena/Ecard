@@ -80,7 +80,7 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade) VALUES (@Nome, @cpf, @email, @status, bia, 50, 50, 2002-02-02)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, instituicao_id) VALUES (@Nome, @cpf, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 2)", conn);
 
             cmd.Parameters.AddWithValue("@Nome", obj.nome);
             cmd.Parameters.AddWithValue("@cpf", obj.cpf);
@@ -90,6 +90,7 @@ namespace Ecardmark1.DAL
             cmd.Parameters.AddWithValue("@carteira_saldo", obj.carteira_saldo);
             cmd.Parameters.AddWithValue("@carteira_numero", obj.carteira_numero);
             cmd.Parameters.AddWithValue("@carteira_validade", obj.carteira_validade);
+            cmd.Parameters.AddWithValue("@senha", obj.senha);
 
             cmd.ExecuteNonQuery();
 
@@ -103,13 +104,14 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET Nome = @Nome WHERE Id = @Id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET Nome = @Nome, cpf = @cpf, senha = @senha, email = @email, status = @status, carteira_foto = @carteira_foto, carteira_saldo = @carteira_saldo, carteira_numero = @carteira_numero, carteira_validade = @carteira_validade WHERE Id = @Id", conn);
 
             cmd.Parameters.AddWithValue("@Id", obj.id);
             cmd.Parameters.AddWithValue("@Nome", obj.nome);
             cmd.Parameters.AddWithValue("@cpf", obj.cpf);
             cmd.Parameters.AddWithValue("@email", obj.email);
             cmd.Parameters.AddWithValue("@status", obj.status);
+            cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@carteira_foto", obj.carteira_foto);
             cmd.Parameters.AddWithValue("@carteira_saldo", obj.carteira_saldo);
             cmd.Parameters.AddWithValue("@carteira_numero", obj.carteira_numero);
