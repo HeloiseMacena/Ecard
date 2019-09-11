@@ -53,7 +53,6 @@
                        
                 </div>
             </div>
-                </div>
 
             <div class="box2">
                 <div class="box2-user-container">
@@ -99,7 +98,6 @@
 	            </aside>
             </div>
         </div>
-            
     </form>
 </body>
 </html>

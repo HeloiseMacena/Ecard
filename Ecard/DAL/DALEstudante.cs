@@ -36,7 +36,6 @@ namespace Ecardmark1.DAL
                 while (dr.Read())
                 {
                     Modelo.Estudante aEstudante = new Modelo.Estudante(
-                        Convert.ToInt32(dr["id"].ToString()),
                         dr["nome"].ToString(),
                         dr["cpf"].ToString(),
                         dr["email"].ToString(),
@@ -47,6 +46,7 @@ namespace Ecardmark1.DAL
                         int.Parse(dr["carteira_numero"].ToString()),
                         Convert.ToDateTime(dr["carteira_validade"].ToString())
                     );
+                    aEstudante.id = Convert.ToInt32(dr["id"].ToString());
                     aListEstudante.Add(aEstudante);
                 }
             }
@@ -80,9 +80,8 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Id, Nome, cpf, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade) VALUES (@Id, @Nome, @cpf, @email, @status, @carteira_foto, @carteira_numero, @carteira_validade)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, instituicao_id) VALUES (@Nome, @cpf, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 2)", conn);
 
-            cmd.Parameters.AddWithValue("@Id", obj.id);
             cmd.Parameters.AddWithValue("@Nome", obj.nome);
             cmd.Parameters.AddWithValue("@cpf", obj.cpf);
             cmd.Parameters.AddWithValue("@email", obj.email);
@@ -91,6 +90,7 @@ namespace Ecardmark1.DAL
             cmd.Parameters.AddWithValue("@carteira_saldo", obj.carteira_saldo);
             cmd.Parameters.AddWithValue("@carteira_numero", obj.carteira_numero);
             cmd.Parameters.AddWithValue("@carteira_validade", obj.carteira_validade);
+            cmd.Parameters.AddWithValue("@senha", obj.senha);
 
             cmd.ExecuteNonQuery();
 
@@ -104,13 +104,14 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET Nome = @Nome WHERE Id = @Id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET Nome = @Nome, cpf = @cpf, senha = @senha, email = @email, status = @status, carteira_foto = @carteira_foto, carteira_saldo = @carteira_saldo, carteira_numero = @carteira_numero, carteira_validade = @carteira_validade WHERE Id = @Id", conn);
 
             cmd.Parameters.AddWithValue("@Id", obj.id);
             cmd.Parameters.AddWithValue("@Nome", obj.nome);
             cmd.Parameters.AddWithValue("@cpf", obj.cpf);
             cmd.Parameters.AddWithValue("@email", obj.email);
             cmd.Parameters.AddWithValue("@status", obj.status);
+            cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@carteira_foto", obj.carteira_foto);
             cmd.Parameters.AddWithValue("@carteira_saldo", obj.carteira_saldo);
             cmd.Parameters.AddWithValue("@carteira_numero", obj.carteira_numero);
@@ -122,7 +123,7 @@ namespace Ecardmark1.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Estudante> Select(string Id)
+        public List<Modelo.Estudante> Select(int Id)
         {
             Modelo.Estudante aEstudante;
             List<Modelo.Estudante> aListEstudante = new List<Modelo.Estudante>();
@@ -137,7 +138,6 @@ namespace Ecardmark1.DAL
                 while (dr.Read())
                 {
                     aEstudante = new Modelo.Estudante(
-                        Convert.ToInt32(dr["id"].ToString()),
                         dr["nome"].ToString(),
                         dr["cpf"].ToString(),
                         dr["email"].ToString(),
@@ -148,6 +148,7 @@ namespace Ecardmark1.DAL
                         int.Parse(dr["carteira_numero"].ToString()),
                         Convert.ToDateTime(dr["carteira_validade"].ToString())
                         );
+                    aEstudante.id = Convert.ToInt32(dr["id"].ToString());
                     aListEstudante.Add(aEstudante);
                 }
             }

@@ -7,20 +7,19 @@ namespace Ecardmark1.Modelo
 {
     public class Bairro
     {
-        public int id { get; set; }
-        public string nome { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
 
 
         public Bairro()
         {
-            this.id = 0;
-            this.nome = "";
+            this.Id = 0;
+            this.Nome = "";
         }
 
         public Bairro(int id, string nome)
         {
-            this.id = id;
-            this.nome = nome;
+            this.Nome = nome;
         }
     }
 }

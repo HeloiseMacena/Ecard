@@ -1,61 +1,53 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Ecard
+namespace Ecardmark1
 {
     public partial class EditarPonto : System.Web.UI.Page
     {
+        int id;
         protected void Page_Load(object sender, EventArgs e)
-        {   
+        {
             if (!IsPostBack)
             {
-                string id;
-                id = Request.QueryString["id"];
-                Ecardmark1.DAL.DALPonto_recarga aDALPonto_recarga;
-
-                aDALPonto_recarga = new Ecardmark1.DAL.DALPonto_recarga();
-
-                TextPonto.Text = aDALPonto_recarga.Select(id).ElementAt(0).nome_ponto;
-                TextRua.Text = aDALPonto_recarga.Select(id).ElementAt(0).endereco_logradouro;
-                TextBairro.Text = aDALPonto_recarga.Select(id).ElementAt(0).endereco_bairro;
-                TextNumero.Text = aDALPonto_recarga.Select(id).ElementAt(0).endereco_numero;
-                TextCEP.Text = aDALPonto_recarga.Select(id).ElementAt(0).endereco_cep;
-                TextMunicipio.Text = aDALPonto_recarga.Select(id).ElementAt(0).endereco_municipio;
+                id = int.Parse(Request.QueryString["id"]);
+                DAL.DALPonto_recarga p = new DAL.DALPonto_recarga();
+                Modelo.Ponto_recarga ponto = p.Select(id);
+                TextBox1.Text = ponto.nome_ponto;
+                TextBox2.Text = ponto.endereco_logradouro;
+                TextBox3.Text = ponto.endereco_bairro;
+                TextBox4.Text = ponto.endereco_numero;
+                TextBox5.Text = ponto.endereco_cep;
+                TextBox6.Text = ponto.endereco_municipio;
             }
-        }
 
-        protected void Update_Click(object sender, EventArgs e)
+        }
+        protected void Unnamed2_Click(object sender, EventArgs e)
         {
-            string id;
-            id = Request.QueryString["id"];
-
-            Ecardmark1.DAL.DALPonto_recarga aDALPonto_recarga;
-            aDALPonto_recarga = new Ecardmark1.DAL.DALPonto_recarga();
-
-            Ecardmark1.Modelo.Ponto_recarga aPonto_recarga;
-            aPonto_recarga = new Ecardmark1.Modelo.Ponto_recarga(int.Parse(id), TextPonto.Text, TextNumero.Text, TextRua.Text, TextCEP.Text, TextBairro.Text, TextMunicipio.Text);
-            aDALPonto_recarga.Update(aPonto_recarga);
-            Response.Redirect("CadastroPonto.aspx");
+            id = int.Parse(Request.QueryString["id"]);
+            DAL.DALPonto_recarga p = new DAL.DALPonto_recarga();
+            Modelo.Ponto_recarga ponto = p.Select(id);
+            ponto.nome_ponto = TextBox1.Text;
+            ponto.endereco_logradouro = TextBox2.Text;
+            ponto.endereco_bairro = TextBox3.Text;
+            ponto.endereco_numero = TextBox4.Text;
+            ponto.endereco_cep = TextBox5.Text;
+            ponto.endereco_municipio = TextBox6.Text;
+            p.Update(ponto);
+            Response.Redirect("~//CadastroPonto.aspx");
         }
 
-        protected void Delete_Click(object sender, EventArgs e)
+        protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            string id;
-            id = Request.QueryString["id"];
-
-            Ecardmark1.DAL.DALPonto_recarga aDALPonto_recarga;
-            aDALPonto_recarga = new Ecardmark1.DAL.DALPonto_recarga();
-
-            Ecardmark1.Modelo.Ponto_recarga aPonto_recarga;
-            aPonto_recarga = new Ecardmark1.Modelo.Ponto_recarga(int.Parse(id), TextPonto.Text, TextNumero.Text, TextRua.Text, TextCEP.Text, TextBairro.Text, TextMunicipio.Text);
-
-            aDALPonto_recarga.Delete(aPonto_recarga); 
-            Response.Redirect("CadastroPonto.aspx");
+            id = int.Parse(Request.QueryString["id"]);
+            DAL.DALPonto_recarga p = new DAL.DALPonto_recarga();
+            Modelo.Ponto_recarga ponto = p.Select(id);
+            p.Delete(ponto);
+            Response.Redirect("~//CadastroPonto.aspx");
         }
-
     }
 }

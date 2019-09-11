@@ -69,6 +69,9 @@
   <ItemGroup>
     <Content Include="CadastroBairro.aspx" />
     <Content Include="CadastroBairroEdit.aspx" />
+    <Content Include="CadastroEstudante.aspx" />
+    <Content Include="LoginEstudante.aspx" />
+    <Content Include="StyleCadastroEstudante.css" />
     <Content Include="CadastroPonto.aspx" />
     <Content Include="CadastroPontoEdit.aspx" />
     <Content Include="CadastroPontoReferencia.aspx" />
@@ -107,6 +110,13 @@
     </Compile>
     <Compile Include="CadastroBairroEdit.aspx.designer.cs">
       <DependentUpon>CadastroBairroEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroEstudante.aspx.cs">
+      <DependentUpon>CadastroEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroEstudante.aspx.designer.cs">
+      <DependentUpon>CadastroEstudante.aspx</DependentUpon>
     </Compile>
     <Compile Include="CadastroPonto.aspx.cs">
       <DependentUpon>CadastroPonto.aspx</DependentUpon>
@@ -187,6 +197,13 @@
     </Compile>
     <Compile Include="EditarRota.aspx.designer.cs">
       <DependentUpon>EditarRota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginEstudante.aspx.cs">
+      <DependentUpon>LoginEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginEstudante.aspx.designer.cs">
+      <DependentUpon>LoginEstudante.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Administrador.cs" />
     <Compile Include="Modelo\Bairro.cs" />

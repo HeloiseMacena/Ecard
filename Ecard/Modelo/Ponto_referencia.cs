@@ -7,18 +7,19 @@ namespace Ecardmark1.Modelo
 {
     public class Ponto_referencia
     {
-        public int id { get; set; }
-        public string nome { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
 
 
         public Ponto_referencia()
         {
-            this.nome = "";
+            Id = 0;
+            Nome = "";
         }
 
         public Ponto_referencia(string nome)
         {
-            this.nome = nome;
+            Nome = nome;
         }
     }
 }

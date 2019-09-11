@@ -51,7 +51,7 @@
                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Ecardmark1.Modelo.Bairro" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecardmark1.DAL.DALBairro" UpdateMethod="Update"></asp:ObjectDataSource>
                     
                     
-                   </div> 
+                  </div>  
               </div>
             <div class="box2">
                 <div class="box2-user-container">
