@@ -14,7 +14,7 @@ namespace Ecardmark1
 
         }
 
-        protected void pModal_Click(object sender, EventArgs e)
+       /* protected void pModal_Click(object sender, EventArgs e)
         {
             string id = btnModal.CommandArgument;
             DAL.DALPonto_recarga aDALPonto_recarga;
@@ -23,6 +23,6 @@ namespace Ecardmark1
 
             lblModalNumero.Text = aDALPonto_recarga.Select(id).ElementAt(0).endereco_numero;
             lblModalCEP.Text = aDALPonto_recarga.Select(id).ElementAt(0).endereco_cep;
-        }
+        }*/
     }
 }

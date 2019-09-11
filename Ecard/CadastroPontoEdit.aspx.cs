@@ -9,11 +9,7 @@ namespace Ecardmark1
 {
     public partial class CadastroPontoEdit : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         protected void Unnamed2_Click(object sender, EventArgs e)
         {
             Modelo.Ponto_recarga pr = new Modelo.Ponto_recarga(0, TextPonto.Text, TextNumero.Text, TextRua.Text, TextCEP.Text, TextBairro.Text, TextMunicipio.Text);

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroPontoEdit.aspx.cs" Inherits="Ecardmark1.CadastroPonto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroPontoEdit.aspx.cs" Inherits="Ecardmark1.CadastroPontoEdit" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
