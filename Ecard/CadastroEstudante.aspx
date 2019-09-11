@@ -14,8 +14,8 @@
             <div class="box1">
             	<div class="box1-header">
             		<img src="Imagens/ECard.png"/>
-            		<p>Estudante</p>
-            		<p>Informações Básicas</p>
+            		<p class="p1">Estudante</p>
+            		<p class="p2">Informações Básicas</p>
             	</div>
             	<div class="lado1">
             		<asp:TextBox ID="Textbox1" runat="server" CssClass="box-lado1" placeholder="Nome Completo"></asp:TextBox>
@@ -28,7 +28,7 @@
             		<asp:TextBox ID="Textbox5" runat="server" CssClass="box-lado2" placeholder="Senha"></asp:TextBox>
             		<asp:TextBox ID="Textbox6" runat="server" CssClass="box-lado2" placeholder="Confirmar Senha"></asp:TextBox>
             		<asp:Button class="btn=cadastrar" runat="server" Text="Cadastrar" OnClick="Unnamed1_Click"/>
-            		<p>Já possuo uma conta! <a href="LoginEstudante.aspx">Entrar</a></p>
+            		<p class="p3">Já possuo uma conta! <a href="LoginEstudante.aspx" class="entrar-lnk">Entrar</a></p>
             	</div>
             </div>
         </div>
