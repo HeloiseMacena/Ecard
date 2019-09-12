@@ -1,0 +1,135 @@
+﻿body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: rgb(207, 207, 207);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.contenedor {
+    width: 100%;
+    padding: 15px;
+}
+
+.formulario {
+    max-width:90%;
+    margin:auto;
+}
+
+h1 {
+    text-align: center;
+    color: #1a2537;
+    font-size: 40px;
+}
+
+input[type="text"],
+input[type="password"] {
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+
+.input-contenedor {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: white;
+    color: #a1a1a1;
+    border-style: none;
+    border-radius: 10px;
+}
+
+.icon {
+    min-width: 50px;
+    text-align: center;
+    color: #999;
+}
+
+.button {
+    margin-top:10%;
+    border: none;
+    color: white;
+    font-size: 20px;
+    background: #66CD42;
+    padding:2% 4%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    .button:hover {
+        background: cadetblue;
+    }
+
+p {
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    color: #1a2537;
+    font-weight: 600;
+}
+
+    .link:hover {
+        color: cadetblue;
+    }
+
+.vl { /* vertical line */
+    height: 40px;
+    width: 1px;
+    background-color: #cccccc;
+    margin: 0 10px;
+}
+
+.coluna-1 {
+    width:40%;
+    margin:5%;
+    border-right-style:solid;
+    border-right-color:rgb(190, 190, 190);  
+}
+    .textbox {
+        padding:2%;
+    }
+.image {
+    max-width:40%;
+    margin:auto;
+    padding-bottom:10%;
+}
+.coluna-2 { 
+    width: 60%;
+    margin: 5%;
+}
+    .coluna-2::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+.coluna-3 {
+    float:left;
+    width: 50%
+}
+.coluna-4 {
+    width: 60%
+}
+.login {
+    width:100%;
+    margin:auto;
+    text-align:center;
+}
+@media(min-width:768px) {
+    .formulario {
+        width: 90%;
+        background-color:#EBEBEB;
+        margin:auto;
+        margin-top: 150px;
+        border-radius: 2%;
+        padding: 0px 15px;
+        display: flex;
+        flex-direction: row;
+    }
+}
