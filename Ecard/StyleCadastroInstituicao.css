@@ -28,7 +28,7 @@ h1 {
 
 input[type="text"],
 input[type="password"] {
-    font-size: 20px;
+    font-size: 15px;
     width: 82%;
     padding: 10px;
     border: none;
@@ -51,10 +51,10 @@ input[type="password"] {
 }
 
 .button {
-    margin-top:10%;
+    margin-top:8%;
     border: none;
     color: white;
-    font-size: 20px;
+    font-size: 17px;
     background: #66CD42;
     padding:2% 4%;
     border-radius: 5px;
@@ -79,29 +79,53 @@ p {
     }
 
 .vl { /* vertical line */
-    height: 40px;
-    width: 1px;
+    height: 468px;
+    width: 3px;
     background-color: #cccccc;
-    margin: 0 10px;
+    margin: 81px 10px;
 }
 
 .coluna-1 {
     width:40%;
-    margin:5%;
-    border-right-style:solid;
-    border-right-color:rgb(190, 190, 190);  
+    margin:5%;  
 }
-    .textbox {
-        padding:2%;
-    }
+.textbox {
+    padding: 2%;
+    width: 122%;
+}
+
+.textbox1 {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: white;
+    color: #a1a1a1;
+    border-style: none;
+    border-radius: 4px;
+}
+
 .image {
     max-width:40%;
     margin:auto;
     padding-bottom:10%;
 }
-.coluna-2 { 
+
+.info {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-content: center ;
+    align-items: center;
+}
+
+    .info > p {
+        color: #777777;
+    }
+
+.coluna-2 {
     width: 60%;
     margin: 5%;
+   
 }
     .coluna-2::after {
       content: "";
@@ -117,13 +141,15 @@ p {
     width: 60%
 }
 .login {
-    width:100%;
-    margin:auto;
-    text-align:center;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 41px;
+    color: #777777;
 }
 @media(min-width:768px) {
     .formulario {
-        width: 90%;
+        width: 60%;
         background-color:#EBEBEB;
         margin:auto;
         margin-top: 150px;

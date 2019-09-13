@@ -34,7 +34,7 @@
                   
             </div>
             </div>
-
+            </div>
             <div class="box2">
                 <div class="box2-user-container">
                     <div class="box2-user">
