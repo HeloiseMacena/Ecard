@@ -16,8 +16,8 @@
 }
 
 .formulario {
-    max-width:100%;
-    margin:auto;
+    max-width: 100%;
+    margin: auto;
 }
 
 h1 {
@@ -30,8 +30,9 @@ input[type="text"],
 input[type="password"] {
     font-size: 15px;
     width: 82%;
-    padding: 10px;
+    padding: 12px;
     border: none;
+    margin: auto;
 }
 
 .input-contenedor {
@@ -51,15 +52,16 @@ input[type="password"] {
 }
 
 .button {
-    margin-top:8%;
+    margin-top: 8%;
     border: none;
     color: white;
     font-size: 17px;
     background: #66CD42;
-    padding:2% 4%;
+    padding: 3% 17%;
     border-radius: 5px;
     cursor: pointer;
 }
+
     .button:hover {
         background: cadetblue;
     }
@@ -74,24 +76,16 @@ p {
     font-weight: 600;
 }
 
-    .link:hover {
-        color: cadetblue;
-    }
 
-.vl { /* vertical line */
-    height: 468px;
-    width: 3px;
-    background-color: #cccccc;
-    margin: 81px 10px;
-}
 
 .coluna-1 {
-    width:40%;
-    margin:5%;  
+    width: 90%;
+    margin: 5%;
 }
+
 .textbox {
-    padding: 2%;
-    width: 122%;
+    padding: 4%;
+    width: 118%;
 }
 
 .textbox1 {
@@ -105,41 +99,28 @@ p {
 }
 
 .image {
-    max-width:40%;
-    margin:auto;
-    padding-bottom:10%;
+    max-width: 40%;
+    margin: auto;
+    padding-bottom: 10%;
+    margin-top: 35px;
 }
 
 .info {
     justify-content: space-between;
     display: flex;
     flex-direction: column;
-    align-content: center ;
+    align-content: center;
     align-items: center;
 }
 
     .info > p {
         color: #777777;
+        margin-bottom: 57px;
+        margin-top: -5px;
+        font-size: 25px;
     }
 
-.coluna-2 {
-    width: 60%;
-    margin: 5%;
-   
-}
-    .coluna-2::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
 
-.coluna-3 {
-    float:left;
-    width: 50%
-}
-.coluna-4 {
-    width: 60%
-}
 .login {
     width: 100%;
     margin: auto;
@@ -155,19 +136,26 @@ p {
     margin-bottom: 41px;
     color: #777777;
 }
+
 .link-open {
-        text-decoration: none;
-        color: #5FB741;
-        margin-left:10px;
- }
+    text-decoration: none;
+    color: #5FB741;
+    margin-left: 10px;
+}
+
+.link-rec {
+    text-decoration: none;
+    color: #2EBFD6 !important;
+    margin-left: 10px;
+}
 
 @media(min-width:768px) {
     .formulario {
-        width: 85%;
-        background-color:#EBEBEB;
-        margin:auto;
+        width: 35%;
+        background-color: #EBEBEB;
+        margin: auto;
         margin-top: 150px;
-        margin-bottom:150px;
+        margin-bottom: 150px;
         border-radius: 2%;
         padding: 0px 15px;
         display: flex;

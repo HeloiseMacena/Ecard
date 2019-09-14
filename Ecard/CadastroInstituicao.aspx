@@ -13,9 +13,9 @@
  <form class="formulario" runat="server" id="form12">
     
      <div class="coluna-1" >
-         <div class="image" style="margin-right: 114px;"><img src="Imagens/ECard.png"  style="max-width:100%;"/></div>
+         <div class="image" style="margin-right: 103px;"><img src="Imagens/ECard.png"  style="max-width:100%;"/></div>
          <div class="info">
-             <p>Instituição</p>
+             <h2>Instituição</h2>
              <p>Informações básicas</p>
          </div>
          <div class="textbox">
@@ -35,7 +35,7 @@
      </div>
         <div class="vl"></div> <!-- vertical line -->
      <div class="coluna-2">
-         <div class="login">Informações avançadas</div>
+         <div class="login-1">Informações avançadas</div>
         <div class ="coluna-3">
              <div class="textbox">
                
@@ -90,7 +90,7 @@
             </div>
          <div class="login">
              <asp:Button ID="Button1" runat="server" Text="Cadastrar" type="submit" class="button" />
-             <p>Já possuo conta!<a href="LoginInstituicao.aspx">Entrar</a></p>
+             <p>Já possuo conta!<a class="link-open" href="LoginInstituicao.aspx">Entrar</a></p>
          </div>
 </div>
     </form>

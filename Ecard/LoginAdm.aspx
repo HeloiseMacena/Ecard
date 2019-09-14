@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginInstituicao.aspx.cs" Inherits="Ecard.LoginInstituicao" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginAdm.aspx.cs" Inherits="Ecard.LoginAdm" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +6,7 @@
 <head runat="server">
 <script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="StyleLoginInstituicao.css"/>
+<link rel="stylesheet" type="text/css" href="StyleLoginAdm.css"/>
     <title></title>
 </head>  
 <body>
@@ -15,13 +15,13 @@
      <div class="coluna-1" >
          <div class="image" style="margin-right: 120px;"><img src="Imagens/ECard.png"  style="max-width:100%;"/></div>
          <div class="info">
-             <p>Instituição</p>
+             <p>Administrador</p>
              
          </div>
        
          <div class="textbox">
              
-             <asp:TextBox ID="TextEmail" CssClass="textbox1" runat="server" type="text" placeholder="Email"></asp:TextBox>
+             <asp:TextBox ID="TextUsuario" CssClass="textbox1" runat="server" type="text" placeholder="Usuário"></asp:TextBox>
          </div>    
              <div class="textbox">
             
@@ -33,7 +33,6 @@
       
          <div class="login">
              <asp:Button ID="Button1" runat="server" Text="Entrar" type="submit" class="button" />
-             <p>Instituição não cadastrada!<a class="link-open" href="CadastroInstituicao.aspx">Cadastre-a</a></p>
              <p class="link-rec">Esqueceu a senha?</p>
          </div>
         </div>

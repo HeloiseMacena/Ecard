@@ -10,7 +10,7 @@
 namespace Ecard {
     
     
-    public partial class LoginInstituicao {
+    public partial class TelaInicial {
         
         /// <summary>
         /// Controle form12.
@@ -22,30 +22,21 @@ namespace Ecard {
         protected global::System.Web.UI.HtmlControls.HtmlForm form12;
         
         /// <summary>
-        /// Controle TextEmail.
+        /// Controle Button2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextEmail;
+        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// Controle TextSenha.
+        /// Controle Button3.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextSenha;
-        
-        /// <summary>
-        /// Controle Button1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Button3;
     }
 }

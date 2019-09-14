@@ -71,6 +71,7 @@
     <Content Include="CadastroBairroEdit.aspx" />
     <Content Include="CadastroEstudante.aspx" />
     <Content Include="CadastroInstituicao.aspx" />
+    <Content Include="LoginAdm.aspx" />
     <Content Include="LoginEstudante.aspx" />
     <Content Include="LoginInstituicao.aspx" />
     <Content Include="StyleCadastroEstudante.css" />
@@ -91,10 +92,14 @@
     <Content Include="StyleCadastroRota.css" />
     <Content Include="StyleEditarPonto.css" />
     <Content Include="StyleEditarRota.css" />
+    <Content Include="StyleLoginAdm.css" />
+    <Content Include="StyleLoginInstituicao.css" />
     <Content Include="StylePonto.css" />
     <Content Include="StyleRota.css" />
+    <Content Include="StyleTelaInicial.css" />
     <Content Include="StyleTelaPrincipalAdm.css" />
     <Content Include="StyleTelaPrincipalInstituicao.css" />
+    <Content Include="TelaInicial.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebFormTelaPrincipalAdm.aspx" />
     <Content Include="WebFormTelaPrincipalInstituicao.aspx" />
@@ -208,6 +213,13 @@
     <Compile Include="EditarRota.aspx.designer.cs">
       <DependentUpon>EditarRota.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LoginAdm.aspx.cs">
+      <DependentUpon>LoginAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginAdm.aspx.designer.cs">
+      <DependentUpon>LoginAdm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LoginEstudante.aspx.cs">
       <DependentUpon>LoginEstudante.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -233,6 +245,13 @@
     <Compile Include="Modelo\Rota.cs" />
     <Compile Include="Modelo\Telefone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TelaInicial.aspx.cs">
+      <DependentUpon>TelaInicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TelaInicial.aspx.designer.cs">
+      <DependentUpon>TelaInicial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormTelaPrincipalAdm.aspx.cs">
       <DependentUpon>WebFormTelaPrincipalAdm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
