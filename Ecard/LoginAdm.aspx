@@ -13,7 +13,7 @@
  <form class="formulario" runat="server" id="form12">
     
      <div class="coluna-1" >
-         <div class="image" style="margin-right: 120px;"><img src="Imagens/ECard.png"  style="max-width:100%;"/></div>
+         <div class="image" ><img src="Imagens/ECard.png"  style="max-width:100%;"/></div>
          <div class="info">
              <p>Administrador</p>
              
@@ -32,7 +32,7 @@
      
       
          <div class="login">
-             <asp:Button ID="Button1" runat="server" Text="Entrar" type="submit" class="button" />
+             <asp:Button ID="Button1" runat="server" Text="Entrar"  type="submit" class="button" PostBackUrl="~/WebFormTelaPrincipalAdm.aspx" />
              <p class="link-rec">Esqueceu a senha?</p>
          </div>
         </div>

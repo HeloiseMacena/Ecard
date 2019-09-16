@@ -13,7 +13,7 @@
  <form class="formulario" runat="server" id="form12">
     
      <div class="coluna-1" >
-         <div class="image" style="margin-right: 104px;"><img src="Imagens/ECard.png"  style="max-width:100%;"/></div>
+         <div class="image""><img src="Imagens/ECard.png"  style="max-width:100%;"/></div>
          <div class="hl"></div> <!-- horizontal line -->
          <div class="info">
              <p>Escolha o tipo de usuário para realizar o login:</p>

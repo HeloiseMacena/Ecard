@@ -90,13 +90,14 @@ p {
 
 
 .coluna-1 {
-    width: 90%;
+    width: 100%;
     margin: 5%;
 }
 
 .textbox {
     padding: 8%;
-    width: 118%;
+    text-align:center;
+    max-width:100%;
 }
 
 .textbox1 {
@@ -138,22 +139,18 @@ p {
 }
 
 
-.login{
-    margin-right:-7px;
-}
 
 
 .link-open {
     text-decoration: none;
     color: #5FB741;
-    margin-left: 72px;
 }
 
 
 
 @media(min-width:768px) {
     .formulario {
-        width: 32%;
+        width: 450px;
         background-color: #EBEBEB;
         margin: auto;
         margin-top: 150px;

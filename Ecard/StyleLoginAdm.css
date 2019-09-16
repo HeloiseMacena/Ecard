@@ -79,7 +79,7 @@ p {
 
 
 .coluna-1 {
-    width: 90%;
+    width: 100%;
     margin: 5%;
 }
 
@@ -101,7 +101,7 @@ p {
 .image {
     max-width: 40%;
     margin: auto;
-    padding-bottom: 10%;
+    padding-bottom: 8%;
     margin-top: 35px;
 }
 
@@ -151,7 +151,7 @@ p {
 
 @media(min-width:768px) {
     .formulario {
-        width: 35%;
+        width: 450px;
         background-color: #EBEBEB;
         margin: auto;
         margin-top: 150px;
