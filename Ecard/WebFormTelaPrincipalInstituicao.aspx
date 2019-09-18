@@ -23,18 +23,45 @@
         </div>
         <div class="container">
             <div class="box1">
-                <div class="box1-header">
+                 <div class="box1-header">
                     <div class="box1-title">
-                        <asp:LinkButton ID="LinkButton1" CssClass="link-2" runat="server">Novo Estudante</asp:LinkButton>
-                      <i class="fas fa-plus"></i>
-                    
+                         <i class="fas fa-user-graduate"></i>
+                       <p>Estudantes</p>
                     </div>
-               </div>
-               <div class="princi">
-                  
+                    <div class="box1-button">
+                        <asp:Button runat="server" CssClass="btnAdd" Text="Novo" PostBackUrl="~/CadastroPontoEdit.aspx" />
+                    </div>
+                </div>
+                <div class="hl"></div> <!-- horizontal line -->
+                <div class="pesq">
+                    <asp:TextBox ID="TextBox1" CssClass="box1-mid" runat="server" placeholder="Pesquisar" ></asp:TextBox>
+                </div>
+
+                 <div class="help">
+                     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
+                         <ItemTemplate>
+                             <div class="pontoItem">
+                                 <div class="pontoItem-nome">
+                                     <p class="ponto-nome"><%#Eval("nome_ponto")%></p>
+                                     <p class="ponto-rua">Logradouro: <%#Eval("endereco_logradouro")%></p>
+                                 </div>
+                                 <div class="vl"></div>
+                                 <!-- vertical line -->
+                                 <div class="pontoItem-bairro">
+                                     <p class="ponto-bairro-title">Bairro</p>
+                                     <p><%#Eval("endereco_bairro")%></p>
+                                 </div>
+                                 <div class="ponto-but">
+                                 </div>
+                             </div>
+                         </ItemTemplate>
+                     </asp:Repeater>
+                     <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" DataObjectTypeName="Ecard.Modelo.Lista_alunos" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALLista_alunos" UpdateMethod="Update"></asp:ObjectDataSource>
+                 </div>
             </div>
-            </div>
-            </div>
+
+            
+
             <div class="box2">
                 <div class="box2-user-container">
                     <div class="box2-user">
@@ -49,7 +76,7 @@
                     </div>
                 </div>
             </div>
-        
+        </div>
     </form>
 </body>
 </html>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -19,7 +20,49 @@ namespace Ecard.DAL
             connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        void SelectArquivoCsv(string arquivo)
+        {
+            StreamReader sr;
+            string Linha;
+            string[] linha;
 
+            List<Modelo.Estudante> aListEstudante = new List<Modelo.Estudante>();
+
+            // Le arquivo com nome de imagens
+            if (System.IO.File.Exists(arquivo))
+            {
+                sr = new StreamReader(System.IO.File.OpenRead(arquivo));
+                try
+                {
+                    while (sr.Peek() > -1)
+                    {
+                        Linha = sr.ReadLine(); // Le uma Linha
+
+                        // Separa os dados em cada linha
+                        linha = Linha.Split(';');
+
+                        Modelo.Estudante aEstudante = new Modelo.Estudante(
+                            linha[0],
+                            linha[1],
+                            linha[2],
+                           "Ecard2019",
+                            true,
+                            "",
+                            0,
+                            0,
+                            Convert.ToDateTime("01/01/2000")
+                        );
+
+                        aListEstudante.Add(aEstudante);
+                    }
+                }
+                finally
+                {
+                    sr.Close();
+                }
+            }
+        }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Estudante> SelectAll()
