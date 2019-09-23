@@ -89,7 +89,7 @@
          </div>
             </div>
          <div class="login">
-             <asp:Button ID="Button1" runat="server" Text="Cadastrar" type="submit" class="button" />
+             <asp:Button ID="Button1" runat="server" Text="Cadastrar" type="submit" class="button" onclick="Button1_Click"/>
              <p>Já possuo conta!<a class="link-open" href="LoginInstituicao.aspx">Entrar</a></p>
          </div>
 </div>

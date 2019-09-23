@@ -37,7 +37,6 @@ namespace Ecard.DAL
                 while (dr.Read())
                 {
                     aInstituicao = new Modelo.Instituicao(
-                        Convert.ToInt32(dr["Id"].ToString()),
                         dr["Nome"].ToString(),
                         dr["Email"].ToString(),
                         dr["Codigo_inep_mec"].ToString(),
@@ -47,8 +46,10 @@ namespace Ecard.DAL
                         dr["Endereco_CEP"].ToString(),
                         dr["Endereco_municipio"].ToString(),
                         dr["Endereco_logradouro"].ToString(),
-                        dr["Endereco_numero"].ToString()
+                        dr["Endereco_numero"].ToString(),
+                        dr["cnpj"].ToString()
                         );
+                    aInstituicao.Id = int.Parse(dr["id"].ToString());
                     aListInstituicao.Add(aInstituicao);
                 }
             }
@@ -82,9 +83,8 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Instituicao (Id, Nome, email, codigo_inep_mec, status, senha, endereco_bairro, endereco_cep, endereco_municipio, endereco_logradouro, endereco_numero) VALUES (@Id, @Nome, @Email, @Codigo_inep_mec, @Status, @Senha, @Endereco_bairro, @Endereco_CEP, @Endereco_municipio, @Endereco_logradouro, @Endereco_numero)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Instituicao (Nome, email, codigo_inep, status, senha, endereco_bairro, endereco_cep, endereco_municipio, endereco_logradouro, endereco_numero, cnpj) VALUES (@Nome, @Email, @Codigo_inep_mec, @Status, @Senha, @Endereco_bairro, @Endereco_CEP, @Endereco_municipio, @Endereco_logradouro, @Endereco_numero, @cnpj)", conn);
 
-            cmd.Parameters.AddWithValue("@Id", obj.Id);
             cmd.Parameters.AddWithValue("@Nome", obj.Nome);
             cmd.Parameters.AddWithValue("@Email", obj.Email);
             cmd.Parameters.AddWithValue("@Codigo_inep_mec", obj.Codigo_inep_mec);
@@ -95,6 +95,7 @@ namespace Ecard.DAL
             cmd.Parameters.AddWithValue("@Endereco_municipio", obj.Endereco_municipio);
             cmd.Parameters.AddWithValue("@Endereco_logradouro", obj.Endereco_logradouro);
             cmd.Parameters.AddWithValue("@Endereco_numero", obj.Endereco_numero);
+            cmd.Parameters.AddWithValue("@cnpj", obj.cnpj);
 
             cmd.ExecuteNonQuery();
 
@@ -128,10 +129,10 @@ namespace Ecard.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Instituicao> Select(string Id)
+        public Modelo.Instituicao Select(int Id)
         {
             Modelo.Instituicao aInstituicao;
-            List<Modelo.Instituicao> aListInstituicao = new List<Modelo.Instituicao>();
+            Modelo.Instituicao Instituicao = new Modelo.Instituicao();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
@@ -140,10 +141,7 @@ namespace Ecard.DAL
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
-                while (dr.Read())
-                {
-                    aInstituicao = new Modelo.Instituicao(
-                        Convert.ToInt32(dr["Id"].ToString()),
+                    Instituicao = new Modelo.Instituicao(
                         dr["Nome"].ToString(),
                         dr["Email"].ToString(),
                         dr["Codigo_inep_mec"].ToString(),
@@ -153,16 +151,16 @@ namespace Ecard.DAL
                         dr["Endereco_CEP"].ToString(),
                         dr["Endereco_municipio"].ToString(),
                         dr["Endereco_logradouro"].ToString(),
-                        dr["Endereco_numero"].ToString()
+                        dr["Endereco_numero"].ToString(),
+                        dr["cnpj"].ToString()
                         );
-                    aListInstituicao.Add(aInstituicao);
-                }
+                    Instituicao.Id = int.Parse(dr["id"].ToString());
             }
 
             dr.Close();
             conn.Close();
 
-            return aListInstituicao;
+            return Instituicao;
         }
     }
 }
