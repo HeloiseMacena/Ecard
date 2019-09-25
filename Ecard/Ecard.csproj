@@ -74,6 +74,7 @@
     <Content Include="LoginAdm.aspx" />
     <Content Include="LoginEstudante.aspx" />
     <Content Include="LoginInstituicao.aspx" />
+    <Content Include="PerfilInstituicao.aspx" />
     <Content Include="StyleCadastroEstudante.css" />
     <Content Include="CadastroPonto.aspx" />
     <Content Include="CadastroPontoEdit.aspx" />
@@ -94,6 +95,7 @@
     <Content Include="StyleEditarRota.css" />
     <Content Include="StyleLoginAdm.css" />
     <Content Include="StyleLoginInstituicao.css" />
+    <Content Include="StylePerfilInstituicao.css" />
     <Content Include="StylePonto.css" />
     <Content Include="StyleRota.css" />
     <Content Include="StyleTelaInicial.css" />
@@ -244,6 +246,13 @@
     <Compile Include="Modelo\Recarga.cs" />
     <Compile Include="Modelo\Rota.cs" />
     <Compile Include="Modelo\Telefone.cs" />
+    <Compile Include="PerfilInstituicao.aspx.cs">
+      <DependentUpon>PerfilInstituicao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilInstituicao.aspx.designer.cs">
+      <DependentUpon>PerfilInstituicao.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TelaInicial.aspx.cs">
       <DependentUpon>TelaInicial.aspx</DependentUpon>

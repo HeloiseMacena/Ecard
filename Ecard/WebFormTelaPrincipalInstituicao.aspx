@@ -67,7 +67,7 @@
                     <div class="box2-user">
                          <i class="fas fa-university"></i>
                          <div class="user-name"> 
-                            <h1>Nome Escola</h1>
+                            <h1>Nome Instituição</h1>
                             <p>Instituição</p>
                         </div>
                     </div>
