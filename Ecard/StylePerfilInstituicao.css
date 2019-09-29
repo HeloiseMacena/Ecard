@@ -275,7 +275,7 @@ form#form1 {
     margin: auto;
     margin-top: 30px;
     margin-bottom: 30px;
-    color: black;
+    color: #3C3C3C;
 }
 
 .box1-midi {
@@ -287,7 +287,7 @@ form#form1 {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-top: 120px;
+    margin-top: 9px;
 }
 
 .box1-mid {
@@ -298,6 +298,46 @@ form#form1 {
     color: #a1a1a1;
     border-style: none;
     border-radius: 4px;
+}
+
+.nov-header {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: white;
+    border-radius: 2px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nov-text {
+    margin-top: 20px;
+    width: 75%;
+    padding: 15px 20px;
+    background-color: white;
+    color: black;
+    border-style: none;
+    border-radius: 4px;
+}
+
+  .space{
+      display:flex;
+      flex-direction:row;
+      align-items:center;
+      justify-content:space-between;
+  }
+
+.space-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link-alt {
+    text-decoration: none;
+    color: #2EBFD6 !important;
+    font-size:15px;
 }
 
 /* RESPONSIVIDADE */
