@@ -71,6 +71,7 @@
     <Content Include="CadastroBairroEdit.aspx" />
     <Content Include="CadastroEstudante.aspx" />
     <Content Include="CadastroInstituicao.aspx" />
+    <Content Include="EditEstudante.aspx" />
     <Content Include="LoginAdm.aspx" />
     <Content Include="LoginEstudante.aspx" />
     <Content Include="LoginInstituicao.aspx" />
@@ -93,6 +94,7 @@
     <Content Include="StyleCadastroRota.css" />
     <Content Include="StyleEditarPonto.css" />
     <Content Include="StyleEditarRota.css" />
+    <Content Include="StyleEditEstudante.css" />
     <Content Include="StyleLoginAdm.css" />
     <Content Include="StyleLoginInstituicao.css" />
     <Content Include="StylePerfilInstituicao.css" />
@@ -214,6 +216,13 @@
     </Compile>
     <Compile Include="EditarRota.aspx.designer.cs">
       <DependentUpon>EditarRota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditEstudante.aspx.cs">
+      <DependentUpon>EditEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditEstudante.aspx.designer.cs">
+      <DependentUpon>EditEstudante.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginAdm.aspx.cs">
       <DependentUpon>LoginAdm.aspx</DependentUpon>
