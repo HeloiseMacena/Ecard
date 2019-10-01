@@ -31,6 +31,15 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.TextBox TextBoxNome;
         
         /// <summary>
+        /// Controle DropDownBairro.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownBairro;
+        
+        /// <summary>
         /// Controle TextBoxBairro.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace Ecard {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button11;
+        
+        /// <summary>
+        /// Controle DropDownReferencia.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownReferencia;
         
         /// <summary>
         /// Controle TextBoxReferencia.

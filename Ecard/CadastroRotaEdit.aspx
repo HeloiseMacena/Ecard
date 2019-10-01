@@ -33,11 +33,13 @@
                       <h1>Cadastro</h1>
                       <asp:TextBox ID="TextBoxNome" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>   
                     <div class="org-1">
-                        <asp:TextBox ID="TextBoxBairro" runat="server" CssClass="box1-mid-1" placeholder="Bairro"></asp:TextBox>
+                        <asp:DropDownList ID="DropDownBairro" runat="server"></asp:DropDownList>
+                        <!-- <asp:TextBox ID="TextBoxBairro" runat="server" CssClass="box1-mid-1" placeholder="Bairro"></asp:TextBox> -->
                         <asp:Button ID="Button11" class="btn-add-1" runat="server" Text="Adicionar" PostBackUrl="~/CadastroBairroEdit.aspx"/>
                     </div> 
                     <div class="org-1">
-                        <asp:TextBox ID="TextBoxReferencia" runat="server" CssClass="box1-mid-1" placeholder="Ponto de Referência"></asp:TextBox>
+                        <asp:DropDownList ID="DropDownReferencia" runat="server"></asp:DropDownList>
+                        <!--<asp:TextBox ID="TextBoxReferencia" runat="server" CssClass="box1-mid-1" placeholder="Ponto de Referência"></asp:TextBox> -->
                         <asp:Button ID="Button22" class="btn-add-1" runat="server" Text="Adicionar" PostBackUrl="~/CadastroPontoReferenciaEdit.aspx"/>
                     </div>
                     <div class="btn-b2">
