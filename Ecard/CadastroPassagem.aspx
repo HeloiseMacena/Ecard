@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditEstudante.aspx.cs" Inherits="Ecard.EditEstudante" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroPassagem.aspx.cs" Inherits="Ecard.CadastroPassagem" %>
+
+<!DOCTYPE html>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -24,17 +26,31 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
-                       <i class="fas fa-user-edit"></i>
-                       <p>Editar Informações de Estudante</p>
+                      <i class="fas fa-calculator"></i>
+                       <p>Cadastro de passagem</p>
                     </div>
                 </div>
                 <div class="box1-midi">
-                      <asp:TextBox ID="TextNome" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>
-                      <asp:TextBox ID="TextRG" runat="server" CssClass="box1-mid" placeholder="RG"></asp:TextBox>
-                      <asp:TextBox ID="TextCPF" runat="server" CssClass="box1-mid" placeholder="CPF"></asp:TextBox>
-                      <asp:TextBox ID="TextDatadeNascimento" runat="server" CssClass="box1-mid" placeholder="Data de Nascimento"></asp:TextBox>
-                      <asp:TextBox ID="TextInstitu" runat="server" CssClass="box1-mid" placeholder="Instituição"></asp:TextBox>
-                      <asp:TextBox ID="TextCurso" runat="server" CssClass="box1-mid" placeholder="Curso"></asp:TextBox>
+                    <div class="space">
+                    <asp:Label ID="Label5" runat="server" class="text-p" Text="Passagem de Ceará Mirim"></asp:Label>
+                    <asp:TextBox ID="TextBox1" CssClass="box1-mid" placeholder="R$ 5,90" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="space">
+                    <asp:Label ID="Label1" runat="server" class="text-p" Text="Passagem de Extremoz"></asp:Label>
+                    <asp:TextBox ID="TextBox2" CssClass="box1-mid" placeholder="R$ 4,45" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="space">
+                    <asp:Label ID="Label2" runat="server" class="text-p" Text="Passagem de Natal"></asp:Label>
+                    <asp:TextBox ID="TextBox3" CssClass="box1-mid" placeholder="R$ 4,00" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="space">
+                    <asp:Label ID="Label3" runat="server" class="text-p" Text="Passagem de Parnamirm"></asp:Label>
+                    <asp:TextBox ID="TextBox4" CssClass="box1-mid" placeholder="R$ 4,45" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="space">
+                    <asp:Label ID="Label4" runat="server" class="text-p" Text="Passagem de São Gonçalo do Amarante"></asp:Label>
+                    <asp:TextBox ID="TextBox5" CssClass="box1-mid" placeholder="R$ 4,20" runat="server"></asp:TextBox>
+                    </div>
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroPonto.aspx" />
                         <asp:Button class="btn-save" runat="server" Text="Salvar"  />
