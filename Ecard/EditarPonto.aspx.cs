@@ -26,7 +26,7 @@ namespace Ecard
             }
 
         }
-        protected void Unnamed2_Click(object sender, EventArgs e)
+        protected void Update_Click(object sender, EventArgs e)
         {
             id = int.Parse(Request.QueryString["id"]);
             DAL.DALPonto_recarga p = new DAL.DALPonto_recarga();
@@ -41,7 +41,7 @@ namespace Ecard
             Response.Redirect("~//CadastroPonto.aspx");
         }
 
-        protected void Unnamed1_Click(object sender, EventArgs e)
+        protected void Delete_Click(object sender, EventArgs e)
         {
             id = int.Parse(Request.QueryString["id"]);
             DAL.DALPonto_recarga p = new DAL.DALPonto_recarga();

@@ -147,7 +147,7 @@ form#form1 {
 
 .btn-b2 {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     width: 100%;
@@ -160,7 +160,7 @@ form#form1 {
         padding: 10px 20px;
         border: none;
         border-radius: 2px;
-        background-color: #17A2B8;
+        background-color: #C5303E;
         color: #EBEBEB;
         border-bottom-color: #13899C;
         margin-right: 30px;
@@ -282,7 +282,7 @@ form#form1 {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-top: 120px;
+    margin-top: 100px;
 }
 
 .box1-mid {
@@ -292,7 +292,7 @@ form#form1 {
     background-color: white;
     color: #a1a1a1;
     border-style: none;
-    border-radius: 10px;
+    border-radius: 4px;
 }
 
 /* RESPONSIVIDADE */
