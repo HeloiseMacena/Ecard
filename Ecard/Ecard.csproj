@@ -76,6 +76,7 @@
     <Content Include="LoginEstudante.aspx" />
     <Content Include="LoginInstituicao.aspx" />
     <Content Include="PerfilInstituicao.aspx" />
+    <Content Include="SolicitacaoCarteira.aspx" />
     <Content Include="StyleCadastroEstudante.css" />
     <Content Include="CadastroPonto.aspx" />
     <Content Include="CadastroPontoEdit.aspx" />
@@ -96,16 +97,19 @@
     <Content Include="StyleEditarRota.css" />
     <Content Include="StyleEditEstudante.css" />
     <Content Include="StyleLoginAdm.css" />
+    <Content Include="StyleLoginEstudante.css" />
     <Content Include="StyleLoginInstituicao.css" />
     <Content Include="StylePerfilInstituicao.css" />
     <Content Include="StylePonto.css" />
     <Content Include="StyleRota.css" />
+    <Content Include="StyleSolicitacaoCarteira.css" />
     <Content Include="StyleTelaInicial.css" />
     <Content Include="StyleTelaPrincipalAdm.css" />
     <Content Include="StyleTelaPrincipalInstituicao.css" />
     <Content Include="TelaInicial.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebFormTelaPrincipalAdm.aspx" />
+    <Content Include="WebFormTelaPrincipalEstudante.aspx" />
     <Content Include="WebFormTelaPrincipalInstituicao.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -263,6 +267,13 @@
       <DependentUpon>PerfilInstituicao.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolicitacaoCarteira.aspx.cs">
+      <DependentUpon>SolicitacaoCarteira.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitacaoCarteira.aspx.designer.cs">
+      <DependentUpon>SolicitacaoCarteira.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TelaInicial.aspx.cs">
       <DependentUpon>TelaInicial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -276,6 +287,13 @@
     </Compile>
     <Compile Include="WebFormTelaPrincipalAdm.aspx.designer.cs">
       <DependentUpon>WebFormTelaPrincipalAdm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormTelaPrincipalEstudante.aspx.cs">
+      <DependentUpon>WebFormTelaPrincipalEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormTelaPrincipalEstudante.aspx.designer.cs">
+      <DependentUpon>WebFormTelaPrincipalEstudante.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormTelaPrincipalInstituicao.aspx.cs">
       <DependentUpon>WebFormTelaPrincipalInstituicao.aspx</DependentUpon>

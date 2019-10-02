@@ -15,27 +15,22 @@
      <div class="coluna-1" >
          <div class="image" ><img src="Imagens/ECard.png"  style="max-width:100%;"/></div>
          <div class="info">
-             <p>Administrador</p>
-             
+             <p>Administrador</p>            
          </div>
        
-         <div class="textbox">
-             
+         <div class="textbox">             
              <asp:TextBox ID="TextUsuario" CssClass="textbox1" runat="server" type="text" placeholder="Usuário"></asp:TextBox>
-         </div>    
-             <div class="textbox">
-            
-             <asp:TextBox ID="TextSenha" CssClass="textbox1" runat="server" type="text" placeholder="Senha"></asp:TextBox>
-                
          </div>   
          
-     
-      
+         <div class="textbox">
+             <asp:TextBox ID="TextSenha" CssClass="textbox1" runat="server" type="password" placeholder="Senha"></asp:TextBox>               
+         </div>   
+            
          <div class="login">
              <asp:Button ID="Button1" runat="server" Text="Entrar"  type="submit" class="button" PostBackUrl="~/WebFormTelaPrincipalAdm.aspx" />
              <p class="link-rec">Esqueceu a senha?</p>
          </div>
-        </div>
-    </form>
+    </div>
+</form>
 </body>
 </html>
