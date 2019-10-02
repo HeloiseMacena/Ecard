@@ -9,29 +9,46 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div class="container">
-            <div class="box1">
-            	<div class="box1-header">
-            		<img src="Imagens/ECard.png"/>
-            		<p class="p1">Estudante</p>
-            		<p class="p2">Informações Básicas</p>
-            	</div>
-            	<div class="lado1">
-            		<asp:TextBox ID="Textbox1" runat="server" CssClass="box-lado1" placeholder="Nome Completo"></asp:TextBox>
-            		<asp:TextBox ID="Textbox2" runat="server" CssClass="box-lado1" placeholder="Email"></asp:TextBox>
-            		<asp:TextBox ID="Textbox3" runat="server" CssClass="box-lado1" placeholder="Confirmar Email"></asp:TextBox>
-            	</div>
-            	<div class="linha"></div>
-            	<div class="lado2">
-            		<asp:TextBox ID="Textbox4" runat="server" CssClass="box-lado2" placeholder="CPF"></asp:TextBox>
-            		<asp:TextBox ID="Textbox5" runat="server" CssClass="box-lado2" placeholder="Senha"></asp:TextBox>
-            		<asp:TextBox ID="Textbox6" runat="server" CssClass="box-lado2" placeholder="Confirmar Senha"></asp:TextBox>
-            		<asp:Button class="btn=cadastrar" runat="server" Text="Cadastrar" OnClick="Unnamed1_Click"/>
-            		<p class="p3">Já possuo uma conta! <a href="LoginEstudante.aspx" class="entrar-lnk">Entrar</a></p>
-            	</div>
+    <form id="form1" runat="server" class="formulario">
+        <div class="coluna1">
+            <div class="image"><img style="max-width:100%;" src="Imagens/ECard.png"/></div>
+            <div class="info">          
+                <h2>Estudante</h2>
+            	<p>Informações Básicas</p>
+            </div>
+
+            <div class="textbox">
+                <asp:TextBox ID="Textbox1" runat="server" CssClass="textbox1" type="text" placeholder="Nome Completo"></asp:TextBox>
+            </div>
+
+            <div class="textbox">
+                <asp:TextBox ID="Textbox2" runat="server" CssClass="textbox1" type="email" placeholder="Email"></asp:TextBox>
+            </div>
+
+            <div class="textbox">
+            	<asp:TextBox ID="Textbox3" runat="server" CssClass="textbox1" type="email" placeholder="Confirmar Email"></asp:TextBox>
             </div>
         </div>
+
+        <div class="v1"></div> <!-- vertical line -->
+        <div class="coluna2">
+            <div class="textbox">
+                <asp:TextBox ID="Textbox4" runat="server" CssClass="textbox1" type="text" placeholder="CPF"></asp:TextBox>
+            </div>
+
+            <div class="textbox">
+                <asp:TextBox ID="Textbox5" runat="server" CssClass="textbox1" type="password" placeholder="Senha"></asp:TextBox>
+            </div>
+
+            <div class="textbox">
+                <asp:TextBox ID="Textbox6" runat="server" CssClass="textbox1" type="password" placeholder="Confirmar Senha"></asp:TextBox>
+            </div>
+
+            <div class="login">
+            	<asp:Button ID="Button1" class="button" type="submit" runat="server" Text="Cadastrar" OnClick="Unnamed1_Click"/>
+            	<p class="p3">Já possuo uma conta! <a href="LoginEstudante.aspx" class="link-open">Entrar</a></p>
+            </div>
+         </div>
     </form>
 </body>
 </html>

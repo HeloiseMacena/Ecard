@@ -24,11 +24,11 @@
          </div>
          <div class="textbox">
              
-             <asp:TextBox ID="TextEmail" CssClass="textbox1" runat="server" type="text" placeholder="Email"></asp:TextBox>
+             <asp:TextBox ID="TextEmail" CssClass="textbox1" runat="server" type="email" placeholder="Email"></asp:TextBox>
          </div>    
              <div class="textbox">
             
-             <asp:TextBox ID="TextConEmail" CssClass="textbox1" runat="server" type="text" placeholder="Confirmar Email"></asp:TextBox>
+             <asp:TextBox ID="TextConEmail" CssClass="textbox1" runat="server" type="email" placeholder="Confirmar Email"></asp:TextBox>
                 
          </div>   
          

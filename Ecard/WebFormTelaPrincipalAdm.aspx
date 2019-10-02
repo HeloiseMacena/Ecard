@@ -30,7 +30,7 @@
                     </div>
                     <div class="box1-button">
                         <asp:Button runat="server" CssClass="btnAdd" Text="INSTITUIÇÃO "  />
-                        <asp:Button runat="server" CssClass="btnAdd" Text=" CARTEIRA"  />
+                        <asp:Button runat="server" CssClass="btnAdd" Text=" CARTEIRA" PostBackUrl="~/SolicitacaoCarteira.aspx" />
                     </div>
                </div>
                <div class="princi">
