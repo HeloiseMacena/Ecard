@@ -162,9 +162,9 @@ form#form1 {
         padding: 10px 20px;
         border: none;
         border-radius: 2px;
-        background-color: #C5303E;
+        background-color: #DC3545;
         color: #EBEBEB;
-        border-bottom-color: #13899C;
+        border-bottom-color: #C5303E;
         margin-right: 30px;
         cursor: pointer;
     }
@@ -284,7 +284,7 @@ form#form1 {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .box1-mid {

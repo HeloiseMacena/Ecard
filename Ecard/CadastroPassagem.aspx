@@ -13,7 +13,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="header">
-            <img src="Imagens/ECard.png" />
+             <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
             <ol>
                 <li>Menu</li>
                 <li>Page 2</li>
@@ -52,24 +52,24 @@
                     <asp:TextBox ID="TextBox5" CssClass="box1-mid" placeholder="R$ 4,20" runat="server"></asp:TextBox>
                     </div>
                     <div class="btn-b2">
-                        <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroPonto.aspx" />
+                        <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/WebFormTelaPrincipalAdm.aspx" />
                         <asp:Button class="btn-save" runat="server" Text="Salvar"  />
 
                     </div>
                 </div>
             </div>
 
-            <div class="box2">
+          <div class="box2">
                 <div class="box2-user-container">
                     <div class="box2-user">
-                         <i class="fas fa-university"></i>
+                         <i class="fas fa-user-circle"></i>
                          <div class="user-name"> 
-                            <h1>Nome Instituição</h1>
-                            <p>Instituição</p>
+                            <h1>Daniel Victor</h1>
+                            <p>Administrador</p>
                         </div>
                     </div>
                     <div class="box2-button">
-                         <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" />
+                         <asp:Button runat="server" CssClass="btn2"  Text="Ver Perfil" />
                     </div>
                 </div>
             </div>

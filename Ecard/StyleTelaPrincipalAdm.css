@@ -279,9 +279,10 @@ form#form1 {
 }
 
 .org-p1 {
-        color: #777777;
-        font-size:22px;
-    }
+    color: #777777;
+    font-size: 22px;
+    text-decoration: none;
+}
 
 .org-p2 {
     color: #777777;
