@@ -46,7 +46,8 @@
                                     <p><%#Eval("endereco_bairro")%></p>
                                 </div>
                                 <div class="ponto-but">
-
+                                     <asp:LinkButton runat="server"><a href="#modal" class="action-button shadow animate blue" id="show-modal">Mais</a></asp:LinkButton>
+                                   <asp:LinkButton CssClass="link-but" runat="server"  PostBackUrl='<%#"~/EditarPonto.aspx?id=" +  Eval("id") %>'> <i class="fas fa-pen-square"></i> </asp:LinkButton>
                                   
                                   </div>
                             </div> 

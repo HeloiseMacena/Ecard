@@ -24,12 +24,11 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
-                       <i class="fas fa-map-marked-alt"></i>
-                       <p>Cadastrar Estudante</p>
+                       <i class="fas fa-user-edit"></i>
+                       <p>Editar Informações de Estudante</p>
                     </div>
                 </div>
                 <div class="box1-midi">
-                      <h1>Cadastro</h1>
                       <asp:TextBox ID="TextNome" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>
                       <asp:TextBox ID="TextRG" runat="server" CssClass="box1-mid" placeholder="RG"></asp:TextBox>
                       <asp:TextBox ID="TextCPF" runat="server" CssClass="box1-mid" placeholder="CPF"></asp:TextBox>
@@ -38,7 +37,7 @@
                       <asp:TextBox ID="TextCurso" runat="server" CssClass="box1-mid" placeholder="Curso"></asp:TextBox>
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroPonto.aspx" />
-                        <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed2_Click" />
+                        <asp:Button class="btn-save" runat="server" Text="Salvar"  />
 
                     </div>
                 </div>
@@ -47,17 +46,16 @@
             <div class="box2">
                 <div class="box2-user-container">
                     <div class="box2-user">
-                         <i class="fas fa-user-circle"></i>
+                         <i class="fas fa-university"></i>
                          <div class="user-name"> 
-                            <h1>Daniel Victor</h1>
-                            <p>Administrador</p>
+                            <h1>Nome Instituição</h1>
+                            <p>Instituição</p>
                         </div>
                     </div>
                     <div class="box2-button">
                          <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" />
                     </div>
                 </div>
-
             </div>
           </div>
     </form>
