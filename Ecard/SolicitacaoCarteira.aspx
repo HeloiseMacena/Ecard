@@ -23,21 +23,20 @@
 
         <div class="container">
             <div class="box1">
-                <div class="box1-pesquisa">
-                    <asp:TextBox ID="TextPesquisa" CssClass="textbox1" runat="server" type="text" placeholder="Pesquisar"></asp:TextBox>                </div>
+                <asp:TextBox ID="TextPesquisa" CssClass="textbox1" runat="server" type="text" placeholder="Pesquisar"></asp:TextBox>
                 <div class="box1-filtro">
-                    <asp:ListBox ID="Filtrar" CssClass="listbox1" text="Filtrar por..." runat="server">
+                    <asp:DropDownList CssClass="ddlist1" runat="server">
                         <asp:ListItem>Escola</asp:ListItem>
                         <asp:ListItem>Ordem alfabética</asp:ListItem>
                         <asp:ListItem>Mais recente</asp:ListItem>
                         <asp:ListItem>Mais antiga</asp:ListItem>
-                    </asp:ListBox>
+                    </asp:DropDownList>
                     <asp:Button runat="server" CssClass="btn-ok" Text="Ok"/>
                 </div>
                 <div class="box1-midi">
                 </div>
             </div>
-
+            
             <div class="box2">
                 <div class="box2-user-container">
                     <div class="box2-user">

@@ -98,17 +98,59 @@ form#form1 {
     padding: 20px;
 }
 
-.box1-midi {
-    overflow-y: auto;
+.textbox1 {
     width: 100%;
-    padding: 15px 20px;
+    padding: 10px 20px;
+    background-color: #EBEBEB;
+    border-radius: 2px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.box1-filtro {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.ddlist1 {
+    width: 80%;
+    padding: 10px 20px;
+    background-color: #EBEBEB;
+    border: none;
+    border-radius: 2px;
+}
+
+.btn-ok {
+    width: 20%;
+    padding: 10px 20px;
+    background-color: #17A2B8;
+    border-bottom-color: #13899C;
+    border: none;
+    border-radius: 2px;
+    margin-left: 4%;
+    color: white;
+    cursor: pointer;
+}
+
+.box1-midi {
+    width: 100%;
+    height: 86%;
+    padding: 10px 20px;
     background-color: #EBEBEB;
     border-radius: 2px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-top: 120px;
+    margin-top: 15px;
 }
 
 .box2-button > .btn2 {
@@ -152,6 +194,11 @@ form#form1 {
     align-items: center;
     flex-direction: row;
     margin-bottom: 50px;
+}
+
+.box2-user > i {
+    font-size: 60px;
+    color: #555555;
 }
 
 .user-name {
