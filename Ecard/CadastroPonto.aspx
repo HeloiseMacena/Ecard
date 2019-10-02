@@ -57,7 +57,7 @@
                                     <p><%#Eval("endereco_bairro")%></p>
                                 </div>
                                 <div class="ponto-but">
-                                     <asp:Button runat="server" Text="Mais" CssClass="action-button animate blue" OnClientClick="ToggleModal(); return false;" />
+                                     <asp:Button runat="server" Text="Mais"  CssClass="action-button animate blue" OnClientClick="ToggleModal(); return false;" />
                                    <asp:LinkButton CssClass="link-but" runat="server"  PostBackUrl='<%#"~/EditarPonto.aspx?id=" +  Eval("id") %>'> <i class="fas fa-pen-square"></i> </asp:LinkButton>
                                   
                                   </div>
@@ -99,8 +99,8 @@
                         <div class="modal-container close">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                   <h2>Modal :D</h2>
-                                    <asp:Button runat="server" Text="X" UseSubmitBehavior="false"  OnClientClick="ToggleModal(); return false;"/>
+                                   <h2>Mais Informações</h2>
+                                    <asp:Button CssClass="xis" runat="server" Text="X" UseSubmitBehavior="false"  OnClientClick="ToggleModal(); return false;"/>
                                 </div>
                                 <div class="modal-body">
 

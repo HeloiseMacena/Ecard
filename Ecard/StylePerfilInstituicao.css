@@ -337,7 +337,8 @@ form#form1 {
 .link-alt {
     text-decoration: none;
     color: #2EBFD6 !important;
-    font-size:15px;
+    font-size: 15px;
+    margin-top: 22px;
 }
 
 /* RESPONSIVIDADE */

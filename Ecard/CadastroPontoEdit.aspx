@@ -31,7 +31,7 @@
                 <div class="box1-midi">
                       <h1>Cadastro</h1>
                       <asp:TextBox ID="TextPonto" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>
-                      <asp:TextBox ID="TextRua" runat="server" CssClass="box1-mid" placeholder="Rua"></asp:TextBox>
+                      <asp:TextBox ID="TextRua" runat="server" CssClass="box1-mid" placeholder="Logradouro"></asp:TextBox>
                       <asp:TextBox ID="TextBairro" runat="server" CssClass="box1-mid" placeholder="Bairro"></asp:TextBox>
                       <asp:TextBox ID="TextNumero" runat="server" CssClass="box1-mid" placeholder="Número"></asp:TextBox>
                       <asp:TextBox ID="TextCEP" runat="server" CssClass="box1-mid" placeholder="CEP"></asp:TextBox>
