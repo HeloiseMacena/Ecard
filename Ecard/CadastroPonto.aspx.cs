@@ -14,15 +14,20 @@ namespace Ecard
 
         }
 
-       /* protected void pModal_Click(object sender, EventArgs e)
+        protected void ToggleModal_Click(object sender, EventArgs e)
         {
-            string id = btnModal.CommandArgument;
-            DAL.DALPonto_recarga aDALPonto_recarga;
+            ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "ToggleModal", "ToggleModal()", true);
+        }
 
-            aDALPonto_recarga = new DAL.DALPonto_recarga();
+        /* protected void pModal_Click(object sender, EventArgs e)
+         {
+             string id = btnModal.CommandArgument;
+             DAL.DALPonto_recarga aDALPonto_recarga;
 
-            lblModalNumero.Text = aDALPonto_recarga.Select(id).ElementAt(0).endereco_numero;
-            lblModalCEP.Text = aDALPonto_recarga.Select(id).ElementAt(0).endereco_cep;
-        }*/
+             aDALPonto_recarga = new DAL.DALPonto_recarga();
+
+             lblModalNumero.Text = aDALPonto_recarga.Select(id).ElementAt(0).endereco_numero;
+             lblModalCEP.Text = aDALPonto_recarga.Select(id).ElementAt(0).endereco_cep;
+         }*/
     }
 }
