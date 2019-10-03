@@ -7,20 +7,10 @@
 <script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="StylePonto.css"/>
+    <script type="text/javascript" src="JS/Events.js"></script>
     <title></title>
-    
 </head>
 <body>
-    <script>
-        function ToggleModal() {
-            if (document.querySelector('.modal-container').classList == 'modal-container close') {
-                document.querySelector('.modal-container').classList.remove('close')
-            } else {
-                document.querySelector('.modal-container').classList.add('close')
-            }
-
-        }
-    </script>
     <form id="form1" runat="server">
         <div class="header">
            <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
@@ -56,8 +46,8 @@
                                     <p class="ponto-bairro-title">Bairro</p>
                                     <p><%#Eval("endereco_bairro")%></p>
                                 </div>
-                                <div class="ponto-but">
-                                     <asp:Button runat="server" Text="Mais"  CssClass="action-button animate blue" OnClientClick="ToggleModal(); return false;" />
+                                <div class="ponto-but"> 
+                                   <asp:Button runat="server" Text="Mais" CommandArgument='<%#Eval("id")%>' CssClass="action-button animate blue" OnClick="getModalInfos_Click" />
                                    <asp:LinkButton CssClass="link-but" runat="server"  PostBackUrl='<%#"~/EditarPonto.aspx?id=" +  Eval("id") %>'> <i class="fas fa-pen-square"></i> </asp:LinkButton>
                                   
                                   </div>
@@ -96,14 +86,16 @@
             <div>   <!-- Modal -->
                 <div class="help-modal">
                     <div>
-                        <div class="modal-container close">
+                        <div class="modal-container" id="modalContainer" runat="server">
                             <div class="modal-content">
                                 <div class="modal-header">
                                    <h2>Mais Informações</h2>
-                                    <asp:Button CssClass="xis" runat="server" Text="X" UseSubmitBehavior="false"  OnClientClick="ToggleModal(); return false;"/>
+                                    <i class="fas fa-times" id="closeModal" runat="server" onclick="document.querySelector('.modal-container').style.visibility = 'hidden';"></i>
                                 </div>
                                 <div class="modal-body">
-
+                                    <asp:Label runat="server" ID="modalNum"></asp:Label>
+                                    <asp:Label runat="server" ID="modalCEP"></asp:Label>
+                                    <asp:Label runat="server" ID="modalMun"></asp:Label>
                                 </div>
                                 <div class="modal-footer"></div>
                             </div>

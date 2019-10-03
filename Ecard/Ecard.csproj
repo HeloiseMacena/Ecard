@@ -73,6 +73,7 @@
     <Content Include="CadastroInstituicao.aspx" />
     <Content Include="CadastroPassagem.aspx" />
     <Content Include="EditEstudante.aspx" />
+    <Content Include="JS\Events.js" />
     <Content Include="LoginAdm.aspx" />
     <Content Include="LoginEstudante.aspx" />
     <Content Include="LoginInstituicao.aspx" />
