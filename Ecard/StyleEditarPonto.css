@@ -21,15 +21,15 @@ form#form1 {
 }
 
 .header {
-    width: 1000px;
+    width: 100%;
     background-color: #FFF;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
     padding: 0 0 0 50px;
-    box-shadow: 0 15px 50px rgba(2,3,3,.1);
+    box-shadow: 0 0px 5px rgba(0,0,0,.1);
     position: fixed;
+    z-index: 1;
 }
 
     .header > img {
@@ -88,6 +88,13 @@ form#form1 {
     flex-direction: row;
 }
 
+
+.ai {
+    text-decoration: none;
+    color: #0F3561;
+    margin-right: 10px;
+}
+
 .box1, .box2 {
     background-color: #FFF;
 }
@@ -119,6 +126,12 @@ form#form1 {
     flex-direction: row;
     align-content: space-between;
     align-items: center;
+}
+
+.ai {
+    text-decoration: none;
+    color: #0F3561;
+    margin-right: 10px;
 }
 
 .box1-header > .box1-button > .btnAdd {

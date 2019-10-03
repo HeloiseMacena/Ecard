@@ -11,14 +11,7 @@ namespace Ecard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Convert.ToString(Session["OpenModal"]) != "")
-            {
-                if (Session["OpenModal"].ToString() == "S")
-                {
-                    ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "ToggleModal", "ToggleModal()", true);
-                    Session["OpenModal"] = "N";
-                }
-            }
+
         }
 
         protected void ToggleModal_Click(object sender, EventArgs e)

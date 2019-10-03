@@ -25,8 +25,8 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
-                       <i class="fas fa-map-marked-alt"></i>
-                       <p>Pontos de recarga</p>
+                       <a class="ai" href="CadastroBairro.aspx"><i class="fas fa-arrow-left"></i></a>
+                       <p>Bairro</p>
                     </div>
                 </div>
                 <div class="box1-midi">

@@ -12,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="header">
-               <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
+               <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;"/></a>
             <ol>
                 <li>Menu</li>
                 <li>Page 2</li>
@@ -25,7 +25,7 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
-                       <i class="fas fa-map-marker-alt"></i>
+                        <a class="ai" href="WebFormTelaPrincipalAdm.aspx"><i class="fas fa-arrow-left"></i></a>
                        <p>Rotas</p>
                     </div>
                     <div class="box1-button">

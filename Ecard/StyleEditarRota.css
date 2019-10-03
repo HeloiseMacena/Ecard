@@ -19,15 +19,15 @@ form#form1 {
 }
 
 .header {
-    width: 1000px;
+    width: 100%;
     background-color: #FFF;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
     padding: 0 0 0 50px;
-    box-shadow: 0 15px 50px rgba(2,3,3,.1);
+    box-shadow: 0 0px 5px rgba(0,0,0,.1);
     position: fixed;
+    z-index: 1;
 }
 
     .header > img {
@@ -109,6 +109,13 @@ form#form1 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    text-decoration: none
+}
+
+.ai {
+    text-decoration: none;
+    color: #0F3561;
+    margin-right: 10px;
 }
 
 .box1-title {
@@ -118,6 +125,7 @@ form#form1 {
     align-content: space-between;
     align-items: center;
 }
+
 
 .box1-header > .box1-button > .btnAdd {
     padding: 10px 20px;
@@ -244,6 +252,8 @@ form#form1 {
 
 .box1-title > i {
     margin-right: 10px;
+    color:white;
+    text-decoration: none;
 }
 
 .box2-user > i {
