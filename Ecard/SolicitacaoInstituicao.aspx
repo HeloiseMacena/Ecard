@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SolicitacaoCarteira.aspx.cs" Inherits="Ecard.SolicitacaoEstudante" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SolicitacaoInstituicao.aspx.cs" Inherits="Ecard.SolicitacaoInstituicao" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="StyleSolicitacaoCarteira.css"/>    
+<link rel="stylesheet" type="text/css" href="StyleSolicitacaoInstituicao.css"/>    
     <title></title>
 </head>
 <body>
@@ -26,7 +26,7 @@
                 <asp:TextBox ID="TextPesquisa" CssClass="textbox1" runat="server" type="text" placeholder="Pesquisar"></asp:TextBox>
                 <div class="box1-filtro">
                     <asp:DropDownList CssClass="ddlist1" runat="server">
-                        <asp:ListItem>Escola</asp:ListItem>
+                        <asp:ListItem>Município</asp:ListItem>
                         <asp:ListItem>Ordem alfabética</asp:ListItem>
                         <asp:ListItem>Mais recente</asp:ListItem>
                         <asp:ListItem>Mais antiga</asp:ListItem>
