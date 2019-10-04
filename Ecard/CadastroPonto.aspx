@@ -93,9 +93,25 @@
                                     <i class="fas fa-times" id="closeModal" runat="server" onclick="document.querySelector('.modal-container').style.visibility = 'hidden';"></i>
                                 </div>
                                 <div class="modal-body">
-                                    <asp:Label runat="server" ID="modalNum"></asp:Label>
-                                    <asp:Label runat="server" ID="modalCEP"></asp:Label>
-                                    <asp:Label runat="server" ID="modalMun"></asp:Label>
+                                 <div class="help-modal">                                
+                                        <div class="rota-modal">
+                                            <div class="rota-modal-nome">
+                                                <p class="ponto-ref">Nº:
+                                                    <asp:Label runat="server" ID="modalNum"></asp:Label>
+                                               </p>
+                                                </div>
+                                            <div class="rota-modal-nome">
+                                                <p class="ponto-ref">CEP:
+                                                    <asp:Label runat="server" ID="modalCEP"></asp:Label>
+                                                </p>
+                                                </div>
+                                            <div class="rota-modal-nome">
+                                                <p class="ponto-ref">Município:
+                                                    <asp:Label runat="server" ID="modalMun"></asp:Label>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div> 
                                 </div>
                                 <div class="modal-footer"></div>
                             </div>

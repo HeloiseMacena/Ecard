@@ -101,6 +101,7 @@
     <Content Include="StyleEditarPonto.css" />
     <Content Include="StyleEditarRota.css" />
     <Content Include="StyleEditEstudante.css" />
+    <Content Include="StyleHeader.css" />
     <Content Include="StyleLoginAdm.css" />
     <Content Include="StyleLoginEstudante.css" />
     <Content Include="StyleLoginInstituicao.css" />
@@ -114,7 +115,9 @@
     <Content Include="StyleTelaInicial.css" />
     <Content Include="StyleTelaPrincipalAdm.css" />
     <Content Include="StyleTelaPrincipalInstituicao.css" />
+    <Content Include="StyleTelaSolicitacaoCarteira.css" />
     <Content Include="TelaInicial.aspx" />
+    <Content Include="TelaSolicitacaoCarteira.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebFormTelaPrincipalAdm.aspx" />
     <Content Include="WebFormTelaPrincipalEstudante.aspx" />
@@ -243,6 +246,13 @@
     <Compile Include="EditEstudante.aspx.designer.cs">
       <DependentUpon>EditEstudante.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Estudante.Master.cs">
+      <DependentUpon>Estudante.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estudante.Master.designer.cs">
+      <DependentUpon>Estudante.Master</DependentUpon>
+    </Compile>
     <Compile Include="LoginAdm.aspx.cs">
       <DependentUpon>LoginAdm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -310,6 +320,13 @@
     <Compile Include="TelaInicial.aspx.designer.cs">
       <DependentUpon>TelaInicial.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TelaSolicitacaoCarteira.aspx.cs">
+      <DependentUpon>TelaSolicitacaoCarteira.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TelaSolicitacaoCarteira.aspx.designer.cs">
+      <DependentUpon>TelaSolicitacaoCarteira.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormTelaPrincipalAdm.aspx.cs">
       <DependentUpon>WebFormTelaPrincipalAdm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -333,6 +350,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Estudante.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

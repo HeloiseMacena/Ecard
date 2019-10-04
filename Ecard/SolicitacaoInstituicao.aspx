@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+<script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="StyleSolicitacaoInstituicao.css"/>    
     <title></title>
@@ -26,7 +27,6 @@
                 <asp:TextBox ID="TextPesquisa" CssClass="textbox1" runat="server" type="text" placeholder="Pesquisar"></asp:TextBox>
                 <div class="box1-filtro">
                     <asp:DropDownList CssClass="ddlist1" runat="server">
-                        <asp:ListItem>Município</asp:ListItem>
                         <asp:ListItem>Ordem alfabética</asp:ListItem>
                         <asp:ListItem>Mais recente</asp:ListItem>
                         <asp:ListItem>Mais antiga</asp:ListItem>
@@ -34,9 +34,8 @@
                     <asp:Button runat="server" CssClass="btn-ok" Text="Ok"/>
                 </div>
 
-                <div class="box1-midi"></div>
+              
             </div>
-            
             <div class="box2">
                 <div class="box2-user-container">
                     <div class="box2-user">
@@ -47,7 +46,7 @@
                         </div>
                     </div>
                     <div class="box2-button">
-                         <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" />
+                         <asp:Button runat="server" CssClass="btn2"  Text="Ver Perfil" PostBackUrl="~/PerfilAdm.aspx" />
                     </div>
                 </div>
             </div>

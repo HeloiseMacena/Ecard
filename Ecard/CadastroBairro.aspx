@@ -68,7 +68,7 @@
                         <p>Pontos de recarga</p>
                     </div>
                     <div class="ponto2">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search"></i> 
                         <p>Pesquisar</p>
                     </div>
                 </div>

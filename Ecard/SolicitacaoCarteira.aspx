@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+<script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="StyleSolicitacaoCarteira.css"/>    
     <title></title>
@@ -34,7 +35,7 @@
                     <asp:Button runat="server" CssClass="btn-ok" Text="Ok"/>
                 </div>
 
-                <div class="box1-midi"></div>
+                
             </div>
             
             <div class="box2">

@@ -32,48 +32,47 @@ form#form1 {
     z-index: 1;
 }
 
-.header > img {
-    width: 100px;
-    cursor: pointer;
-}
+    .header > img {
+        width: 100px;
+        cursor: pointer;
+    }
 
-.header > ol {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-}
+    .header > ol {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
 
-.header > ol > li {
-    margin: 0 20px;
-    padding: 28px 20px;
-    border-top: 2px solid #FFF;
-    font-weight: 600;
-    color: #5c5c5c;
-}
+        .header > ol > li {
+            margin: 0 20px;
+            padding: 28px 20px;
+            border-top: 2px solid #FFF;
+            font-weight: 600;
+            color: #5c5c5c;
+        }
 
-.header > ol > li:hover {
-    border-top: 2px solid #0bba25; 
-    transition: 0.4s;
-    cursor: pointer;
-}
+            .header > ol > li:hover {
+                border-top: 2px solid #0bba25;
+                transition: 0.4s;
+                cursor: pointer;
+            }
 
 
-/* MENU USER */
+        /* MENU USER */
 
-.header > ol > .menu-user {
-    height: 100%;
-    padding: 30px;
-    margin: 0 !important;
-    background-color: #f2f2f2;
-    border: none !important;
-    
-}
+        .header > ol > .menu-user {
+            height: 100%;
+            padding: 30px;
+            margin: 0 !important;
+            background-color: #f2f2f2;
+            border: none !important;
+        }
 
-.header > ol > .menu-user:hover {
-    background-color: #f4f4f4;
-}
+            .header > ol > .menu-user:hover {
+                background-color: #f4f4f4;
+            }
 
 
 /* CONTAINER */
@@ -84,7 +83,6 @@ form#form1 {
     height: 400px;
     background-color: #FFF;
     margin-top: 170px;
-
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -120,8 +118,8 @@ form#form1 {
     justify-content: space-between;
     display: flex;
     flex-direction: row;
-    align-content:space-between;
-    align-items:center;
+    align-content: space-between;
+    align-items: center;
 }
 
 .ai {
@@ -134,7 +132,8 @@ form#form1 {
     padding: 10px 20px;
     border: none;
     border-radius: 1px;
-    cursor:pointer;
+    cursor: pointer;
+    color: #2BB21F;
 }
 
 .box2-button > .btn2 {
@@ -143,9 +142,8 @@ form#form1 {
     border-radius: 1px;
     background-color: #17A2B8;
     color: white;
-    border-bottom-color: #13899C ;
+    border-bottom-color: #13899C;
     cursor: pointer;
-   
 }
 
 .box2-button {
@@ -183,30 +181,29 @@ form#form1 {
 
 .box2-ponto {
     width: 100%;
-    height: 600px;
+    height: 186px;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
 }
+
 .ponto {
-    padding-top: 10px;
-    padding-right: 120px;
-    padding-bottom: 10px;
-    padding-left: 128px;
-    background-color: #C4C4C4;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
-    color: white;
+    color: #9F9F9F;
     display: flex;
+    margin-top: 15px;
+    font-size:24px;
 }
+
 .ponto2 {
     padding: 7px 50px;
     margin-top: 5px;
     background-color: #b8b8b8;
     border-radius: 5px;
-    color: white;
+    color: #9F9F9F;
     align-items: center;
     justify-content: space-between;
     display: flex;
@@ -214,13 +211,14 @@ form#form1 {
     align-content: center;
 }
 
-.ponto2 > i {
-    margin-right: 10px;
-}
+    .ponto2 > i {
+        margin-right: 10px;
+    }
 
 .box1-title > i {
     margin-right: 10px;
 }
+
 .box2-user > i {
     font-size: 60px;
     color: #555555;
@@ -233,13 +231,13 @@ form#form1 {
     margin-left: 20px;
 }
 
-.user-name > h1 {
-    color: #313131;
-}
+    .user-name > h1 {
+        color: #313131;
+    }
 
-.user-name > p {
-    color: #adadad;
-}
+    .user-name > p {
+        color: #adadad;
+    }
 
 /* REPEATER */
 
@@ -272,13 +270,12 @@ form#form1 {
     font-size: 14px;
 }
 
-.vl { /* vertical line */
-    height: 40px;
-    width: 1px;
-    background-color: #cccccc;
-    margin: 0 10px;
+.hl { /* horizontal line */
+    height: 2px;
+    width: 90%;
+    background-color: #EDEDED;
+    margin-top: 2px;
 }
-
 .ponto-nome {
     color: #262626;
 }
@@ -290,12 +287,12 @@ form#form1 {
 
 .ponto-but {
     width: 100%;
-    display:flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
-    align-content:center;
+    align-content: center;
     margin: 10px;
-    margin-left:70px;
+    margin-left: 247px;
 }
 
     .ponto-but > .mais-but {
@@ -313,108 +310,6 @@ form#form1 {
     margin-left: 10px;
 }
 
-/*Modal*/
-
-
-.modal-container.open {
-    visibility: visible;
-    animation-name: fadein;
-    animation-duration: 0.2s;
-}
-
-.modal-container {
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.66);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    visibility: hidden;
-}
-
-@keyframes fadein {
-    from {
-        opacity: 0
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-.fas {
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.modal-content {
-    width: 600px;
-    height: 350px;
-    background: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.modal-header {
-    width: 82%;
-    height: 60px;
-    background-color: #0ead4b;
-    padding: 20px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-    border-radius: 2px 2px 0 0;
-}
-
-.modal-body {
-    width: 82%;
-    height: 100%;
-    margin-bottom: 44px;
-    background-color: #EFEFEF;
-}
-
-.rota-modal {
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-}
-
-.rota-modal-nome {
-   
-}
-
-.ponto-ref {
-    color: #262626;
-    min-width: 100%;
-    margin-top: 16px;
-    box-shadow: 0px 1px 5px -3px rgba(0,0,0,0.75);
-    padding: 20px;
-}
-
-
-
-/*.modal-footer {
-    width: 100%;
-    height: 100px;
-    background-color: #0ead4b;
-    border-radius: 0 0 2px 2px;
-}*/
-
-
-.xis {
-    background-color: #0ead4b;
-    border:none;
-    cursor:pointer;
-    font-size: 1.5em;
-    color: white;
-}
-
 
 .action-button {
     position: relative;
@@ -428,7 +323,6 @@ form#form1 {
     transition: all 0.15s linear;
     text-align: center;
     z-index: 0;
-    
 }
 
 .blue {
@@ -438,129 +332,95 @@ form#form1 {
     cursor: pointer;
 }
 
-    #show-modal:hover {
+#show-modal:hover {
+    cursor: pointer;
+}
+
+.title-money {
+    color: #3C3C3C;
+    font-size: 45px;
+    margin-top: 6px;
+}
+
+.btns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+    .btns > .btn-rec {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 2px;
+        background-color: #EBEBEB;
+        color: #898989;
+        border-bottom-color: #C2C2C2;
+        margin-right: 30px;
         cursor: pointer;
     }
 
-
-/*
-.modal {
-    position: fixed;
-    top: -100vh;
-    left: 0;
-    z-index: 99999999;
-    background: rgba(0,0,0,0.75);
-    width: 100vw;
-    height: 100vh;
-    opacity: 0;
-}
-    .modal .content-modal {
-        width: 100%;
-        max-width: 500px;
-        position: fixed;
-        left: 50%;
-        top: -100vh;
-        transition: top 0.35s ease;
-        margin-left: -250px;
-        background: white;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    .btns > .btn-calc {
+        padding: 10px 20px;
+        border: none;
         border-radius: 2px;
-        z-index: 99999999;
+        background-color: #17A2B8;
+        color: #EBEBEB;
+        border-bottom-color: #13899C;
+        cursor: pointer;
     }
 
-    .modal h2 {
-        padding: 0.5em;
-        text-align: center;
-        color: #444444;
-        margin: 0;
-    }
-
-    .modal article {
-        height: 300px;
-        background: #dedede;
-    }
-
-.close-modal {
-    color: #e74c3c;
-    position: absolute;
-    top: 0.2em;
-    right: 0.375em;
-    margin: 0;
-    padding: 5px;
-    font-weight: bold;
-    font-size: 1.5em;
-    text-decoration: none;
-}
-
-.modal a:hover {
-    color: #c0392b;
-}
-
-.modal:target {
-    opacity: 1;
-    top: 0;
-}
-
-.modal .btn-close-modal {
-    position: absolute;
+.info {
     width: 100%;
-    height: 100%;
-    z-index: 99999999;
-}
-
-.modal:target .content-modal {
-    top: 50px;
-    transition: top 0.35s ease;
-}
-
-
-@media (max-width: 500px) {
-    .modal .content-modal {
-        width: 90%;
-        max-width: none;
-        left: 5%;
-        margin-left: 0;
-    }
-}
-
-.help-modal {
-    margin-top: 20px;
-}
-
-.ponto-modal {
-    width: 100%;
-    padding: 20px;
+    padding: 15px 20px;
+    border-radius: 2px;
     display: flex;
-    box-shadow: 0px 1px 5px -3px rgba(0,0,0,0.75);
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 60px;
 }
 
-.ponto-modal-nome {
-    min-width: 225px;
-    
+.info-cor {
+    color: #A1A1A1;
+}
+    .title-info{
+
+    }
+
+.info-2 {
+    width: 90%;
+    margin: 4%;
 }
 
-.ponto-nume {
-    color: #262626;
+.azul {
+    background-color: #4B8193;
+    color: #FFFFFF;
+    font-size: 15px;
+    border-style: none;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-right: -5px;
+    padding: 10px 20px 10px 20px;
 }
 
-.ponto-cep {
-    color: #7a7a7a;
-    font-size: 14px;
+.campo-inf {
+    background-color: #F6F6F6;
+    color: #898989;
+    font-size: 15px;
+    border-style: none;
+    border-radius: 4px;
+    padding: 10px 30px 10px 54px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 
-.pontoItem-muni {
-    margin-right: 50px;
-    max-width: 50px;
-    min-width: 50px;
-}
-
-.ponto-muni-title {
-    color: #7a7a7a;
-    font-size: 14px;
-}*/
 
 
 /* RESPONSIVIDADE */
