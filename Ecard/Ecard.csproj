@@ -77,6 +77,7 @@
     <Content Include="LoginAdm.aspx" />
     <Content Include="LoginEstudante.aspx" />
     <Content Include="LoginInstituicao.aspx" />
+    <Content Include="PerfilAdm.aspx" />
     <Content Include="PerfilInstituicao.aspx" />
     <Content Include="SolicitacaoCarteira.aspx" />
     <Content Include="SolicitacaoInstituicao.aspx" />
@@ -103,8 +104,10 @@
     <Content Include="StyleLoginAdm.css" />
     <Content Include="StyleLoginEstudante.css" />
     <Content Include="StyleLoginInstituicao.css" />
+    <Content Include="StylePerfilAdm.css" />
     <Content Include="StylePerfilInstituicao.css" />
     <Content Include="StylePonto.css" />
+    <Content Include="StylePontoBairro.css" />
     <Content Include="StyleRota.css" />
     <Content Include="StyleSolicitacaoCarteira.css" />
     <Content Include="StyleSolicitacaoInstituicao.css" />
@@ -271,6 +274,13 @@
     <Compile Include="Modelo\Recarga.cs" />
     <Compile Include="Modelo\Rota.cs" />
     <Compile Include="Modelo\Telefone.cs" />
+    <Compile Include="PerfilAdm.aspx.cs">
+      <DependentUpon>PerfilAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilAdm.aspx.designer.cs">
+      <DependentUpon>PerfilAdm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PerfilInstituicao.aspx.cs">
       <DependentUpon>PerfilInstituicao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

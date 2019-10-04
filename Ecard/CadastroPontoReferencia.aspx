@@ -40,7 +40,6 @@
                                     <p class="ponto-nome"><%#Eval("nome")%></p>
                                 </div>
                                 <div class="ponto-but">
-                                   <asp:LinkButton runat="server"><a href="#modal" class="action-button shadow animate blue" id="show-modal">Mais</a></asp:LinkButton>
                                    <asp:LinkButton CssClass="link-but" runat="server"  PostBackUrl='<%#"~/EditarPontoReferencia.aspx?id=" +  Eval("Id") %>'> <i class="fas fa-pen-square"></i> </asp:LinkButton>
                                   </div>
                             </div> 
@@ -79,33 +78,7 @@
                     </div>
                 </div>
             </div>
-            <div>   <!-- Modal -->
-                    <aside id="modal" class="modal">
-		            <div class="content-modal">
-			            <header>
-				            <a href="#" class="close-modal">X</a>
-				            <h2>Mais informações</h2>	
-			            </header>
-			            <article>
-                            <div class="help-modal">
-                                
-                                        <div class="ponto-modal">
-                                            <div class="ponto-modal-nome">
-                                                <p class="ponto-nume">N° </p>
-                                                <p class="ponto-cep">CEP: </p>
-                                            </div>
-                                            <div class="vl"></div>
-                                            <!-- vertical line -->
-                                            <div class="pontoItem-muni">
-                                                <p class="ponto-muni-title">Municipio</p>
-                                                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                                            </div>
-                                        </div>
-                            </div>
-			            </article>
-		            </div>
-		            <a href="#" class="btn-close-modal"></a>
-	            </aside>
+            <div>  
                 </div>
            </div>
     </form>

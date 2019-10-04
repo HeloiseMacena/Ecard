@@ -13,7 +13,7 @@
  <form class="formulario" runat="server" id="form12">
     
      <div class="coluna-1" >
-         <div class="image" style="margin-right: 103px;"><img src="Imagens/ECard.png"  style="max-width:100%;"/></div>
+         <div class="image" ><img src="Imagens/ECard.png"  style="max-width:100%;"/></div>
          <div class="info">
              <h2>Instituição</h2>
              <p>Informações básicas</p>
