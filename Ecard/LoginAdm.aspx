@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginAdm.aspx.cs" Inherits="Ecard.LoginAdm" %>
+﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginAdm.aspx.cs" Inherits="Ecard.LoginAdm" %>--%>
 
 <!DOCTYPE html>
 
