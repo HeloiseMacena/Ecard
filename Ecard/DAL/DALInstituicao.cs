@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace Ecardmark1.DAL
+namespace Ecard.DAL
 {
     public class DALInstituicao
     {
@@ -24,6 +24,7 @@ namespace Ecardmark1.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Instituicao> SelectAll()
         {
+            Modelo.Instituicao aInstituicao;
             List<Modelo.Instituicao> aListInstituicao = new List<Modelo.Instituicao>();
 
             SqlConnection conn = new SqlConnection(connectionString);
@@ -35,23 +36,20 @@ namespace Ecardmark1.DAL
             {
                 while (dr.Read())
                 {
-                    string str = dr["status"].ToString();
-                    bool status = str == "1";
-
-                    Modelo.Instituicao aInstituicao = new Modelo.Instituicao(
-                        dr["nome"].ToString(),
-                        dr["email"].ToString(),
-                        dr["codigo_inep"].ToString(),
-                        dr["cnpj"].ToString(),
-                        status,
-                        dr["senha"].ToString(),
-                        dr["endereco_bairro"].ToString(),
-                        dr["endereco_CEP"].ToString(),
-                        dr["endereco_municipio"].ToString(),
-                        dr["endereco_logradouro"].ToString(),
-                        dr["endereco_numero"].ToString()
+                    aInstituicao = new Modelo.Instituicao(
+                        dr["Nome"].ToString(),
+                        dr["Email"].ToString(),
+                        dr["Codigo_inep_mec"].ToString(),
+                        Convert.ToBoolean(dr["Status"].ToString()),
+                        dr["Senha"].ToString(),
+                        dr["Endereco_bairro"].ToString(),
+                        dr["Endereco_CEP"].ToString(),
+                        dr["Endereco_municipio"].ToString(),
+                        dr["Endereco_logradouro"].ToString(),
+                        dr["Endereco_numero"].ToString(),
+                        dr["cnpj"].ToString()
                         );
-                    aInstituicao.id = Convert.ToInt32(dr["id"].ToString());
+                    aInstituicao.Id = int.Parse(dr["id"].ToString());
                     aListInstituicao.Add(aInstituicao);
                 }
             }
@@ -69,9 +67,9 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("DELETE FROM Instituicao WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("DELETE FROM Instituicao WHERE Id = @Id", conn);
 
-            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.Parameters.AddWithValue("@Id", obj.Id);
 
             cmd.ExecuteNonQuery();
 
@@ -85,19 +83,19 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Instituicao (nome, email, codigo_inep, cnpj, status, senha, endereco_bairro, endereco_cep, endereco_municipio, endereco_logradouro, endereco_numero) VALUES (@nome, @email, @codigo_inep, @cnpj, @status, @senha, @endereco_bairro, @endereco_CEP, @endereco_municipio, @endereco_logradouro, @endereco_numero)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Instituicao (Nome, email, codigo_inep, status, senha, endereco_bairro, endereco_cep, endereco_municipio, endereco_logradouro, endereco_numero, cnpj) VALUES (@Nome, @Email, @Codigo_inep_mec, @Status, @Senha, @Endereco_bairro, @Endereco_CEP, @Endereco_municipio, @Endereco_logradouro, @Endereco_numero, @cnpj)", conn);
 
-            cmd.Parameters.AddWithValue("@nome", obj.nome);
-            cmd.Parameters.AddWithValue("@email", obj.email);
-            cmd.Parameters.AddWithValue("@codigo_inep", obj.codigo_inep);
+            cmd.Parameters.AddWithValue("@Nome", obj.Nome);
+            cmd.Parameters.AddWithValue("@Email", obj.Email);
+            cmd.Parameters.AddWithValue("@Codigo_inep_mec", obj.Codigo_inep_mec);
+            cmd.Parameters.AddWithValue("@Status", obj.Status);
+            cmd.Parameters.AddWithValue("@Senha", obj.Senha);
+            cmd.Parameters.AddWithValue("@Endereco_bairro", obj.Endereco_bairro);
+            cmd.Parameters.AddWithValue("@Endereco_CEP", obj.Endereco_CEP);
+            cmd.Parameters.AddWithValue("@Endereco_municipio", obj.Endereco_municipio);
+            cmd.Parameters.AddWithValue("@Endereco_logradouro", obj.Endereco_logradouro);
+            cmd.Parameters.AddWithValue("@Endereco_numero", obj.Endereco_numero);
             cmd.Parameters.AddWithValue("@cnpj", obj.cnpj);
-            cmd.Parameters.AddWithValue("@status", obj.status);
-            cmd.Parameters.AddWithValue("@senha", obj.senha);
-            cmd.Parameters.AddWithValue("@endereco_bairro", obj.endereco_bairro);
-            cmd.Parameters.AddWithValue("@endereco_CEP", obj.endereco_CEP);
-            cmd.Parameters.AddWithValue("@endereco_municipio", obj.endereco_municipio);
-            cmd.Parameters.AddWithValue("@endereco_logradouro", obj.endereco_logradouro);
-            cmd.Parameters.AddWithValue("@endereco_numero", obj.endereco_numero);
 
             cmd.ExecuteNonQuery();
 
@@ -111,20 +109,19 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Instituicao SET nome = @nome, email = @email, codigo_inep = @codigo_inep, cnpj = @cnpj, status = @status, senha = @senha, endereco_bairro = @endereco_bairro, endereco_CEP = @endereco_CEP, endereco_municipio = @endereco_municipio, endereco_logradouro = @endereco_logradouro, endereco_numero = @endereco_numero  WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Instituicao SET Nome = @Nome; Email=@Email, Codigo_inep_mec = @Codigo_inep_mec, Status = @Status, Senha = @Senha, Endereco_bairro = @Endereco_bairro, Endereco_CEP = @Endereco_CEP, Endereco_municipio = @Endereco_municipio, Endereco_logradouro = @Endereco_logradouro, Endereco_numero = @Endereco_numero  WHERE Id = @Id", conn);
 
-            cmd.Parameters.AddWithValue("@id", obj.id);
-            cmd.Parameters.AddWithValue("@nome", obj.nome);
-            cmd.Parameters.AddWithValue("@email", obj.email);
-            cmd.Parameters.AddWithValue("@codigo_inep", obj.codigo_inep);
-            cmd.Parameters.AddWithValue("@cnpj", obj.cnpj);
-            cmd.Parameters.AddWithValue("@status", obj.status);
-            cmd.Parameters.AddWithValue("@senha", obj.senha);
-            cmd.Parameters.AddWithValue("@endereco_bairro", obj.endereco_bairro);
-            cmd.Parameters.AddWithValue("@endereco_CEP", obj.endereco_CEP);
-            cmd.Parameters.AddWithValue("@endereco_municipio", obj.endereco_municipio);
-            cmd.Parameters.AddWithValue("@endereco_logradouro", obj.endereco_logradouro);
-            cmd.Parameters.AddWithValue("@endereco_numero", obj.endereco_numero);
+            cmd.Parameters.AddWithValue("@Id", obj.Id);
+            cmd.Parameters.AddWithValue("@Nome", obj.Nome);
+            cmd.Parameters.AddWithValue("@Email", obj.Email);
+            cmd.Parameters.AddWithValue("@Codigo_inep_mec", obj.Codigo_inep_mec);
+            cmd.Parameters.AddWithValue("@Status", obj.Status);
+            cmd.Parameters.AddWithValue("@Senha", obj.Senha);
+            cmd.Parameters.AddWithValue("@Endereco_bairro", obj.Endereco_bairro);
+            cmd.Parameters.AddWithValue("@Endereco_CEP", obj.Endereco_CEP);
+            cmd.Parameters.AddWithValue("@Endereco_municipio", obj.Endereco_municipio);
+            cmd.Parameters.AddWithValue("@Endereco_logradouro", obj.Endereco_logradouro);
+            cmd.Parameters.AddWithValue("@Endereco_numero", obj.Endereco_numero);
 
             cmd.ExecuteNonQuery();
         }
@@ -132,44 +129,38 @@ namespace Ecardmark1.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Instituicao> Select(string id)
+        public Modelo.Instituicao Select(int Id)
         {
-            List<Modelo.Instituicao> aListInstituicao = new List<Modelo.Instituicao>();
+            Modelo.Instituicao aInstituicao;
+            Modelo.Instituicao Instituicao = new Modelo.Instituicao();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Instituicao where id = @id";
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "Select * from Instituicao Where Id = @Id";
+            cmd.Parameters.AddWithValue("@Id", Id);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
-                string str = dr["status"].ToString();
-                bool status = str == "1";
-
-                while (dr.Read())
-                {
-                    Modelo.Instituicao aInstituicao = new Modelo.Instituicao(
-                        dr["nome"].ToString(),
-                        dr["email"].ToString(),
-                        dr["codigo_inep"].ToString(),
-                        dr["cnpj"].ToString(),
-                        status,
-                        dr["senha"].ToString(),
-                        dr["endereco_bairro"].ToString(),
-                        dr["endereco_CEP"].ToString(),
-                        dr["endereco_municipio"].ToString(),
-                        dr["endereco_logradouro"].ToString(),
-                        dr["endereco_numero"].ToString()
+                    Instituicao = new Modelo.Instituicao(
+                        dr["Nome"].ToString(),
+                        dr["Email"].ToString(),
+                        dr["Codigo_inep_mec"].ToString(),
+                        Convert.ToBoolean(dr["Status"].ToString()),
+                        dr["Senha"].ToString(),
+                        dr["Endereco_bairro"].ToString(),
+                        dr["Endereco_CEP"].ToString(),
+                        dr["Endereco_municipio"].ToString(),
+                        dr["Endereco_logradouro"].ToString(),
+                        dr["Endereco_numero"].ToString(),
+                        dr["cnpj"].ToString()
                         );
-                    aInstituicao.id = Convert.ToInt32(dr["id"].ToString());
-                    aListInstituicao.Add(aInstituicao);
-                }
+                    Instituicao.Id = int.Parse(dr["id"].ToString());
             }
 
             dr.Close();
             conn.Close();
 
-            return aListInstituicao;
+            return Instituicao;
         }
     }
 }

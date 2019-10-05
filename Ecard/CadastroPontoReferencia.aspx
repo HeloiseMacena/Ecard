@@ -6,7 +6,7 @@
 <head runat="server">
 <script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="StylePonto.css"/>
+<link rel="stylesheet" type="text/css" href="StylePontoBairro.css"/>
     <title></title>
 </head>
 <body>
@@ -25,7 +25,7 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
-                       <i class="fas fa-map-marked-alt"></i>
+                        <a class="ai" href="WebFormTelaPrincipalAdm.aspx"><i class="fas fa-arrow-left"></i></a>
                        <p>Pontos de referência</p>
                     </div>
                     <div class="box1-button">
@@ -40,7 +40,6 @@
                                     <p class="ponto-nome"><%#Eval("nome")%></p>
                                 </div>
                                 <div class="ponto-but">
-                                   <asp:LinkButton runat="server"><a href="#modal" class="action-button shadow animate blue" id="show-modal">Mais</a></asp:LinkButton>
                                    <asp:LinkButton CssClass="link-but" runat="server"  PostBackUrl='<%#"~/EditarPontoReferencia.aspx?id=" +  Eval("Id") %>'> <i class="fas fa-pen-square"></i> </asp:LinkButton>
                                   </div>
                             </div> 
@@ -49,7 +48,7 @@
                     
                     
                     
-                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Ecardmark1.Modelo.Ponto_referencia" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecardmark1.DAL.DALPonto_referencia" UpdateMethod="Update"></asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Ecard.Modelo.Ponto_referencia" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALPonto_referencia" UpdateMethod="Update"></asp:ObjectDataSource>
                     
                     
                     
@@ -79,33 +78,7 @@
                     </div>
                 </div>
             </div>
-            <div>   <!-- Modal -->
-                    <aside id="modal" class="modal">
-		            <div class="content-modal">
-			            <header>
-				            <a href="#" class="close-modal">X</a>
-				            <h2>Mais informações</h2>	
-			            </header>
-			            <article>
-                            <div class="help-modal">
-                                
-                                        <div class="ponto-modal">
-                                            <div class="ponto-modal-nome">
-                                                <p class="ponto-nume">N° </p>
-                                                <p class="ponto-cep">CEP: </p>
-                                            </div>
-                                            <div class="vl"></div>
-                                            <!-- vertical line -->
-                                            <div class="pontoItem-muni">
-                                                <p class="ponto-muni-title">Municipio</p>
-                                                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                                            </div>
-                                        </div>
-                            </div>
-			            </article>
-		            </div>
-		            <a href="#" class="btn-close-modal"></a>
-	            </aside>
+            <div>  
                 </div>
            </div>
     </form>

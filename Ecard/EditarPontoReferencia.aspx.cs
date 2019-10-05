@@ -9,19 +9,20 @@ namespace Ecard
 {
     public partial class EditarPontoReferencia : System.Web.UI.Page
     {
-        int id;
+       int id;
         protected void Page_Load(object sender, EventArgs e)
         {
             id = int.Parse(Request.QueryString["id"]);
-            Ecardmark1.DAL.DALPonto_referencia p = new Ecardmark1.DAL.DALPonto_referencia();
-            Ecardmark1.Modelo.Ponto_referencia Ponto_referencia = p.Select(id);
-            //TextBox1.Text = Ponto_referencia.Nome;
+            Ecard.DAL.DALPonto_referencia p = new Ecard.DAL.DALPonto_referencia();
+            Ecard.Modelo.Ponto_referencia Ponto_referencia = p.Select(id);
+            if (!IsPostBack) TextBox1.Text = Ponto_referencia.Nome;
         }
 
         protected void Unnamed2_Click(object sender, EventArgs e)
         {
-            Ecardmark1.DAL.DALPonto_referencia p = new Ecardmark1.DAL.DALPonto_referencia();
-            Ecardmark1.Modelo.Ponto_referencia ponto = p.Select(id);
+            id = int.Parse(Request.QueryString["id"]);
+            Ecard.DAL.DALPonto_referencia p = new Ecard.DAL.DALPonto_referencia();
+            Ecard.Modelo.Ponto_referencia ponto = p.Select(id);
             ponto.Nome = TextBox1.Text;
             p.Update(ponto);
             Response.Redirect("~//CadastroPontoReferencia.aspx");
@@ -29,8 +30,9 @@ namespace Ecard
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            Ecardmark1.DAL.DALPonto_referencia p = new Ecardmark1.DAL.DALPonto_referencia();
-            Ecardmark1.Modelo.Ponto_referencia ponto = p.Select(id);
+            id = int.Parse(Request.QueryString["id"]); id = int.Parse(Request.QueryString["id"]);
+            Ecard.DAL.DALPonto_referencia p = new Ecard.DAL.DALPonto_referencia();
+            Ecard.Modelo.Ponto_referencia ponto = p.Select(id);
             p.Delete(ponto);
             Response.Redirect("~//CadastroPontoReferencia.aspx");
         }

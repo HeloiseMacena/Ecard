@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 
-namespace Ecardmark1.DAL
+namespace Ecard.DAL
 {
     public class DALLista_alunos
     {
@@ -16,7 +17,7 @@ namespace Ecardmark1.DAL
 
         public DALLista_alunos()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["PubsConnectionString"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
         }
 
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarRota.aspx.cs" Inherits="Ecardmark1.EditarRota" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarRota.aspx.cs" Inherits="Ecard.EditarRota" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -24,8 +24,8 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
-                       <i class="fas fa-map-marked-alt"></i>
-                       <p>Rotas de Ônibus</p>
+                      <a class="ai" href="CadastroRota.aspx"><i class="fas fa-arrow-left"></i></a>
+                       <p>Rotas</p>
                     </div>
                 </div>
                 <div class="box1-midi">

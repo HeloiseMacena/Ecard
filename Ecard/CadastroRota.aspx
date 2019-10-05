@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroRota.aspx.cs" Inherits="Ecardmark1.CadastroRota" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroRota.aspx.cs" Inherits="Ecard.CadastroRota" %>
 
 <!DOCTYPE html>
 
@@ -12,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="header">
-               <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
+               <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;"/></a>
             <ol>
                 <li>Menu</li>
                 <li>Page 2</li>
@@ -25,7 +25,7 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
-                       <i class="fas fa-map-marker-alt"></i>
+                        <a class="ai" href="WebFormTelaPrincipalAdm.aspx"><i class="fas fa-arrow-left"></i></a>
                        <p>Rotas</p>
                     </div>
                     <div class="box1-button">
@@ -49,12 +49,11 @@
                         </ItemTemplate>
                     </asp:Repeater>
                        
-                         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Ecardmark1.Modelo.Rota" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecardmark1.DAL.DALRota" UpdateMethod="Update"></asp:ObjectDataSource>
+                         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Ecard.Modelo.Rota" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALRota" UpdateMethod="Update"></asp:ObjectDataSource>
                        
                 </div>
             </div>
-                </div>
-
+        </div>
             <div class="box2">
                 <div class="box2-user-container">
                     <div class="box2-user">
@@ -99,7 +98,6 @@
 	            </aside>
             </div>
         </div>
-            
     </form>
 </body>
 </html>

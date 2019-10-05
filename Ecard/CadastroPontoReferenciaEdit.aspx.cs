@@ -16,8 +16,8 @@ namespace Ecard
 
         protected void Unnamed2_Click(object sender, EventArgs e)
         {
-            Ecardmark1.Modelo.Ponto_referencia pr = new Ecardmark1.Modelo.Ponto_referencia(TextBox1.Text);
-            Ecardmark1.DAL.DALPonto_referencia dal = new Ecardmark1.DAL.DALPonto_referencia();
+            Ecard.Modelo.Ponto_referencia pr = new Ecard.Modelo.Ponto_referencia(TextBox1.Text);
+            Ecard.DAL.DALPonto_referencia dal = new Ecard.DAL.DALPonto_referencia();
             dal.Insert(pr);
             Response.Redirect("~//CadastroPontoReferencia.aspx");
         }

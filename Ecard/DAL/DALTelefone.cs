@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace Ecardmark1.DAL
+namespace Ecard.DAL
 {
     public class DALTelefone
     {
@@ -24,6 +24,7 @@ namespace Ecardmark1.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Telefone> SelectAll()
         {
+            Modelo.Telefone aTelefone;
             List<Modelo.Telefone> aListTelefone = new List<Modelo.Telefone>();
 
             SqlConnection conn = new SqlConnection(connectionString);
@@ -35,10 +36,10 @@ namespace Ecardmark1.DAL
             {
                 while (dr.Read())
                 {
-                    Modelo.Telefone aTelefone = new Modelo.Telefone(
-                        dr["numero"].ToString()
+                    aTelefone = new Modelo.Telefone(
+                        Convert.ToInt32(dr["Id"].ToString()),
+                        dr["Numero"].ToString()
                         );
-                    aTelefone.id = Convert.ToInt32(dr["id"].ToString());
                     aListTelefone.Add(aTelefone);
                 }
             }
@@ -56,9 +57,9 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("DELETE FROM Telefone WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("DELETE FROM Telefone WHERE Id = @Id", conn);
 
-            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.Parameters.AddWithValue("@Id", obj.Id);
 
             cmd.ExecuteNonQuery();
 
@@ -72,9 +73,10 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Telefone (numero, instituicao_id) VALUES (@numero, 1)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Telefone (Id, Numero) VALUES (@Id, @Numero)", conn);
 
-            cmd.Parameters.AddWithValue("@numero", obj.numero);
+            cmd.Parameters.AddWithValue("@Id", obj.Id);
+            cmd.Parameters.AddWithValue("@Numero", obj.Numero);
 
             cmd.ExecuteNonQuery();
 
@@ -88,10 +90,10 @@ namespace Ecardmark1.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Telefone SET numero = @numero WHERE id = @id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Telefone SET Numero = @Numero WHERE Id = @Id", conn);
 
-            cmd.Parameters.AddWithValue("@id", obj.id);
-            cmd.Parameters.AddWithValue("@numero", obj.numero);
+            cmd.Parameters.AddWithValue("@Id", obj.Id);
+            cmd.Parameters.AddWithValue("@Numero", obj.Numero);
 
             cmd.ExecuteNonQuery();
         }
@@ -99,23 +101,24 @@ namespace Ecardmark1.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Telefone> Select(string id)
+        public List<Modelo.Telefone> Select(string Id)
         {
+            Modelo.Telefone aTelefone;
             List<Modelo.Telefone> aListTelefone = new List<Modelo.Telefone>();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Telefone Where id = @id";
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "Select * from Telefone Where Id = @Id";
+            cmd.Parameters.AddWithValue("@Id", Id);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
                 while (dr.Read())
                 {
-                    Modelo.Telefone aTelefone = new Modelo.Telefone(
-                        dr["numero"].ToString()
+                    aTelefone = new Modelo.Telefone(
+                        Convert.ToInt32(dr["Id"].ToString()),
+                        dr["Nome"].ToString()
                         );
-                    aTelefone.id = Convert.ToInt32(dr["id"].ToString());
                     aListTelefone.Add(aTelefone);
                 }
             }

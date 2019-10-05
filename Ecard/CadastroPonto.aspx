@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroPonto.aspx.cs" Inherits="Ecardmark1.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroPonto.aspx.cs" Inherits="Ecard.CadastroPonto" %>
 
 <!DOCTYPE html>
 
@@ -7,25 +7,27 @@
 <script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="StylePonto.css"/>
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="JS/Events.js"></script>
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="header">
-           <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
-            <ol>
-                <li>Menu</li>
-                <li>Page 2</li>
-                <li>Page 3</li>
-                <li>Page 4</li> 
-                <li class="menu-user">Daniel Victor</li>
-            </ol>
+        <div class="header max">
+            <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
+            <div class="ol">
+                <div class="li">Menu</div>
+                <div class="li">Page 2</div>
+                <div class="li">Page 3</div>
+                <div class="li">Page 4</div> 
+                <div class="menu-user">Daniel Victor</div>
+            </div>
         </div>
         <div class="container">
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
-                       <i class="fas fa-map-marked-alt"></i>
+                        <a class="ai" href="WebFormTelaPrincipalAdm.aspx"><i class="fas fa-arrow-left"></i></a>
                        <p>Pontos de recarga</p>
                     </div>
                     <div class="box1-button">
@@ -45,15 +47,16 @@
                                     <p class="ponto-bairro-title">Bairro</p>
                                     <p><%#Eval("endereco_bairro")%></p>
                                 </div>
-                                <div class="ponto-but">
-                                   <asp:LinkButton runat="server"><a href="#modal" class="action-button shadow animate blue" id="show-modal">Mais</a></asp:LinkButton>
+                                <div class="ponto-but"> 
+                                   <asp:Button runat="server" Text="Mais" CommandArgument='<%#Eval("id")%>' CssClass="action-button animate blue" OnClick="getModalInfos_Click" />
                                    <asp:LinkButton CssClass="link-but" runat="server"  PostBackUrl='<%#"~/EditarPonto.aspx?id=" +  Eval("id") %>'> <i class="fas fa-pen-square"></i> </asp:LinkButton>
+                                  
                                   </div>
                             </div> 
                         </ItemTemplate>
                     </asp:Repeater>
                     
-                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Ecardmark1.Modelo.Ponto_recarga" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecardmark1.DAL.DALPonto_recarga" UpdateMethod="Update"></asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Ecard.Modelo.Ponto_recarga" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALPonto_recarga" UpdateMethod="Update"></asp:ObjectDataSource>
                     
                 </div>
               </div>
@@ -82,34 +85,42 @@
                 </div>
             </div>
             <div>   <!-- Modal -->
-                    <aside id="modal" class="modal">
-		            <div class="content-modal">
-			            <header>
-				            <a href="#" class="close-modal">X</a>
-				            <h2>Mais informações</h2>	
-			            </header>
-			            <article>
-                            <div class="help-modal">
-                                
-                                        <div class="ponto-modal">
-                                            <div class="ponto-modal-nome">
-                                                <p class="ponto-nume">N° </p>
-                                                <p class="ponto-cep">CEP: </p>
-                                            </div>
-                                            <div class="vl"></div>
-                                            <!-- vertical line -->
-                                            <div class="pontoItem-muni">
-                                                <p class="ponto-muni-title">Municipio</p>
-                                                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <div class="help-modal">
+                    <div>
+                        <div class="modal-container" id="modalContainer" runat="server">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                   <h2>Mais Informações</h2>
+                                    <i class="fas fa-times" id="closeModal" runat="server" onclick="document.querySelector('.modal-container').style.visibility = 'hidden';"></i>
+                                </div>
+                                <div class="modal-body">
+                                 <div class="help-modal">                                
+                                        <div class="rota-modal">
+                                            <div class="rota-modal-nome">
+                                                <p class="ponto-ref">Nº:
+                                                    <asp:Label runat="server" ID="modalNum"></asp:Label>
+                                               </p>
+                                                </div>
+                                            <div class="rota-modal-nome">
+                                                <p class="ponto-ref">CEP:
+                                                    <asp:Label runat="server" ID="modalCEP"></asp:Label>
+                                                </p>
+                                                </div>
+                                            <div class="rota-modal-nome">
+                                                <p class="ponto-ref">Município:
+                                                    <asp:Label runat="server" ID="modalMun"></asp:Label>
+                                                </p>
                                             </div>
                                         </div>
+                                    </div> 
+                                </div>
+                                <div class="modal-footer"></div>
                             </div>
-			            </article>
-		            </div>
-		            <a href="#" class="btn-close-modal"></a>
-	            </aside>
+                        </div>
+                    </div>
                 </div>
-           </div>
+            </div>
+        </div>
     </form>
 </body>
 </html>

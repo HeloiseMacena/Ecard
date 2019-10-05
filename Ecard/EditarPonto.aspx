@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarPonto.aspx.cs" Inherits="Ecardmark1.EditarPonto" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarPonto.aspx.cs" Inherits="Ecard.EditarPonto" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -23,21 +23,26 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
-                       <i class="fas fa-map-marked-alt"></i>
+                        <a class="ai" href="CadastroPonto.aspx"><i class="fas fa-arrow-left"></i></a>
                        <p>Pontos de recarga</p>
                     </div>
                 </div>
                 <div class="box1-midi">
                       <h1>Editar</h1>
-                      <asp:TextBox ID="TextBox1" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>
-                      <asp:TextBox ID="TextBox2" runat="server" CssClass="box1-mid" placeholder="Rua"></asp:TextBox>
-                      <asp:TextBox ID="TextBox3" runat="server" CssClass="box1-mid" placeholder="Bairro"></asp:TextBox>
-                      <asp:TextBox ID="TextBox4" runat="server" CssClass="box1-mid" placeholder="Número"></asp:TextBox>
-                      <asp:TextBox ID="TextBox5" runat="server" CssClass="box1-mid" placeholder="CEP"></asp:TextBox>
-                      <asp:TextBox ID="TextBox6" runat="server" CssClass="box1-mid" placeholder="Município"></asp:TextBox>
+                      <asp:TextBox ID="TextPonto" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>
+                      <asp:TextBox ID="TextRua" runat="server" CssClass="box1-mid" placeholder="Rua"></asp:TextBox>
+                      <asp:TextBox ID="TextBairro" runat="server" CssClass="box1-mid" placeholder="Bairro"></asp:TextBox>
+                      <asp:TextBox ID="TextNumero" runat="server" CssClass="box1-mid" placeholder="Número"></asp:TextBox>
+                      <asp:TextBox ID="TextCEP" runat="server" CssClass="box1-mid" placeholder="CEP"></asp:TextBox>
+                      <asp:TextBox ID="TextMunicipio" runat="server" CssClass="box1-mid" placeholder="Município"></asp:TextBox>
                     <div class="btn-b2">
+<<<<<<< HEAD
                         <asp:Button class="btn-close" runat="server" Text="Excluir" OnClick="Unnamed1_Click"  />
                         <asp:Button class="btn-save" runat="server" Text="Atualizar" OnClick="Unnamed2_Click" />
+=======
+                        <asp:Button class="btn-close" runat="server" Text="Excluir" OnClick="Delete_Click" />
+                        <asp:Button class="btn-save" runat="server" Text="Atualizar" OnClick="Update_Click" />
+>>>>>>> 8b4e53278fe63098a130cfa91e798f00b2a21a50
                     </div>
                 </div>
             </div>

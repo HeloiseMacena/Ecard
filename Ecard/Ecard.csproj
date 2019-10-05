@@ -69,6 +69,23 @@
   <ItemGroup>
     <Content Include="CadastroBairro.aspx" />
     <Content Include="CadastroBairroEdit.aspx" />
+    <Content Include="CadastroEstudante.aspx" />
+    <Content Include="CadastroInstituicao.aspx" />
+    <Content Include="CadastroPassagem.aspx" />
+    <Content Include="ConsultaPontodeRecarga.aspx" />
+    <Content Include="EditEstudante.aspx" />
+    <Content Include="Imagens\fotocarteira.png" />
+    <Content Include="JS\Events.js" />
+    <Content Include="LoginAdm.aspx" />
+    <Content Include="LoginEstudante.aspx" />
+    <Content Include="LoginInstituicao.aspx" />
+    <Content Include="PerfilAdm.aspx" />
+    <Content Include="PerfilEstudante.aspx" />
+    <Content Include="PerfilInstituicao.aspx" />
+    <Content Include="Recarga.aspx" />
+    <Content Include="SolicitacaoCarteira.aspx" />
+    <Content Include="SolicitacaoInstituicao.aspx" />
+    <Content Include="StyleCadastroEstudante.css" />
     <Content Include="CadastroPonto.aspx" />
     <Content Include="CadastroPontoEdit.aspx" />
     <Content Include="CadastroPontoReferencia.aspx" />
@@ -81,15 +98,39 @@
     <Content Include="EditarRota.aspx" />
     <Content Include="Imagens\ECard.png" />
     <Content Include="Imagens\lupa.jpg" />
+    <Content Include="StyleCadastroInstituicao.css" />
+    <Content Include="StyleCadastroPassagem.css" />
     <Content Include="StyleCadastroPonto.css" />
     <Content Include="StyleCadastroRota.css" />
+    <Content Include="StyleConsultaPontodeRecarga.css" />
     <Content Include="StyleEditarPonto.css" />
     <Content Include="StyleEditarRota.css" />
+    <Content Include="StyleEditEstudante.css" />
+    <Content Include="StyleHeader.css" />
+    <Content Include="StyleLoginAdm.css" />
+    <Content Include="StyleLoginEstudante.css" />
+    <Content Include="StyleLoginInstituicao.css" />
+    <Content Include="StylePerfilAdm.css" />
+    <Content Include="StylePerfilEstudante.css" />
+    <Content Include="StylePerfilInstituicao.css" />
     <Content Include="StylePonto.css" />
+    <Content Include="StylePontoBairro.css" />
     <Content Include="StyleRota.css" />
+    <Content Include="StyleSolicitacaoCarteira.css" />
+    <Content Include="StyleSolicitacaoInstituicao.css" />
+    <Content Include="StyleTelaInicial.css" />
     <Content Include="StyleTelaPrincipalAdm.css" />
-    <Content Include="Web.config" />
+    <Content Include="StyleTelaPrincipalEstudante.css" />
+    <Content Include="StyleTelaPrincipalInstituicao.css" />
+    <Content Include="StyleTelaSolicitacaoCarteira.css" />
+    <Content Include="TelaInicial.aspx" />
+    <Content Include="TelaPrincipalEstudante.aspx" />
+    <Content Include="TelaSolicitacaoCarteira.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WebFormTelaPrincipalAdm.aspx" />
+    <Content Include="WebFormTelaPrincipalInstituicao.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CadastroBairro.aspx.cs">
@@ -105,6 +146,27 @@
     </Compile>
     <Compile Include="CadastroBairroEdit.aspx.designer.cs">
       <DependentUpon>CadastroBairroEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroEstudante.aspx.cs">
+      <DependentUpon>CadastroEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroEstudante.aspx.designer.cs">
+      <DependentUpon>CadastroEstudante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroInstituicao.aspx.cs">
+      <DependentUpon>CadastroInstituicao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroInstituicao.aspx.designer.cs">
+      <DependentUpon>CadastroInstituicao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroPassagem.aspx.cs">
+      <DependentUpon>CadastroPassagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroPassagem.aspx.designer.cs">
+      <DependentUpon>CadastroPassagem.aspx</DependentUpon>
     </Compile>
     <Compile Include="CadastroPonto.aspx.cs">
       <DependentUpon>CadastroPonto.aspx</DependentUpon>
@@ -148,6 +210,13 @@
     <Compile Include="CadastroRotaEdit.aspx.designer.cs">
       <DependentUpon>CadastroRotaEdit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaPontodeRecarga.aspx.cs">
+      <DependentUpon>ConsultaPontodeRecarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaPontodeRecarga.aspx.designer.cs">
+      <DependentUpon>ConsultaPontodeRecarga.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\DALAdministrador.cs" />
     <Compile Include="DAL\DALBairro.cs" />
     <Compile Include="DAL\DALEstudante.cs" />
@@ -186,6 +255,41 @@
     <Compile Include="EditarRota.aspx.designer.cs">
       <DependentUpon>EditarRota.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditEstudante.aspx.cs">
+      <DependentUpon>EditEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditEstudante.aspx.designer.cs">
+      <DependentUpon>EditEstudante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estudante.Master.cs">
+      <DependentUpon>Estudante.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estudante.Master.designer.cs">
+      <DependentUpon>Estudante.Master</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAdm.aspx.cs">
+      <DependentUpon>LoginAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginAdm.aspx.designer.cs">
+      <DependentUpon>LoginAdm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginEstudante.aspx.cs">
+      <DependentUpon>LoginEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginEstudante.aspx.designer.cs">
+      <DependentUpon>LoginEstudante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginInstituicao.aspx.cs">
+      <DependentUpon>LoginInstituicao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginInstituicao.aspx.designer.cs">
+      <DependentUpon>LoginInstituicao.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Administrador.cs" />
     <Compile Include="Modelo\Bairro.cs" />
     <Compile Include="Modelo\Estudante.cs" />
@@ -196,7 +300,70 @@
     <Compile Include="Modelo\Recarga.cs" />
     <Compile Include="Modelo\Rota.cs" />
     <Compile Include="Modelo\Telefone.cs" />
+    <Compile Include="PerfilAdm.aspx.cs">
+      <DependentUpon>PerfilAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilAdm.aspx.designer.cs">
+      <DependentUpon>PerfilAdm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilEstudante.aspx.cs">
+      <DependentUpon>PerfilEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilEstudante.aspx.designer.cs">
+      <DependentUpon>PerfilEstudante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilInstituicao.aspx.cs">
+      <DependentUpon>PerfilInstituicao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilInstituicao.aspx.designer.cs">
+      <DependentUpon>PerfilInstituicao.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recarga.aspx.cs">
+      <DependentUpon>Recarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recarga.aspx.designer.cs">
+      <DependentUpon>Recarga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitacaoCarteira.aspx.cs">
+      <DependentUpon>SolicitacaoCarteira.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitacaoCarteira.aspx.designer.cs">
+      <DependentUpon>SolicitacaoCarteira.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitacaoInstituicao.aspx.cs">
+      <DependentUpon>SolicitacaoInstituicao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitacaoInstituicao.aspx.designer.cs">
+      <DependentUpon>SolicitacaoInstituicao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TelaInicial.aspx.cs">
+      <DependentUpon>TelaInicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TelaInicial.aspx.designer.cs">
+      <DependentUpon>TelaInicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TelaPrincipalEstudante.aspx.cs">
+      <DependentUpon>TelaPrincipalEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TelaPrincipalEstudante.aspx.designer.cs">
+      <DependentUpon>TelaPrincipalEstudante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TelaSolicitacaoCarteira.aspx.cs">
+      <DependentUpon>TelaSolicitacaoCarteira.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TelaSolicitacaoCarteira.aspx.designer.cs">
+      <DependentUpon>TelaSolicitacaoCarteira.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormTelaPrincipalAdm.aspx.cs">
       <DependentUpon>WebFormTelaPrincipalAdm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,8 +371,16 @@
     <Compile Include="WebFormTelaPrincipalAdm.aspx.designer.cs">
       <DependentUpon>WebFormTelaPrincipalAdm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebFormTelaPrincipalInstituicao.aspx.cs">
+      <DependentUpon>WebFormTelaPrincipalInstituicao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormTelaPrincipalInstituicao.aspx.designer.cs">
+      <DependentUpon>WebFormTelaPrincipalInstituicao.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Estudante.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

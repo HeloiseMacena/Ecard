@@ -25,16 +25,16 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
-                       <i class="fas fa-map-marked-alt"></i>
-                       <p>Pontos de recarga</p>
+                       <a class="ai" href="CadastroBairro.aspx"><i class="fas fa-arrow-left"></i></a>
+                       <p>Bairro</p>
                     </div>
                 </div>
                 <div class="box1-midi">
                       <h1>Editar</h1>
-                      <asp:TextBox ID="TextBox1" runat="server" CssClass="box1-mid" placeholder=""></asp:TextBox>
+                      <asp:TextBox ID="txtNome" runat="server" CssClass="box1-mid" placeholder=""></asp:TextBox>
                     <div class="btn-b2">
-                        <asp:Button class="btn-close" runat="server" Text="Excluir" OnClick="Unnamed1_Click"  />
-                        <asp:Button class="btn-save" runat="server" Text="Atualizar" OnClick="Unnamed2_Click" />
+                        <asp:Button class="btn-close" runat="server" Text="Excluir" OnClick="Delete_Click"  />
+                        <asp:Button class="btn-save" runat="server" Text="Atualizar" OnClick="Update_Click" />
                     </div>
                 </div>
             </div>

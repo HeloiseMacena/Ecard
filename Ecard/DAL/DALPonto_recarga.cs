@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace Ecardmark1.DAL
+namespace Ecard.DAL
 {
     public class DALPonto_recarga
     {
@@ -16,7 +16,7 @@ namespace Ecardmark1.DAL
 
         public DALPonto_recarga()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["PubsConnectionString"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
         }
 
 
@@ -35,7 +35,8 @@ namespace Ecardmark1.DAL
             {
                 while (dr.Read())
                 {
-                    Modelo.Ponto_recarga aPonto_recarga = new Modelo.Ponto_recarga( 
+                    Modelo.Ponto_recarga aPonto_recarga = new Modelo.Ponto_recarga(
+                         int.Parse(dr["id"].ToString()),
                         dr["nome_ponto"].ToString(),
                         dr["endereco_numero"].ToString(),
                         dr["endereco_logradouro"].ToString(),
@@ -129,6 +130,7 @@ namespace Ecardmark1.DAL
                 while (dr.Read())
                 {
                     aPonto_recarga = new Modelo.Ponto_recarga(
+                        int.Parse(dr["id"].ToString()),
                         dr["nome_ponto"].ToString(),
                         dr["endereco_numero"].ToString(),
                         dr["endereco_logradouro"].ToString(),
@@ -143,7 +145,6 @@ namespace Ecardmark1.DAL
 
             dr.Close();
             conn.Close();
-
             return aListPonto_recarga;
         }
     }

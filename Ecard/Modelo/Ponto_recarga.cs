@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Web;
 
-namespace Ecardmark1.Modelo
+namespace Ecard.Modelo
 {
     public class Ponto_recarga
     {
@@ -20,22 +20,24 @@ namespace Ecardmark1.Modelo
 
         public Ponto_recarga()
         {
+            this.id = 0;
             this.nome_ponto = "";
             this.endereco_numero = "";
             this.endereco_logradouro = "";
             this.endereco_cep = "";
-            this.endereco_municipio = "";
             this.endereco_bairro = "";
+            this.endereco_municipio = "";
         }
 
-        public Ponto_recarga(string nome_ponto, string endereco_numero, string endereco_logradouro, string endereco_cep, string endereco_bairro, string endereco_municipio)
+        public Ponto_recarga(int id, string nome_ponto, string endereco_numero, string endereco_logradouro, string endereco_cep, string endereco_bairro, string endereco_municipio)
         {
+            this.id = id;
             this.nome_ponto = nome_ponto;
             this.endereco_numero = endereco_numero;
             this.endereco_logradouro = endereco_logradouro;
             this.endereco_cep = endereco_cep;
-            this.endereco_municipio = endereco_municipio;
             this.endereco_bairro = endereco_bairro;
+            this.endereco_municipio = endereco_municipio;
         }
     }
 }

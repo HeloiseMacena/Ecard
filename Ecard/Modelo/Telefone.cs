@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Ecardmark1.Modelo
+namespace Ecard.Modelo
 {
     public class Telefone
     {
-        public int id { get; set; }
-        public string numero { get; set; }
+        public int Id { get; set; }
+        public string Numero { get; set; }
 
         public Telefone()
         {
-            this.numero = "";
+            this.Id = 0;
+            this.Numero = "";
         }
 
-        public Telefone(string numero)
+        public Telefone(int id, string numero)
         {
-            this.numero = numero;
+            this.Id = id;
+            this.Numero = numero;
         }
     }
 }

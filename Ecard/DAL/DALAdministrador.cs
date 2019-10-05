@@ -6,13 +6,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace Ecardmark1.DAL
+namespace Ecard.DAL
 {
     public class DALAdministrador
     {
         string connectionString = "";
 
-        public DALAdministrador() => connectionString = ConfigurationManager.ConnectionStrings["PubsConnectionString"].ConnectionString;
+        public DALAdministrador() => connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
 
 
 

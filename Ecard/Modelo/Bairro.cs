@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Ecardmark1.Modelo
+namespace Ecard.Modelo
 {
     public class Bairro
     {
-        public int id { get; set; }
-        public string nome { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
 
 
         public Bairro()
         {
-            this.nome = "";
+            this.Id = 0;
+            this.Nome = "";
         }
 
         public Bairro(string nome)
         {
-            this.nome = nome;
+            this.Nome = nome;
         }
     }
 }

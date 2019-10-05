@@ -7,7 +7,7 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Ecardmark1 {
+namespace Ecard {
     
     
     public partial class CadastroRotaEdit {
@@ -31,13 +31,13 @@ namespace Ecardmark1 {
         protected global::System.Web.UI.WebControls.TextBox TextBoxNome;
         
         /// <summary>
-        /// Controle TextBoxRua.
+        /// Controle DropDownBairro.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxRua;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownBairro;
         
         /// <summary>
         /// Controle TextBoxBairro.
@@ -49,13 +49,22 @@ namespace Ecardmark1 {
         protected global::System.Web.UI.WebControls.TextBox TextBoxBairro;
         
         /// <summary>
-        /// Controle Button10.
+        /// Controle Button11.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button10;
+        protected global::System.Web.UI.WebControls.Button Button11;
+        
+        /// <summary>
+        /// Controle DropDownReferencia.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownReferencia;
         
         /// <summary>
         /// Controle TextBoxReferencia.
@@ -67,40 +76,13 @@ namespace Ecardmark1 {
         protected global::System.Web.UI.WebControls.TextBox TextBoxReferencia;
         
         /// <summary>
-        /// Controle Button3.
+        /// Controle Button22.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
-        
-        /// <summary>
-        /// Controle DropDownList1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-        
-        /// <summary>
-        /// Controle ObjectDataSource1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
-        
-        /// <summary>
-        /// Controle Button1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Button22;
         
         /// <summary>
         /// Controle iconTeste.

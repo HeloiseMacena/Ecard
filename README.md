@@ -1,3 +1,0 @@
-# Ecard
-
-Projeto Integrador

@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
-namespace Ecardmark1.DAL
+namespace Ecard.DAL
 {
     public class DALRota
     {
@@ -22,6 +22,7 @@ namespace Ecardmark1.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Rota> SelectAll()
         {
+            Modelo.Rota aRota;
             List<Modelo.Rota> aListRota = new List<Modelo.Rota>();
 
             SqlConnection conn = new SqlConnection(connectionString);
@@ -34,7 +35,7 @@ namespace Ecardmark1.DAL
 
                 while (dr.Read())
                 {
-                    Modelo.Rota aRota = new Modelo.Rota(
+                    aRota = new Modelo.Rota(
                         dr["nome"].ToString()
                         );
                     aRota.id = Convert.ToInt32(dr["id"].ToString());
@@ -66,16 +67,22 @@ namespace Ecardmark1.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(Modelo.Rota obj)
+        public void Insert(Modelo.Rota obj,int ponto_referencia_id, int bairro_id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO rota (nome, administrador_id) VALUES (@nome, 1)", conn);
-
+            SqlCommand cmd = new SqlCommand("INSERT INTO rota (nome, administrador_id, ponto_referencia_id) VALUES (@nome, 1,@ponto_referencia_id)", conn);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
-
+            cmd.Parameters.AddWithValue("@ponto_referencia_id", ponto_referencia_id);
             cmd.ExecuteNonQuery();
+            cmd = new SqlCommand("Select @@identity as id", conn);
+            int id = Convert.ToInt32(cmd.ExecuteScalar());
+            cmd = new SqlCommand("INSERT INTO Rotas_Bairro(rotas_id,bairro_id) VALUES (@rota_id,@bairro_id)", conn);
+            cmd.Parameters.AddWithValue("@bairro_id",bairro_id);
+            cmd.Parameters.AddWithValue("@rota_id", id);
+            cmd.ExecuteNonQuery();
+
 
         }
 
@@ -91,7 +98,6 @@ namespace Ecardmark1.DAL
 
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
-
             cmd.ExecuteNonQuery();
         }
 
@@ -99,12 +105,17 @@ namespace Ecardmark1.DAL
 
         [DataObjectMethod(DataObjectMethodType.Select)]
 <<<<<<< HEAD
+<<<<<<< HEAD
         public Modelo.Rota Select(int id)
 =======
         public List<Modelo.Rota> Select(string id)
 >>>>>>> master
+=======
+        public Modelo.Rota Select(int id)
+>>>>>>> 8b4e53278fe63098a130cfa91e798f00b2a21a50
         {
-            List<Modelo.Rota> aListRota = new List<Modelo.Rota>();
+            Modelo.Rota aRota;
+            Modelo.Rota aListRota = new Modelo.Rota();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
@@ -115,17 +126,16 @@ namespace Ecardmark1.DAL
             {
                 while (dr.Read())
                 {
-                    Modelo.Rota aRota = new Modelo.Rota(
+                    aRota = new Modelo.Rota(
                         dr["nome"].ToString()
                         );
-                    aRota.id = Convert.ToInt32(dr["id"].ToString());
-                    aListRota.Add(aRota);
+                    aRota.id = Convert.ToInt32(dr["id"].ToString()); 
+                    aListRota = aRota;
                 }
             }
 
             dr.Close();
             conn.Close();
-
             return aListRota;
         }
     }

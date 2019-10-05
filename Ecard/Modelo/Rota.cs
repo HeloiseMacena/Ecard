@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading;
 using System.Web;
 
-namespace Ecardmark1.Modelo
+namespace Ecard.Modelo
 {
     public class Rota
     {
         public int id { get; set; }
         public string nome { get; set; }
+
+        public static int globalRotaId;
 
         public Rota()
         {
@@ -18,7 +20,7 @@ namespace Ecardmark1.Modelo
 
         public Rota(string nome)
         {
-
+          
             this.nome = nome;
         }
     }

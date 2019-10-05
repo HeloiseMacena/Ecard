@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="CadastroRotaEdit.aspx.cs" Inherits="Ecardmark1.CadastroRotaEdit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="CadastroRotaEdit.aspx.cs" Inherits="Ecard.CadastroRotaEdit" %>
 
 <!DOCTYPE html>
 
@@ -31,17 +31,21 @@
                 </div>
                 <div class="box1-midi">
                       <h1>Cadastro</h1>
-                      <asp:TextBox ID="TextBoxNome" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>
-                     <!-- <asp:TextBox ID="TextBoxRua" runat="server" CssClass="box1-mid" placeholder="Rua"></asp:TextBox> -->   
-                      <asp:TextBox ID="TextBoxBairro" runat="server" CssClass="box1-mid-1" placeholder="Bairro"></asp:TextBox> <asp:Button ID="Button10" class="btn-add-1" runat="server" Text="Adicionar"/>
-                      <asp:TextBox ID="TextBoxReferencia" runat="server" CssClass="box1-mid-1" placeholder="Ponto de Referência"></asp:TextBox> <asp:Button ID="Button3" class="btn-add-1" runat="server" Text="Adicionar"/>
-                      
+                      <asp:TextBox ID="TextBoxNome" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>   
+                    <div class="org-1">
+                        <asp:DropDownList ID="DropDownBairro" runat="server"></asp:DropDownList>
+                        <!-- <asp:TextBox ID="TextBoxBairro" runat="server" CssClass="box1-mid-1" placeholder="Bairro"></asp:TextBox> -->
+                        <asp:Button ID="Button11" class="btn-add-1" runat="server" Text="Adicionar" PostBackUrl="~/CadastroBairroEdit.aspx"/>
+                    </div> 
+                    <div class="org-1">
+                        <asp:DropDownList ID="DropDownReferencia" runat="server"></asp:DropDownList>
+                        <!--<asp:TextBox ID="TextBoxReferencia" runat="server" CssClass="box1-mid-1" placeholder="Ponto de Referência"></asp:TextBox> -->
+                        <asp:Button ID="Button22" class="btn-add-1" runat="server" Text="Adicionar" PostBackUrl="~/CadastroPontoReferenciaEdit.aspx"/>
+                    </div>
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroRota.aspx" />
                         <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed2_Click" />
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ObjectDataSource1" DataTextField="nome" DataValueField="id"></asp:DropDownList>
-                        <!-- <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectAll" TypeName="Ecardmark1.DAL.DALRota"></asp:ObjectDataSource> 
-                        <asp:Button   class="btn-save" ID="Button1" runat="server" Text="Adicionar" /> -->
+
                     </div>
                 </div>
             </div>
