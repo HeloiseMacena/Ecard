@@ -1,0 +1,430 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1772BAD3-05DB-4F8F-8148-A88FE1695161}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ecard</RootNamespace>
+    <AssemblyName>Ecard</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CadastroBairro.aspx" />
+    <Content Include="CadastroBairroEdit.aspx" />
+    <Content Include="CadastroEstudante.aspx" />
+    <Content Include="CadastroInstituicao.aspx" />
+    <Content Include="CadastroPassagem.aspx" />
+    <Content Include="ConsultaPontodeRecarga.aspx" />
+    <Content Include="EditEstudante.aspx" />
+    <Content Include="Imagens\fotocarteira.png" />
+    <Content Include="JS\Events.js" />
+    <Content Include="LoginAdm.aspx" />
+    <Content Include="LoginEstudante.aspx" />
+    <Content Include="LoginInstituicao.aspx" />
+    <Content Include="PerfilAdm.aspx" />
+    <Content Include="PerfilEstudante.aspx" />
+    <Content Include="PerfilInstituicao.aspx" />
+    <Content Include="Recarga.aspx" />
+    <Content Include="SolicitacaoCarteira.aspx" />
+    <Content Include="SolicitacaoInstituicao.aspx" />
+    <Content Include="StyleCadastroEstudante.css" />
+    <Content Include="CadastroPonto.aspx" />
+    <Content Include="CadastroPontoEdit.aspx" />
+    <Content Include="CadastroPontoReferencia.aspx" />
+    <Content Include="CadastroPontoReferenciaEdit.aspx" />
+    <Content Include="CadastroRota.aspx" />
+    <Content Include="CadastroRotaEdit.aspx" />
+    <Content Include="EditarBairro.aspx" />
+    <Content Include="EditarPonto.aspx" />
+    <Content Include="EditarPontoReferencia.aspx" />
+    <Content Include="EditarRota.aspx" />
+    <Content Include="Imagens\ECard.png" />
+    <Content Include="Imagens\lupa.jpg" />
+    <Content Include="StyleCadastroInstituicao.css" />
+    <Content Include="StyleCadastroPassagem.css" />
+    <Content Include="StyleCadastroPonto.css" />
+    <Content Include="StyleCadastroRota.css" />
+    <Content Include="StyleConsultaPontodeRecarga.css" />
+    <Content Include="StyleEditarPonto.css" />
+    <Content Include="StyleEditarRota.css" />
+    <Content Include="StyleEditEstudante.css" />
+    <Content Include="StyleHeader.css" />
+    <Content Include="StyleLoginAdm.css" />
+    <Content Include="StyleLoginEstudante.css" />
+    <Content Include="StyleLoginInstituicao.css" />
+    <Content Include="StylePerfilAdm.css" />
+    <Content Include="StylePerfilEstudante.css" />
+    <Content Include="StylePerfilInstituicao.css" />
+    <Content Include="StylePonto.css" />
+    <Content Include="StylePontoBairro.css" />
+    <Content Include="StyleRota.css" />
+    <Content Include="StyleSolicitacaoCarteira.css" />
+    <Content Include="StyleSolicitacaoInstituicao.css" />
+    <Content Include="StyleTelaInicial.css" />
+    <Content Include="StyleTelaPrincipalAdm.css" />
+    <Content Include="StyleTelaPrincipalEstudante.css" />
+    <Content Include="StyleTelaPrincipalInstituicao.css" />
+    <Content Include="StyleTelaSolicitacaoCarteira.css" />
+    <Content Include="TelaInicial.aspx" />
+    <Content Include="TelaPrincipalEstudante.aspx" />
+    <Content Include="TelaSolicitacaoCarteira.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebFormTelaPrincipalAdm.aspx" />
+    <Content Include="WebFormTelaPrincipalInstituicao.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CadastroBairro.aspx.cs">
+      <DependentUpon>CadastroBairro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroBairro.aspx.designer.cs">
+      <DependentUpon>CadastroBairro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroBairroEdit.aspx.cs">
+      <DependentUpon>CadastroBairroEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroBairroEdit.aspx.designer.cs">
+      <DependentUpon>CadastroBairroEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroEstudante.aspx.cs">
+      <DependentUpon>CadastroEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroEstudante.aspx.designer.cs">
+      <DependentUpon>CadastroEstudante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroInstituicao.aspx.cs">
+      <DependentUpon>CadastroInstituicao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroInstituicao.aspx.designer.cs">
+      <DependentUpon>CadastroInstituicao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroPassagem.aspx.cs">
+      <DependentUpon>CadastroPassagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroPassagem.aspx.designer.cs">
+      <DependentUpon>CadastroPassagem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroPonto.aspx.cs">
+      <DependentUpon>CadastroPonto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroPonto.aspx.designer.cs">
+      <DependentUpon>CadastroPonto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroPontoEdit.aspx.cs">
+      <DependentUpon>CadastroPontoEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroPontoEdit.aspx.designer.cs">
+      <DependentUpon>CadastroPontoEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroPontoReferencia.aspx.cs">
+      <DependentUpon>CadastroPontoReferencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroPontoReferencia.aspx.designer.cs">
+      <DependentUpon>CadastroPontoReferencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroPontoReferenciaEdit.aspx.cs">
+      <DependentUpon>CadastroPontoReferenciaEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroPontoReferenciaEdit.aspx.designer.cs">
+      <DependentUpon>CadastroPontoReferenciaEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroRota.aspx.cs">
+      <DependentUpon>CadastroRota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroRota.aspx.designer.cs">
+      <DependentUpon>CadastroRota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroRotaEdit.aspx.cs">
+      <DependentUpon>CadastroRotaEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroRotaEdit.aspx.designer.cs">
+      <DependentUpon>CadastroRotaEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaPontodeRecarga.aspx.cs">
+      <DependentUpon>ConsultaPontodeRecarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaPontodeRecarga.aspx.designer.cs">
+      <DependentUpon>ConsultaPontodeRecarga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DALAdministrador.cs" />
+    <Compile Include="DAL\DALBairro.cs" />
+    <Compile Include="DAL\DALEstudante.cs" />
+    <Compile Include="DAL\DALInstituicao.cs" />
+    <Compile Include="DAL\DALLista_alunos.cs" />
+    <Compile Include="DAL\DALPonto_recarga.cs" />
+    <Compile Include="DAL\DALPonto_referencia.cs" />
+    <Compile Include="DAL\DALRecarga.cs" />
+    <Compile Include="DAL\DALRota.cs" />
+    <Compile Include="DAL\DALTelefone.cs" />
+    <Compile Include="EditarBairro.aspx.cs">
+      <DependentUpon>EditarBairro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarBairro.aspx.designer.cs">
+      <DependentUpon>EditarBairro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarPonto.aspx.cs">
+      <DependentUpon>EditarPonto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarPonto.aspx.designer.cs">
+      <DependentUpon>EditarPonto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarPontoReferencia.aspx.cs">
+      <DependentUpon>EditarPontoReferencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarPontoReferencia.aspx.designer.cs">
+      <DependentUpon>EditarPontoReferencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarRota.aspx.cs">
+      <DependentUpon>EditarRota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarRota.aspx.designer.cs">
+      <DependentUpon>EditarRota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditEstudante.aspx.cs">
+      <DependentUpon>EditEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditEstudante.aspx.designer.cs">
+      <DependentUpon>EditEstudante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estudante.Master.cs">
+      <DependentUpon>Estudante.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estudante.Master.designer.cs">
+      <DependentUpon>Estudante.Master</DependentUpon>
+    </Compile>
+    <Compile Include="LoginAdm.aspx.cs">
+      <DependentUpon>LoginAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginAdm.aspx.designer.cs">
+      <DependentUpon>LoginAdm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginEstudante.aspx.cs">
+      <DependentUpon>LoginEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginEstudante.aspx.designer.cs">
+      <DependentUpon>LoginEstudante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginInstituicao.aspx.cs">
+      <DependentUpon>LoginInstituicao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginInstituicao.aspx.designer.cs">
+      <DependentUpon>LoginInstituicao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Administrador.cs" />
+    <Compile Include="Modelo\Bairro.cs" />
+    <Compile Include="Modelo\Estudante.cs" />
+    <Compile Include="Modelo\Instituicao.cs" />
+    <Compile Include="Modelo\Lista_alunos.cs" />
+    <Compile Include="Modelo\Ponto_recarga.cs" />
+    <Compile Include="Modelo\Ponto_referencia.cs" />
+    <Compile Include="Modelo\Recarga.cs" />
+    <Compile Include="Modelo\Rota.cs" />
+    <Compile Include="Modelo\Telefone.cs" />
+    <Compile Include="PerfilAdm.aspx.cs">
+      <DependentUpon>PerfilAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilAdm.aspx.designer.cs">
+      <DependentUpon>PerfilAdm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilEstudante.aspx.cs">
+      <DependentUpon>PerfilEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilEstudante.aspx.designer.cs">
+      <DependentUpon>PerfilEstudante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilInstituicao.aspx.cs">
+      <DependentUpon>PerfilInstituicao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilInstituicao.aspx.designer.cs">
+      <DependentUpon>PerfilInstituicao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recarga.aspx.cs">
+      <DependentUpon>Recarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recarga.aspx.designer.cs">
+      <DependentUpon>Recarga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitacaoCarteira.aspx.cs">
+      <DependentUpon>SolicitacaoCarteira.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitacaoCarteira.aspx.designer.cs">
+      <DependentUpon>SolicitacaoCarteira.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitacaoInstituicao.aspx.cs">
+      <DependentUpon>SolicitacaoInstituicao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitacaoInstituicao.aspx.designer.cs">
+      <DependentUpon>SolicitacaoInstituicao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TelaInicial.aspx.cs">
+      <DependentUpon>TelaInicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TelaInicial.aspx.designer.cs">
+      <DependentUpon>TelaInicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TelaPrincipalEstudante.aspx.cs">
+      <DependentUpon>TelaPrincipalEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TelaPrincipalEstudante.aspx.designer.cs">
+      <DependentUpon>TelaPrincipalEstudante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TelaSolicitacaoCarteira.aspx.cs">
+      <DependentUpon>TelaSolicitacaoCarteira.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TelaSolicitacaoCarteira.aspx.designer.cs">
+      <DependentUpon>TelaSolicitacaoCarteira.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormTelaPrincipalAdm.aspx.cs">
+      <DependentUpon>WebFormTelaPrincipalAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormTelaPrincipalAdm.aspx.designer.cs">
+      <DependentUpon>WebFormTelaPrincipalAdm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormTelaPrincipalInstituicao.aspx.cs">
+      <DependentUpon>WebFormTelaPrincipalInstituicao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormTelaPrincipalInstituicao.aspx.designer.cs">
+      <DependentUpon>WebFormTelaPrincipalInstituicao.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Estudante.Master" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63693</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63693/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecard", "Ecard\Ecard.csproj", "{1772BAD3-05DB-4F8F-8148-A88FE1695161}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1772BAD3-05DB-4F8F-8148-A88FE1695161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1772BAD3-05DB-4F8F-8148-A88FE1695161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1772BAD3-05DB-4F8F-8148-A88FE1695161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1772BAD3-05DB-4F8F-8148-A88FE1695161}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFCA5CDA-6175-4ECE-AD40-07906565E77C}
+	EndGlobalSection
+EndGlobal
