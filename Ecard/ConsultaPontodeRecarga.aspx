@@ -1,37 +1,28 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroPonto.aspx.cs" Inherits="Ecard.CadastroPonto" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="StylePonto.css"/>
-     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="JS/Events.js"></script>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div class="header max">
-            <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
-            <div class="ol">
-                <div class="li">Menu</div>
-                <div class="li">Page 2</div>
-                <div class="li">Page 3</div>
-                <div class="li">Page 4</div> 
-                <div class="menu-user">Daniel Victor</div>
-            </div>
-        </div>
-        <div class="container">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Estudante.Master" AutoEventWireup="true" CodeBehind="ConsultaPontodeRecarga.aspx.cs" Inherits="Ecard.CnsultaPontodeRecarga" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+      <link rel="stylesheet" type="text/css" href="StyleConsultaPontodeRecarga.css"/>
+    <div class="container">
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
                         <a class="ai" href="WebFormTelaPrincipalAdm.aspx"><i class="fas fa-arrow-left"></i></a>
                        <p>Pontos de recarga</p>
                     </div>
-                    <div class="box1-button">
-                        <asp:Button runat="server" CssClass="btnAdd" Text="Novo" PostBackUrl="~/CadastroPontoEdit.aspx" />
+                </div>
+                <div class="hl-2"></div><!--  horizontal line -->
+                <div class=" pesq">
+                    <asp:Label ID="Label2" CssClass="text-men" runat="server" Text="Encontre o ponto mais perto de você!"></asp:Label> 
+                    <asp:TextBox ID="TextBox1" CssClass="textbox1" runat="server" placeholder="Pesquisar"></asp:TextBox>
+                    <div class="pesq-2">
+                        <asp:DropDownList CssClass="ddlist1" runat="server">
+                        <asp:ListItem>Nome</asp:ListItem>
+                        <asp:ListItem>Logradouro</asp:ListItem>
+                        <asp:ListItem>Bairro</asp:ListItem>
+                        <asp:ListItem>CEP</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:Button ID="Button1" CssClass="btn-loc" runat="server" Text="Localizar" />
                     </div>
                 </div>
                 <div class="help">
@@ -42,15 +33,15 @@
                                     <p class="ponto-nome"><%#Eval("nome_ponto")%></p>
                                     <p class="ponto-rua">Logradouro: <%#Eval("endereco_logradouro")%></p>
                                 </div>
+
                                 <div class="vl"></div> <!-- vertical line -->
+
                                 <div class="pontoItem-bairro">
                                     <p class="ponto-bairro-title">Bairro</p>
                                     <p><%#Eval("endereco_bairro")%></p>
                                 </div>
                                 <div class="ponto-but"> 
                                    <asp:Button runat="server" Text="Mais" CommandArgument='<%#Eval("id")%>' CssClass="action-button animate blue" OnClick="getModalInfos_Click" />
-                                   <asp:LinkButton CssClass="link-but" runat="server"  PostBackUrl='<%#"~/EditarPonto.aspx?id=" +  Eval("id") %>'> <i class="fas fa-pen-square"></i> </asp:LinkButton>
-                                  
                                   </div>
                             </div> 
                         </ItemTemplate>
@@ -61,12 +52,13 @@
                 </div>
               </div>
             <div class="box2">
+                 <div class="box2">
                 <div class="box2-user-container">
                     <div class="box2-user">
                          <i class="fas fa-user-circle"></i>
                          <div class="user-name"> 
                             <h1>User</h1>
-                            <p>Administrador</p>
+                            <p>Estudante</p>
                         </div>
                     </div>
                     <div class="box2-button">
@@ -76,13 +68,16 @@
 
                 <div class="box2-ponto">
                     <div class="ponto">
-                        <p>Pontos de recarga</p>
+                        <p>Seu Saldo</p>
                     </div>
-                    <div class="ponto2">
-                        <i class="fas fa-search"></i>
-                        <p>Pesquisar</p>
+                     <div class="hl"></div> <!--  horizontal line -->
+                    <asp:Label ID="Label1" CssClass="title-money" runat="server" Text="R$ 9,58"></asp:Label>
+                    <div class="btns">
+                         <asp:Button class="btn-rec" runat="server" Text="Recarregar" />
+                        <asp:Button class="btn-calc" runat="server" Text="Calcular Passagens"  />
                     </div>
                 </div>
+            </div>
             </div>
             <div>   <!-- Modal -->
                 <div class="help-modal">
@@ -121,6 +116,4 @@
                 </div>
             </div>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

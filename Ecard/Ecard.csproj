@@ -72,6 +72,7 @@
     <Content Include="CadastroEstudante.aspx" />
     <Content Include="CadastroInstituicao.aspx" />
     <Content Include="CadastroPassagem.aspx" />
+    <Content Include="ConsultaPontodeRecarga.aspx" />
     <Content Include="EditEstudante.aspx" />
     <Content Include="Imagens\fotocarteira.png" />
     <Content Include="JS\Events.js" />
@@ -80,6 +81,7 @@
     <Content Include="LoginInstituicao.aspx" />
     <Content Include="PerfilAdm.aspx" />
     <Content Include="PerfilInstituicao.aspx" />
+    <Content Include="Recarga.aspx" />
     <Content Include="SolicitacaoCarteira.aspx" />
     <Content Include="SolicitacaoInstituicao.aspx" />
     <Content Include="StyleCadastroEstudante.css" />
@@ -99,6 +101,7 @@
     <Content Include="StyleCadastroPassagem.css" />
     <Content Include="StyleCadastroPonto.css" />
     <Content Include="StyleCadastroRota.css" />
+    <Content Include="StyleConsultaPontodeRecarga.css" />
     <Content Include="StyleEditarPonto.css" />
     <Content Include="StyleEditarRota.css" />
     <Content Include="StyleEditEstudante.css" />
@@ -119,7 +122,9 @@
     <Content Include="StyleTelaSolicitacaoCarteira.css" />
     <Content Include="TelaInicial.aspx" />
     <Content Include="TelaSolicitacaoCarteira.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WebFormTelaPrincipalAdm.aspx" />
     <Content Include="WebFormTelaPrincipalInstituicao.aspx" />
   </ItemGroup>
@@ -200,6 +205,13 @@
     </Compile>
     <Compile Include="CadastroRotaEdit.aspx.designer.cs">
       <DependentUpon>CadastroRotaEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaPontodeRecarga.aspx.cs">
+      <DependentUpon>ConsultaPontodeRecarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaPontodeRecarga.aspx.designer.cs">
+      <DependentUpon>ConsultaPontodeRecarga.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\DALAdministrador.cs" />
     <Compile Include="DAL\DALBairro.cs" />
@@ -299,6 +311,13 @@
       <DependentUpon>PerfilInstituicao.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recarga.aspx.cs">
+      <DependentUpon>Recarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recarga.aspx.designer.cs">
+      <DependentUpon>Recarga.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SolicitacaoCarteira.aspx.cs">
       <DependentUpon>SolicitacaoCarteira.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
