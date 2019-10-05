@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" type="text/css" href="StylePerfilAdm.css"/>
+    <link rel="stylesheet" type="text/css" href="StylePerfilEstudante.css"/>
     <div class="container">
         <div class="box1">
             <div class="box1-header">

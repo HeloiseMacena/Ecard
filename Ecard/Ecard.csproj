@@ -111,6 +111,7 @@
     <Content Include="StyleLoginEstudante.css" />
     <Content Include="StyleLoginInstituicao.css" />
     <Content Include="StylePerfilAdm.css" />
+    <Content Include="StylePerfilEstudante.css" />
     <Content Include="StylePerfilInstituicao.css" />
     <Content Include="StylePonto.css" />
     <Content Include="StylePontoBairro.css" />
