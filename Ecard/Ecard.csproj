@@ -74,6 +74,7 @@
     <Content Include="CadastroPassagem.aspx" />
     <Content Include="ConsultaPontodeRecarga.aspx" />
     <Content Include="EditEstudante.aspx" />
+    <Content Include="Imagens\default.png" />
     <Content Include="Imagens\fotocarteira.png" />
     <Content Include="JS\Events.js" />
     <Content Include="LoginAdm.aspx" />

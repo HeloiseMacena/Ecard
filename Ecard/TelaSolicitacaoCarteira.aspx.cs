@@ -13,18 +13,23 @@ namespace Ecard
 
         protected void btnUpload_Click(object sender, EventArgs e)
         {
-            BinaryReader br = new BinaryReader(FileUpload1.PostedFile.InputStream);
-            byte[] bytes = br.ReadBytes((int)FileUpload1.PostedFile.InputStream.Length);
+            try
+            {
+                BinaryReader br = new BinaryReader(FileUpload1.PostedFile.InputStream);
+                byte[] bytes = br.ReadBytes((int)FileUpload1.PostedFile.InputStream.Length);
 
-            string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+                string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
 
 
-            byte[] imageBytes = Convert.FromBase64String(base64String);
+                byte[] imageBytes = Convert.FromBase64String(base64String);
 
-            string filePath = Server.MapPath("~/Imagens/" + Path.GetFileName(FileUpload1.PostedFile.FileName));
-            File.WriteAllBytes(filePath, imageBytes);
+                string filePath = Server.MapPath("~/Imagens/" + Path.GetFileName(FileUpload1.PostedFile.FileName));
+                File.WriteAllBytes(filePath, imageBytes);
 
-            userImage.ImageUrl = "Imagens/" + FileUpload1.FileName;
+                userImage.ImageUrl = "Imagens/" + FileUpload1.FileName;
+            } catch {
+                
+            }
         }
 
     }

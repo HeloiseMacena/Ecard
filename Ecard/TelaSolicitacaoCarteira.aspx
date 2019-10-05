@@ -4,6 +4,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <link rel="stylesheet" type="text/css" href="StyleTelaSolicitacaoCarteira.css"/>
+    <script>
+        function selectFile() {
+            $('#ContentPlaceHolder1_FileUpload1').click();
+        }
+
+        function uploadPhoto() {
+            $('#ContentPlaceHolder1_btnUpload1').click();
+        }
+    </script>
 
      <div class="container">
 
@@ -22,31 +31,52 @@
                         <asp:Label ID="Label2" cssClass="info-cor" runat="server" Text="Se os dados abaixo estiverem INCORRETOS, procure a sua ESCOLA e solicite atualização de dados antes de solicitar!"></asp:Label>
                     </div>
                     <div class="info-2">
-                        <asp:Label ID="Label3" CssClass="azul" runat="server" Text="Nome"></asp:Label>
+                        <div class="info-2-label">
+                            <asp:Label ID="Label3" CssClass="azul" runat="server" Text="Nome"></asp:Label>
+                        </div>
                         <asp:Label ID="Label4" CssClass="campo-inf" runat="server" Text="Dara Hadrielle da Cunha Rocha "></asp:Label>
                     </div>
-                     <div class="info-2">
-                        <asp:Label ID="Label5" CssClass="azul-2" runat="server" Text="RG"></asp:Label>
-                        <asp:Label ID="Label6" CssClass="campo-inf-2" runat="server" Text="123.456.789"></asp:Label>
+                     <div class="info-2"> 
+                        <div class="info-2-label">
+                            <asp:Label ID="Label5" CssClass="azul" runat="server" Text="RG"></asp:Label>
+                        </div>
+                        <asp:Label ID="Label6" CssClass="campo-inf" runat="server" Text="123.456.789"></asp:Label>
                     </div>
                      <div class="info-2">
-                        <asp:Label ID="Label7" CssClass="azul-3" runat="server" Text="CPF"></asp:Label>
-                        <asp:Label ID="Label8" CssClass="campo-inf-3" runat="server" Text="123.456.789-11 "></asp:Label>
+                        <div class="info-2-label">
+                            <asp:Label ID="Label7" CssClass="azul" runat="server" Text="CPF"></asp:Label>
+                        </div>
+                        <asp:Label ID="Label8" CssClass="campo-inf" runat="server" Text="123.456.789-11 "></asp:Label>
                     </div>
                      <div class="info-2">
-                        <asp:Label ID="Label9" CssClass="azul-4" runat="server" Text="Nascimento"></asp:Label>
-                        <asp:Label ID="Label10" CssClass="campo-inf-4" runat="server" Text="01/01/2001"></asp:Label>
+                        <div class="info-2-label">
+                            <asp:Label ID="Label9" CssClass="azul" runat="server" Text="Nascimento"></asp:Label>
+                        </div>
+                        <asp:Label ID="Label10" CssClass="campo-inf" runat="server" Text="01/01/2001"></asp:Label>
                     </div>
                      <div class="info-2">
-                        <asp:Label ID="Label11" CssClass="azul-5" runat="server" Text="Instituição"></asp:Label>
-                        <asp:Label ID="Label12" CssClass="campo-inf-5" runat="server" Text="IFRN "></asp:Label>
+                        <div class="info-2-label">
+                            <asp:Label ID="Label11" CssClass="azul" runat="server" Text="Instituição"></asp:Label>
+                        </div>
+                        <asp:Label ID="Label12" CssClass="campo-inf" runat="server" Text="IFRN "></asp:Label>
                     </div>
-                    <div class="image-1" ><img src="Imagens/fotocarteira.png"  style="max-width:100%;"/></div>
+                    <div class="image-1" ><img src="Imagens/fotocarteira.png"  style="width:100%;"/></div>
                     <div class="photo">
-                        <asp:FileUpload ID="FileUpload1" runat="server" class="multi"  AllowMultiple="true"/>
-                        <asp:Label ID="Status" runat="server" Text="Upload"></asp:Label>
-                        <asp:Button ID="btnUpload" runat="server" Text="Carregar Fotos" onclick="btnUpload_Click" BackColor="#CC0000" BorderColor="#CC0000" Font-Bold="True" ForeColor="White" />
-                        <asp:Image runat="server" ID="userImage" Height="100"  />
+                        <div>
+                            <asp:Image runat="server" ImageUrl="~/Imagens/default.png" Width="200" ID="userImage" />
+                        </div>
+                        <div style="margin-left: 20px;" class="photo-content">
+                            <div>
+                                <h1 style="font-size: 22px; font-weight: 700; margin-bottom: 10px;">Selecione a sua foto</h1>
+                                <label style="font-size: 14px;">Escolha uma foto que atenda a todos os requisitos apresentados acima e aperte em enviar!</label>
+                            </div>
+                            <div style="margin-bottom: 4px; display: flex; align-items: flex-end">
+                                <asp:FileUpload ID="FileUpload1" runat="server" class="multi" AllowMultiple="true" onchange="uploadPhoto()" />
+                                <asp:Button ID="btnUpload" CssClass="btnUpload" runat="server" Text="Carregar Foto" OnClientClick="selectFile(); return false;" />
+                                <asp:Button runat="server" CssClass="btnSubmit" Text="Enviar" />
+                                <asp:Button runat="server" ID="btnUpload1" OnClick="btnUpload_Click" style="display: none" />
+                            </div>
+                        </div>
                     </div>
                 </div>
               </div>
