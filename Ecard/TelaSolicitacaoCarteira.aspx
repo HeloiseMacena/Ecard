@@ -25,6 +25,29 @@
                         <asp:Label ID="Label3" CssClass="azul" runat="server" Text="Nome"></asp:Label>
                         <asp:Label ID="Label4" CssClass="campo-inf" runat="server" Text="Dara Hadrielle da Cunha Rocha "></asp:Label>
                     </div>
+                     <div class="info-2">
+                        <asp:Label ID="Label5" CssClass="azul-2" runat="server" Text="RG"></asp:Label>
+                        <asp:Label ID="Label6" CssClass="campo-inf-2" runat="server" Text="123.456.789"></asp:Label>
+                    </div>
+                     <div class="info-2">
+                        <asp:Label ID="Label7" CssClass="azul-3" runat="server" Text="CPF"></asp:Label>
+                        <asp:Label ID="Label8" CssClass="campo-inf-3" runat="server" Text="123.456.789-11 "></asp:Label>
+                    </div>
+                     <div class="info-2">
+                        <asp:Label ID="Label9" CssClass="azul-4" runat="server" Text="Nascimento"></asp:Label>
+                        <asp:Label ID="Label10" CssClass="campo-inf-4" runat="server" Text="01/01/2001"></asp:Label>
+                    </div>
+                     <div class="info-2">
+                        <asp:Label ID="Label11" CssClass="azul-5" runat="server" Text="Instituição"></asp:Label>
+                        <asp:Label ID="Label12" CssClass="campo-inf-5" runat="server" Text="IFRN "></asp:Label>
+                    </div>
+                    <div class="image-1" ><img src="Imagens/fotocarteira.png"  style="max-width:100%;"/></div>
+                    <div class="photo">
+                        <asp:FileUpload ID="FileUpload1" runat="server" class="multi"  AllowMultiple="true"/>
+                        <asp:Label ID="Status" runat="server" Text="Upload"></asp:Label>
+                        <asp:Button ID="btnUpload" runat="server" Text="Carregar Fotos" onclick="btnUpload_Click" BackColor="#CC0000" BorderColor="#CC0000" Font-Bold="True" ForeColor="White" />
+                        <asp:Image runat="server" ID="userImage" Height="100"  />
+                    </div>
                 </div>
               </div>
             <div class="box2">

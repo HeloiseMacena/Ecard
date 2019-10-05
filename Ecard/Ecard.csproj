@@ -73,6 +73,7 @@
     <Content Include="CadastroInstituicao.aspx" />
     <Content Include="CadastroPassagem.aspx" />
     <Content Include="EditEstudante.aspx" />
+    <Content Include="Imagens\fotocarteira.png" />
     <Content Include="JS\Events.js" />
     <Content Include="LoginAdm.aspx" />
     <Content Include="LoginEstudante.aspx" />
@@ -120,7 +121,6 @@
     <Content Include="TelaSolicitacaoCarteira.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebFormTelaPrincipalAdm.aspx" />
-    <Content Include="WebFormTelaPrincipalEstudante.aspx" />
     <Content Include="WebFormTelaPrincipalInstituicao.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -333,13 +333,6 @@
     </Compile>
     <Compile Include="WebFormTelaPrincipalAdm.aspx.designer.cs">
       <DependentUpon>WebFormTelaPrincipalAdm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebFormTelaPrincipalEstudante.aspx.cs">
-      <DependentUpon>WebFormTelaPrincipalEstudante.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebFormTelaPrincipalEstudante.aspx.designer.cs">
-      <DependentUpon>WebFormTelaPrincipalEstudante.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormTelaPrincipalInstituicao.aspx.cs">
       <DependentUpon>WebFormTelaPrincipalInstituicao.aspx</DependentUpon>
