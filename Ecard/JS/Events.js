@@ -3,13 +3,15 @@
         var height = $(window).scrollTop();
 
         if (height !== 0) {
-            if (document.querySelector('.header').className === "header") {
+            if (document.querySelector('.header').className === "header max") {
+                document.querySelector('.header').classList.remove('max');
                 document.querySelector('.header').classList.add('min');
             }
         }
         if (height === 0) {
             if (document.querySelector('.header').className === "header min") {
                 document.querySelector('.header').classList.remove('min');
+                document.querySelector('.header').classList.add('max');
             }
         }
     });
