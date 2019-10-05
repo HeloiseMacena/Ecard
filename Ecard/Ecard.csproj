@@ -81,6 +81,7 @@
     <Content Include="LoginEstudante.aspx" />
     <Content Include="LoginInstituicao.aspx" />
     <Content Include="PerfilAdm.aspx" />
+    <Content Include="PerfilEstudante.aspx" />
     <Content Include="PerfilInstituicao.aspx" />
     <Content Include="Recarga.aspx" />
     <Content Include="SolicitacaoCarteira.aspx" />
@@ -111,6 +112,7 @@
     <Content Include="StyleLoginEstudante.css" />
     <Content Include="StyleLoginInstituicao.css" />
     <Content Include="StylePerfilAdm.css" />
+    <Content Include="StylePerfilEstudante.css" />
     <Content Include="StylePerfilInstituicao.css" />
     <Content Include="StylePonto.css" />
     <Content Include="StylePontoBairro.css" />
@@ -119,9 +121,11 @@
     <Content Include="StyleSolicitacaoInstituicao.css" />
     <Content Include="StyleTelaInicial.css" />
     <Content Include="StyleTelaPrincipalAdm.css" />
+    <Content Include="StyleTelaPrincipalEstudante.css" />
     <Content Include="StyleTelaPrincipalInstituicao.css" />
     <Content Include="StyleTelaSolicitacaoCarteira.css" />
     <Content Include="TelaInicial.aspx" />
+    <Content Include="TelaPrincipalEstudante.aspx" />
     <Content Include="TelaSolicitacaoCarteira.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -304,6 +308,13 @@
     <Compile Include="PerfilAdm.aspx.designer.cs">
       <DependentUpon>PerfilAdm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PerfilEstudante.aspx.cs">
+      <DependentUpon>PerfilEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilEstudante.aspx.designer.cs">
+      <DependentUpon>PerfilEstudante.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PerfilInstituicao.aspx.cs">
       <DependentUpon>PerfilInstituicao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -339,6 +350,13 @@
     </Compile>
     <Compile Include="TelaInicial.aspx.designer.cs">
       <DependentUpon>TelaInicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TelaPrincipalEstudante.aspx.cs">
+      <DependentUpon>TelaPrincipalEstudante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TelaPrincipalEstudante.aspx.designer.cs">
+      <DependentUpon>TelaPrincipalEstudante.aspx</DependentUpon>
     </Compile>
     <Compile Include="TelaSolicitacaoCarteira.aspx.cs">
       <DependentUpon>TelaSolicitacaoCarteira.aspx</DependentUpon>
