@@ -222,26 +222,17 @@
     cursor: pointer;
 }
 
-    .btns > .btn-rec {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 2px;
-        background-color: #EBEBEB;
-        color: #898989;
-        border-bottom-color: #C2C2C2;
-        margin-right: 30px;
-        cursor: pointer;
-    }
 
-    .btns > .btn-calc {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 2px;
-        background-color: #17A2B8;
-        color: #EBEBEB;
-        border-bottom-color: #13899C;
-        cursor: pointer;
-    }
+.btns > .btn-calc {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 2px;
+    background-color: #17A2B8;
+    color: #EBEBEB;
+    border-bottom-color: #13899C;
+    margin-top: 5px;
+    cursor: pointer;
+}
 
 .ponto-nome {
     color: #262626;

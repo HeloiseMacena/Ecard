@@ -9,7 +9,7 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
-                       <a class="ai" href="WebFormTelaPrincipalAdm.aspx"><i class="fas fa-arrow-left"></i></a>
+                       <a class="ai" href="TelaPrincipalEstudante.aspx"><i class="fas fa-arrow-left"></i></a>
                        <p>Realize sua recarga</p>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="box2-button">
-                         <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" />
+                         <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" PostBackUrl="~/PerfilEstudante.aspx" />
                     </div>
                 </div>
 
@@ -69,7 +69,6 @@
                      <div class="hl"></div> <!--  horizontal line -->
                     <asp:Label ID="Label1" CssClass="title-money" runat="server" Text="R$ 9,58"></asp:Label>
                     <div class="btns">
-                         <asp:Button class="btn-rec" runat="server" Text="Recarregar" />
                         <asp:Button class="btn-calc" runat="server" Text="Calcular Passagens"  />
                     </div>
                 </div>

@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <div class="btn">
-                         <asp:Button runat="server" CssClass="btn1"  Text="Adquirir" PostBackUrl="~/PerfilEstudante.aspx" />
+                         <asp:Button runat="server" CssClass="btn1"  Text="Adquirir" PostBackUrl="~/TelaSolicitacaoCarteira.aspx" />
                     </div>
                 </div>
             </div>           

@@ -7,19 +7,21 @@
 <script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="StylePontoBairro.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="JS/Events.js"></script>
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="header">
-           <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
-            <ol>
-                <li>Menu</li>
-                <li>Page 2</li>
-                <li>Page 3</li>
-                <li>Page 4</li> 
-                <li class="menu-user">Daniel Victor</li>
-            </ol>
+        <div class="header max">
+            <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
+            <div class="ol">
+                <div class="li">Menu</div>
+                <div class="li">Page 2</div>
+                <div class="li">Page 3</div>
+                <div class="li">Page 4</div> 
+                <div class="menu-user">Daniel Victor</div>
+            </div>
         </div>
         <div class="container">
             <div class="box1">

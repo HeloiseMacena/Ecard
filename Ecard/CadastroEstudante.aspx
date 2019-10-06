@@ -13,37 +13,31 @@
         <div class="coluna1">
             <div class="image"><img style="max-width:100%;" src="Imagens/ECard.png"/></div>
             <div class="info">          
-                <h2>Estudante</h2>
-            	<p>Informações Básicas</p>
+                <p>Estudante</p>
+            	<p style="font-size: 18px;">Informações Básicas</p>
             </div>
-
             <div class="textbox">
                 <asp:TextBox ID="Textbox1" runat="server" CssClass="textbox1" type="text" placeholder="Nome Completo"></asp:TextBox>
             </div>
-
             <div class="textbox">
                 <asp:TextBox ID="Textbox2" runat="server" CssClass="textbox1" type="email" placeholder="Email"></asp:TextBox>
             </div>
-
             <div class="textbox">
             	<asp:TextBox ID="Textbox3" runat="server" CssClass="textbox1" type="email" placeholder="Confirmar Email"></asp:TextBox>
             </div>
         </div>
-
         <div class="v1"></div> <!-- vertical line -->
         <div class="coluna2">
+            <div class="login-1">Informações avançadas</div>
             <div class="textbox">
                 <asp:TextBox ID="Textbox4" runat="server" CssClass="textbox1" type="text" placeholder="CPF"></asp:TextBox>
             </div>
-
             <div class="textbox">
                 <asp:TextBox ID="Textbox5" runat="server" CssClass="textbox1" type="password" placeholder="Senha"></asp:TextBox>
             </div>
-
             <div class="textbox">
                 <asp:TextBox ID="Textbox6" runat="server" CssClass="textbox1" type="password" placeholder="Confirmar Senha"></asp:TextBox>
             </div>
-
             <div class="login">
             	<asp:Button ID="Button1" class="button" type="submit" runat="server" Text="Cadastrar" OnClick="Unnamed1_Click"/>
             	<p class="p3">Já possuo uma conta!<a href="LoginEstudante.aspx" class="link-open">Entrar</a></p>

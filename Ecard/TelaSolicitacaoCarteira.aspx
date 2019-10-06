@@ -19,16 +19,16 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
-                       <a class="ai" href="WebFormTelaPrincipalAdm.aspx"><i class="fas fa-arrow-left"></i></a>
+                       <a class="ai" href="TelaPrincipalEstudante.aspx"><i class="fas fa-arrow-left"></i></a>
                        <p>Solicite sua carteira</p>
                     </div>
                     <div class="box1-button">
-                        <asp:Button runat="server" CssClass="btnAdd" Text="R$ 25,00" PostBackUrl="~/CadastroBairroEdit.aspx" />
+                        <asp:Button runat="server" CssClass="btnAdd" Text="R$ 25,00"  />
                     </div>
                 </div>  
                 <div class="info">
                     <div class="title-info">
-                        <asp:Label ID="Label2" cssClass="info-cor" runat="server" Text="Se os dados abaixo estiverem INCORRETOS, procure a sua ESCOLA e solicite atualização de dados antes de solicitar!"></asp:Label>
+                        <asp:Label ID="Label2" cssClass="info-cor" runat="server" Text="Se os dados abaixo estiverem INCORRETOS, procure a sua ESCOLA e solicite atualização de dados antes de solicitar a carteira!"></asp:Label>
                     </div>
                     <div class="info-2">
                         <div class="info-2-label">
@@ -104,7 +104,7 @@
                         </div>
                     </div>
                     <div class="box2-button">
-                         <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" />
+                         <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" PostBackUrl="~/PerfilEstudante.aspx" />
                     </div>
                 </div>
 
@@ -115,7 +115,7 @@
                      <div class="hl"></div> <!--  horizontal line -->
                     <asp:Label ID="Label1" CssClass="title-money" runat="server" Text="R$ 9,58"></asp:Label>
                     <div class="btns">
-                         <asp:Button class="btn-rec" runat="server" Text="Recarregar" />
+                         <asp:Button class="btn-rec" runat="server" Text="Recarregar" PostBackUrl="~/Recarga.aspx" />
                         <asp:Button class="btn-calc" runat="server" Text="Calcular Passagens"  />
                     </div>
                 </div>

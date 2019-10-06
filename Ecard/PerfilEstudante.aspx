@@ -26,7 +26,7 @@
                 <asp:TextBox ID="TextRua" runat="server" CssClass="box1-mid" placeholder="Nova senha"></asp:TextBox>
                 <asp:TextBox ID="TextBairro" runat="server" CssClass="box1-mid" placeholder="Confirmar nova senha"></asp:TextBox>
                 <div class="btn-b2">
-                    <asp:Button class="btn-close" runat="server" Text="Cancelar" PostBackUrl="~/WebFormTelaPrincipalAdm.aspx"/>
+                    <asp:Button class="btn-close" runat="server" Text="Cancelar" PostBackUrl="~/TelaPrincipalEstudante.aspx"/>
                     <asp:Button class="btn-save" runat="server" Text="Salvar"/>
                 </div>
             </div>
