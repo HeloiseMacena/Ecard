@@ -9,7 +9,7 @@
                    <div class="princi-icon">
                         <div class="org"><i class="fas fa-calculator"></i> <asp:HyperLink CssClass="org-p" runat="server" NavigateUrl="~/CalcularPassagem.aspx" >Calcular Passagem</asp:HyperLink></div>
                         <div class="org"><i class="fas fa-map-marker-alt"></i><asp:HyperLink CssClass="org-p" runat="server" NavigateUrl="~/PesquisarRota.aspx">Pesquisar rotas de ônibus</asp:HyperLink></div>
-                        <div class="org"><i class="fas fa-map-marked-alt"></i><asp:HyperLink CssClass="org-p" runat="server" NavigateUrl="~/PesquisarPonto.aspx">Pesquisar pontos de recarga</asp:HyperLink></div>
+                        <div class="org"><i class="fas fa-map-marked-alt"></i><asp:HyperLink CssClass="org-p" runat="server" NavigateUrl="~/ConsultaPontodeRecarga.aspx">Pesquisar pontos de recarga</asp:HyperLink></div>
                    </div>  
               </div>
             </div>
@@ -35,7 +35,7 @@
                      <div class="hl"></div> <!--  horizontal line -->
                     <asp:Label ID="Label1" CssClass="title-money" runat="server" Text="R$ 9,58"></asp:Label>
                     <div class="btns">
-                         <asp:Button class="btn-rec" runat="server" Text="Recarregar" />
+                         <asp:Button class="btn-rec" runat="server" Text="Recarregar" PostBackUrl="~/Recarga.aspx" />
                         <asp:Button class="btn-calc" runat="server" Text="Calcular Passagens"  />
                     </div>
                 </div>

@@ -72,6 +72,7 @@
     <Content Include="CadastroEstudante.aspx" />
     <Content Include="CadastroInstituicao.aspx" />
     <Content Include="CadastroPassagem.aspx" />
+    <Content Include="CalcularPassagem.aspx" />
     <Content Include="ConsultaPontodeRecarga.aspx" />
     <Content Include="EditEstudante.aspx" />
     <Content Include="Imagens\default.png" />
@@ -116,6 +117,7 @@
     <Content Include="StylePerfilInstituicao.css" />
     <Content Include="StylePonto.css" />
     <Content Include="StylePontoBairro.css" />
+    <Content Include="StyleRecarga.css" />
     <Content Include="StyleRota.css" />
     <Content Include="StyleSolicitacaoCarteira.css" />
     <Content Include="StyleSolicitacaoInstituicao.css" />
@@ -210,6 +212,13 @@
     </Compile>
     <Compile Include="CadastroRotaEdit.aspx.designer.cs">
       <DependentUpon>CadastroRotaEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalcularPassagem.aspx.cs">
+      <DependentUpon>CalcularPassagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalcularPassagem.aspx.designer.cs">
+      <DependentUpon>CalcularPassagem.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConsultaPontodeRecarga.aspx.cs">
       <DependentUpon>ConsultaPontodeRecarga.aspx</DependentUpon>
