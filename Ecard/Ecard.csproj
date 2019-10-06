@@ -113,6 +113,7 @@
     <Content Include="StylePerfilInstituicao.css" />
     <Content Include="StylePonto.css" />
     <Content Include="StylePontoBairro.css" />
+    <Content Include="StyleRecarga.css" />
     <Content Include="StyleRota.css" />
     <Content Include="StyleSolicitacaoCarteira.css" />
     <Content Include="StyleSolicitacaoInstituicao.css" />
