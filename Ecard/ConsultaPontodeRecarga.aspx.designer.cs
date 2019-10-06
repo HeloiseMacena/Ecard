@@ -7,11 +7,13 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Ecard {
-    
-    
-    public partial class CnsultaPontodeRecarga {
-        
+namespace Ecard
+{
+
+
+    public partial class CnsultaPontodeRecarga
+    {
+
         /// <summary>
         /// Controle Label2.
         /// </summary>
@@ -20,25 +22,34 @@ namespace Ecard {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-        
+
         /// <summary>
-        /// Controle TextBox1.
+        /// Controle valueSearch.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
-        
+        protected global::System.Web.UI.WebControls.TextBox valueSearch;
+
         /// <summary>
-        /// Controle Button1.
+        /// Controle DDLSearch.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
+        protected global::System.Web.UI.WebControls.DropDownList DDLSearch;
+
+        /// <summary>
+        /// Controle btnSearch.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearch;
+
         /// <summary>
         /// Controle Repeater1.
         /// </summary>
@@ -47,7 +58,7 @@ namespace Ecard {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Repeater1;
-        
+
         /// <summary>
         /// Controle ObjectDataSource1.
         /// </summary>
@@ -56,7 +67,7 @@ namespace Ecard {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
-        
+
         /// <summary>
         /// Controle Label1.
         /// </summary>
@@ -65,7 +76,7 @@ namespace Ecard {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
+
         /// <summary>
         /// Controle modalContainer.
         /// </summary>
@@ -74,7 +85,7 @@ namespace Ecard {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl modalContainer;
-        
+
         /// <summary>
         /// Controle closeModal.
         /// </summary>
@@ -83,7 +94,7 @@ namespace Ecard {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl closeModal;
-        
+
         /// <summary>
         /// Controle modalNum.
         /// </summary>
@@ -92,7 +103,7 @@ namespace Ecard {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label modalNum;
-        
+
         /// <summary>
         /// Controle modalCEP.
         /// </summary>
@@ -101,7 +112,7 @@ namespace Ecard {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label modalCEP;
-        
+
         /// <summary>
         /// Controle modalMun.
         /// </summary>

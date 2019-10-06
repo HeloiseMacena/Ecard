@@ -11,7 +11,6 @@
 </head>  
 <body>
  <form class="formulario" runat="server" id="form12">
-    
      <div class="coluna-1" >
          <div class="image" ><img src="Imagens/ECard.png"  style="max-width:100%;"/></div>
          <div class="info">
