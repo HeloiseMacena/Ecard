@@ -104,6 +104,7 @@
     <Content Include="StyleCadastroPassagem.css" />
     <Content Include="StyleCadastroPonto.css" />
     <Content Include="StyleCadastroRota.css" />
+    <Content Include="StyleCalcularPassagem.css" />
     <Content Include="StyleConsultaPontodeRecarga.css" />
     <Content Include="StyleEditarPonto.css" />
     <Content Include="StyleEditarRota.css" />
