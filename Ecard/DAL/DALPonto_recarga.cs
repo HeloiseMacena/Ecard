@@ -54,7 +54,43 @@ namespace Ecard.DAL
             return aListPonto_recarga;
         }
 
+        public List<Modelo.Ponto_recarga> SearchSelect(string value, string option)
+        {
+            if (value == "" || value == null) { value = "%"; }
 
+            List<Modelo.Ponto_recarga> aListPonto_recarga = new List<Modelo.Ponto_recarga>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            if (option == "Nome") cmd.CommandText = "SELECT * FROM Ponto_Recarga WHERE nome_ponto LIKE '" + value + "'";
+            else if (option == "Logradouro") cmd.CommandText = "SELECT * FROM Ponto_Recarga WHERE endereco_logradouro LIKE '" + value + "'";
+            else if (option == "Bairro") cmd.CommandText = "SELECT * FROM Ponto_Recarga WHERE endereco_bairro LIKE '" + value + "'";
+            else if (option == "CEP") cmd.CommandText = "SELECT * FROM Ponto_Recarga WHERE endereco_cep LIKE '" + value + "'";
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    Modelo.Ponto_recarga aPonto_recarga = new Modelo.Ponto_recarga(
+                         int.Parse(dr["id"].ToString()),
+                        dr["nome_ponto"].ToString(),
+                        dr["endereco_numero"].ToString(),
+                        dr["endereco_logradouro"].ToString(),
+                        dr["endereco_cep"].ToString(),
+                        dr["endereco_bairro"].ToString(),
+                        dr["endereco_municipio"].ToString()
+                    );
+                    aPonto_recarga.id = Convert.ToInt32(dr["id"].ToString());
+                    aListPonto_recarga.Add(aPonto_recarga);
+                }
+            }
+            dr.Close();
+            conn.Close();
+
+            return aListPonto_recarga;
+        }
 
         [DataObjectMethod(DataObjectMethodType.Delete)]
         public void Delete(Modelo.Ponto_recarga obj)
