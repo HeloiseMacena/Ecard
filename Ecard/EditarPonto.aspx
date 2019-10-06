@@ -57,16 +57,6 @@
                          <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" />
                     </div>
                 </div>
-
-                <div class="box2-ponto">
-                    <div class="ponto">
-                        <p>Pontos de recarga</p>
-                    </div>
-                    <div class="ponto2">
-                        <i runat="server" id="i1" class="fas fa-search"></i>
-                        <p>Pesquisar</p>
-                    </div>
-                </div>
             </div>
           </div>
     </form>

@@ -11,9 +11,8 @@ namespace Ecard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            modalContainer.Style.Add("visibility", "hidden");
         }
-
         protected void ToggleModal_Click(object sender, EventArgs e)
         {
             ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "ToggleModal", "ToggleModal()", true);
@@ -29,20 +28,22 @@ namespace Ecard
             modalMun.Text = ponto.endereco_municipio;
 
             modalContainer.Style.Add("visibility", "visible");
-
-            // Session["OpenModal"] = "S";
-            // ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "ToggleModal", "ToggleModal()", true);
         }
 
-        /* protected void pModal_Click(object sender, EventArgs e)
-         {
-             string id = btnModal.CommandArgument;
-             DAL.DALPonto_recarga aDALPonto_recarga;
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string option = DDLSearch.Text;
+                string value = valueSearch.Text;
 
-             aDALPonto_recarga = new DAL.DALPonto_recarga();
+                DAL.DALPonto_recarga aDALPonto_recarga = new DAL.DALPonto_recarga();
 
-             lblModalNumero.Text = aDALPonto_recarga.Select(id).ElementAt(0).endereco_numero;
-             lblModalCEP.Text = aDALPonto_recarga.Select(id).ElementAt(0).endereco_cep;
-         }*/
+                Repeater1.DataSourceID = null;
+                Repeater1.DataSource = aDALPonto_recarga.SearchSelect(value, option);
+                Repeater1.DataBind();
+            }
+            catch { }
+        }
     }
 }

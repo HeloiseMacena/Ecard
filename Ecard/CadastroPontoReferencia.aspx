@@ -74,10 +74,15 @@
                     <div class="ponto">
                         <p>Pontos de recarga</p>
                     </div>
-                    <div class="ponto2">
-                        <i class="fas fa-search"></i>
-                        <p>Pesquisar</p>
+                     <div class=" pesq">
+                    <asp:TextBox ID="valueSearch" CssClass="textbox1" runat="server" placeholder="Pesquisar"></asp:TextBox>
+                    <div class="pesq-2">
+                        <asp:DropDownList id="DDLSearch" CssClass="ddlist1" runat="server">
+                        <asp:ListItem>Nome</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:Button ID="btnSearch" OnClick="btnSearch_Click"  CssClass="btn-loc" runat="server" Text="Localizar" />
                     </div>
+                </div>
                 </div>
             </div>
             <div>  

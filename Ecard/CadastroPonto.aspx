@@ -79,15 +79,15 @@
                         <p>Pontos de recarga</p>
                     </div>
                     <div class=" pesq">
-                    <asp:TextBox ID="TextBox1" CssClass="textbox1" runat="server" placeholder="Pesquisar"></asp:TextBox>
+                    <asp:TextBox ID="valueSearch" CssClass="textbox1" runat="server" placeholder="Pesquisar"></asp:TextBox>
                     <div class="pesq-2">
-                        <asp:DropDownList CssClass="ddlist1" runat="server">
+                        <asp:DropDownList id="DDLSearch" CssClass="ddlist1" runat="server">
                         <asp:ListItem>Nome</asp:ListItem>
                         <asp:ListItem>Logradouro</asp:ListItem>
                         <asp:ListItem>Bairro</asp:ListItem>
                         <asp:ListItem>CEP</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:Button ID="Button1" CssClass="btn-loc" runat="server" Text="Localizar" />
+                    <asp:Button ID="btnSearch" OnClick="btnSearch_Click"  CssClass="btn-loc" runat="server" Text="Localizar" />
                     </div>
                 </div>
                 </div>

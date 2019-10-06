@@ -47,6 +47,34 @@ namespace Ecard.DAL
             return ListPonto_referencias;
         }
 
+        public List<Modelo.Ponto_referencia> SearchSelect(string value, string option)
+        {
+            if(value == "" || value == null) { value = "%"; }
+
+            Modelo.Ponto_referencia Ponto_referencia;
+            List<Modelo.Ponto_referencia> ListPonto_referencias = new List<Modelo.Ponto_referencia>();
+
+            SqlConnection a = new SqlConnection(connectionString);
+            a.Open();
+            SqlCommand b = a.CreateCommand();
+            b.CommandText = "Select * from Ponto_referencia WHERE Nome LIKE'" + value + "'";
+            SqlDataReader c = b.ExecuteReader();
+            if (c.HasRows)
+            {
+                while (c.Read())
+                {
+                    Ponto_referencia = new Modelo.Ponto_referencia(
+                        c["Nome"].ToString()
+                        );
+                    Ponto_referencia.Id = int.Parse(c["Id"].ToString());
+                    ListPonto_referencias.Add(Ponto_referencia);
+                }
+            }
+            c.Close();
+            a.Close();
+
+            return ListPonto_referencias;
+        }
 
 
         [DataObjectMethod(DataObjectMethodType.Delete)]

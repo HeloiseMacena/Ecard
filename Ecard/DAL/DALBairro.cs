@@ -49,6 +49,36 @@ namespace Ecard.DAL
             return aListBairro;
         }
 
+        public List<Modelo.Bairro> SearchSelect(string value, string option )
+        {
+            if (value == "" || value == null) { value = "%"; }
+
+            Modelo.Bairro aBairro;
+            List<Modelo.Bairro> aListBairro = new List<Modelo.Bairro>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Bairro WHERE Nome LIKE'" + value +"'";
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    aBairro = new Modelo.Bairro(
+                        dr["Nome"].ToString()
+                        );
+                    aBairro.Id = int.Parse(dr["id"].ToString());
+                    aListBairro.Add(aBairro);
+                }
+            }
+            dr.Close();
+            conn.Close();
+
+            return aListBairro;
+        }
+
+
 
 
         [DataObjectMethod(DataObjectMethodType.Delete)]
