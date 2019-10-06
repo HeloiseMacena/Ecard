@@ -1,9 +1,14 @@
 ﻿body {
+    width: 100vw;
+    height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    background-color: rgb(207, 207, 207);
+    background-color: #EFEFEF;
     background-size: cover;
     background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 * {
@@ -29,7 +34,7 @@ h2 {
 
 input[type="text"], input[type="password"], input[type=email] {
     font-size: 15px;
-    width: 82%;
+    width: 100%;
     padding: 10px;
     border: none;
 }
@@ -51,19 +56,20 @@ input[type="text"], input[type="password"], input[type=email] {
 }
 
 .button {
-    margin-top: 8%;
+    width: 200px;
+    margin-top: 10px;
     border: none;
     color: white;
     font-size: 17px;
     background: #66CD42;
-    padding: 2% 4%;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 2px;
     cursor: pointer;
 }
 
-.button:hover {
-    background: cadetblue;
-}
+    .button:hover {
+        background: #5cb83b;
+    }
 
 p {
     text-align: center;
@@ -82,37 +88,34 @@ p {
 /* vertical line */
 
 .v1 {
-    height: 300px;
     width: 3px;
     background-color: #cccccc;
-    margin: 80px 10px;
 }
 
 .coluna1 {
     width: 50%;
-    margin: 65px 5%;
-    align-items:center;
+    margin: 50px 50px 50px 50px;
+    align-items: center;
 }
 
 .textbox {
-    padding: 2%;
-    width: 122%;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 .textbox1 {
-    margin-top: 10px;
+    margin-bottom: 15px;
     width: 100%;
-    padding: 15px 20px;
+    padding: 20px;
     background-color: white;
     color: #a1a1a1;
     border-style: none;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .image {
     max-width: 40%;
     margin: auto;
-    padding-bottom: 10%;
 }
 
 .info {
@@ -125,15 +128,23 @@ p {
 
 .info > p {
     color: #777777;
-    margin-top: 0.25px;
+    font-size: 25px;
 }
 
 .coluna2 {
     width: 50%;
-    margin: 80px 5%;
+    margin: 50px 50px 50px 50px;
     display: flex;
     flex-direction: column;
     vertical-align: middle;
+}
+
+.login-1 {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 41px;
+    color: #777777;
 }
 
 .login {
@@ -152,13 +163,12 @@ p {
 
 @media(min-width:768px) {
     .formulario {
-        width: 55%;
-        background-color: #EBEBEB;
+        width: 1000px;
+        background-color: #EFEFEF;
+        box-shadow: 0px 0px 10px 0px rgba(115,115,115,1);
         margin: auto;
-        margin-top: 150px;
-        margin-bottom: 150px;
-        border-radius: 2%;
-        padding: 0px 15px;
+        border-radius: 3px;
+        padding: 20px;
         display: flex;
         flex-direction: row;
     }

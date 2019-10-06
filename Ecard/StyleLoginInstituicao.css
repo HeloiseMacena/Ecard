@@ -1,9 +1,14 @@
 ﻿body {
+    width: 100vw;
+    height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    background-color: rgb(207, 207, 207);
+    background-color: #EFEFEF;
     background-size: cover;
     background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 * {
@@ -29,7 +34,7 @@ h1 {
 input[type="text"],
 input[type="password"] {
     font-size: 15px;
-    width: 82%;
+    width: 100%;
     padding: 12px;
     border: none;
     margin:auto;
@@ -52,18 +57,19 @@ input[type="password"] {
 }
 
 .button {
-    margin-top: 8%;
+    width: 200px;
+    margin-top: 10px;
     border: none;
     color: white;
     font-size: 17px;
     background: #66CD42;
-    padding: 3% 17%;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 2px;
     cursor: pointer;
 }
 
     .button:hover {
-        background: cadetblue;
+        background: #5cb83b;
     }
 
 p {
@@ -84,18 +90,18 @@ p {
 }
 
 .textbox {
-    padding: 4%;
-    width: 118%;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 .textbox1 {
-    margin-top: 20px;
+    margin-bottom: 15px;
     width: 100%;
-    padding: 15px 20px;
+    padding: 20px;
     background-color: white;
     color: #a1a1a1;
     border-style: none;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .image {
@@ -115,7 +121,6 @@ p {
 
     .info > p {
         color: #777777;
-        margin-bottom:57px;
         margin-top:-5px;
         font-size:25px;
     }
@@ -125,7 +130,6 @@ p {
     width: 100%;
     margin: auto;
     text-align: center;
-    margin-bottom: 41px;
     color: #777777;
 }
 
@@ -151,13 +155,11 @@ p {
 
 @media(min-width:768px) {
     .formulario {
-        width: 450px;
-        background-color: #EBEBEB;
-        margin: auto;
-        margin-top: 150px;
-        margin-bottom: 150px;
-        border-radius: 2%;
-        padding: 0px 15px;
+        width: 400px;
+        background-color: #EFEFEF;
+        box-shadow: 0px 0px 10px 0px rgba(115,115,115,1);
+        border-radius: 3px;
+        padding: 20px;
         display: flex;
         flex-direction: row;
     }

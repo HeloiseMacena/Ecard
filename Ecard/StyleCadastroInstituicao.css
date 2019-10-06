@@ -1,9 +1,14 @@
 ﻿body {
+    width: 100vw;
+    height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    background-color: rgb(207, 207, 207);
+    background-color: #EFEFEF;
     background-size: cover;
     background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 * {
@@ -17,7 +22,6 @@
 
 .formulario {
     max-width:100%;
-    margin:auto;
 }
 
 h1 {
@@ -30,7 +34,7 @@ input[type="text"],
 input[type="password"],
 input[type=email]{
     font-size: 15px;
-    width: 82%;
+    width: 100%;
     padding: 10px;
     border: none;
 }
@@ -52,17 +56,19 @@ input[type=email]{
 }
 
 .button {
-    margin-top:8%;
+    width: 200px;
+    margin-top: 10px;
     border: none;
     color: white;
     font-size: 17px;
     background: #66CD42;
-    padding:2% 4%;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 2px;
     cursor: pointer;
 }
+
     .button:hover {
-        background: cadetblue;
+        background: #5cb83b;
     }
 
 p {
@@ -80,35 +86,33 @@ p {
     }
 
 .vl { /* vertical line */
-    height: 468px;
     width: 3px;
     background-color: #cccccc;
-    margin: 81px 10px;
 }
 
 .coluna-1 {
-    width:40%;
-    margin:5%;  
+    width: 40%;
+    margin: 50px 50px 0 50px;
 }
+
 .textbox {
-    padding: 2%;
-    width: 122%;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 .textbox1 {
-    margin-top: 20px;
+    margin-bottom: 15px;
     width: 100%;
-    padding: 15px 20px;
+    padding: 20px;
     background-color: white;
     color: #a1a1a1;
     border-style: none;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .image {
     max-width:40%;
     margin:auto;
-    padding-bottom:10%;
 }
 
 .info {
@@ -121,12 +125,12 @@ p {
 
     .info > p {
         color: #777777;
+        font-size: 25px;
     }
 
 .coluna-2 {
     width: 60%;
-    margin: 5%;
-   
+    margin: 50px 50px 0 50px;
 }
     .coluna-2::after {
       content: "";
@@ -136,7 +140,8 @@ p {
 
 .coluna-3 {
     float:left;
-    width: 50%
+    width: 46%;
+    margin: 0 2%;
 }
 .coluna-4 {
     width: 60%
@@ -164,13 +169,12 @@ p {
 
 @media(min-width:768px) {
     .formulario {
-        width: 85%;
-        background-color:#EBEBEB;
-        margin:auto;
-        margin-top: 150px;
-        margin-bottom:150px;
-        border-radius: 2%;
-        padding: 0px 15px;
+        width: 1200px;
+        background-color: #EFEFEF;
+        box-shadow: 0px 0px 10px 0px rgba(115,115,115,1);
+        margin: auto;
+        border-radius: 3px;
+        padding: 20px;
         display: flex;
         flex-direction: row;
     }
