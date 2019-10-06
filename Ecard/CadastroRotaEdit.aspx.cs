@@ -10,8 +10,19 @@ namespace Ecard
 {
     public partial class CadastroRotaEdit : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["logged"] != null)
+            {
+                if (Session["accesslevel"] == "instituicao") Response.Redirect("~/WebFormTelaPrincipalInstituicao.aspx");
+                if (Session["accesslevel"] == "estudante") Response.Redirect("~/TelaPrincipalEstudante.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/TelaInicial.aspx");
+            }
+
             DALBairro dal_bairro = new DALBairro();
             ListItem li;
             foreach (Bairro b in dal_bairro.SelectAll())

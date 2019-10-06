@@ -29,7 +29,7 @@ namespace Ecard.DAL
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "Select * from rota";
-
+            SqlDataReader dr = cmd.ExecuteReader();
 
             if (dr.HasRows)
             {

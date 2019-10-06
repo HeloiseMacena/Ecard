@@ -61,7 +61,7 @@ namespace Ecard.DAL
             cmd.Parameters.AddWithValue("@Id", obj.Id);
             cmd.ExecuteNonQuery();
 
-            SqlCommand cmd = new SqlCommand("DELETE FROM Rotas_Bairro where rotas_id = @id");
+            cmd = new SqlCommand("DELETE FROM Rotas_Bairro where rotas_id = @id");
             cmd.Parameters.AddWithValue("@id", obj.Id);
             cmd.ExecuteNonQuery();
 

@@ -1,7 +1,6 @@
-﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginAdm.aspx.cs" Inherits="Ecard.LoginAdm" %>--%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginAdm.aspx.cs" Inherits="Ecard.LoginAdm" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
@@ -13,9 +12,7 @@
  <form class="formulario" runat="server" id="form12">
     
      <div class="coluna-1" >
-         <div class="image" ><img src="Imagens/ECard.png"  style="max-width:100%;"/></div>
-         <div class="info">
-             <p>Administrador</p>            
+         <div clAdministrador </p>            
          </div>
        
          <div class="textbox">             
@@ -27,7 +24,7 @@
          </div>   
             
          <div class="login">
-             <asp:Button ID="Button1" runat="server" Text="Entrar"  type="submit" class="button" PostBackUrl="~/WebFormTelaPrincipalAdm.aspx" />
+             <asp:Button ID="Button1" runat="server" Text="Entrar"  type="submit" class="button" OnClick="Button_click" />
              <p class="link-rec">Esqueceu a senha?</p>
          </div>
     </div>

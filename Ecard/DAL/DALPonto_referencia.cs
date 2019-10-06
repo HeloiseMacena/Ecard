@@ -60,7 +60,7 @@ namespace Ecard.DAL
             cmd.ExecuteNonQuery();
 
             cmd = new SqlCommand("DELETE FROM rota_referencia where ponto_referencia_id = @id");
-            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.Parameters.AddWithValue("@id", obj.Id);
             cmd.ExecuteNonQuery();
 
         }

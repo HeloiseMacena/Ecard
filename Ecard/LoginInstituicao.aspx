@@ -27,7 +27,8 @@
          </div>               
       
          <div class="login">
-             <asp:Button ID="Button1" runat="server" Text="Entrar" type="submit" class="button" PostBackUrl="~/WebFormTelaPrincipalInstituicao.aspx"/>
+             <!-- PostBackUrl="~/WebFormTelaPrincipalInstituicao.aspx" -->
+             <asp:Button ID="Button1" runat="server" Text="Entrar" type="submit" class="button"  OnClick="Button_Click"/>
              <p>Instituição não cadastrada!<a class="link-open" href="CadastroInstituicao.aspx">Cadastre-a</a></p>
              <p class="link-rec">Esqueceu a senha?</p>
          </div>
