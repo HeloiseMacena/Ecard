@@ -62,7 +62,7 @@
                 <div class="hl"></div> <!--  horizontal line -->
                 <asp:Label ID="Label1" CssClass="title-money" runat="server" Text="R$ 9,58"></asp:Label>
                 <div class="btns">
-                    <asp:Button class="btn-rec" runat="server" Text="Recarregar" />
+                    <asp:Button class="btn-rec" runat="server" Text="Recarregar" PostBackUrl="~/Recarga.aspx" />
                     <asp:Button class="btn-calc" runat="server" Text="Calcular Passagens"  />
                 </div>
             </div>
