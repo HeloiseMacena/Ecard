@@ -21,6 +21,46 @@ namespace Ecard.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
+        public bool SelectComparacao(string cpf)
+        {
+            bool a = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Estudante where cpf =" + cpf;
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                a = true;
+            }
+            conn.Close();
+            return a;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void MudarSituacaoTrue(string cpf)
+        {
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = true where cpf = @" + cpf, conn);
+
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void MudarSituacaoFalse(int id)
+        {
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = false where instituicao_id = " + id, conn);
+
+        }
+
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
         void SelectArquivoCsv(string arquivo)
         {
             StreamReader sr;
