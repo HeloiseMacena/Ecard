@@ -12,6 +12,13 @@ namespace Ecard.Modelo
         public string cpf;
         public string email;
         public bool status;
+        public int carteira_status;
+        /* status da carteira:  
+            0: sem carteira
+            1: carteira solicitada
+            2: carteira existente
+             
+        */
         public string carteira_foto;
         public double carteira_saldo;
         public int carteira_numero;
@@ -34,6 +41,7 @@ namespace Ecard.Modelo
             this.carteira_saldo = carteira_saldo;
             this.carteira_numero = carteira_numero;
             this.carteira_validade = carteira_validade;
+            carteira_status = 0;
         }
     }
 }

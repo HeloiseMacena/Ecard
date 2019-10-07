@@ -130,6 +130,7 @@ namespace Ecard.DAL
                         Convert.ToDateTime(dr["carteira_validade"].ToString())
                     );
                     aEstudante.id = Convert.ToInt32(dr["id"].ToString());
+                    //aEstudante.carteira_status = Convert.ToInt32(dr["carteira_status"].ToString());
                     aListEstudante.Add(aEstudante);
                 }
             }
@@ -163,7 +164,7 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, instituicao_id) VALUES (@Nome, @cpf, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 1)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, instituicao_id, administrador_id) VALUES (@Nome, @cpf, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 1, 1)", conn);
 
             cmd.Parameters.AddWithValue("@Nome", obj.nome);
             cmd.Parameters.AddWithValue("@cpf", obj.cpf);
@@ -265,6 +266,7 @@ namespace Ecard.DAL
                         Convert.ToDateTime(dr["carteira_validade"].ToString())
                         );
                     aEstudante.id = Convert.ToInt32(dr["id"].ToString());
+                    //aEstudante.carteira_status = Convert.ToInt32(dr["carteira_status"].ToString());
                 }
             }
 

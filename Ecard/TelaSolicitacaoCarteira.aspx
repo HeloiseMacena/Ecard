@@ -34,7 +34,7 @@
                         <div class="info-2-label">
                             <asp:Label ID="Label3" CssClass="azul" runat="server" Text="Nome"></asp:Label>
                         </div>
-                        <asp:Label ID="Label4" CssClass="campo-inf" runat="server" Text="Dara Hadrielle da Cunha Rocha "></asp:Label>
+                        <asp:Label ID="LabelNome" CssClass="campo-inf" runat="server" Text="Dara Hadrielle da Cunha Rocha "></asp:Label>
                     </div>
                      <div class="info-2"> 
                         <div class="info-2-label">

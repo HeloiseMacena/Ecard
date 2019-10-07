@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Web;
+using Ecard.DAL;
 
 namespace Ecard
 {
@@ -17,6 +18,7 @@ namespace Ecard
             {
                 Response.Redirect("~/TelaInicial.aspx");
             }
+            int id = int.Parse(Session["userid"].ToString());
         }
 
         protected void btnUpload_Click(object sender, EventArgs e)

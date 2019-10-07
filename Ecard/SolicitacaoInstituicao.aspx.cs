@@ -72,3 +72,4 @@ namespace Ecard
             else resposta.Text = "Por favor, selecione um arquivo a enviar";
         }*/
     }
+}
