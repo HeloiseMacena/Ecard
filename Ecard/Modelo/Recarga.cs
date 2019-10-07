@@ -9,12 +9,15 @@ namespace Ecard.Modelo
     {
         public int id;
         public DateTime data;
-        public float valor;
+        public double valor;
 
-        public Recarga(int id, DateTime data, float valor)
+        public Recarga()
         {
-            this.id = id;
-            this.data = data;
+            id = 0;
+        }
+        public Recarga(double valor)
+        {
+            data = DateTime.Now;
             this.valor = valor;
         }
     }

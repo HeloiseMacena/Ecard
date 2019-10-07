@@ -44,8 +44,11 @@
                     <div class="azul">
                     <asp:Label ID="Label6" runat="server" Text="Saldo de Recarga:"></asp:Label>
                     </div>
-                    <asp:Label ID="Label7" CssClass="campo-inf" runat="server" Text="R$ 9,43"></asp:Label>
                     </div>
+                </div>
+                <div class="forma-5">
+                    <asp:TextBox ID="TextBoxRecarga" CssClass="title-money" runat="server" Width="200"></asp:TextBox>
+                    <asp:Button class="btn-calc" runat="server" Text="Recarregar" OnClick="Unnamed_Click"/>
                 </div>
               </div>
             <div class="box2">
@@ -68,6 +71,7 @@
                     </div>
                      <div class="hl"></div> <!--  horizontal line -->
                     <asp:Label ID="Label1" CssClass="title-money" runat="server" Text="R$ 9,58"></asp:Label>
+                    
                     <div class="btns">
                         <asp:Button class="btn-calc" runat="server" Text="Calcular Passagens" PostBackUrl="~/CalcularPassagem.aspx"/>
                     </div>

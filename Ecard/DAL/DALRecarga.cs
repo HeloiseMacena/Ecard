@@ -36,10 +36,10 @@ namespace Ecard.DAL
                 while (dr.Read())
                 {
                     Modelo.Recarga aRecarga = new Modelo.Recarga(
-                        Convert.ToInt32(dr["id"].ToString()),
-                        Convert.ToDateTime(dr["data"].ToString()),
-                         (float)Convert.ToDouble(dr["valor"].ToString())
+                        Convert.ToDouble(dr["valor"].ToString())
                         );
+                    aRecarga.id = Convert.ToInt32(dr["id"].ToString());
+                    aRecarga.data = Convert.ToDateTime(dr["data"].ToString());
                     aListRecarga.Add(aRecarga);
                 }
             }
@@ -68,16 +68,17 @@ namespace Ecard.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(Modelo.Recarga obj)
+        public void Insert(Modelo.Recarga obj, int estudante_id, int ponto_recarga_id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Recarga (Id, data, valor) VALUES (@Id, @data, @valor)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Recarga (data_recarga, valor, estudante_id, ponto_recarga_id) VALUES (@data, @valor, @estudante_id, @ponto_recarga_id)", conn);
 
-            cmd.Parameters.AddWithValue("@Id", obj.id);
             cmd.Parameters.AddWithValue("@data", obj.data);
             cmd.Parameters.AddWithValue("@valor", obj.valor);
+            cmd.Parameters.AddWithValue("@estudante_id",estudante_id);
+            cmd.Parameters.AddWithValue("@ponto_recarga_id", ponto_recarga_id);
 
             cmd.ExecuteNonQuery();
 
@@ -103,10 +104,9 @@ namespace Ecard.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Recarga> Select(string Id)
+        public Modelo.Recarga Select(string Id)
         {
-            Modelo.Recarga aRecarga;
-            List<Modelo.Recarga> aListRecarga = new List<Modelo.Recarga>();
+            Modelo.Recarga aRecarga = new Modelo.Recarga();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
@@ -118,18 +118,17 @@ namespace Ecard.DAL
                 while (dr.Read())
                 {
                     aRecarga = new Modelo.Recarga(
-                        Convert.ToInt32(dr["id"].ToString()),
-                        Convert.ToDateTime(dr["data"].ToString()),
-                        (float) Convert.ToDouble(dr["valor"].ToString())
+                         Convert.ToDouble(dr["valor"].ToString())
                         );
-                    aListRecarga.Add(aRecarga);
+                    aRecarga.id = Convert.ToInt32(dr["id"].ToString());
+                    aRecarga.data = Convert.ToDateTime(dr["data"].ToString());
                 }
             }
 
             dr.Close();
             conn.Close();
 
-            return aListRecarga;
+            return aRecarga;
         }
     }
 }

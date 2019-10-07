@@ -41,8 +41,8 @@ namespace Ecard
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
             id = int.Parse(Request.QueryString["id"]);
-            Ecard.DAL.DALRota p = new Ecard.DAL.DALRota();
-            Ecard.Modelo.Rota ponto = p.Select(id);
+            DAL.DALRota p = new DAL.DALRota();
+            Modelo.Rota ponto = p.Select(id);
             p.Delete(ponto);
             Response.Redirect("~//CadastroRota.aspx");
         }

@@ -59,7 +59,11 @@ namespace Ecard.DAL
             conn.Open();
             SqlCommand com = conn.CreateCommand();
 
-            SqlCommand cmd = new SqlCommand("DELETE FROM Rotas_Bairro where rotas_id = @id");
+            SqlCommand cmd = new SqlCommand("DELETE FROM Rotas_Bairro where rotas_id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SqlCommand("DELETE FROM rota_referencia where rota_id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.ExecuteNonQuery();
 
@@ -67,35 +71,39 @@ namespace Ecard.DAL
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.ExecuteNonQuery();
 
-            cmd = new SqlCommand("DELETE FROM rota_referencia where rota_id = @id");
-            cmd.Parameters.AddWithValue("@id", obj.id);
-            cmd.ExecuteNonQuery();
+           
         }
 
 
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(Modelo.Rota obj,int ponto_referencia_id, int bairro_id)
+        public void Insert(Modelo.Rota obj,List<int> ponto_referencia_id, List<int> bairro_id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO rota (nome, administrador_id, ponto_referencia_id) VALUES (@nome, 1,@ponto_referencia_id)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO rota (nome, administrador_id) VALUES (@nome, 1)", conn);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
-            cmd.Parameters.AddWithValue("@ponto_referencia_id", ponto_referencia_id);
             cmd.ExecuteNonQuery();
-
             cmd = new SqlCommand("Select @@identity as id", conn);
             int id = Convert.ToInt32(cmd.ExecuteScalar());
-            cmd = new SqlCommand("INSERT INTO Rotas_Bairro(rotas_id,bairro_id) VALUES (@rota_id,@bairro_id)", conn);
-            cmd.Parameters.AddWithValue("@bairro_id",bairro_id);
-            cmd.Parameters.AddWithValue("@rota_id", id);
-            cmd.ExecuteNonQuery();
 
-            cmd = new SqlCommand("insert into rota_referencia(rota_id, ponto_referencia_id) values(@rota_id, @referencia_id0)", conn);
-            cmd.Parameters.AddWithValue("@rota_id", id);
-            cmd.Parameters.AddWithValue("@referencia_id", ponto_referencia_id);
-            cmd.ExecuteNonQuery();
+            for (int i=0;i < bairro_id.Count(); i++)
+            {
+                cmd = new SqlCommand("INSERT INTO Rotas_Bairro(rotas_id,bairro_id) VALUES (@rota_id,@bairro_id)", conn);
+                cmd.Parameters.AddWithValue("@bairro_id", bairro_id[i]);
+                cmd.Parameters.AddWithValue("@rota_id", id);
+                cmd.ExecuteNonQuery();
+            }
+            
+            for (int i=0;i < ponto_referencia_id.Count(); i++)
+            {
+                cmd = new SqlCommand("insert into rota_referencia(rota_id, ponto_referencia_id) values(@rota_id, @referencia_id)", conn);
+                cmd.Parameters.AddWithValue("@rota_id", id);
+                cmd.Parameters.AddWithValue("@referencia_id", ponto_referencia_id[i]);
+                cmd.ExecuteNonQuery();
+            }
+            
 
 
         }
