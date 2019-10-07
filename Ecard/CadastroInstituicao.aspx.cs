@@ -14,11 +14,14 @@ namespace Ecard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
             if (Session["logged"] != null)
             {
                 if (Session["accesslevel"] == "instituicao") Response.Redirect("~/WebFormTelaPrincipalInstituicao.aspx");
                 if (Session["accesslevel"] == "estudante") Response.Redirect("~/TelaPrincipalEstudante.aspx");
             }
+>>>>>>> 8b9f38851f4c983cc15bb49adcd80d21c639ab0c
 
         }
 

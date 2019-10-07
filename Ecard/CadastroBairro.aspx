@@ -66,6 +66,9 @@
                 </div>
 
                 <div class="box2-ponto">
+                    <div class="ponto">
+                        <p>Bairro</p>
+                    </div>
                      <div class=" pesq">
                     <asp:TextBox ID="valueSearch" CssClass="textbox1" runat="server" placeholder="Pesquisar"></asp:TextBox>
                     <div class="pesq-2">

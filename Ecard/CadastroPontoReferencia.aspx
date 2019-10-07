@@ -72,7 +72,7 @@
 
                 <div class="box2-ponto">
                     <div class="ponto">
-                        <p>Pontos de recarga</p>
+                        <p>Ponto de Referência</p>
                     </div>
                      <div class=" pesq">
                     <asp:TextBox ID="valueSearch" CssClass="textbox1" runat="server" placeholder="Pesquisar"></asp:TextBox>
