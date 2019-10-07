@@ -13,5 +13,16 @@ namespace Ecard
         {
 
         }
+        protected void Button_click(object sender, EventArgs e)
+        {
+            if (TextUsuario.Text == "adm" && TextSenha.Text == "12345")
+            {
+                Session["userid"] = 0;
+                Session["username"] = "Administrador";
+                Session["logged"] = true;
+                Session["accesslevel"] = "administrador";
+                Response.Redirect("~/WebFormTelaPrincipalAdm.aspx");
+            }
+        }
     }
 }

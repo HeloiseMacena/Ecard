@@ -141,6 +141,8 @@ namespace Ecard.DAL
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
+                while (dr.Read())
+                {
                     Instituicao = new Modelo.Instituicao(
                         dr["Nome"].ToString(),
                         dr["Email"].ToString(),
@@ -155,11 +157,51 @@ namespace Ecard.DAL
                         dr["cnpj"].ToString()
                         );
                     Instituicao.Id = int.Parse(dr["id"].ToString());
+                }
             }
 
             dr.Close();
             conn.Close();
 
+            return Instituicao;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public Modelo.Instituicao Login(string email, string senha)
+        {
+            Modelo.Instituicao aInstituicao;
+            Modelo.Instituicao Instituicao = new Modelo.Instituicao();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Instituicao Where email = @email and senha = @senha";
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@senha", senha);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    Instituicao = new Modelo.Instituicao(
+                      dr["nome"].ToString(),
+                      dr["email"].ToString(),
+                      dr["codigo_inep"].ToString(),
+                      Convert.ToBoolean(Convert.ToInt32(dr["status"].ToString())),
+                      dr["senha"].ToString(),
+                      dr["endereco_bairro"].ToString(),
+                      dr["endereco_cep"].ToString(),
+                      dr["endereco_municipio"].ToString(),
+                      dr["endereco_logradouro"].ToString(),
+                      dr["endereco_numero"].ToString(),
+                      dr["cnpj"].ToString()
+                      );
+                    Instituicao.Id = int.Parse(dr["id"].ToString());
+                }
+            }
+
+            dr.Close();
+            conn.Close();
+ 
             return Instituicao;
         }
     }

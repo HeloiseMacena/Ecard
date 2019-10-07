@@ -18,6 +18,10 @@ namespace Ecard.Modelo
         public DateTime carteira_validade;
         public string senha;
 
+        public Estudante()
+        {
+            id = 0;
+        }
         public Estudante(string nome, string cpf, string email, string senha, bool status, string carteira_foto, double carteira_saldo, int carteira_numero, DateTime carteira_validade)
         {
             

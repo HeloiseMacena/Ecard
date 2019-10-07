@@ -25,12 +25,13 @@
                 <asp:TextBox ID="TextSenha" CssClass="textbox1" runat="server" type="password" placeholder="Senha"></asp:TextBox>                
             </div>               
       
-            <div class="login">
-                <asp:Button ID="Button1" runat="server" Text="Entrar" type="submit" class="button" PostBackUrl="~/WebFormTelaPrincipalInstituicao.aspx"/>
-                <p>Instituição não cadastrada!<a class="link-open" href="CadastroInstituicao.aspx">Cadastre-a</a></p>
-                <p class="link-rec">Esqueceu a senha?</p>
-            </div>
-        </div>
-    </form>
+         <div class="login">
+             <!-- PostBackUrl="~/WebFormTelaPrincipalInstituicao.aspx" -->
+             <asp:Button ID="Button1" runat="server" Text="Entrar" type="submit" class="button"  OnClick="Button_Click"/>
+             <p>Instituição não cadastrada!<a class="link-open" href="CadastroInstituicao.aspx">Cadastre-a</a></p>
+             <p class="link-rec">Esqueceu a senha?</p>
+         </div>
+     </div>
+</form>
 </body>
 </html>

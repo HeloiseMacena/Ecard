@@ -9,10 +9,18 @@ namespace Ecard
 {
     public partial class CadastroRota : System.Web.UI.Page
     {
-         protected void Page_Load(object sender, EventArgs e)
-         {
-
-         }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["logged"] != null)
+            {
+                if (Session["accesslevel"] == "instituicao") Response.Redirect("~/WebFormTelaPrincipalInstituicao.aspx");
+                if (Session["accesslevel"] == "estudante") Response.Redirect("~/TelaPrincipalEstudante.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/TelaInicial.aspx");
+            }
+        }
 
         /*  protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
          {

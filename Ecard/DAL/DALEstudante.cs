@@ -123,7 +123,7 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, instituicao_id) VALUES (@Nome, @cpf, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 2)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, instituicao_id) VALUES (@Nome, @cpf, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 1)", conn);
 
             cmd.Parameters.AddWithValue("@Nome", obj.nome);
             cmd.Parameters.AddWithValue("@cpf", obj.cpf);
@@ -200,6 +200,40 @@ namespace Ecard.DAL
             conn.Close();
 
             return aListEstudante;
+        }
+        public Modelo.Estudante Login(string cpf, string senha)
+        {
+            Modelo.Estudante aEstudante = new Modelo.Estudante();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Estudante Where cpf = @cpf and senha = @senha";
+            cmd.Parameters.AddWithValue("@cpf", cpf);
+            cmd.Parameters.AddWithValue("@senha", senha);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    aEstudante = new Modelo.Estudante(
+                        dr["nome"].ToString(),
+                        dr["cpf"].ToString(),
+                        dr["email"].ToString(),
+                        dr["senha"].ToString(),
+                        Convert.ToBoolean(Convert.ToInt32(dr["status"].ToString())),
+                        dr["carteira_foto"].ToString(),
+                        double.Parse(dr["carteira_saldo"].ToString()),
+                        int.Parse(dr["carteira_numero"].ToString()),
+                        Convert.ToDateTime(dr["carteira_validade"].ToString())
+                        );
+                    aEstudante.id = Convert.ToInt32(dr["id"].ToString());
+                }
+            }
+
+            dr.Close();
+            conn.Close();
+
+            return aEstudante;
         }
     }
 }

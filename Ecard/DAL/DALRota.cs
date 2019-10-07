@@ -30,6 +30,7 @@ namespace Ecard.DAL
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "Select * from rota";
             SqlDataReader dr = cmd.ExecuteReader();
+
             if (dr.HasRows)
             {
 
@@ -39,6 +40,7 @@ namespace Ecard.DAL
                         dr["nome"].ToString()
                         );
                     aRota.id = Convert.ToInt32(dr["id"].ToString());
+                    
                     aListRota.Add(aRota);
                 }
             }
@@ -56,12 +58,18 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("DELETE FROM rota WHERE id = @id", conn);
 
+            SqlCommand cmd = new SqlCommand("DELETE FROM Rotas_Bairro where rotas_id = @id");
             cmd.Parameters.AddWithValue("@id", obj.id);
-
             cmd.ExecuteNonQuery();
 
+            cmd = new SqlCommand("DELETE FROM rota WHERE id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SqlCommand("DELETE FROM rota_referencia where rota_id = @id");
+            cmd.Parameters.AddWithValue("@id", obj.id);
+            cmd.ExecuteNonQuery();
         }
 
 
@@ -76,11 +84,17 @@ namespace Ecard.DAL
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.Parameters.AddWithValue("@ponto_referencia_id", ponto_referencia_id);
             cmd.ExecuteNonQuery();
+
             cmd = new SqlCommand("Select @@identity as id", conn);
             int id = Convert.ToInt32(cmd.ExecuteScalar());
             cmd = new SqlCommand("INSERT INTO Rotas_Bairro(rotas_id,bairro_id) VALUES (@rota_id,@bairro_id)", conn);
             cmd.Parameters.AddWithValue("@bairro_id",bairro_id);
             cmd.Parameters.AddWithValue("@rota_id", id);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SqlCommand("insert into rota_referencia(rota_id, ponto_referencia_id) values(@rota_id, @referencia_id0)", conn);
+            cmd.Parameters.AddWithValue("@rota_id", id);
+            cmd.Parameters.AddWithValue("@referencia_id", ponto_referencia_id);
             cmd.ExecuteNonQuery();
 
 
