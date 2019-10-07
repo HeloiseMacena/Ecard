@@ -32,6 +32,7 @@ namespace Ecard
                     Repeater1.DataSource = cmd.ExecuteReader();
                     Repeater1.DataBind();
                 }
+            }
 
             
         }
