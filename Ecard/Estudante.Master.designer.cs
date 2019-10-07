@@ -31,6 +31,15 @@ namespace Ecard {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Controle usuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label usuario;
+        
+        /// <summary>
         /// Controle ContentPlaceHolder1.
         /// </summary>
         /// <remarks>

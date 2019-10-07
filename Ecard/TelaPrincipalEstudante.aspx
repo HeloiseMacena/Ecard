@@ -19,8 +19,8 @@
                     <div class="box2-user">
                          <i class="fas fa-user-circle"></i>
                          <div class="user-name"> 
-                            <h1>Dara Hadrielle</h1>
-                            <p>Estudante</p>
+                           <asp:Label ID="nome_usuario" runat="server" Text=""></asp:Label>
+                           <p>Estudante</p>
                         </div>
                     </div>
                     <div class="box2-button">
@@ -33,7 +33,7 @@
                         <p>Seu Saldo</p>
                     </div>
                      <div class="hl"></div> <!--  horizontal line -->
-                    <asp:Label ID="Label1" CssClass="title-money" runat="server" Text="R$ 9,58"></asp:Label>
+                    <asp:Label ID="saldo" CssClass="title-money" runat="server" Text=""></asp:Label>
                     <div class="btns">
                          <asp:Button class="btn-rec" runat="server" Text="Recarregar" PostBackUrl="~/Recarga.aspx"/>
                         <asp:Button class="btn-calc" runat="server" Text="Calcular Passagens" PostBackUrl="~/CalcularPassagem.aspx"/>
