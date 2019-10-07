@@ -254,6 +254,12 @@ form#form1 {
     cursor: pointer;
 }
 
+.ai {
+    text-decoration: none;
+    color: #0F3561;
+    margin-right: 10px;
+}
+
 .box2-button {
     display: flex;
     justify-content: flex-end;
