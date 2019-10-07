@@ -19,10 +19,7 @@ namespace Ecard
                 if (Session["accesslevel"] == "instituicao") Response.Redirect("~/WebFormTelaPrincipalInstituicao.aspx");
                 if (Session["accesslevel"] == "estudante") Response.Redirect("~/TelaPrincipalEstudante.aspx");
             }
-            else
-            {
-                Response.Redirect("~/TelaInicial.aspx");
-            }
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)

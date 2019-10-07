@@ -166,10 +166,9 @@ namespace Ecard.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Estudante> Select(int Id)
+        public Modelo.Estudante Select(int Id)
         {
-            Modelo.Estudante aEstudante;
-            List<Modelo.Estudante> aListEstudante = new List<Modelo.Estudante>();
+            Modelo.Estudante aEstudante = new Modelo.Estudante();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
@@ -185,21 +184,20 @@ namespace Ecard.DAL
                         dr["cpf"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
-                        Convert.ToBoolean(dr["status"].ToString()),
+                        Convert.ToBoolean(int.Parse(dr["status"].ToString())),
                         dr["carteira_foto"].ToString(),
                         double.Parse(dr["carteira_saldo"].ToString()),
                         int.Parse(dr["carteira_numero"].ToString()),
                         Convert.ToDateTime(dr["carteira_validade"].ToString())
                         );
                     aEstudante.id = Convert.ToInt32(dr["id"].ToString());
-                    aListEstudante.Add(aEstudante);
                 }
             }
 
             dr.Close();
             conn.Close();
 
-            return aListEstudante;
+            return aEstudante;
         }
         public Modelo.Estudante Login(string cpf, string senha)
         {
