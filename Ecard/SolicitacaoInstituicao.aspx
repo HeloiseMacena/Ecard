@@ -35,7 +35,21 @@
                     </asp:DropDownList>
                     <asp:Button runat="server" CssClass="btn-ok" Text="Ok"/>
                 </div>
-
+            <div class="help">
+                    <asp:Repeater ID="Repeater1" runat="server" >
+                        <ItemTemplate>
+                            <div class="solicitItem">
+                                <div class="solicitItem-nome">
+                                    <p class="solicit-nome"><%#Eval("Nome")%></p>
+                                </div>
+                                <div class="solicit-but">
+                                   <asp:LinkButton runat="server"><a href="#modal" class="action-button shadow animate blue" id="show-modal"><i class="fas fa-pen-square"></i></a></asp:LinkButton>                                   
+                                  </div>
+                            </div> 
+                        </ItemTemplate>
+                    </asp:Repeater>                                                            
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Ecard.Modelo.Bairro" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALBairro" UpdateMethod="Update"></asp:ObjectDataSource>                                  
+                  </div>
               
             </div>
             <div class="box2">
@@ -51,6 +65,25 @@
                          <asp:Button runat="server" CssClass="btn2"  Text="Ver Perfil" PostBackUrl="~/PerfilAdm.aspx" />
                     </div>
                 </div>
+                <!-- Modal -->
+                <aside id="modal" class="modal">
+		            <div class="content-modal">
+			            <header>
+				            <a href="#" class="close-modal">X</a>
+				            <h2>Mais informações</h2>	
+			            </header>
+			            <article>
+                          <div class="help-modal">                                
+                                        <div class="rota-modal">
+                                            <div class="rota-modal-nome">
+                                                <p class="ponto-ref">Pontos de Referência:</p>
+                                            </div>
+                                        </div>
+                            </div>
+			            </article>
+                    </div>
+		            <a href="#" class="btn-close-modal"></a>
+	            </aside>
             </div>
         </div>
     </form>
