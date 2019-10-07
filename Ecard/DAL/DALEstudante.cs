@@ -220,7 +220,7 @@ namespace Ecard.DAL
                         dr["cpf"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
-                        Convert.ToBoolean(dr["status"].ToString()),
+                        Convert.ToBoolean(Convert.ToInt32(dr["status"].ToString())),
                         dr["carteira_foto"].ToString(),
                         double.Parse(dr["carteira_saldo"].ToString()),
                         int.Parse(dr["carteira_numero"].ToString()),
