@@ -26,6 +26,7 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
+                        <a class="ai" href="WebFormTelaPrincipalAdm.aspx"><i class="fas fa-arrow-left"></i></a>
                        <h3>Perfil</h3>
                     </div>
                 </div>
