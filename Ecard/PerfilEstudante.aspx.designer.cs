@@ -49,30 +49,30 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
         
         /// <summary>
-        /// Controle TextPonto.
+        /// Controle TextAtual.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextPonto;
+        protected global::System.Web.UI.WebControls.TextBox TextAtual;
         
         /// <summary>
-        /// Controle TextRua.
+        /// Controle TextNova.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextRua;
+        protected global::System.Web.UI.WebControls.TextBox TextNova;
         
         /// <summary>
-        /// Controle TextBairro.
+        /// Controle TextConfirmacao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBairro;
+        protected global::System.Web.UI.WebControls.TextBox TextConfirmacao;
     }
 }

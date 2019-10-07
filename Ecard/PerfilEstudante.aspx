@@ -22,12 +22,12 @@
             </div>
             <div class="box1-midi">
                 <h1 class="title-1">Mudar Senha</h1>
-                <asp:TextBox ID="TextPonto" runat="server" CssClass="box1-mid" placeholder="Senha atual"></asp:TextBox>
-                <asp:TextBox ID="TextRua" runat="server" CssClass="box1-mid" placeholder="Nova senha"></asp:TextBox>
-                <asp:TextBox ID="TextBairro" runat="server" CssClass="box1-mid" placeholder="Confirmar nova senha"></asp:TextBox>
+                <asp:TextBox ID="TextAtual" runat="server" CssClass="box1-mid" placeholder="Senha atual"></asp:TextBox>
+                <asp:TextBox ID="TextNova" runat="server" CssClass="box1-mid" placeholder="Nova senha"></asp:TextBox>
+                <asp:TextBox ID="TextConfirmacao" runat="server" CssClass="box1-mid" placeholder="Confirmar nova senha"></asp:TextBox>
                 <div class="btn-b2">
                     <asp:Button class="btn-close" runat="server" Text="Cancelar" PostBackUrl="~/TelaPrincipalEstudante.aspx"/>
-                    <asp:Button class="btn-save" runat="server" Text="Salvar"/>
+                    <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed_Click"/>
                 </div>
             </div>
         </div>
