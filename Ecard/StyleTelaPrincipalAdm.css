@@ -94,18 +94,20 @@ form#form1 {
 
         /* MENU USER */
 
-        .header > .ol > .menu-user {
-            height: 100%;
-            padding-left: 30px !important;
-            padding-right: 30px !important;
-            font-weight: 600;
-            color: #5c5c5c;
-            margin: 0 !important;
-            background-color: #f2f2f2;
-            border: none !important;
-            display: flex;
-            align-items: center;
-        }
+.menu-user {
+    height: 100%;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    font-weight: 600;
+    color: #b50707;
+    margin: 0 !important;
+    background-color: #f2f2f2;
+    border: none !important;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none !important;
+}
 
             .header > .ol > .menu-user:hover {
                 background-color: #f4f4f4;

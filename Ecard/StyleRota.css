@@ -554,6 +554,18 @@ form#form1 {
     color: #262626;
 }
 
+.check {
+    font-family: arial;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    padding-top: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    display:flex;
+}
+
 
 /* RESPONSIVIDADE */
 

@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="CadastroRotaEdit.aspx.cs" Inherits="Ecard.CadastroRotaEdit" %>
+﻿
+
+<%@ Page Language="C#" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="CadastroRotaEdit.aspx.cs" Inherits="Ecard.CadastroRotaEdit" %>
 
 <!DOCTYPE html>
 
@@ -35,15 +37,16 @@
                       <h1>Cadastro</h1>
                       <asp:TextBox ID="TextBoxNome" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>   
                     <div class="org-1">
-                        <asp:Label ID="Label1" runat="server" Text="Bairros"></asp:Label>
-                        <asp:CheckBoxList ID="CheckBoxListBairro" runat="server"></asp:CheckBoxList>
+                        <div class="org-2">
+                        <asp:Label ID="Label1" CssClass="label" runat="server" Text="Bairros"></asp:Label>
+                        <asp:CheckBoxList ID="CheckBoxListBairro" CssClass="check" runat="server"></asp:CheckBoxList>
                         <!-- <asp:TextBox ID="TextBoxBairro" runat="server" CssClass="box1-mid-1" placeholder="Bairro"></asp:TextBox> -->
-                        
-                    </div> 
-                    <div class="org-1">
-                        <asp:Label ID="Label2" runat="server" Text="Pontos de referência"></asp:Label>
-                        <asp:CheckBoxList ID="CheckBoxListReferencia" runat="server"></asp:CheckBoxList>
+                        </div>
+                        <div class="org-3">                    
+                        <asp:Label ID="Label2" CssClass="label" runat="server" Text="Pontos de referência"></asp:Label>
+                        <asp:CheckBoxList ID="CheckBoxListReferencia"  CssClass="check" runat="server"></asp:CheckBoxList>
                         <!--<asp:TextBox ID="TextBoxReferencia" runat="server" CssClass="box1-mid-1" placeholder="Ponto de Referência"></asp:TextBox> -->
+                    </div>
                     </div>
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroRota.aspx" />
@@ -64,16 +67,6 @@
                     </div>
                     <div class="box2-button">
                          <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" />
-                    </div>
-                </div>
-
-                <div class="box2-rotas">
-                    <div class="rotas">
-                        <p>Rotas</p>
-                    </div>
-                    <div class="rotas2">
-                        <i runat="server" id="iconTeste" class="fas fa-search"></i>
-                        <p>Pesquisar</p>
                     </div>
                 </div>
             </div>

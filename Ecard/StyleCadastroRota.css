@@ -281,12 +281,22 @@ form#form1 {
 
 .org-1 {
     flex-direction: row;
-    width: 42%;
     display: flex;
     align-items: center;
     margin-top: 20px;
-    justify-content: space-between;
+    justify-content: center;
+    align-content: flex-end;
+    width: 123%;
+    padding: 30px;
 }
+
+.org-2 {
+
+}
+.org-3 {
+    margin-left: 64px;
+}
+
 
 
 
@@ -464,6 +474,14 @@ form#form1 {
     color: #a1a1a1;
     border-style: none;
     border-radius: 3px;
+}
+
+.check {
+    margin-top: 10px;
+}
+
+.label {
+    font-size: 19px;
 }
 
 

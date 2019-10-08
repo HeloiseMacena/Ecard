@@ -20,7 +20,7 @@
                 <div class="li">Page 2</div>
                 <div class="li">Page 3</div>
                 <div class="li">Page 4</div> 
-                <div class="menu-user">Daniel Victor</div>
+                <div><a class="menu-user" href="TelaInicial.aspx">Sair</a></div>
             </div>
         </div>
         <div class="container">

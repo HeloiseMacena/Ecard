@@ -27,8 +27,7 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
-                       <i class="fas fa-map-marked-alt"></i>
-                       <p>Pontos de recarga</p>
+                       <p>Editar Bairro</p>
                     </div>
                 </div>
                 <div class="box1-midi">
