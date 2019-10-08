@@ -12,12 +12,12 @@
             </div>
             <div class="nov-header">
                 <div class="space">
-                    <asp:TextBox ID="Nome" runat="server" CssClass="nov-text" placeholder="Heloise" ></asp:TextBox> 
-                    <asp:LinkButton ID="LinkButton1" CssClass="link-alt" runat="server">Alterar</asp:LinkButton>
+                    <asp:TextBox ID="Nome" runat="server" CssClass="nov-text"></asp:TextBox> 
+                    <asp:LinkButton ID="LinkButton1" CssClass="link-alt" runat="server" OnClick="LinkButton1_Click">Alterar</asp:LinkButton>
                 </div>
                 <div class="space-2">
-                    <asp:TextBox ID="Email" runat="server" CssClass="nov-text" placeholder="Heloise@outlook.edu.br"></asp:TextBox>
-                    <asp:LinkButton ID="LinkButton2" CssClass="link-alt" runat="server">Alterar</asp:LinkButton>
+                    <asp:TextBox ID="Email" runat="server" CssClass="nov-text"></asp:TextBox>
+                    <asp:LinkButton ID="LinkButton2" CssClass="link-alt" runat="server" OnClick="LinkButton2_Click">Alterar</asp:LinkButton>
                 </div>
             </div>
             <div class="box1-midi">

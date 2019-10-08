@@ -46,5 +46,23 @@ namespace Ecard
                 Response.Redirect("~/PerfilEstudante.aspx");
             }
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(Session["userid"].ToString());
+            DALEstudante dal = new DALEstudante();
+            Modelo.Estudante estudante = dal.Select(id);
+            estudante.nome = Nome.Text;
+            dal.Update(estudante);
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(Session["userid"].ToString());
+            DALEstudante dal = new DALEstudante();
+            Modelo.Estudante estudante = dal.Select(id);
+            estudante.email = Email.Text;
+            dal.Update(estudante);
+        }
     }
 }
