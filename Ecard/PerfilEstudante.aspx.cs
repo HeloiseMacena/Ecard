@@ -10,6 +10,7 @@ namespace Ecard
 {
     public partial class PerfilEstudante : System.Web.UI.Page
     {
+        int id;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["logged"] != null)
@@ -21,6 +22,16 @@ namespace Ecard
             {
                 Response.Redirect("~/TelaInicial.aspx");
             }
+            if (!IsPostBack)
+            {
+                id = int.Parse(Session["userid"].ToString());
+                DALEstudante dal = new DALEstudante();
+                Modelo.Estudante estudante = dal.Select(id);
+                Nome.Text = estudante.nome;
+                Email.Text = estudante.email;
+            }
+            
+
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)
