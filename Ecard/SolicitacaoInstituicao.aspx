@@ -43,7 +43,7 @@
                                     <p class="solicit-nome"><%#Eval("Nome")%></p>
                                 </div>
                                 <div class="solicit-but">
-                                   <asp:LinkButton runat="server"><a href="#modal" class="action-button shadow animate blue" id="show-modal"><i class="fas fa-pen-square"></i></a></asp:LinkButton>                                   
+                                   <asp:LinkButton runat="server" CommandArgument='<%#Eval("id")%>' OnClick="getModalInfos_Click"><a href="#modal" class="action-button shadow animate link-but" id="show-modal"><i class="fas fa-pen-square"></i></a></asp:LinkButton>                                   
                                   </div>
                             </div> 
                         </ItemTemplate>
@@ -68,21 +68,29 @@
                 <!-- Modal -->
                 <aside id="modal" class="modal">
 		            <div class="content-modal">
-			            <header>
+			            <header class="faixa">
 				            <a href="#" class="close-modal">X</a>
-				            <h2>Mais informações</h2>	
 			            </header>
 			            <article>
                           <div class="help-modal">                                
-                                        <div class="rota-modal">
-                                            <div class="rota-modal-nome">
-                                                <p class="ponto-ref">Pontos de Referência:</p>
-                                            </div>
-                                        </div>
+                            <div class="item-modal">
+                                <asp:Label runat="server" type="text" CssClass="imodal" ID="nome"></asp:Label>
+                                <asp:Label runat="server" type="text" CssClass="imodal" ID="email"></asp:Label>
+                                <asp:Label runat="server" type="text" CssClass="imodal" ID="código"></asp:Label>
+                                <asp:Label runat="server" type="text" CssClass="imodal" ID="cnpj"></asp:Label>
+                                <asp:DropDownList runat="server" CssClass="ddlist2">
+                                    <asp:ListItem>Não há erro...</asp:ListItem>
+                                    <asp:ListItem>Código INEP/MEC não identificado</asp:ListItem>
+                                    <asp:ListItem>CNPJ não identificado</asp:ListItem>
+                                </asp:DropDownList>
+                                <div class="btn-modal">
+                                    <asp:Button runat="server" CssClass="btn-rec" text="Recusar"/>
+                                    <asp:Button runat="server" CssClass="btn-act" text="Aceitar"/>
+                                </div>
+                            </div>
                             </div>
 			            </article>
-                    </div>
-		            <a href="#" class="btn-close-modal"></a>
+                    </div>		            
 	            </aside>
             </div>
         </div>
