@@ -49,13 +49,13 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// Controle Label6.
+        /// Controle LabelRG.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label LabelRG;
         
         /// <summary>
         /// Controle Label7.
@@ -67,13 +67,13 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// Controle Label8.
+        /// Controle LabelCPF.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label8;
+        protected global::System.Web.UI.WebControls.Label LabelCPF;
         
         /// <summary>
         /// Controle Label9.
@@ -85,13 +85,13 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.Label Label9;
         
         /// <summary>
-        /// Controle Label10.
+        /// Controle LabelNascimento.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label10;
+        protected global::System.Web.UI.WebControls.Label LabelNascimento;
         
         /// <summary>
         /// Controle Label11.
@@ -103,13 +103,13 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.Label Label11;
         
         /// <summary>
-        /// Controle Label12.
+        /// Controle LabelInstituicao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label12;
+        protected global::System.Web.UI.WebControls.Label LabelInstituicao;
         
         /// <summary>
         /// Controle userImage.
@@ -146,6 +146,15 @@ namespace Ecard {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnUpload1;
+        
+        /// <summary>
+        /// Controle Termo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Termo;
         
         /// <summary>
         /// Controle cbTerm.

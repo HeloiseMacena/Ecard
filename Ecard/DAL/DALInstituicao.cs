@@ -39,8 +39,8 @@ namespace Ecard.DAL
                     aInstituicao = new Modelo.Instituicao(
                         dr["Nome"].ToString(),
                         dr["Email"].ToString(),
-                        dr["Codigo_inep_mec"].ToString(),
-                        Convert.ToBoolean(dr["Status"].ToString()),
+                        dr["codigo_inep"].ToString(),
+                        Convert.ToBoolean(int.Parse(dr["Status"].ToString())),
                         dr["Senha"].ToString(),
                         dr["Endereco_bairro"].ToString(),
                         dr["Endereco_CEP"].ToString(),
@@ -109,7 +109,7 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Instituicao SET Nome = @Nome; Email=@Email, Codigo_inep_mec = @Codigo_inep_mec, Status = @Status, Senha = @Senha, Endereco_bairro = @Endereco_bairro, Endereco_CEP = @Endereco_CEP, Endereco_municipio = @Endereco_municipio, Endereco_logradouro = @Endereco_logradouro, Endereco_numero = @Endereco_numero  WHERE Id = @Id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Instituicao SET Nome = @Nome, Email=@Email, codigo_inep = @Codigo_inep_mec, Status = @Status, Senha = @Senha, Endereco_bairro = @Endereco_bairro, Endereco_CEP = @Endereco_CEP, Endereco_municipio = @Endereco_municipio, Endereco_logradouro = @Endereco_logradouro, Endereco_numero = @Endereco_numero  WHERE Id = @Id", conn);
 
             cmd.Parameters.AddWithValue("@Id", obj.Id);
             cmd.Parameters.AddWithValue("@Nome", obj.Nome);
@@ -131,7 +131,6 @@ namespace Ecard.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public Modelo.Instituicao Select(int Id)
         {
-            Modelo.Instituicao aInstituicao;
             Modelo.Instituicao Instituicao = new Modelo.Instituicao();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -146,8 +145,8 @@ namespace Ecard.DAL
                     Instituicao = new Modelo.Instituicao(
                         dr["Nome"].ToString(),
                         dr["Email"].ToString(),
-                        dr["Codigo_inep_mec"].ToString(),
-                        Convert.ToBoolean(dr["Status"].ToString()),
+                        dr["codigo_inep"].ToString(),
+                        Convert.ToBoolean(int.Parse(dr["Status"].ToString())),
                         dr["Senha"].ToString(),
                         dr["Endereco_bairro"].ToString(),
                         dr["Endereco_CEP"].ToString(),
@@ -166,10 +165,10 @@ namespace Ecard.DAL
             return Instituicao;
         }
 
+
         [DataObjectMethod(DataObjectMethodType.Select)]
         public Modelo.Instituicao Login(string email, string senha)
         {
-            Modelo.Instituicao aInstituicao;
             Modelo.Instituicao Instituicao = new Modelo.Instituicao();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();

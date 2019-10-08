@@ -34,31 +34,31 @@
                         <div class="info-2-label">
                             <asp:Label ID="Label3" CssClass="azul" runat="server" Text="Nome"></asp:Label>
                         </div>
-                        <asp:Label ID="LabelNome" CssClass="campo-inf" runat="server" Text="Dara Hadrielle da Cunha Rocha "></asp:Label>
+                        <asp:Label ID="LabelNome" CssClass="campo-inf" runat="server"></asp:Label>
                     </div>
                      <div class="info-2"> 
                         <div class="info-2-label">
                             <asp:Label ID="Label5" CssClass="azul" runat="server" Text="RG"></asp:Label>
                         </div>
-                        <asp:Label ID="Label6" CssClass="campo-inf" runat="server" Text="123.456.789"></asp:Label>
+                        <asp:Label ID="LabelRG" CssClass="campo-inf" runat="server"></asp:Label>
                     </div>
                      <div class="info-2">
                         <div class="info-2-label">
                             <asp:Label ID="Label7" CssClass="azul" runat="server" Text="CPF"></asp:Label>
                         </div>
-                        <asp:Label ID="Label8" CssClass="campo-inf" runat="server" Text="123.456.789-11 "></asp:Label>
+                        <asp:Label ID="LabelCPF" CssClass="campo-inf" runat="server"></asp:Label>
                     </div>
                      <div class="info-2">
                         <div class="info-2-label">
                             <asp:Label ID="Label9" CssClass="azul" runat="server" Text="Nascimento"></asp:Label>
                         </div>
-                        <asp:Label ID="Label10" CssClass="campo-inf" runat="server" Text="01/01/2001"></asp:Label>
+                        <asp:Label ID="LabelNascimento" CssClass="campo-inf" runat="server" Text="01/01/2001"></asp:Label>
                     </div>
                      <div class="info-2">
                         <div class="info-2-label">
                             <asp:Label ID="Label11" CssClass="azul" runat="server" Text="Instituição"></asp:Label>
                         </div>
-                        <asp:Label ID="Label12" CssClass="campo-inf" runat="server" Text="IFRN "></asp:Label>
+                        <asp:Label ID="LabelInstituicao" CssClass="campo-inf" runat="server"></asp:Label>
                     </div>
                     <div class="image-1" ><img src="Imagens/fotocarteira.png"  style="width:100%;"/></div>
                     <div class="photo">
@@ -83,13 +83,12 @@
                             <label style="display: block; font-weight: 700; margin-bottom: 20px;">
                                 Termo de compromisso sobre o Cartão Estudante/Carteira Nacional de Identificação Estudantil
                             </label>
-                            <label style="font-size: 12px;">
-                                Eu, PESSOA,CPF: XXXXXXX, RG: XXXXXXX, afirmo, no ato do recebimento deste Cartão Estudante/ Identidade Eletrônica, Ru: 633419 afirmo, no ato do recebimento deste Cartão Estudante/Carteira Nacional de Identificação Estudantil (sob pena de medidas administrativas, civis e criminais - Art. 299 do Código Penal), que sou estudante regularmente matriculado em instituição de ensino e declaro conhecer as formas corretas de utilização deste documento. Asseguro ainda estar ciente de que me submeterei às penas legais e criminais em caso de fraude, especialmente se este cartão pessoal for cedido para utilização de terceiros, estudantes ou não, como também em caso de utilização deste documento de forma ilegal, que possa caracterizar fraude, independentemente de obter ou não, qualquer tipo de vantagem. Além disso, comprometo-me a alertar meus familiares de que o uso deste cartão por outra pessoa que não seja eu mesmo, é crime e pode gerar consequências legais.
-                            </label>
+                            <asp:Label ID="Termo" runat="server" style="font-size: 12px;"></asp:Label>
+                            <label style="font-size: 12px;" >, afirmo, no ato do recebimento deste Cartão Estudante/ Identidade Eletrônica, Ru: 633419 afirmo, no ato do recebimento deste Cartão Estudante/Carteira Nacional de Identificação Estudantil (sob pena de medidas administrativas, civis e criminais - Art. 299 do Código Penal), que sou estudante regularmente matriculado em instituição de ensino e declaro conhecer as formas corretas de utilização deste documento. Asseguro ainda estar ciente de que me submeterei às penas legais e criminais em caso de fraude, especialmente se este cartão pessoal for cedido para utilização de terceiros, estudantes ou não, como também em caso de utilização deste documento de forma ilegal, que possa caracterizar fraude, independentemente de obter ou não, qualquer tipo de vantagem. Além disso, comprometo-me a alertar meus familiares de que o uso deste cartão por outra pessoa que não seja eu mesmo, é crime e pode gerar consequências legais.</label>
                         </div>
                         <div class="term-content-footer">
                             <asp:CheckBox runat="server" ID="cbTerm" Text="DECLARO, para os fins que se fizerem necessários, ter lido e ACEITO integralmente as condições expressas no Termo de Compromisso sobre o cartão abaixo discriminadas." />
-                            <asp:Button runat="server" ID="btnSendForm" CssClass="btnSendForm" Text="Confirmar solicitação" />
+                            <asp:Button runat="server" ID="btnSendForm" CssClass="btnSendForm" Text="Confirmar solicitação" onclick="btnSendForm_Click"/>
                         </div>
                     </div>
                 </div>

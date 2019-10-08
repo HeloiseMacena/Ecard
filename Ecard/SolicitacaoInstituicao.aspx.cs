@@ -27,24 +27,24 @@ namespace Ecard
             {
                 con.Open();
 
-                using (var cmd = new SqlCommand("Select nome from Instituicao", con))
+                using (var cmd = new SqlCommand("Select * from Instituicao", con))
                 {
                     Repeater1.DataSource = cmd.ExecuteReader();
                     Repeater1.DataBind();
                 }
             }
         }
-        /*protected void getModalInfos_Click(object sender, EventArgs e)
+        protected void getModalInfos_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(((Button)sender).CommandArgument.ToString());
+            /*int id = int.Parse(((Button)sender).CommandArgument.ToString());
             DAL.DALInstituicao i = new DAL.DALInstituicao();
             Modelo.Instituicao instituicao = i.Select(id);
             modalNome.Text = instituicao.Nome;
             modalEmail.Text = instituicao.Email;
             modalCodigo.Text = instituicao.Codigo_inep_mec;
 
-            modalContainer.Style.Add("visibility", "visible");
-        }*/
+            modalContainer.Style.Add("visibility", "visible");*/
+        }
         /*protected void Button1_Click(object sender, EventArgs e)
         {
 

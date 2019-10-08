@@ -37,6 +37,56 @@ namespace Ecard.DAL
             return a;
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Estudante> SelectSolicitacoes()
+        {
+            List<Modelo.Estudante> aListEstudante = new List<Modelo.Estudante>();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Estudante where carteira_status = 1";
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    Modelo.Estudante aEstudante = new Modelo.Estudante(
+                        dr["nome"].ToString(),
+                        dr["cpf"].ToString(),
+                        dr["email"].ToString(),
+                        dr["senha"].ToString(),
+                        Convert.ToBoolean(dr["status"].ToString()),
+                        dr["carteira_foto"].ToString(),
+                        double.Parse(dr["carteira_saldo"].ToString()),
+                        int.Parse(dr["carteira_numero"].ToString()),
+                        Convert.ToDateTime(dr["carteira_validade"].ToString())
+                    );
+                    aEstudante.id = Convert.ToInt32(dr["id"].ToString());
+                    aEstudante.carteira_status = Convert.ToInt32(dr["carteira_status"].ToString());
+                    aListEstudante.Add(aEstudante);
+                }
+            }
+            dr.Close();
+            conn.Close();
+
+            return aListEstudante;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void MudarSituacaoCarteira1(string cpf)
+        {
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 1 where cpf = @cpf", conn);
+            cmd.Parameters.AddWithValue("@cpf", cpf);
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Close();
+            conn.Close();
+
+        }
+
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void MudarSituacaoTrue(string cpf)
         {
@@ -130,7 +180,7 @@ namespace Ecard.DAL
                         Convert.ToDateTime(dr["carteira_validade"].ToString())
                     );
                     aEstudante.id = Convert.ToInt32(dr["id"].ToString());
-                    //aEstudante.carteira_status = Convert.ToInt32(dr["carteira_status"].ToString());
+                    aEstudante.carteira_status = Convert.ToInt32(dr["carteira_status"].ToString());
                     aListEstudante.Add(aEstudante);
                 }
             }
@@ -164,7 +214,7 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, instituicao_id, administrador_id) VALUES (@Nome, @cpf, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 1, 1)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, instituicao_id, administrador_id, carteira_status) VALUES (@Nome, @cpf, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 1, 1, 0)", conn);
 
             cmd.Parameters.AddWithValue("@Nome", obj.nome);
             cmd.Parameters.AddWithValue("@cpf", obj.cpf);
@@ -188,7 +238,7 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET Nome = @Nome, cpf = @cpf, senha = @senha, email = @email, status = @status, carteira_foto = @carteira_foto, carteira_saldo = @carteira_saldo, carteira_numero = @carteira_numero, carteira_validade = @carteira_validade WHERE Id = @Id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET Nome = @Nome, cpf = @cpf, senha = @senha, email = @email, status = @status, carteira_foto = @carteira_foto, carteira_saldo = @carteira_saldo, carteira_numero = @carteira_numero, carteira_validade = @carteira_validade, carteira_status = @carteira_status WHERE Id = @Id", conn);
 
             cmd.Parameters.AddWithValue("@Id", obj.id);
             cmd.Parameters.AddWithValue("@Nome", obj.nome);
@@ -200,6 +250,7 @@ namespace Ecard.DAL
             cmd.Parameters.AddWithValue("@carteira_saldo", obj.carteira_saldo);
             cmd.Parameters.AddWithValue("@carteira_numero", obj.carteira_numero);
             cmd.Parameters.AddWithValue("@carteira_validade", obj.carteira_validade);
+            cmd.Parameters.AddWithValue("@carteira_status", obj.carteira_status);
 
             cmd.ExecuteNonQuery();
         }
@@ -232,6 +283,7 @@ namespace Ecard.DAL
                         Convert.ToDateTime(dr["carteira_validade"].ToString())
                         );
                     aEstudante.id = Convert.ToInt32(dr["id"].ToString());
+                    aEstudante.carteira_status = Convert.ToInt32(dr["carteira_status"].ToString());
                 }
             }
 
@@ -240,6 +292,32 @@ namespace Ecard.DAL
 
             return aEstudante;
         }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public int instituicao_id(int Id)
+        {
+            Modelo.Estudante aEstudante = new Modelo.Estudante();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Estudante Where Id = @Id";
+            cmd.Parameters.AddWithValue("@Id", Id);
+            SqlDataReader dr = cmd.ExecuteReader();
+            int id_instituicao = 0;
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    id_instituicao = int.Parse(dr["instituicao_id"].ToString());
+                }
+            }
+
+            dr.Close();
+            conn.Close();
+
+            return id_instituicao;
+        }
+
         public Modelo.Estudante Login(string cpf, string senha)
         {
             Modelo.Estudante aEstudante = new Modelo.Estudante();
@@ -266,7 +344,7 @@ namespace Ecard.DAL
                         Convert.ToDateTime(dr["carteira_validade"].ToString())
                         );
                     aEstudante.id = Convert.ToInt32(dr["id"].ToString());
-                    //aEstudante.carteira_status = Convert.ToInt32(dr["carteira_status"].ToString());
+                    aEstudante.carteira_status = Convert.ToInt32(dr["carteira_status"].ToString());
                 }
             }
 
@@ -275,6 +353,7 @@ namespace Ecard.DAL
 
             return aEstudante;
         }
+
 
 
     }

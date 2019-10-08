@@ -10,6 +10,7 @@ namespace Ecard.Modelo
         public int id;
         public string nome;
         public string cpf;
+        public string rg;
         public string email;
         public bool status;
         public int carteira_status;

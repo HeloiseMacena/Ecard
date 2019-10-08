@@ -25,7 +25,7 @@ namespace Ecard
                 Session["username"] = instituicao.Nome;
                 Session["logged"] = true;
                 Session["accesslevel"] = "instituicao";
-                Response.Redirect("~/WebFormTelaPrincipalAdm.aspx");
+                Response.Redirect("~/PerfilInstituicao.aspx");
             }
             
         }
