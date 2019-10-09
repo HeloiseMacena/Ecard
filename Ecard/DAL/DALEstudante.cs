@@ -37,20 +37,7 @@ namespace Ecard.DAL
             return a;
         }
         
-        [DataObjectMethod(DataObjectMethodType.Update)]
-        public void MudarSituacaoCarteira1(string cpf)
-        {
-
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-            SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 1 where cpf = @cpf", conn);
-            cmd.Parameters.AddWithValue("@cpf", cpf);
-            SqlDataReader dr = cmd.ExecuteReader();
-            dr.Close();
-            conn.Close();
-
-        }
+        
 
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void MudarSituacaoTrue(string cpf)
@@ -138,6 +125,7 @@ namespace Ecard.DAL
                     Modelo.Estudante aEstudante = new Modelo.Estudante(
                         dr["nome"].ToString(),
                         dr["cpf"].ToString(),
+                        dr["rg"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
                         Convert.ToBoolean(dr["status"].ToString()),
@@ -172,6 +160,7 @@ namespace Ecard.DAL
                     Modelo.Estudante aEstudante = new Modelo.Estudante(
                         dr["nome"].ToString(),
                         dr["cpf"].ToString(),
+                        dr["rg"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
                         Convert.ToBoolean(dr["status"].ToString()),
@@ -205,6 +194,7 @@ namespace Ecard.DAL
             conn.Close();
 
         }
+
 
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Estudante> SelectAll()
