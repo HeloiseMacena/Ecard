@@ -30,7 +30,7 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Lista_alunos";
+            cmd.CommandText = "Select * from Lista_Anual_Alunos";
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {

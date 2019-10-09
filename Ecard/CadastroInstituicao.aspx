@@ -57,8 +57,6 @@
                 </div>
                 <div class="textbox">
                     <asp:TextBox ID="TextCEP" CssClass="textbox1" runat="server" type="text" placeholder="CEP"></asp:TextBox>
-                    <asp:regularexpressionvalidator id="regular" runat="server" errormessage="* CEP inválido" validationexpression="”\w+([-+.’]\w+)*@\w+([-.]\w+)*\.\w+([=.]\w+)*”/"></asp:regularexpressionvalidator>
-
                 </div>
                 <div class="textbox">
                     <asp:TextBox ID="TextMunicipio" CssClass="textbox1" runat="server" type="text" placeholder="Municipio"></asp:TextBox>

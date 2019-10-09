@@ -20,7 +20,6 @@ namespace Ecard.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public string SelectValor(int id)
         {
-            List<Modelo.ValorPassagem> aListValor = new List<Modelo.ValorPassagem>();
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -29,7 +28,9 @@ namespace Ecard.DAL
             cmd.Parameters.AddWithValue("@id", id);
             SqlDataReader dr = cmd.ExecuteReader();
 
-            string valor = dr["valor"].ToString();
+            double v = double.Parse(dr["valor"].ToString());
+
+            string valor = (v / 2).ToString();
 
             return valor;
         }
@@ -56,7 +57,7 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("delete from ValorPassagem (valor, local_referencia) VALUES (@valor,@id)", conn);
+            SqlCommand cmd = new SqlCommand("delete from ValorPassagem where local_referencia = @id", conn);
             SqlCommand cmd2 = new SqlCommand("INSERT INTO ValorPassagem (valor, local_referencia) VALUES (@valor,@id)", conn);
 
             cmd.Parameters.AddWithValue("@valor", valor);
@@ -66,7 +67,7 @@ namespace Ecard.DAL
             cmd2.Parameters.AddWithValue("@id", id);
 
             cmd.ExecuteNonQuery();
-
+            cmd2.ExecuteNonQuery();
         }
 
 

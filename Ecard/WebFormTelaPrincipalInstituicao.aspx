@@ -31,7 +31,7 @@
                        <p>Estudantes</p>
                     </div>
                     <div class="box1-button">
-                        <asp:Button runat="server" CssClass="btnAdd" Text="Novo" PostBackUrl="~/CadastroPontoEdit.aspx" />
+                        <asp:Button runat="server" CssClass="btnAdd" Text="Novo"/>
                     </div>
                 </div>
                 <div class="hl"></div> <!-- horizontal line -->
