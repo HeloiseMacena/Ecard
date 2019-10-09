@@ -17,7 +17,22 @@ namespace Ecard.DAL
             connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public string SelectValor(int id)
+        {
+            List<Modelo.ValorPassagem> aListValor = new List<Modelo.ValorPassagem>();
 
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from ValorPassagem where local_referencia = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            string valor = dr["valor"].ToString();
+
+            return valor;
+        }
 
         [DataObjectMethod(DataObjectMethodType.Delete)]
         public void Delete(Modelo.ValorPassagem obj)
@@ -41,11 +56,14 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO ValorPassagem (valor, local_referencia) VALUES (@valor,@id)", conn);
+            SqlCommand cmd = new SqlCommand("delete from ValorPassagem (valor, local_referencia) VALUES (@valor,@id)", conn);
+            SqlCommand cmd2 = new SqlCommand("INSERT INTO ValorPassagem (valor, local_referencia) VALUES (@valor,@id)", conn);
 
             cmd.Parameters.AddWithValue("@valor", valor);
             cmd.Parameters.AddWithValue("@id", id);
 
+            cmd2.Parameters.AddWithValue("@valor", valor);
+            cmd2.Parameters.AddWithValue("@id", id);
 
             cmd.ExecuteNonQuery();
 
