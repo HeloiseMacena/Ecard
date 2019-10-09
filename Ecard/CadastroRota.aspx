@@ -44,7 +44,7 @@
                                 </div>
                                 
                                 <div class="rota-but">
-                                   <asp:LinkButton runat="server"><a href="#modal" class="action-button shadow animate blue" id="show-modal">Mais</a></asp:LinkButton>
+                                    <asp:Button runat="server" Text="Mais" CommandArgument='<%#Eval("id")%>' CssClass="action-button animate blue"  OnClick="getModalInfos_Click" />
                                    <asp:LinkButton CssClass="link-but" runat="server"  PostBackUrl='<%#"~/EditarRota.aspx?id=" +  Eval("id") %>'> <i class="fas fa-pen-square"></i> </asp:LinkButton>
                                  </div>
                             </div> 
@@ -66,38 +66,62 @@
                         </div>
                     </div>
                     <div class="box2-button">
-                         <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" />
+                         <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil"  PostBackUrl="~/PerfilAdm.aspx" />
                     </div>
                 </div>
 
-                <div class="box2-rotas">
-                    <div class="rotas">
-                        <p>Rotas</p>
+                <div class="box2-ponto">
+                    <div class="ponto">
+                        <p>Rota</p>
                     </div>
-                    <div class="rotas2">
-                        <i class="fas fa-search"></i>
-                        <p>Pesquisar</p>
+                    <div class=" pesq">
+                    <asp:TextBox ID="valueSearch" CssClass="textbox1" runat="server" placeholder="Pesquisar"></asp:TextBox>
+                    <div class="pesq-2">
+                        <asp:DropDownList id="DDLSearch" CssClass="ddlist1" runat="server">
+                        <asp:ListItem>Nome</asp:ListItem>
+                        <asp:ListItem>Bairro</asp:ListItem>
+                        <asp:ListItem>Ponto de Recarga</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:Button ID="btnSearch"  CssClass="btn-loc" runat="server" Text="Localizar" />
                     </div>
                 </div>
-                  <!-- Modal -->
-                <aside id="modal" class="modal">
-		            <div class="content-modal">
-			            <header>
-				            <a href="#" class="close-modal">X</a>
-				            <h2>Mais informações</h2>	
-			            </header>
-			            <article>
-                          <div class="help-modal">                                
+                </div>
+                 <!-- Modal -->
+                <div class="help-modal">
+                    <div>
+                        <div class="modal-container" id="modalContainer" runat="server">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                   <h2>Mais Informações</h2>
+                                    <i class="fas fa-times" id="closeModal" runat="server" onclick="document.querySelector('.modal-container').style.visibility = 'hidden';"></i>
+                                </div>
+                                <div class="modal-body">
+                                 <div class="help-modal">                                
                                         <div class="rota-modal">
+                                            <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource2">
+                                                <ItemTemplate>
+                                                    <div class="rota-modal-nome">
+                                                        <p class="ponto-ref">
+                                                            Bairros:
+                                                    <asp:Label runat="server" ID="modalBairro"><%#Eval("nome")%></asp:Label>
+                                                        </p>
+                                                    </div>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                            <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALBairro"></asp:ObjectDataSource>
                                             <div class="rota-modal-nome">
-                                                <p class="ponto-ref">Pontos de Referência:</p>
-                                            </div>
+                                                <p class="ponto-ref">Ponto de referência:
+                                                    <asp:Label runat="server" ID="modalPonto"></asp:Label>
+                                                </p>
+                                                </div>
                                         </div>
+                                    </div> 
+                                </div>
+                                <div class="modal-footer"></div>
                             </div>
-			            </article>
+                        </div>
                     </div>
-		            <a href="#" class="btn-close-modal"></a>
-	            </aside>
+                </div>
             </div>
         </div>
     </form>

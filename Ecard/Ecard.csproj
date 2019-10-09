@@ -240,6 +240,7 @@
     <Compile Include="DAL\DALSolicitacao_carteira.cs" />
     <Compile Include="DAL\DALSolicitacao_instituicao.cs" />
     <Compile Include="DAL\DALTelefone.cs" />
+    <Compile Include="DAL\DALValorPassagem.cs" />
     <Compile Include="EditarBairro.aspx.cs">
       <DependentUpon>EditarBairro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -315,6 +316,7 @@
     <Compile Include="Modelo\Solicitacao_carteira.cs" />
     <Compile Include="Modelo\Solicitacao_instituicao.cs" />
     <Compile Include="Modelo\Telefone.cs" />
+    <Compile Include="Modelo\ValorPassagem.cs" />
     <Compile Include="PerfilAdm.aspx.cs">
       <DependentUpon>PerfilAdm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

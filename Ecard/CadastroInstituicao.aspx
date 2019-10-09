@@ -32,19 +32,20 @@
             <div class="login-1">Informações avançadas</div>
             <div class ="coluna-3">
                  <div class="textbox">
-                    <asp:TextBox ID="TextCodigo" CssClass="textbox1" runat="server" type="text" placeholder="Código do INEP/MEC"></asp:TextBox>
+                    <asp:TextBox ID="TextCodigo" CssClass="textbox1" runat="server" type="String" placeholder="Código do INEP/MEC"></asp:TextBox>
                  </div> 
                  <div class="textbox">
-                    <asp:TextBox ID="TextCNPJ" CssClass="textbox1" runat="server" type="text" placeholder="CNPJ"></asp:TextBox>
+                    <asp:TextBox ID="TextCNPJ" CssClass="textbox1" runat="server" type="String" placeholder="CNPJ"></asp:TextBox>
                  </div>    
                  <div class="textbox">
-                    <asp:TextBox ID="TextSenha" CssClass="textbox1" runat="server" type="text" placeholder="Senha"></asp:TextBox>
+                    <asp:TextBox ID="TextSenha" CssClass="textbox1" runat="server" type="Password" placeholder="Senha"></asp:TextBox>
                  </div> 
                  <div class="textbox">
-                    <asp:TextBox ID="TextConSenha" CssClass="textbox1" runat="server" type="text" placeholder="Confirmar Senha"></asp:TextBox>
+                    <asp:TextBox ID="TextConSenha" CssClass="textbox1" runat="server" type="Password" placeholder="Confirmar Senha"></asp:TextBox>
+                    <asp:CompareValidator ID="CompareValidator2" CssClass="compare" runat="server" Display="Dynamic" type="String" controltovalidate="TextConSenha" controltocompare="TextSenha" enableclientscript="true" text="* Os campos de senha devem ser iguais."></asp:CompareValidator>           	           
                  </div> 
                  <div class="textbox">
-                     <asp:TextBox ID="TextTelefone" CssClass="textbox1" runat="server" type="text" placeholder="Telefone"></asp:TextBox>
+                     <asp:TextBox ID="TextTelefone" CssClass="textbox1" runat="server" type="String" placeholder="Telefone"></asp:TextBox>
                  </div> 
             </div>
             <div class="coluna-3">
@@ -56,12 +57,14 @@
                 </div>
                 <div class="textbox">
                     <asp:TextBox ID="TextCEP" CssClass="textbox1" runat="server" type="text" placeholder="CEP"></asp:TextBox>
+                    <asp:regularexpressionvalidator id="regular" runat="server" errormessage="* CEP inválido" validationexpression="”\w+([-+.’]\w+)*@\w+([-.]\w+)*\.\w+([=.]\w+)*”/"></asp:regularexpressionvalidator>
+
                 </div>
                 <div class="textbox">
                     <asp:TextBox ID="TextMunicipio" CssClass="textbox1" runat="server" type="text" placeholder="Municipio"></asp:TextBox>
                 </div>
                 <div class="textbox">
-                    <asp:TextBox ID="TextNumero" CssClass="textbox1" runat="server" type="text" placeholder="Número"></asp:TextBox>
+                    <asp:TextBox ID="TextNumero" CssClass="textbox1" runat="server" type="Double" placeholder="Número"></asp:TextBox>
                 </div>
             </div>
             <div class="login">

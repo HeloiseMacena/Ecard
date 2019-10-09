@@ -303,7 +303,7 @@
 }
 
 .text-var {
-    width: 18%;
+    width: 45%;
     padding: 10px 20px;
     background-color: #EBEBEB;
     border-radius: 2px;
@@ -316,7 +316,7 @@
     color: #313131;
     font: 16px Arial;
     margin-right: 8px;
-    cursor: not-allowed;
+    cursor: text;
 }
 
 .text-pag {

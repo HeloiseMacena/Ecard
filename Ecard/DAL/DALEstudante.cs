@@ -21,7 +21,7 @@ namespace Ecard.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public bool SelectComparacao(string cpf)
+        public bool ExisteEstudante(string cpf)
         {
             bool a = false;
             SqlConnection conn = new SqlConnection(connectionString);
@@ -36,9 +36,7 @@ namespace Ecard.DAL
             conn.Close();
             return a;
         }
-
         
-
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void MudarSituacaoCarteira1(string cpf)
         {
@@ -76,9 +74,8 @@ namespace Ecard.DAL
 
         }
 
-
         [DataObjectMethod(DataObjectMethodType.Select)]
-        void SelectArquivoCsv(string arquivo)
+        public List<Modelo.Estudante> SelectArquivoCsv(string arquivo)
         {
             StreamReader sr;
             string Linha;
@@ -120,6 +117,93 @@ namespace Ecard.DAL
                     sr.Close();
                 }
             }
+
+            return aListEstudante;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Estudante> SelectRetorno(int id)
+        {
+            List<Modelo.Estudante> aListEstudante = new List<Modelo.Estudante>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Estudante where status = true and instituicao_id = " + id;
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    Modelo.Estudante aEstudante = new Modelo.Estudante(
+                        dr["nome"].ToString(),
+                        dr["cpf"].ToString(),
+                        dr["email"].ToString(),
+                        dr["senha"].ToString(),
+                        Convert.ToBoolean(dr["status"].ToString()),
+                        dr["carteira_foto"].ToString(),
+                        double.Parse(dr["carteira_saldo"].ToString()),
+                        int.Parse(dr["carteira_numero"].ToString()),
+                        Convert.ToDateTime(dr["carteira_validade"].ToString())
+                    );
+                    aEstudante.id = Convert.ToInt32(dr["id"].ToString());
+                    aListEstudante.Add(aEstudante);
+                }
+            }
+            dr.Close();
+            conn.Close();
+
+            return aListEstudante;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Estudante> SelectSolicitacoes()
+        {
+            List<Modelo.Estudante> aListEstudante = new List<Modelo.Estudante>();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Estudante where carteira_status = 1";
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    Modelo.Estudante aEstudante = new Modelo.Estudante(
+                        dr["nome"].ToString(),
+                        dr["cpf"].ToString(),
+                        dr["email"].ToString(),
+                        dr["senha"].ToString(),
+                        Convert.ToBoolean(dr["status"].ToString()),
+                        dr["carteira_foto"].ToString(),
+                        double.Parse(dr["carteira_saldo"].ToString()),
+                        int.Parse(dr["carteira_numero"].ToString()),
+                        Convert.ToDateTime(dr["carteira_validade"].ToString())
+                    );
+                    aEstudante.id = Convert.ToInt32(dr["id"].ToString());
+                    aEstudante.carteira_status = Convert.ToInt32(dr["carteira_status"].ToString());
+                    aListEstudante.Add(aEstudante);
+                }
+            }
+            dr.Close();
+            conn.Close();
+
+            return aListEstudante;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void MudarSituacaoCarteira1(string cpf)
+        {
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 1 where cpf = @cpf", conn);
+            cmd.Parameters.AddWithValue("@cpf", cpf);
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Close();
+            conn.Close();
+
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]

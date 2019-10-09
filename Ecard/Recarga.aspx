@@ -15,11 +15,7 @@
                 </div>
                  <div class="hl-2"></div><!--  horizontal line -->
                 <div class="var">
-                <asp:Label ID="Label2" CssClass="text-var" runat="server" Text="R$ 4,00"></asp:Label>
-                <div class="btns-2">
-                    <asp:LinkButton ID="LinkButton2" cssClass="btn-soma" runat="server"><i class="fas fa-minus-circle"></i></asp:LinkButton>
-                    <asp:LinkButton ID="LinkButton1" CssClass="btn-soma" runat="server"><i class="fas fa-plus-circle"></i></asp:LinkButton>
-                </div>
+                    <asp:TextBox ID="TextBoxRecarga" CssClass="text-var" placeholder="Digite aqui o valor da recarga" runat="server"></asp:TextBox> 
                 </div>
                 <div class="forma">
                     <div class="pag">
@@ -31,7 +27,7 @@
                          <asp:ListItem>Boleto</asp:ListItem>
  
                     </asp:DropDownList>
-                    <asp:Button ID="Button3" class="reca" runat="server" Text="Recarregar" />
+                    <asp:Button ID="Button3"  OnClick="Unnamed_Click" class="reca" runat="server" Text="Recarregar" />
                 </div>
                 <div class="forma-2">
                 <div class="forma-3">
@@ -44,11 +40,10 @@
                     <div class="azul">
                     <asp:Label ID="Label6" runat="server" Text="Saldo de Recarga:"></asp:Label>
                     </div>
+                    <asp:Label ID="Label7" CssClass="campo-inf" runat="server" Text="R$ 9,43"></asp:Label>
                     </div>
                 </div>
                 <div class="forma-5">
-                    <asp:TextBox ID="TextBoxRecarga" CssClass="title-money" runat="server" Width="200"></asp:TextBox>
-                    <asp:Button class="btn-calc" runat="server" Text="Recarregar" OnClick="Unnamed_Click"/>
                 </div>
               </div>
             <div class="box2">
