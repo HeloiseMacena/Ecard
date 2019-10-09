@@ -21,7 +21,7 @@ namespace Ecard
                 Response.Redirect("~/TelaInicial.aspx");
             }
         }
-        protected void btnSearch_Click(object sender, EventArgs e)
+        protected void BtnSearch_Click(object sender, EventArgs e)
         {
             try
             {

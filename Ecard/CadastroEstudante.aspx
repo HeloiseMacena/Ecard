@@ -24,23 +24,26 @@
             </div>
             <div class="textbox">
             	<asp:TextBox ID="Textbox3" runat="server" CssClass="textbox1" type="email" placeholder="Confirmar Email"></asp:TextBox>
+                <asp:CompareValidator ID="CompareValidator3" runat="server" ErrorMessage="* Os campos de email devem ser iguais." ControlToValidate="Textbox3" ControlToCompare="Textbox2" Type="String" Display="Dynamic"></asp:CompareValidator>     	            
             </div>
         </div>
         <div class="v1"></div> <!-- vertical line -->
         <div class="coluna2">
             <div class="login-1">Informações avançadas</div>
             <div class="textbox">
-                <asp:TextBox ID="Textbox4" runat="server" CssClass="textbox1" type="text" placeholder="CPF"></asp:TextBox>
+                <asp:TextBox ID="Textbox4" runat="server" CssClass="textbox1" type="String" placeholder="CPF (Apenas números)"></asp:TextBox>                
+                <asp:rangevalidator id="RangeValidator1" controltovalidate="TextBox4" minimunvalue="10000000000" maximumvalue="99999999999" type="String" text="CPF inválido" runat="server"></asp:rangevalidator>
             </div>
             <div class="textbox">
                 <asp:TextBox ID="Textbox5" runat="server" CssClass="textbox1" type="password" placeholder="Senha"></asp:TextBox>
             </div>
             <div class="textbox">
                 <asp:TextBox ID="Textbox6" runat="server" CssClass="textbox1" type="password" placeholder="Confirmar Senha"></asp:TextBox>
+                <asp:CompareValidator ID="CompareValidator2" runat="server" Display="Dynamic" type="String" controltovalidate="Textbox5" controltocompare="Textbox6" enableclientscript="true" text="* Os campos de senha devem ser iguais."></asp:CompareValidator>           	
             </div>
             <div class="login">
             	<asp:Button ID="Button1" class="button" type="submit" runat="server" Text="Cadastrar" OnClick="Unnamed1_Click"/>
-            	<p class="p3">Já possuo uma conta!<a href="LoginEstudante.aspx" class="link-open">Entrar</a></p>
+                <p class="p3">Já possuo uma conta!<a href="LoginEstudante.aspx" class="link-open">Entrar</a></p>
             </div>
          </div>
     </form>

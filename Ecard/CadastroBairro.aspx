@@ -75,7 +75,7 @@
                         <asp:DropDownList id="DDLSearch" CssClass="ddlist1" runat="server">
                         <asp:ListItem>Nome</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:Button ID="btnSearch" OnClick="btnSearch_Click"  CssClass="btn-loc" runat="server" Text="Localizar" />
+                    <asp:Button ID="btnSearch" OnClick="BtnSearch_Click"  CssClass="btn-loc" runat="server" Text="Localizar" />
                     </div>
                 </div>
                 </div>

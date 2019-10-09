@@ -20,6 +20,6 @@ namespace Ecard
             Ecard.DAL.DALEstudante dal = new Ecard.DAL.DALEstudante();
             dal.Insert(pr);
             Response.Redirect("~//TelaInicial.aspx");
-        }
-    }
+        }        
+}
 }
