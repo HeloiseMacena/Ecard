@@ -44,6 +44,34 @@ namespace Ecard.DAL
             return aListSolicitacao_carteira;
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Solicitacao_carteira> SelectPendentes()
+        {
+            List<Modelo.Solicitacao_carteira> aListSolicitacao_carteira = new List<Modelo.Solicitacao_carteira>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Solicitacao_carteira where status = 0";
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    Modelo.Solicitacao_carteira aSolicitacao_carteira = new Modelo.Solicitacao_carteira();
+                    aSolicitacao_carteira.descricao_erro = dr["descricao_erro"].ToString();
+                    aSolicitacao_carteira.id = int.Parse(dr["id"].ToString());
+                    aSolicitacao_carteira.status = int.Parse(dr["status"].ToString());
+                    aSolicitacao_carteira.data = DateTime.Parse(dr["data"].ToString());
+                    aListSolicitacao_carteira.Add(aSolicitacao_carteira);
+                }
+            }
+            dr.Close();
+            conn.Close();
+
+            return aListSolicitacao_carteira;
+        }
+
 
 
         [DataObjectMethod(DataObjectMethodType.Delete)]
@@ -99,7 +127,7 @@ namespace Ecard.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public Modelo.Solicitacao_carteira Select(string Id)
+        public Modelo.Solicitacao_carteira Select(int Id)
         {
             Modelo.Solicitacao_carteira aSolicitacao_carteira = new Modelo.Solicitacao_carteira();
             SqlConnection conn = new SqlConnection(connectionString);
@@ -124,6 +152,32 @@ namespace Ecard.DAL
 
             return aSolicitacao_carteira;
         }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public int SelectEstudante(int Id)
+        {
+            Modelo.Solicitacao_carteira aSolicitacao_carteira = new Modelo.Solicitacao_carteira();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Solicitacao_carteira Where Id = @Id";
+            cmd.Parameters.AddWithValue("@Id", Id);
+            SqlDataReader dr = cmd.ExecuteReader();
+            int estudante_id = 0;
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    estudante_id = int.Parse(dr["estudante_id"].ToString());
+                }
+            }
+
+            dr.Close();
+            conn.Close();
+
+            return estudante_id;
+        }
+
 
     }
 }

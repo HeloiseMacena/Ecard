@@ -34,6 +34,12 @@ namespace Ecard
                 }
             }
         }
+
+        protected void ToggleModal_Click(object sender, EventArgs e)
+        {
+            ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "ToggleModal", "ToggleModal()", true);
+        }
+
         protected void getModalInfos_Click(object sender, EventArgs e)
         {
             /*int id = int.Parse(((Button)sender).CommandArgument.ToString());

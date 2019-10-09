@@ -37,40 +37,7 @@ namespace Ecard.DAL
             return a;
         }
 
-        [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Estudante> SelectSolicitacoes()
-        {
-            List<Modelo.Estudante> aListEstudante = new List<Modelo.Estudante>();
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Estudante where carteira_status = 1";
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.HasRows)
-            {
-                while (dr.Read())
-                {
-                    Modelo.Estudante aEstudante = new Modelo.Estudante(
-                        dr["nome"].ToString(),
-                        dr["cpf"].ToString(),
-                        dr["email"].ToString(),
-                        dr["senha"].ToString(),
-                        Convert.ToBoolean(dr["status"].ToString()),
-                        dr["carteira_foto"].ToString(),
-                        double.Parse(dr["carteira_saldo"].ToString()),
-                        int.Parse(dr["carteira_numero"].ToString()),
-                        Convert.ToDateTime(dr["carteira_validade"].ToString())
-                    );
-                    aEstudante.id = Convert.ToInt32(dr["id"].ToString());
-                    aEstudante.carteira_status = Convert.ToInt32(dr["carteira_status"].ToString());
-                    aListEstudante.Add(aEstudante);
-                }
-            }
-            dr.Close();
-            conn.Close();
-
-            return aListEstudante;
-        }
+        
 
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void MudarSituacaoCarteira1(string cpf)
@@ -134,6 +101,7 @@ namespace Ecard.DAL
 
                         Modelo.Estudante aEstudante = new Modelo.Estudante(
                             linha[0],
+                            "",
                             linha[1],
                             linha[2],
                            "Ecard2019",
@@ -171,6 +139,7 @@ namespace Ecard.DAL
                     Modelo.Estudante aEstudante = new Modelo.Estudante(
                         dr["nome"].ToString(),
                         dr["cpf"].ToString(),
+                        dr["rg"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
                         Convert.ToBoolean(dr["status"].ToString()),
@@ -243,6 +212,7 @@ namespace Ecard.DAL
             cmd.Parameters.AddWithValue("@Id", obj.id);
             cmd.Parameters.AddWithValue("@Nome", obj.nome);
             cmd.Parameters.AddWithValue("@cpf", obj.cpf);
+            cmd.Parameters.AddWithValue("@rg", obj.rg);
             cmd.Parameters.AddWithValue("@email", obj.email);
             cmd.Parameters.AddWithValue("@status", obj.status);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
@@ -274,14 +244,15 @@ namespace Ecard.DAL
                     aEstudante = new Modelo.Estudante(
                         dr["nome"].ToString(),
                         dr["cpf"].ToString(),
+                        dr["rg"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
-                        Convert.ToBoolean(int.Parse(dr["status"].ToString())),
+                        Convert.ToBoolean(dr["status"].ToString()),
                         dr["carteira_foto"].ToString(),
                         double.Parse(dr["carteira_saldo"].ToString()),
                         int.Parse(dr["carteira_numero"].ToString()),
                         Convert.ToDateTime(dr["carteira_validade"].ToString())
-                        );
+                    );
                     aEstudante.id = Convert.ToInt32(dr["id"].ToString());
                     aEstudante.carteira_status = Convert.ToInt32(dr["carteira_status"].ToString());
                 }
@@ -335,14 +306,15 @@ namespace Ecard.DAL
                     aEstudante = new Modelo.Estudante(
                         dr["nome"].ToString(),
                         dr["cpf"].ToString(),
+                        dr["rg"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
-                        Convert.ToBoolean(Convert.ToInt32(dr["status"].ToString())),
+                        Convert.ToBoolean(dr["status"].ToString()),
                         dr["carteira_foto"].ToString(),
                         double.Parse(dr["carteira_saldo"].ToString()),
                         int.Parse(dr["carteira_numero"].ToString()),
                         Convert.ToDateTime(dr["carteira_validade"].ToString())
-                        );
+                    );
                     aEstudante.id = Convert.ToInt32(dr["id"].ToString());
                     aEstudante.carteira_status = Convert.ToInt32(dr["carteira_status"].ToString());
                 }

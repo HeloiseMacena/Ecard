@@ -41,15 +41,16 @@
                         <ItemTemplate>
                             <div class="solicitItem">
                                 <div class="solicitItem-nome">
-                                    <p class="solicit-nome"><%#Eval("Nome")%></p>
+                                    <p class="solicit-nome"><%#Eval("estudante_id")%></p>
                                 </div>
                                 <div class="solicit-but">
-                                   <asp:LinkButton runat="server"><a href="#modal" class="action-button shadow animate link-but" id="show-modal"><i class="fas fa-pen-square"></i></a></asp:LinkButton>                                   
+                                    <asp:Button runat="server" Text="Mais" CommandArgument='<%#Eval("id")%>' CssClass="action-button animate blue" OnClick="Unnamed_Click" />
                                   </div>
                             </div> 
                         </ItemTemplate>
                     </asp:Repeater>                                                            
-                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectSolicitacoes" TypeName="Ecard.DAL.DALEstudante"></asp:ObjectDataSource>                                  
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="SelectPendentes" TypeName="Ecard.DAL.DALSolicitacao_carteira" DataObjectTypeName="Ecard.Modelo.Solicitacao_carteira" DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update">
+                    </asp:ObjectDataSource>                                  
                   </div>               
             </div>
             
@@ -66,22 +67,42 @@
                          <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" />
                     </div>
                 </div>
-                <!-- Modal -->
-                <aside id="modal" class="modal">
-		            <div class="content-modal">
-			            <header class="faixa">
-				            <a href="#" class="close-modal">X</a>
-			            </header>
-			            <article>
-                          <div class="help-modal">                                
-                            <div class="item-modal">
-                                            
+            </div>
+             <div>   <!-- Modal -->
+                <div class="help-modal">
+                    <div>
+                        <div class="modal-container" id="modalContainer" runat="server">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                   <h2>Mais Informações</h2>
+                                    <i class="fas fa-times" id="closeModal" runat="server" onclick="document.querySelector('.modal-container').style.visibility = 'hidden';"></i>
+                                </div>
+                                <div class="modal-body">
+                                 <div class="help-modal">                                
+                                        <div class="rota-modal">
+                                            <div class="rota-modal-nome">
+                                                <p class="ponto-ref">Nº:
+                                                    <asp:Label runat="server" ID="Modal_id"></asp:Label>
+                                               </p>
+                                                </div>
+                                            <div class="rota-modal-nome">
+                                                <p class="ponto-ref">CEP:
+                                                    <asp:Label runat="server" ID="Modal_data"></asp:Label>
+                                                </p>
+                                                </div>
+                                            <div class="rota-modal-nome">
+                                                <p class="ponto-ref">Município:
+                                                    <asp:Label runat="server" ID="Modal_estudante"></asp:Label>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class="modal-footer"></div>
                             </div>
-                            </div>
-			            </article>
+                        </div>
                     </div>
-		            <a href="#" class="btn-close-modal"></a>
-	            </aside>
+                </div>
             </div>
         </div>
     </form>
