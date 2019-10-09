@@ -35,11 +35,14 @@
                 <asp:rangevalidator id="RangeValidator1" CssClass="range" controltovalidate="Textbox4" minimunvalue="10000000000" maximumvalue="99999999999" type="String" text="* CPF inválido" runat="server"></asp:rangevalidator>
             </div>
             <div class="textbox">
-                <asp:TextBox ID="Textbox5" runat="server" CssClass="textbox1" type="password" placeholder="Senha"></asp:TextBox>
+                <asp:TextBox ID="Textbox5" runat="server" CssClass="textbox1" type="password" placeholder="RG"></asp:TextBox>
             </div>
             <div class="textbox">
-                <asp:TextBox ID="Textbox6" runat="server" CssClass="textbox1" type="password" placeholder="Confirmar Senha"></asp:TextBox>
-                <asp:CompareValidator ID="CompareValidator2" CssClass="compare" runat="server" Display="Dynamic" type="String" controltovalidate="Textbox6" controltocompare="Textbox5" enableclientscript="true" text="* Os campos de senha devem ser iguais."></asp:CompareValidator>           	
+                <asp:TextBox ID="Textbox6" runat="server" CssClass="textbox1" type="password" placeholder="Senha"></asp:TextBox>
+            </div>
+            <div class="textbox">
+                <asp:TextBox ID="Textbox7" runat="server" CssClass="textbox1" type="password" placeholder="Confirmar Senha"></asp:TextBox>
+                <asp:CompareValidator ID="CompareValidator2" CssClass="compare" runat="server" Display="Dynamic" type="String" controltovalidate="Textbox6" controltocompare="Textbox7" enableclientscript="true" text="* Os campos de senha devem ser iguais."></asp:CompareValidator>           	
             </div>
             <div class="login">
             	<asp:Button ID="Button1" class="button" type="submit" runat="server" Text="Cadastrar" OnClick="Unnamed1_Click"/>

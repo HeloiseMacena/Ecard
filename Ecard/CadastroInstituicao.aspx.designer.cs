@@ -85,6 +85,15 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.TextBox TextConSenha;
         
         /// <summary>
+        /// Controle CompareValidator2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator2;
+        
+        /// <summary>
         /// Controle TextTelefone.
         /// </summary>
         /// <remarks>
@@ -119,6 +128,15 @@ namespace Ecard {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextCEP;
+        
+        /// <summary>
+        /// Controle regular.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regular;
         
         /// <summary>
         /// Controle TextMunicipio.
