@@ -113,6 +113,31 @@ p {
     border-radius: 2px;
 }
 
+.compare{
+    color: red;
+    font-size: 12px;
+}
+
+.range {
+    color: red;
+    font-size: 12px;
+}
+
+.textbox2 {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.tt2 {
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 13px;
+    background-color: white;
+    color: #a1a1a1;
+    border-style: none;
+    border-radius: 2px;
+}
+
 .image {
     max-width: 40%;
     margin: auto;

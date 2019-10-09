@@ -21,7 +21,7 @@ namespace Ecard.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public bool SelectComparacao(string cpf)
+        public bool ExisteEstudante(string cpf)
         {
             bool a = false;
             SqlConnection conn = new SqlConnection(connectionString);
@@ -35,6 +35,109 @@ namespace Ecard.DAL
             }
             conn.Close();
             return a;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void MudarSituacaoTrue(string cpf)
+        {
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = true where cpf = @" + cpf, conn);
+
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void MudarSituacaoFalse(int id)
+        {
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = false where instituicao_id = " + id, conn);
+
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Estudante> SelectArquivoCsv(string arquivo)
+        {
+            StreamReader sr;
+            string Linha;
+            string[] linha;
+
+            List<Modelo.Estudante> aListEstudante = new List<Modelo.Estudante>();
+
+            // Le arquivo com nome de imagens
+            if (System.IO.File.Exists(arquivo))
+            {
+                sr = new StreamReader(System.IO.File.OpenRead(arquivo));
+                try
+                {
+                    while (sr.Peek() > -1)
+                    {
+                        Linha = sr.ReadLine(); // Le uma Linha
+
+                        // Separa os dados em cada linha
+                        linha = Linha.Split(';');
+
+                        Modelo.Estudante aEstudante = new Modelo.Estudante(
+                            linha[0],
+                            linha[1],
+                            linha[2],
+                           "Ecard2019",
+                            true,
+                            "",
+                            0,
+                            0,
+                            Convert.ToDateTime("01/01/2000")
+                        );
+
+                        aListEstudante.Add(aEstudante);
+                    }
+                }
+                finally
+                {
+                    sr.Close();
+                }
+            }
+
+            return aListEstudante;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Estudante> SelectRetorno(int id)
+        {
+            List<Modelo.Estudante> aListEstudante = new List<Modelo.Estudante>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Estudante where status = true and instituicao_id = " + id;
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    Modelo.Estudante aEstudante = new Modelo.Estudante(
+                        dr["nome"].ToString(),
+                        dr["cpf"].ToString(),
+                        dr["email"].ToString(),
+                        dr["senha"].ToString(),
+                        Convert.ToBoolean(dr["status"].ToString()),
+                        dr["carteira_foto"].ToString(),
+                        double.Parse(dr["carteira_saldo"].ToString()),
+                        int.Parse(dr["carteira_numero"].ToString()),
+                        Convert.ToDateTime(dr["carteira_validade"].ToString())
+                    );
+                    aEstudante.id = Convert.ToInt32(dr["id"].ToString());
+                    aListEstudante.Add(aEstudante);
+                }
+            }
+            dr.Close();
+            conn.Close();
+
+            return aListEstudante;
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
@@ -85,73 +188,6 @@ namespace Ecard.DAL
             dr.Close();
             conn.Close();
 
-        }
-
-        [DataObjectMethod(DataObjectMethodType.Update)]
-        public void MudarSituacaoTrue(string cpf)
-        {
-
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-            SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = true where cpf = @" + cpf, conn);
-
-        }
-
-        [DataObjectMethod(DataObjectMethodType.Update)]
-        public void MudarSituacaoFalse(int id)
-        {
-
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-            SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = false where instituicao_id = " + id, conn);
-
-        }
-
-
-        [DataObjectMethod(DataObjectMethodType.Select)]
-        void SelectArquivoCsv(string arquivo)
-        {
-            StreamReader sr;
-            string Linha;
-            string[] linha;
-
-            List<Modelo.Estudante> aListEstudante = new List<Modelo.Estudante>();
-
-            // Le arquivo com nome de imagens
-            if (System.IO.File.Exists(arquivo))
-            {
-                sr = new StreamReader(System.IO.File.OpenRead(arquivo));
-                try
-                {
-                    while (sr.Peek() > -1)
-                    {
-                        Linha = sr.ReadLine(); // Le uma Linha
-
-                        // Separa os dados em cada linha
-                        linha = Linha.Split(';');
-
-                        Modelo.Estudante aEstudante = new Modelo.Estudante(
-                            linha[0],
-                            linha[1],
-                            linha[2],
-                           "Ecard2019",
-                            true,
-                            "",
-                            0,
-                            0,
-                            Convert.ToDateTime("01/01/2000")
-                        );
-
-                        aListEstudante.Add(aEstudante);
-                    }
-                }
-                finally
-                {
-                    sr.Close();
-                }
-            }
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
