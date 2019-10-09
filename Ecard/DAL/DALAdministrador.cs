@@ -12,9 +12,10 @@ namespace Ecard.DAL
     {
         string connectionString = "";
 
-        public DALAdministrador() => connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
-
-
+        public DALAdministrador()
+        {
+            connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
+        }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Administrador> SelectAll()

@@ -46,7 +46,7 @@
                     <asp:TextBox ID="TextBox3" CssClass="box1-mid" placeholder="R$ 4,00" runat="server"></asp:TextBox>
                     </div>
                     <div class="space">
-                    <asp:Label ID="Label3" runat="server" class="text-p" Text="Passagem de Parnamirm"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" class="text-p" Text="Passagem de Parnamirim"></asp:Label>
                     <asp:TextBox ID="TextBox4" CssClass="box1-mid" placeholder="R$ 4,45" runat="server"></asp:TextBox>
                     </div>
                     <div class="space">
@@ -55,8 +55,7 @@
                     </div>
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/WebFormTelaPrincipalAdm.aspx" />
-                        <asp:Button class="btn-save" runat="server" Text="Salvar"  />
-
+                        <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed2_Click"/>
                     </div>
                 </div>
             </div>
@@ -71,7 +70,7 @@
                         </div>
                     </div>
                     <div class="box2-button">
-                         <asp:Button runat="server" CssClass="btn2"  Text="Ver Perfil" />
+                         <asp:Button runat="server" CssClass="btn2"  Text="Ver Perfil" PostBackUrl="~/PerfilAdm.aspx"/>
                     </div>
                 </div>
             </div>
