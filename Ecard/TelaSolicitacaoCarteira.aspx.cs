@@ -62,6 +62,8 @@ namespace Ecard
                 Modelo.Estudante estudante = dal.Select(id); 
                 if (estudante.carteira_status == 0)
                 {
+                    DALSolicitacao_carteira dals = new DALSolicitacao_carteira();
+                    dals.Insert(id);
                     dal.MudarSituacaoCarteira1(estudante.cpf);
                     Response.Redirect("~/TelaPrincipalEstudante.aspx");
                 }

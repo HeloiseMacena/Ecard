@@ -237,6 +237,8 @@
     <Compile Include="DAL\DALPonto_referencia.cs" />
     <Compile Include="DAL\DALRecarga.cs" />
     <Compile Include="DAL\DALRota.cs" />
+    <Compile Include="DAL\DALSolicitacao_carteira.cs" />
+    <Compile Include="DAL\DALSolicitacao_instituicao.cs" />
     <Compile Include="DAL\DALTelefone.cs" />
     <Compile Include="EditarBairro.aspx.cs">
       <DependentUpon>EditarBairro.aspx</DependentUpon>
@@ -310,6 +312,8 @@
     <Compile Include="Modelo\Ponto_referencia.cs" />
     <Compile Include="Modelo\Recarga.cs" />
     <Compile Include="Modelo\Rota.cs" />
+    <Compile Include="Modelo\Solicitacao_carteira.cs" />
+    <Compile Include="Modelo\Solicitacao_instituicao.cs" />
     <Compile Include="Modelo\Telefone.cs" />
     <Compile Include="PerfilAdm.aspx.cs">
       <DependentUpon>PerfilAdm.aspx</DependentUpon>
