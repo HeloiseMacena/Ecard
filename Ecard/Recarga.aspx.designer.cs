@@ -13,31 +13,13 @@ namespace Ecard {
     public partial class Recarga {
         
         /// <summary>
-        /// Controle Label2.
+        /// Controle TextBoxRecarga.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// Controle LinkButton2.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
-        
-        /// <summary>
-        /// Controle LinkButton1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxRecarga;
         
         /// <summary>
         /// Controle Label3.
@@ -94,13 +76,13 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// Controle TextBoxRecarga.
+        /// Controle Label7.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxRecarga;
+        protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
         /// Controle Label1.
