@@ -13,6 +13,15 @@ namespace Ecard {
     public partial class CalcularPassagem {
         
         /// <summary>
+        /// Controle tipoPreco.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList tipoPreco;
+        
+        /// <summary>
         /// Controle Label4.
         /// </summary>
         /// <remarks>

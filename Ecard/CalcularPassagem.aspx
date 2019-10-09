@@ -13,8 +13,8 @@
             </div>
             <div class="hl-2"></div><!--  horizontal line -->
             <div class="pesq">
-                <asp:DropDownList CssClass="ddlist1" runat="server">
-                    <asp:ListItem>Passagem de Natal</asp:ListItem>
+                <asp:DropDownList id="tipoPreco" CssClass="ddlist1" runat="server">
+                    <asp:ListItem Value="Natal">Passagem de Natal</asp:ListItem>
                     <asp:ListItem>Passagem de Parnamirim</asp:ListItem>
                     <asp:ListItem>Passagem de Extremoz</asp:ListItem>
                     <asp:ListItem>Passagem de Ceará Mirim</asp:ListItem>
@@ -62,7 +62,7 @@
                 <div class="hl"></div> <!--  horizontal line -->
                 <asp:Label ID="Label1" CssClass="title-money" runat="server" Text="R$ 9,58"></asp:Label>
                 <div class="btns">
-                    <asp:Button class="btn-rec" runat="server" Text="Recarregar" PostBackUrl="~/Recarga.aspx" />
+                    <asp:Button class="btn-rec" runat="server" Text="Recarregar" PostBackUrl="~/Recarga.aspx" OnClick="Unnamed3_Click" />
                     <asp:Button class="btn-calc" runat="server" Text="Calcular Passagens"  />
                 </div>
             </div>
