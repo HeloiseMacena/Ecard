@@ -17,32 +17,32 @@
             	<p style="font-size: 18px;">Informações Básicas</p>
             </div>
             <div class="textbox">
-                <asp:TextBox ID="Textbox1" runat="server" CssClass="textbox1" type="text" placeholder="Nome Completo"></asp:TextBox>
+                <asp:TextBox ID="TextNome" runat="server" CssClass="textbox1" type="text" placeholder="Nome Completo"></asp:TextBox>
             </div>
             <div class="textbox">
-                <asp:TextBox ID="Textbox2" runat="server" CssClass="textbox1" type="email" placeholder="Email"></asp:TextBox>
+                <asp:TextBox ID="TextEmail" runat="server" CssClass="textbox1" type="email" placeholder="Email"></asp:TextBox>
             </div>
             <div class="textbox">
             	<asp:TextBox ID="Textbox3" runat="server" CssClass="textbox1" type="email" placeholder="Confirmar Email"></asp:TextBox>
-                <asp:CompareValidator ID="CompareValidator1" CssClass="compare" runat="server" ErrorMessage="* Os campos de email devem ser iguais." ControlToValidate="Textbox3" ControlToCompare="Textbox2" Type="String" Display="Dynamic"></asp:CompareValidator>     	            
+                <asp:CompareValidator ID="CompareValidator1" CssClass="compare" runat="server" ErrorMessage="* Os campos de email devem ser iguais." ControlToValidate="Textbox3" ControlToCompare="TextEmail" Type="String" Display="Dynamic"></asp:CompareValidator>     	            
             </div>
         </div>
         <div class="v1"></div> <!-- vertical line -->
         <div class="coluna2">
             <div class="login-1">Informações avançadas</div>
             <div class="textbox2">
-                <asp:TextBox ID="Textbox4" runat="server" CssClass="tt2" type="String" placeholder="CPF (Apenas números)"></asp:TextBox>                
-                <asp:rangevalidator id="RangeValidator1" CssClass="range" controltovalidate="Textbox4" minimunvalue="10000000000" maximumvalue="99999999999" type="String" text="* CPF inválido" runat="server"></asp:rangevalidator>
+                <asp:TextBox ID="TextCPF" runat="server" CssClass="tt2" type="String" placeholder="CPF (Apenas números)"></asp:TextBox>                
+                <asp:rangevalidator id="RangeValidator1" CssClass="range" controltovalidate="TextCPF" minimunvalue="10000000000" maximumvalue="99999999999" type="String" text="* CPF inválido" runat="server"></asp:rangevalidator>
             </div>
             <div class="textbox">
-                <asp:TextBox ID="Textbox5" runat="server" CssClass="textbox1" type="password" placeholder="RG"></asp:TextBox>
+                <asp:TextBox ID="TextRG" runat="server" CssClass="textbox1" type="number" placeholder="RG"></asp:TextBox>
             </div>
             <div class="textbox">
-                <asp:TextBox ID="Textbox6" runat="server" CssClass="textbox1" type="password" placeholder="Senha"></asp:TextBox>
+                <asp:TextBox ID="TextSenha" runat="server" CssClass="textbox1" type="password" placeholder="Senha"></asp:TextBox>
             </div>
             <div class="textbox">
                 <asp:TextBox ID="Textbox7" runat="server" CssClass="textbox1" type="password" placeholder="Confirmar Senha"></asp:TextBox>
-                <asp:CompareValidator ID="CompareValidator2" CssClass="compare" runat="server" Display="Dynamic" type="String" controltovalidate="Textbox6" controltocompare="Textbox7" enableclientscript="true" text="* Os campos de senha devem ser iguais."></asp:CompareValidator>           	
+                <asp:CompareValidator ID="CompareValidator2" CssClass="compare" runat="server" Display="Dynamic" type="String" controltovalidate="TextSenha" controltocompare="Textbox7" enableclientscript="true" text="* Os campos de senha devem ser iguais."></asp:CompareValidator>           	
             </div>
             <div class="login">
             	<asp:Button ID="Button1" class="button" type="submit" runat="server" Text="Cadastrar" OnClick="Unnamed1_Click"/>

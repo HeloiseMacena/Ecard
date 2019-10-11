@@ -89,7 +89,7 @@ namespace Ecard.DAL
                             linha[1],
                             linha[2],
                            "Ecard2019",
-                            true,
+                            "true",
                             "",
                             0,
                             0,
@@ -128,7 +128,7 @@ namespace Ecard.DAL
                         dr["rg"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
-                        Convert.ToBoolean(dr["status"].ToString()),
+                        dr["status"].ToString(),
                         dr["carteira_foto"].ToString(),
                         double.Parse(dr["carteira_saldo"].ToString()),
                         int.Parse(dr["carteira_numero"].ToString()),
@@ -163,7 +163,7 @@ namespace Ecard.DAL
                         dr["rg"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
-                        Convert.ToBoolean(dr["status"].ToString()),
+                        dr["status"].ToString(),
                         dr["carteira_foto"].ToString(),
                         double.Parse(dr["carteira_saldo"].ToString()),
                         int.Parse(dr["carteira_numero"].ToString()),
@@ -216,7 +216,7 @@ namespace Ecard.DAL
                         dr["rg"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
-                        Convert.ToBoolean(dr["status"].ToString()),
+                        dr["status"].ToString(),
                         dr["carteira_foto"].ToString(),
                         double.Parse(dr["carteira_saldo"].ToString()),
                         int.Parse(dr["carteira_numero"].ToString()),
@@ -257,10 +257,11 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, instituicao_id, administrador_id, carteira_status) VALUES (@Nome, @cpf, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 1, 1, 0)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, rg, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, instituicao_id, administrador_id, carteira_status) VALUES (@Nome, @cpf, @rg, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 1, 1, 0)", conn);
 
             cmd.Parameters.AddWithValue("@Nome", obj.nome);
             cmd.Parameters.AddWithValue("@cpf", obj.cpf);
+            cmd.Parameters.AddWithValue("@rg", obj.rg);
             cmd.Parameters.AddWithValue("@email", obj.email);
             cmd.Parameters.AddWithValue("@status", obj.status);
             cmd.Parameters.AddWithValue("@carteira_foto", obj.carteira_foto);
@@ -321,7 +322,7 @@ namespace Ecard.DAL
                         dr["rg"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
-                        Convert.ToBoolean(dr["status"].ToString()),
+                        dr["status"].ToString(),
                         dr["carteira_foto"].ToString(),
                         double.Parse(dr["carteira_saldo"].ToString()),
                         int.Parse(dr["carteira_numero"].ToString()),
@@ -383,7 +384,7 @@ namespace Ecard.DAL
                         dr["rg"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
-                        Convert.ToBoolean(dr["status"].ToString()),
+                        dr["status"].ToString(),
                         dr["carteira_foto"].ToString(),
                         double.Parse(dr["carteira_saldo"].ToString()),
                         int.Parse(dr["carteira_numero"].ToString()),

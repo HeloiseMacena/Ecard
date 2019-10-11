@@ -23,10 +23,10 @@ namespace Ecard
             {
                 Response.Redirect("~/TelaInicial.aspx");
             }
-            dal = new DALEstudante();
-            Modelo.Estudante estudante = dal.Select(int.Parse(Session["userid"].ToString()));
-            nome_usuario.Text = "<h1>" + estudante.nome.ToString() + "</h1>";
-            saldo.Text = "R$ " + estudante.carteira_saldo.ToString();
+            //dal = new DALEstudante();
+            //Modelo.Estudante estudante = dal.Select(int.Parse(Session["userid"].ToString()));
+            //nome_usuario.Text = "<h1>" + estudante.nome.ToString() + "</h1>";
+            //saldo.Text = "R$ " + estudante.carteira_saldo.ToString();
 
         }
     }

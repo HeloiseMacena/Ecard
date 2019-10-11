@@ -132,3 +132,80 @@ form#form1 {
             .header > .ol > .menu-user:hover {
                 background-color: #f4f4f4;
             }
+
+            .box11 {
+                margin-right: 25px;
+            }
+
+.box2 {
+    width: 100%;
+}
+
+.box2-user-container {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    margin-bottom: 20px;
+    background-color: #FFF;
+    padding: 20px 20px;
+}
+
+.box2-user {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+
+    .box2-user > i {
+        font-size: 60px;
+        color: #555555;
+    }
+
+.user-name {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+    .user-name > h1 {
+        color: #313131;
+    }
+
+    .user-name > p {
+        color: #adadad;
+    }
+
+.box2-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    cursor: pointer;
+}
+
+    .box2-button > .btn2 {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 1px;
+        background-color: #17A2B8;
+        color: white;
+        border-bottom-color: #13899C;
+        cursor: pointer;
+    }
+
+.box2-ponto {
+    width: 100%;
+    height: 186px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}

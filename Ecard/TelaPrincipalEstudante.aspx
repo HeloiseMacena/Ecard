@@ -14,43 +14,6 @@
               </div>
             </div>
 
-            <div class="box2">
-                <div class="box2-user-container">
-                    <div class="box2-user">
-                         <i class="fas fa-user-circle"></i>
-                         <div class="user-name"> 
-                           <asp:Label ID="nome_usuario" runat="server" Text=""></asp:Label>
-                           <p>Estudante</p>
-                        </div>
-                    </div>
-                    <div class="box2-button">
-                         <asp:Button runat="server" CssClass="btn2"  Text="Ver Perfil" PostBackUrl="~/PerfilEstudante.aspx"/>
-                    </div>
-                </div>
-
-                <div class="box2-ponto">
-                    <div class="ponto">
-                        <p>Seu Saldo</p>
-                    </div>
-                     <div class="hl"></div> <!--  horizontal line -->
-                    <asp:Label ID="saldo" CssClass="title-money" runat="server" Text=""></asp:Label>
-                    <div class="btns">
-                         <asp:Button class="btn-rec" runat="server" Text="Recarregar" PostBackUrl="~/Recarga.aspx"/>
-                        <asp:Button class="btn-calc" runat="server" Text="Calcular Passagens" PostBackUrl="~/CalcularPassagem.aspx"/>
-                    </div>
-                </div>
-
-                <div class="box2-card">
-                    <div class="card">
-                         <i class="fas fa-address-card"></i>
-                         <div class="info"> 
-                            <p>GARANTA SUA NOVA CARTEIRA!</p>
-                        </div>
-                    </div>
-                    <div class="btn">
-                         <asp:Button runat="server" CssClass="btn1"  Text="Adquirir" PostBackUrl="~/TelaSolicitacaoCarteira.aspx" />
-                    </div>
-                </div>
-            </div>           
+                       
         </div>
 </asp:Content>

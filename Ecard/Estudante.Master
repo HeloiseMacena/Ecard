@@ -26,9 +26,29 @@
                 
             </div>
         </div>
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+        <div class="flex" style="display: flex; justify-content: flex-start; align-items: flex-start; margin-top: 100px">
+            <div class="box11" style="width: 700px;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="box22" style="width: 380px;">
+
+                <div class="box2">
+                    <div class="box2-user-container">
+                        <div class="box2-user">
+                             <i class="fas fa-user-circle"></i>
+                             <div class="user-name"> 
+                               <asp:Label ID="nome_usuario" runat="server" Text="Daniel Victor"></asp:Label>
+                               <p>Estudante</p>
+                            </div>
+                        </div>
+                        <div class="box2-button">
+                             <asp:Button runat="server" CssClass="btn2"  Text="Ver Perfil" PostBackUrl="~/PerfilEstudante.aspx"/>
+                        </div>
+                    </div>
+                </div>    
+
+            </div>
         </div>
     </form>
 </body>
