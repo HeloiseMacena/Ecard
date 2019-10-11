@@ -67,15 +67,6 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.TextBox TextCPF;
         
         /// <summary>
-        /// Controle RangeValidator1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
-        
-        /// <summary>
         /// Controle TextRG.
         /// </summary>
         /// <remarks>
