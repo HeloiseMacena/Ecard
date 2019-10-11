@@ -381,7 +381,7 @@ form#form1 {
 }
 
 .vl { /* vertical line */
-    height: 398px;
+    height: 100%;
     width: 3px;
     background-color: #cccccc;
     margin: 0 10px;
@@ -519,7 +519,7 @@ form#form1 {
 }
 
 .modal-content {
-    width: 55%;
+    width: 800px;
     background: transparent;
     display: flex;
     flex-direction: column;
@@ -527,7 +527,7 @@ form#form1 {
 }
 
 .modal-header {
-    width: 82%;
+    width: 100%;
     height: 60px;
     background-color: #0ead4b;
     padding: 20px 30px;
@@ -539,7 +539,7 @@ form#form1 {
 }
 
 .modal-body {
-    width: 82%;
+    width: 100%;
     height: 400px;
     background-color: #EFEFEF;
     overflow: auto;
@@ -547,10 +547,13 @@ form#form1 {
 
 .rota-modal {
     width: 100%;
+    height: 100%;
     flex-direction: row;
     align-items: center;
     overflow-y: auto;
     display: flex;
+    padding: 15px;
+    align-items: flex-start;
 }
 
 .rota-modal-nome {
@@ -563,7 +566,7 @@ form#form1 {
 }
 
 .help-modal{
-
+    height: 100%;
 }
 
 .ponto-ref {
