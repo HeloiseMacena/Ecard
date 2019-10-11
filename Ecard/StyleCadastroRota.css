@@ -285,16 +285,18 @@ form#form1 {
     align-items: center;
     margin-top: 20px;
     justify-content: center;
-    align-content: flex-end;
-    width: 123%;
-    padding: 30px;
+    align-items: flex-start;
 }
 
 .org-2 {
-
+    width: 100%;
 }
 .org-3 {
-    margin-left: 64px;
+    width: 100%;
+}
+
+input[type=checkbox] {
+    margin-right: 5px;
 }
 
 
@@ -478,6 +480,15 @@ form#form1 {
 
 .check {
     margin-top: 10px;
+    margin-right: 10px;
+}
+
+td {
+    margin-bottom: 10px;
+}
+
+tbody > tr {
+    margin-bottom: 10px;
 }
 
 .label {

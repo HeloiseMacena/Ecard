@@ -520,7 +520,6 @@ form#form1 {
 
 .modal-content {
     width: 600px;
-    height: 350px;
     background: transparent;
     display: flex;
     flex-direction: column;
@@ -541,9 +540,9 @@ form#form1 {
 
 .modal-body {
     width: 82%;
-    height: 100%;
-    margin-bottom: 44px;
+    height: 400px;
     background-color: #EFEFEF;
+    overflow: auto;
 }
 
 .rota-modal {
