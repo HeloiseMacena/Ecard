@@ -98,9 +98,10 @@
                                 <div class="modal-body">
                                  <div class="help-modal">                                
                                         <div class="rota-modal">
+                                            <div class="test">
                                             <asp:Repeater ID="Repeater2" runat="server" DataSourceID="ObjectDataSource2">
                                                 <ItemTemplate>
-                                                    <div class="rota-modal-nome">
+                                                    <div class="rota-modal-nome1">
                                                         <p class="ponto-ref">
                                                             Bairros:
                                                     <asp:Label runat="server" ID="modalBairro"><%#Eval("nome")%></asp:Label>
@@ -109,11 +110,19 @@
                                                 </ItemTemplate>
                                             </asp:Repeater>
                                             <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALBairro"></asp:ObjectDataSource>
+                                            </div>
+                                            <div class="vl"></div>
                                             <div class="rota-modal-nome">
-                                                <p class="ponto-ref">Ponto de referência:
-                                                    <asp:Label runat="server" ID="modalPonto"></asp:Label>
-                                                </p>
-                                                </div>
+                                                <asp:Repeater ID="Repeater3" runat="server" DataSourceID="ObjectDataSource3">
+                                                    <ItemTemplate>
+                                                        <p class="ponto-ref">
+                                                            Ponto de referência:
+                                                    <asp:Label runat="server" ID="modalPonto"><%#Eval("nome")%></asp:Label>
+                                                        </p>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
+                                                <asp:ObjectDataSource runat="server" ID="ObjectDataSource3" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALPonto_referencia"></asp:ObjectDataSource>
+                                            </div>
                                         </div>
                                     </div> 
                                 </div>

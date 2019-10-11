@@ -35,10 +35,10 @@ namespace Ecard
             Modelo.Bairro ponto = p.Select(id);
             modalBairro.Text = ponto.Nome;*/
 
-            int Id = int.Parse(((Button)sender).CommandArgument.ToString());
+            /*int Id = int.Parse(((Button)sender).CommandArgument.ToString());
             DAL.DALPonto_referencia b = new DAL.DALPonto_referencia();
             Modelo.Ponto_referencia bo = b.Select(Id);
-            modalPonto.Text = bo.Nome;
+            modalPonto.Text = bo.Nome;*/
 
 
             modalContainer.Style.Add("visibility", "visible");

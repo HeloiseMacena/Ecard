@@ -381,8 +381,8 @@ form#form1 {
 }
 
 .vl { /* vertical line */
-    height: 50px;
-    width: 1px;
+    height: 398px;
+    width: 3px;
     background-color: #cccccc;
     margin: 0 10px;
 }
@@ -519,7 +519,7 @@ form#form1 {
 }
 
 .modal-content {
-    width: 600px;
+    width: 55%;
     background: transparent;
     display: flex;
     flex-direction: column;
@@ -550,11 +550,18 @@ form#form1 {
     flex-direction: row;
     align-items: center;
     overflow-y: auto;
+    display: flex;
 }
 
 .rota-modal-nome {
-    
+    width: 50%;
 }
+.test {
+    flex-direction: column;
+    display: flex;
+    width: 50%;
+}
+
 .help-modal{
 
 }
@@ -638,7 +645,7 @@ form#form1 {
 
 #show-modal:hover {
     cursor: pointer;
-}}
+}
 
 
 /* RESPONSIVIDADE */
