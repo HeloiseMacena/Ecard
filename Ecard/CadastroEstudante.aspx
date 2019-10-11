@@ -30,12 +30,11 @@
         <div class="v1"></div> <!-- vertical line -->
         <div class="coluna2">
             <div class="login-1">Informações avançadas</div>
-            <div class="textbox2">
-                <asp:TextBox ID="TextCPF" runat="server" CssClass="tt2" type="String" placeholder="CPF (Apenas números)"></asp:TextBox>                
-                <asp:rangevalidator id="RangeValidator1" CssClass="range" controltovalidate="TextCPF" minimunvalue="10000000000" maximumvalue="99999999999" type="String" text="* CPF inválido" runat="server"></asp:rangevalidator>
+            <div class="textbox">
+                <asp:TextBox ID="TextCPF" runat="server" CssClass="textbox1" type="text" placeholder="CPF (Apenas números)"></asp:TextBox>                            
             </div>
             <div class="textbox">
-                <asp:TextBox ID="TextRG" runat="server" CssClass="textbox1" type="number" placeholder="RG"></asp:TextBox>
+                <asp:TextBox ID="TextRG" runat="server" CssClass="textbox1" type="text" placeholder="RG"></asp:TextBox>
             </div>
             <div class="textbox">
                 <asp:TextBox ID="TextSenha" runat="server" CssClass="textbox1" type="password" placeholder="Senha"></asp:TextBox>
