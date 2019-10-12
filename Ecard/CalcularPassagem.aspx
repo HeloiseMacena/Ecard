@@ -21,24 +21,42 @@
                     <asp:ListItem Value="Amarante">Passagem de São Gonçalo do Amarante</asp:ListItem>
                 </asp:DropDownList>
                 <div class="valores">
-                    <div class="campo1">
-                        <asp:Label id="Label4" CssClass="text-var" runat="server" Text="R$4,20"></asp:Label>
-                        <div class="btns-2">
-                            <asp:LinkButton ID="LinkButton2" cssClass="btn-soma" runat="server"><i class="fas fa-minus-circle"></i></asp:LinkButton>
-                            <asp:LinkButton ID="LinkButton1" CssClass="btn-soma" runat="server"><i class="fas fa-plus-circle"></i></asp:LinkButton>
+                    <div class="campos">
+                        <asp:Label id="Label2" CssClass="text-var" runat="server" Text="R$4,20"></asp:Label>
+                        <asp:TextBox ID="TextBoxRecarga" CssClass="campo-qntPas" placeholder="0" runat="server"></asp:TextBox> 
+                    </div>
+                    <div class="campos">
+                        <asp:Label id="Label3" CssClass="text-var" runat="server" Text="R$6,30"></asp:Label>
+                        <asp:TextBox ID="TextBox1" CssClass="campo-qntPas" placeholder="0" runat="server"></asp:TextBox> 
+                    </div>
+                    <div class="campos">
+                        <asp:Label id="Label4" CssClass="text-var" runat="server" Text="Dias"></asp:Label>
+                        <asp:TextBox ID="TextBox2" CssClass="campo-qntDia" placeholder="0" runat="server"></asp:TextBox>                    
+                    </div>
+                </div>
+                <div class="resultados">
+                    <div class="resul">
+                        <div class="campo">
+                            <div Class="text-varbox"><asp:Label id="Label5" runat="server" Text="Sobra"></asp:Label></div>
+                            <asp:Label ID="ResulSobra" CssClass="campo-resul" text="R$ 0,00" runat="server"></asp:Label>    
+                        </div>
+                        <div class="campo-2">
+                            <div Class="text-varbox"><asp:Label id="Label6" runat="server" Text="Falta"></asp:Label></div>
+                            <asp:Label ID="ResulFalta" CssClass="campo-resul" text="R$ 0,00" runat="server"></asp:Label>    
                         </div>
                     </div>
-                    <div class="campo2">
-                        <asp:Label id="Label6" CssClass="text-var" runat="server" Text="R$6,30"></asp:Label>
-                        <div class="val">
-                            <asp:Label ID="Label2" CssClass="txt-val" runat="server" Text="1"></asp:Label>
-                        </div>    
-                        <div class="btns-2">
-                            <asp:LinkButton ID="LinkButton3" cssClass="btn-soma" runat="server"><i class="fas fa-minus-circle"></i></asp:LinkButton>
-                            <asp:LinkButton ID="LinkButton4" CssClass="btn-soma" runat="server"><i class="fas fa-plus-circle"></i></asp:LinkButton>
+                    <div class="resul-2">
+                        <div class="campo">
+                            <div Class="text-varbox"><asp:Label id="Label7" runat="server" Text="Saldo"></asp:Label></div>
+                            <asp:Label ID="Label8" CssClass="campo-resul" text="R$ 0,00" runat="server"></asp:Label>    
+                        </div>
+                        <div class="campo-2">
+                            <div Class="text-varbox"><asp:Label id="Label9" runat="server" Text="Total"></asp:Label></div>
+                            <asp:Label ID="Label10" CssClass="campo-resul" text="R$ 0,00" runat="server"></asp:Label>    
                         </div>
                     </div>
-                </div>                
+                </div>
+                <asp:Button ID="ButtonCalc" class="calc-result" runat="server" Text="Calcular" />
             </div>
         </div>
         <div class="box2">

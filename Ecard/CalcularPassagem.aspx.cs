@@ -20,28 +20,28 @@ namespace Ecard
 
             if(tipoPreco.SelectedItem.Value == "Natal")
             {
-                Label4.Text = "R$ " + a.SelectValor(3);
-                Label6.Text = "R$ " + a.SelectValor(3);
+                Label2.Text = "R$ " + a.SelectValor(3);
+                Label3.Text = "R$ " + a.SelectValor(3);
             }
             if (tipoPreco.SelectedItem.Value == "Parnamirim")
             {
-                Label4.Text = "R$ " + a.SelectValor(4);
-                Label6.Text = "R$ " + a.SelectValor(4);
+                Label2.Text = "R$ " + a.SelectValor(4);
+                Label3.Text = "R$ " + a.SelectValor(4);
             }
             if (tipoPreco.SelectedItem.Value == "Extremoz")
             {
-                Label4.Text = "R$ " + a.SelectValor(2);
-                Label6.Text = "R$ " + a.SelectValor(2);
+                Label2.Text = "R$ " + a.SelectValor(2);
+                Label3.Text = "R$ " + a.SelectValor(2);
             }
             if (tipoPreco.SelectedItem.Value == "Ceará")
             {
-                Label4.Text = "R$ " + a.SelectValor(1);
-                Label6.Text = "R$ " + a.SelectValor(1);
+                Label2.Text = "R$ " + a.SelectValor(1);
+                Label3.Text = "R$ " + a.SelectValor(1);
             }
             if (tipoPreco.SelectedItem.Value == "Amarante")
             {
-                Label4.Text = "R$ " + a.SelectValor(5);
-                Label6.Text = "R$ " + a.SelectValor(5);
+                Label2.Text = "R$ " + a.SelectValor(5);
+                Label3.Text = "R$ " + a.SelectValor(5);
             }
         }
     }

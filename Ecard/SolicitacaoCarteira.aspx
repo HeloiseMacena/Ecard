@@ -26,6 +26,12 @@
 
         <div class="container">
             <div class="box1">
+                <div class="box1-header">
+                    <div class="box1-title">
+                        <a class="ai" href="TelaPrincipalEstudante.aspx"><i class="fas fa-arrow-left"></i></a>
+                        <p>Visualize as solicitações de estudantes</p>
+                    </div>
+                </div>
                 <asp:TextBox ID="TextPesquisa" CssClass="textbox1" runat="server" type="text" placeholder="Pesquisar"></asp:TextBox>
                 <div class="box1-filtro">
                     <asp:DropDownList CssClass="ddlist1" runat="server">
