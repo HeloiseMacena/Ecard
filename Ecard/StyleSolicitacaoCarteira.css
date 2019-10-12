@@ -254,6 +254,32 @@ form#form1 {
     padding: 20px;
 }
 
+.box1-header {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #17A2B8;
+    border-radius: 2px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box1-title {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: center;
+}
+
+.ai {
+    text-decoration: none;
+    color: #0F3561;
+    margin-right: 10px;
+}
+
 .textbox1 {
     width: 100%;
     padding: 10px 20px;
@@ -264,7 +290,7 @@ form#form1 {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 20px;
     color: #313131;
     font: 16px Arial;
 }
