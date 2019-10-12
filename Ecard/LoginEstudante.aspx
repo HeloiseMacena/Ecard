@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+<script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="StyleLoginEstudante.css"/>
     <title></title>
@@ -29,6 +30,9 @@
              <p>Estudante não cadastrado!<a class="link-open" href="CadastroEstudante.aspx">Cadastre-se</a></p>
              <p class="link-rec">Esqueceu a senha?</p>
          </div>
+            <div class="volt">
+                <a class="vol" href="TelaInicial.aspx"><i class="fas fa-arrow-left"></i></a>
+            </div>
         </div>
     </form>
 </body>

@@ -49,6 +49,33 @@ namespace Ecard.DAL
             return aListBairro;
         }
 
+        public List<Modelo.Bairro> SelectBairros(string rname)
+        {
+            Modelo.Bairro aBairro;
+            List<Modelo.Bairro> aListBairro = new List<Modelo.Bairro>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "SELECT r.id, b.nome FROM Rotas_Bairro rb INNER JOIN rota r ON rb.rotas_id = r.id INNER JOIN Bairro b ON rb.bairro_id = b.id WHERE r.nome = " + rname;
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    aBairro = new Modelo.Bairro(
+                        dr["Nome"].ToString()
+                        );
+                    aBairro.Id = int.Parse(dr["id"].ToString());
+                    aListBairro.Add(aBairro);
+                }
+            }
+            dr.Close();
+            conn.Close();
+
+            return aListBairro;
+        }
+
         public List<Modelo.Bairro> SearchSelect(string value, string option )
         {
             if (value == "" || value == null) { value = "%"; }
@@ -59,7 +86,8 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Bairro WHERE Nome LIKE'" + value +"'";
+
+            cmd.CommandText = "Select * from Bairro WHERE Nome LIKE'%" + value +"%'";
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {

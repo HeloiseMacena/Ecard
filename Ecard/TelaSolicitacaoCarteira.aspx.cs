@@ -22,7 +22,7 @@ namespace Ecard
             DALEstudante dal = new DALEstudante();
             DALInstituicao dal_instituicao = new DALInstituicao();
             Modelo.Estudante estudante = dal.Select(id);
-            Modelo.Instituicao instituicao = dal_instituicao.Select(dal.instituicao_id(id));
+            Modelo.Instituicao instituicao = dal_instituicao.Select(int.Parse(dal.instituicao_id(id).ToString()));
             LabelNome.Text = estudante.nome;
             LabelRG.Text = estudante.rg;
             LabelCPF.Text = estudante.cpf;

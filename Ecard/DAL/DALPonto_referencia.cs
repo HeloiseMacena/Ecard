@@ -47,6 +47,33 @@ namespace Ecard.DAL
             return ListPonto_referencias;
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Ponto_referencia> SelectPontos(string rname)
+        {
+            Modelo.Ponto_referencia Ponto_referencia;
+            List<Modelo.Ponto_referencia> ListPonto_referencias = new List<Modelo.Ponto_referencia>();
+            SqlConnection a = new SqlConnection(connectionString);
+            a.Open();
+            SqlCommand b = a.CreateCommand();
+            b.CommandText = "SELECT r.id, pr.nome FROM rota_referencia INNER JOIN rota r ON rota_referencia.rota_id = r.id INNER JOIN Ponto_Referencia pr ON rota_referencia.ponto_referencia_id = pr.id WHERE r.nome = " + rname;
+            SqlDataReader c = b.ExecuteReader();
+            if (c.HasRows)
+            {
+                while (c.Read())
+                {
+                    Ponto_referencia = new Modelo.Ponto_referencia(
+                        c["Nome"].ToString()
+                        );
+                    Ponto_referencia.Id = int.Parse(c["Id"].ToString());
+                    ListPonto_referencias.Add(Ponto_referencia);
+                }
+            }
+            c.Close();
+            a.Close();
+
+            return ListPonto_referencias;
+        }
+
         public List<Modelo.Ponto_referencia> SearchSelect(string value, string option)
         {
             if(value == "" || value == null) { value = "%"; }
@@ -57,7 +84,7 @@ namespace Ecard.DAL
             SqlConnection a = new SqlConnection(connectionString);
             a.Open();
             SqlCommand b = a.CreateCommand();
-            b.CommandText = "Select * from Ponto_referencia WHERE Nome LIKE'" + value + "'";
+            b.CommandText = "Select * from Ponto_referencia WHERE Nome LIKE'%" + value + "%'";
             SqlDataReader c = b.ExecuteReader();
             if (c.HasRows)
             {

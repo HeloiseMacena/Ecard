@@ -152,6 +152,15 @@ p {
     margin-left: 10px;
 }
 
+.volt{
+    margin:auto;
+}
+.vol{
+    color: red;
+    font-size:15px;
+    text-decoration:none;
+}
+
 @media(min-width:768px) {
     .formulario {
         width: 400px;

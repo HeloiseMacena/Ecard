@@ -44,7 +44,7 @@
                                 </div>
                                 
                                 <div class="rota-but">
-                                    <asp:Button runat="server" Text="Mais" CommandArgument='<%#Eval("id")%>' CssClass="action-button animate blue"  OnClick="getModalInfos_Click" />
+                                    <asp:Button runat="server" Text="Mais" CommandArgument='<%#Eval("nome")%>' CssClass="action-button animate blue"  OnClick="getModalInfos_Click" />
                                    <asp:LinkButton CssClass="link-but" runat="server"  PostBackUrl='<%#"~/EditarRota.aspx?id=" +  Eval("id") %>'> <i class="fas fa-pen-square"></i> </asp:LinkButton>
                                  </div>
                             </div> 
@@ -80,9 +80,9 @@
                         <asp:DropDownList id="DDLSearch" CssClass="ddlist1" runat="server">
                         <asp:ListItem>Nome</asp:ListItem>
                         <asp:ListItem>Bairro</asp:ListItem>
-                        <asp:ListItem>Ponto de Recarga</asp:ListItem>
+                        <asp:ListItem>Ponto de Referência</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:Button ID="btnSearch"  CssClass="btn-loc" runat="server" Text="Localizar" />
+                    <asp:Button ID="btnSearch" OnClick="btnSearch_Click"  CssClass="btn-loc" runat="server" Text="Localizar" />
                     </div>
                 </div>
                 </div>

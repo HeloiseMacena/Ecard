@@ -50,6 +50,40 @@ namespace Ecard.DAL
             return aListRota;
         }
 
+        public List<Modelo.Rota> SearchSelect(string value, string option)
+        {
+            if (value == "" || value == null) { value = "%"; }
+            Modelo.Rota aRota;
+            List<Modelo.Rota> aListRota = new List<Modelo.Rota>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            
+            if (option == "Nome") { cmd.CommandText = "SELECT r.id, r.nome FROM Rotas_Bairro rb INNER JOIN Bairro b ON rb.bairro_id = b.id INNER JOIN rota r ON rb.rotas_id = r.id INNER JOIN rota_referencia rr ON r.id = rr.rota_id INNER JOIN Ponto_Referencia pr ON rr.ponto_referencia_id = pr.id WHERE r.nome LIKE '" + value + "'"; }
+            else if (option == "Bairro") { cmd.CommandText = "SELECT r.id, r.nome FROM Rotas_Bairro rb INNER JOIN Bairro b ON rb.bairro_id = b.id INNER JOIN rota r ON rb.rotas_id = r.id INNER JOIN rota_referencia rr ON r.id = rr.rota_id INNER JOIN Ponto_Referencia pr ON rr.ponto_referencia_id = pr.id WHERE b.nome LIKE '%" + value + "%'"; }
+            else { cmd.CommandText = "SELECT r.id, r.nome FROM Rotas_Bairro rb INNER JOIN Bairro b ON rb.bairro_id = b.id INNER JOIN rota r ON rb.rotas_id = r.id INNER JOIN rota_referencia rr ON r.id = rr.rota_id INNER JOIN Ponto_Referencia pr ON rr.ponto_referencia_id = pr.id WHERE pr.nome LIKE '%" + value + "%'"; }
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+
+                while (dr.Read())
+                {
+                    aRota = new Modelo.Rota(
+                        dr["nome"].ToString()
+                        );
+                    aRota.id = Convert.ToInt32(dr["id"].ToString());
+
+                    aListRota.Add(aRota);
+                }
+            }
+            dr.Close();
+            conn.Close();
+
+            return aListRota;
+        }
+
 
 
         [DataObjectMethod(DataObjectMethodType.Delete)]
