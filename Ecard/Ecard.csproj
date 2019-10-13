@@ -72,6 +72,7 @@
     <Content Include="CadastroEstudante.aspx" />
     <Content Include="CadastroInstituicao.aspx" />
     <Content Include="CadastroPassagem.aspx" />
+    <Content Include="CadastroRota.aspx" />
     <Content Include="CalcularPassagem.aspx" />
     <Content Include="ConsultaPontodeRecarga.aspx" />
     <Content Include="EditEstudante.aspx" />
@@ -84,6 +85,7 @@
     <Content Include="PerfilAdm.aspx" />
     <Content Include="PerfilEstudante.aspx" />
     <Content Include="PerfilInstituicao.aspx" />
+    <Content Include="PesquisarRota.aspx" />
     <Content Include="Recarga.aspx" />
     <Content Include="SolicitacaoCarteira.aspx" />
     <Content Include="SolicitacaoInstituicao.aspx" />
@@ -92,7 +94,6 @@
     <Content Include="CadastroPontoEdit.aspx" />
     <Content Include="CadastroPontoReferencia.aspx" />
     <Content Include="CadastroPontoReferenciaEdit.aspx" />
-    <Content Include="CadastroRota.aspx" />
     <Content Include="CadastroRotaEdit.aspx" />
     <Content Include="EditarBairro.aspx" />
     <Content Include="EditarPonto.aspx" />
@@ -337,6 +338,13 @@
     </Compile>
     <Compile Include="PerfilInstituicao.aspx.designer.cs">
       <DependentUpon>PerfilInstituicao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PesquisarRota.aspx.cs">
+      <DependentUpon>PesquisarRota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PesquisarRota.aspx.designer.cs">
+      <DependentUpon>PesquisarRota.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recarga.aspx.cs">

@@ -171,6 +171,25 @@ p {
     margin-left: 10px;
 }
 
+.volt {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    align-items: baseline;
+}
+
+.vol {
+    color: #5FB741;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.vol-1 {
+    margin-left: 10px;
+    color: #5FB741;
+    font-size: 15px;
+}
+
 @media(min-width:768px) {
     .formulario {
         width: 1000px;
