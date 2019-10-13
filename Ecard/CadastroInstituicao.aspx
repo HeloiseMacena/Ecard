@@ -69,6 +69,12 @@
                 <asp:Button ID="Button1" runat="server" Text="Cadastrar" type="submit" class="button" onclick="Button1_Click"/>
                 <p>Já possuo conta!<a class="link-open" href="LoginInstituicao.aspx">Entrar</a></p>
             </div>
+             <div class="volt">
+             <a class="vol" href="LoginInstituicao.aspx"><i class="fas fa-arrow-left"></i></a>
+                <div class="vol-1">
+                    <p >Voltar</p>
+                </div>
+            </div>
         </div>
     </form>
 </body>

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Ecard
 {
-    public partial class CadastroRota : System.Web.UI.Page
+    public partial class PesquisarRota : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

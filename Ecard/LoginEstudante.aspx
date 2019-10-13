@@ -31,7 +31,10 @@
              <p class="link-rec">Esqueceu a senha?</p>
          </div>
             <div class="volt">
-                <a class="vol" href="TelaInicial.aspx"><i class="fas fa-arrow-left"></i></a>
+             <a class="vol" href="TelaInicial.aspx"><i class="fas fa-arrow-left"></i></a>
+                <div class="vol-1">
+                    <p >Voltar</p>
+                </div>
             </div>
         </div>
     </form>
