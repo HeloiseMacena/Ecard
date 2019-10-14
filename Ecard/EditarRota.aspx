@@ -58,13 +58,6 @@
                          <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" />
                     </div>
                 </div>
-                <div class="box2-rota">
-                    <div class="rota"><p>Rotas de Ônibus</p></div>
-                    <div class="rota2">
-                        <i runat="server" id="iconTeste" class="fas fa-search"></i>
-                        <p>Pesquisar</p>
-                    </div>
-                </div>
             </div>
 
              </div>
