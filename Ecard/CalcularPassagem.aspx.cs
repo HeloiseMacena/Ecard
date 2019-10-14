@@ -20,28 +20,28 @@ namespace Ecard
 
             if(tipoPreco.SelectedItem.Value == "Natal")
             {
-                Label2.Text = "R$ " + a.SelectValor(3);
-                Label3.Text = "R$ " + a.SelectValor(3);
+                Label2.Text = "R$ " + a.SelectValor("Natal");
+                Label3.Text = "R$ " + a.SelectValor("Natal");
             }
             if (tipoPreco.SelectedItem.Value == "Parnamirim")
             {
-                Label2.Text = "R$ " + a.SelectValor(4);
-                Label3.Text = "R$ " + a.SelectValor(4);
+                Label2.Text = "R$ " + a.SelectValor("Parnamirim");
+                Label3.Text = "R$ " + a.SelectValor("Parnamirim");
             }
             if (tipoPreco.SelectedItem.Value == "Extremoz")
             {
-                Label2.Text = "R$ " + a.SelectValor(2);
-                Label3.Text = "R$ " + a.SelectValor(2);
+                Label2.Text = "R$ " + a.SelectValor("Extremoz");
+                Label3.Text = "R$ " + a.SelectValor("Extremoz");
             }
             if (tipoPreco.SelectedItem.Value == "Ceará")
             {
-                Label2.Text = "R$ " + a.SelectValor(1);
-                Label3.Text = "R$ " + a.SelectValor(1);
+                Label2.Text = "R$ " + a.SelectValor("Ceará");
+                Label3.Text = "R$ " + a.SelectValor("Ceará");
             }
             if (tipoPreco.SelectedItem.Value == "Amarante")
             {
-                Label2.Text = "R$ " + a.SelectValor(5);
-                Label3.Text = "R$ " + a.SelectValor(5);
+                Label2.Text = "R$ " + a.SelectValor("São Gonçalo do Amarante");
+                Label3.Text = "R$ " + a.SelectValor("São Gonçalo do Amarante");
             }
         }
     }

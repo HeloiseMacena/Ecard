@@ -27,23 +27,23 @@ namespace Ecard
             DAL.DALValorPassagem a = new DAL.DALValorPassagem();
             if (TextBox1.Text != "R$ 5,90")
             {
-                a.Insert(double.Parse(TextBox1.Text), 1);
+                a.Insert(double.Parse(TextBox1.Text), "Ceará Mirim");
             }
             if (TextBox2.Text != "R$ 4,45")
             {
-                a.Insert(double.Parse(TextBox2.Text), 2);
+                a.Insert(double.Parse(TextBox2.Text), "Extremoz");
             }
             if (TextBox3.Text != "R$ 4,00")
             {
-                a.Insert(double.Parse(TextBox3.Text), 3);
+                a.Insert(double.Parse(TextBox3.Text), "Natal");
             }
             if (TextBox4.Text != "R$ 4,45")
             {
-                a.Insert(double.Parse(TextBox4.Text), 4);
+                a.Insert(double.Parse(TextBox4.Text), "Parnamirim");
             }
             if (TextBox5.Text != "R$ 4,20")
             {
-                a.Insert(double.Parse(TextBox5.Text), 5);
+                a.Insert(double.Parse(TextBox5.Text), "São Gonçalo do Amarante");
             }
         }
     }
