@@ -55,7 +55,8 @@ namespace Ecard.DAL
             SqlConnection a = new SqlConnection(connectionString);
             a.Open();
             SqlCommand b = a.CreateCommand();
-            b.CommandText = "SELECT r.id, pr.nome FROM rota_referencia INNER JOIN rota r ON rota_referencia.rota_id = r.id INNER JOIN Ponto_Referencia pr ON rota_referencia.ponto_referencia_id = pr.id WHERE r.nome = " + rname;
+            b.CommandText = "SELECT r.id, pr.nome FROM rota_referencia INNER JOIN rota r ON rota_referencia.rota_id = r.id INNER JOIN Ponto_Referencia pr ON rota_referencia.ponto_referencia_id = pr.id WHERE r.nome = @rname";
+            b.Parameters.AddWithValue("@rname", rname);
             SqlDataReader c = b.ExecuteReader();
             if (c.HasRows)
             {

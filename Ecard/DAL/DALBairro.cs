@@ -57,7 +57,8 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "SELECT r.id, b.nome FROM Rotas_Bairro rb INNER JOIN rota r ON rb.rotas_id = r.id INNER JOIN Bairro b ON rb.bairro_id = b.id WHERE r.nome = " + rname;
+            cmd.CommandText = "SELECT r.id, b.nome FROM Rotas_Bairro rb INNER JOIN rota r ON rb.rotas_id = r.id INNER JOIN Bairro b ON rb.bairro_id = b.id WHERE r.nome = @rname";
+            cmd.Parameters.AddWithValue("@rname", rname);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
