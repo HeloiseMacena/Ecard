@@ -18,15 +18,35 @@ namespace Ecard.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
+        public string SelectValorInteiro(string local)
+        {
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select valor from ValorPassagem where local = @local";
+            cmd.Parameters.AddWithValue("@local", local);
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
+            double v = double.Parse(dr["valor"].ToString());
+
+            string valor = v.ToString();
+
+            return valor;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
         public string SelectValor(string local)
         {
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from ValorPassagem where local = @local";
+            cmd.CommandText = "Select valor from ValorPassagem where local = @local";
             cmd.Parameters.AddWithValue("@local", local);
             SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
 
             double v = double.Parse(dr["valor"].ToString());
 
