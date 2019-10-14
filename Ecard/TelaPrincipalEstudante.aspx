@@ -13,19 +13,5 @@
                    </div>  
               </div>
             </div>
-
-                         <div class="box2-card">
-                    <div class="card">
-                         <i class="fas fa-address-card"></i>
-                         <div class="info"> 
-                            <p>GARANTA SUA NOVA CARTEIRA!</p>
-                        </div>
-                    </div>
-                    <div class="btn">
-                         <asp:Button runat="server" CssClass="btn1"  Text="Adquirir" PostBackUrl="~/TelaSolicitacaoCarteira.aspx" />
-                    </div>
-                </div>
         </div>
-
-
 </asp:Content>

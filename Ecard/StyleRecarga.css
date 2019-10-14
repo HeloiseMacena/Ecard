@@ -2,10 +2,9 @@
 /* ========= */
 
 .container {
-    width: 1000px;
+    width: 100%;
     height: 400px;
     background-color: #FFF;
-    margin-top: 170px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -18,9 +17,7 @@
 
 
 .box1 {
-    width: 600px;
-    height: 1000px;
-    margin-right: 20px;
+    width: 100%;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
     padding: 20px;
 }
@@ -77,90 +74,6 @@
     cursor: pointer;
 }
 
-.box2 {
-    width: 380px;
-}
-
-.box2-user-container {
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    margin-bottom: 20px;
-    background-color: #FFF;
-    padding: 20px 20px;
-}
-
-.box2-user {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: row;
-    margin-bottom: 50px;
-}
-
-.box2-ponto {
-    width: 100%;
-    height: 186px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-}
-
-.ponto {
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-    color: #9F9F9F;
-    display: flex;
-    margin-top: 15px;
-    font-size: 24px;
-}
-
-.ponto2 {
-    padding: 7px 50px;
-    margin-top: 5px;
-    background-color: #b8b8b8;
-    border-radius: 5px;
-    color: white;
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-}
-
-    .ponto2 > i {
-        margin-right: 10px;
-    }
-
-.box1-title > i {
-    margin-right: 10px;
-}
-
-.box2-user > i {
-    font-size: 60px;
-    color: #555555;
-}
-
-.user-name {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    margin-left: 20px;
-}
-
-    .user-name > h1 {
-        color: #313131;
-    }
-
-    .user-name > p {
-        color: #adadad;
-    }
-
 /* REPEATER */
 
 .help {
@@ -192,46 +105,12 @@
     font-size: 14px;
 }
 
-.hl { /* horizontal line */
-    height: 2px;
-    width: 90%;
-    background-color: #EDEDED;
-    margin-top: 2px;
-}
-
 .hl-2 { /* horizontal line */
     height: 3px;
     width: 100%;
     background-color: #EDEDED;
     margin-top: 53px;
     margin-bottom: 21px;
-}
-
-.title-money {
-    color: #3C3C3C;
-    font-size: 45px;
-    margin-top: 6px;
-}
-
-.btns-2 {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-direction: row;
-    margin-top: 16px;
-    cursor: pointer;
-}
-
-
-.btns > .btn-calc {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 2px;
-    background-color: #17A2B8;
-    color: #EBEBEB;
-    border-bottom-color: #13899C;
-    margin-top: 5px;
-    cursor: pointer;
 }
 
 .ponto-nome {

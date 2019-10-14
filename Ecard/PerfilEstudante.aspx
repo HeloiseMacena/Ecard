@@ -32,17 +32,5 @@
                 </div>
             </div>
         </div>
-            
-        <div class="box2">
-            <div class="box2-user-container">
-                <div class="box2-user">
-                    <i class="fas fa-user-circle"></i>
-                    <div class="user-name"> 
-                        <h1>Dara Hadrielle</h1>
-                        <p>Estudante</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </asp:Content>

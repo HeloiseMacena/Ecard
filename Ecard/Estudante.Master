@@ -33,12 +33,12 @@
             </div>
             <div class="box22" style="width: 380px;">
 
-                <div class="box2">
+                <div class="box2" runat="server" ID="box2"> 
                     <div class="box2-user-container">
                         <div class="box2-user">
                              <i class="fas fa-user-circle"></i>
                              <div class="user-name"> 
-                               <asp:Label ID="nome_usuario" runat="server" Text="Daniel Victor"></asp:Label>
+                               <asp:Label ID="nome_usuario" CssClass="username" runat="server" Text="Daniel Victor"></asp:Label>
                                <p>Estudante</p>
                             </div>
                         </div>
@@ -47,6 +47,30 @@
                         </div>
                     </div>
                 </div>    
+
+                <div class="box2-ponto" runat="server" id="box2Ponto"> 
+                    <div class="ponto">
+                        <p>Seu Saldo</p>
+                    </div>
+                     <div class="hl"></div> <!--  horizontal line -->
+                    <asp:Label ID="saldo" CssClass="title-money" runat="server" Text=""></asp:Label>
+                    <div class="btns">
+                         <asp:Button class="btn-rec" runat="server" Text="Recarregar" PostBackUrl="~/Recarga.aspx"/>
+                        <asp:Button class="btn-calc" runat="server" Text="Calcular Passagens" PostBackUrl="~/CalcularPassagem.aspx"/>
+                    </div>
+                </div>
+
+                <div class="box2-card" runat="server" ID="box2Card">
+                    <div class="card">
+                         <i class="fas fa-address-card"></i>
+                         <div class="info"> 
+                            <p>GARANTA SUA NOVA CARTEIRA!</p>
+                        </div>
+                    </div>
+                    <div class="btn">
+                         <asp:Button runat="server" CssClass="btn1"  Text="Adquirir" PostBackUrl="~/TelaSolicitacaoCarteira.aspx" />
+                    </div>
+                </div>
 
             </div>
         </div>

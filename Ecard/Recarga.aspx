@@ -46,32 +46,6 @@
                 <div class="forma-5">
                 </div>
               </div>
-            <div class="box2">
-                <div class="box2-user-container">
-                    <div class="box2-user">
-                         <i class="fas fa-user-circle"></i>
-                         <div class="user-name"> 
-                            <h1>User</h1>
-                            <p>Estudante</p>
-                        </div>
-                    </div>
-                    <div class="box2-button">
-                         <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" PostBackUrl="~/PerfilEstudante.aspx" />
-                    </div>
-                </div>
-
-                <div class="box2-ponto">
-                    <div class="ponto">
-                        <p>Seu Saldo</p>
-                    </div>
-                     <div class="hl"></div> <!--  horizontal line -->
-                    <asp:Label ID="Label1" CssClass="title-money" runat="server" Text="R$ 9,58"></asp:Label>
-                    
-                    <div class="btns">
-                        <asp:Button class="btn-calc" runat="server" Text="Calcular Passagens" PostBackUrl="~/CalcularPassagem.aspx"/>
-                    </div>
-                </div>
-            </div>
             <div>  
                 </div>
            </div>

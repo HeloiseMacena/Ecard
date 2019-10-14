@@ -1,10 +1,8 @@
 ﻿/* CONTAINER */
 
 .container {
-    width: 1000px;
-    height: 400px;
+    width: 100%;
     background-color: #FFF;
-    margin-top: 170px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -17,9 +15,7 @@
 
 
 .box1 {
-    width: 600px;
-    height: 820px;
-    margin-right: 20px;
+    width: 100%;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
     padding: 20px;
 }
@@ -105,53 +101,6 @@
     color: #0F3561;
     margin-right: 10px;
 }
-
-.box2 {
-    width: 380px;
-}
-
-.box2-user-container {
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    margin-bottom: 20px;
-    background-color: #FFF;
-    padding: 28px 20px;
-}
-
-.box2-user {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: row;
-}
-
-.box1-title > i {
-    margin-right: 10px;
-}
-
-.box2-user > i {
-    font-size: 60px;
-    color: #555555;
-}
-
-.user-name {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    margin-left: 20px;
-}
-
-    .user-name > h1 {
-        color: #313131;
-    }
-
-    .user-name > p {
-        color: #adadad;
-    }
 
 .box1-midi > h1 {
     margin: auto;

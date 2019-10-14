@@ -117,6 +117,7 @@
     <Content Include="StylePerfilAdm.css" />
     <Content Include="StylePerfilEstudante.css" />
     <Content Include="StylePerfilInstituicao.css" />
+    <Content Include="StylePesquisarRota.css" />
     <Content Include="StylePonto.css" />
     <Content Include="StylePontoBairro.css" />
     <Content Include="StyleRecarga.css" />

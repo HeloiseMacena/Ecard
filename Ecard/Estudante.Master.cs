@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -26,6 +27,32 @@ namespace Ecard
             dal = new DALEstudante();
             Modelo.Estudante estudante = dal.Select(int.Parse(Session["userid"].ToString()));
             usuario.Text = estudante.nome.ToString();
+
+            string pageName = Path.GetFileNameWithoutExtension(Page.AppRelativeVirtualPath);
+            switch(pageName)
+            {
+                case "TelaPrincipalEstudante":
+                    break;
+
+                case "PerfilEstudante":
+                    box2.Style.Add("display", "none");
+                    box2Card.Style.Add("display", "none");
+                    break;
+                case "CalcularPassagem":
+                    box2Ponto.Style.Add("display", "none");
+                    box2Card.Style.Add("display", "none");
+                    break;
+                case "ConsultaPontodeRecarga":
+                    box2Card.Style.Add("display", "none");
+                    break;
+                case "Recarga":
+                    box2Card.Style.Add("display", "none");
+                    break;
+                case "PesquisarRota":
+                    box2Card.Style.Add("display", "none");
+                    break;
+            }
+            
         }
     }
 }

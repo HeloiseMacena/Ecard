@@ -2,49 +2,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <link rel="stylesheet" type="text/css" href="StylePesquisarRota.css"/>
         <div class="container">
             <div class="box1">
+
                 <div class="box1-header">
                     <div class="box1-title">
                         <a class="ai" href="TelaPrincipalEstudante.aspx"><i class="fas fa-arrow-left"></i></a>
                        <p>Rotas</p>
                     </div>
                     <div class="box1-button">
-                    </div>
-                </div>
-                <div class="box1-body">
-                     <div class="help">
-                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
-                        <ItemTemplate>
-                            <div class="rotaItem">
-                                <div class="rotaItem-nome">
-                                    <p class="rota-nome"><%#Eval("nome")%></p>
-                                </div>
-                                
-                                <div class="rota-but">
-                                    <asp:Button runat="server" Text="Mais" CommandArgument='<%#Eval("nome")%>' CssClass="action-button animate blue"  OnClick="getModalInfos_Click" />
-                                 </div>
-                            </div> 
-                        </ItemTemplate>
-                    </asp:Repeater>
-                       
-                         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Ecard.Modelo.Rota" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALRota" UpdateMethod="Update"></asp:ObjectDataSource>
-                       
-                </div>
-            </div>
-        </div>
-            <div class="box2">
-                <div class="box2-user-container">
-                    <div class="box2-user">
-                         <i class="fas fa-user-circle"></i>
-                         <div class="user-name"> 
-                            <h1>Daniel Victor</h1>
-                            <p>Administrador</p>
-                        </div>
-                    </div>
-                    <div class="box2-button">
-                         <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil"  PostBackUrl="~/PerfilEstudante.aspx" />
                     </div>
                 </div>
 
@@ -109,6 +76,27 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="box1-body">
+                     <div class="help">
+                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">
+                        <ItemTemplate>
+                            <div class="rotaItem">
+                                <div class="rotaItem-nome">
+                                    <p class="rota-nome"><%#Eval("nome")%></p>
+                                </div>
+                                
+                                <div class="rota-but">
+                                    <asp:Button runat="server" Text="Mais" CommandArgument='<%#Eval("nome")%>' CssClass="action-button animate blue"  OnClick="getModalInfos_Click" />
+                                 </div>
+                            </div> 
+                        </ItemTemplate>
+                    </asp:Repeater>
+                       
+                         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Ecard.Modelo.Rota" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALRota" UpdateMethod="Update"></asp:ObjectDataSource>
+                       
+                </div>
             </div>
+        </div>
         </div>
 </asp:Content>
