@@ -27,7 +27,7 @@ namespace Ecard
             {
                 con.Open();
 
-                using (var cmd = new SqlCommand("Select * from Instituicao", con))
+                using (var cmd = new SqlCommand("Select * from Instituicao where status = 0", con))
                 {
                     Repeater1.DataSource = cmd.ExecuteReader();
                     Repeater1.DataBind();
@@ -51,41 +51,53 @@ namespace Ecard
 
             modalContainer.Style.Add("visibility", "visible");*/
         }
-        /*protected void Button1_Click(object sender, EventArgs e)
+
+        protected void Recusar_click(object sender, EventArgs e)
         {
 
-            DAL.DALEstudante aDALEstudante = new DAL.DALEstudante();
-            List<Modelo.Estudante> aListEstudante;
-            int id = int.Parse(Session["userid"].ToString());
+        }
 
-            string Arquivo = FileUpload1.FileName;
+        protected void Aceitar_click(object sender, EventArgs e)
+        {
 
-            if (FileUpload1.HasFile)
-            {
-                string nomeArquivo = Path.GetFileName(FileUpload1.PostedFile.FileName);
-                FileUpload1.PostedFile.SaveAs(Server.MapPath("~/Teste/" + nomeArquivo));
-                resposta.Text = "Arquivo enviado com sucesso";
+        }
 
-                aListEstudante = aDALEstudante.SelectArquivoCsv(Arquivo);
 
-                if (aListEstudante.Count > 0)
-                {
-                    aDALEstudante.MudarSituacaoFalse(id);
+        /*protected void Button1_Click(object sender, EventArgs e)
+{
 
-                    for (int i = 0; i < aListEstudante.Count; i++)
-                    {
-                        if (aDALEstudante.SelectComparacao(aListEstudante[i].cpf) == true)
-                        {
-                            aDALEstudante.MudarSituacaoTrue(aListEstudante[i].cpf);
-                        }
-                        else
-                        {
-                            aDALEstudante.Insert(aListEstudante[i]);
-                        }
-                    }
-                }
-            }
-            else resposta.Text = "Por favor, selecione um arquivo a enviar";
-        }*/
+   DAL.DALEstudante aDALEstudante = new DAL.DALEstudante();
+   List<Modelo.Estudante> aListEstudante;
+   int id = int.Parse(Session["userid"].ToString());
+
+   string Arquivo = FileUpload1.FileName;
+
+   if (FileUpload1.HasFile)
+   {
+       string nomeArquivo = Path.GetFileName(FileUpload1.PostedFile.FileName);
+       FileUpload1.PostedFile.SaveAs(Server.MapPath("~/Teste/" + nomeArquivo));
+       resposta.Text = "Arquivo enviado com sucesso";
+
+       aListEstudante = aDALEstudante.SelectArquivoCsv(Arquivo);
+
+       if (aListEstudante.Count > 0)
+       {
+           aDALEstudante.MudarSituacaoFalse(id);
+
+           for (int i = 0; i < aListEstudante.Count; i++)
+           {
+               if (aDALEstudante.SelectComparacao(aListEstudante[i].cpf) == true)
+               {
+                   aDALEstudante.MudarSituacaoTrue(aListEstudante[i].cpf);
+               }
+               else
+               {
+                   aDALEstudante.Insert(aListEstudante[i]);
+               }
+           }
+       }
+   }
+   else resposta.Text = "Por favor, selecione um arquivo a enviar";
+}*/
     }
 }

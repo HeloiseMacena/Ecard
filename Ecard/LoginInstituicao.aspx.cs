@@ -19,13 +19,13 @@ namespace Ecard
         {
             DALInstituicao dal = new DALInstituicao();
             Instituicao instituicao = dal.Login(TextEmail.Text, TextSenha.Text);
-            if (instituicao.Id != 0)
+            if (instituicao.Id != 0 && instituicao.Status == true)
             {
                 Session["userid"] = instituicao.Id;
                 Session["username"] = instituicao.Nome;
                 Session["logged"] = true;
                 Session["accesslevel"] = "instituicao";
-                Response.Redirect("~/PerfilInstituicao.aspx");
+                Response.Redirect("~/WebFormTelaPrincipalInstituicao.aspx");
             }
             
         }

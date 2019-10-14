@@ -126,6 +126,18 @@ namespace Ecard.DAL
             cmd.ExecuteNonQuery();
         }
 
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void AlterarStatus(Modelo.Instituicao obj)
+        {
+            bool valor = !(obj.Status);
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("UPDATE Instituicao SET status = @status WHERE Id = @Id", conn);
+            cmd.Parameters.AddWithValue("@Status", valor);
+            cmd.ExecuteNonQuery();
+        }
+
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]

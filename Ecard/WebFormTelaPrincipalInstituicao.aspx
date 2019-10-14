@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="box2-button">
-                         <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" />
+                         <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" PostBackUrl="~/PerfilInstituicao.aspx" />
                     </div>
                 </div>
             </div>

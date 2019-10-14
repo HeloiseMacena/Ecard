@@ -90,8 +90,8 @@
                                     <asp:ListItem>CNPJ não identificado</asp:ListItem>
                                 </asp:DropDownList>
                                 <div class="btn-modal">
-                                    <asp:Button runat="server" CssClass="btn-rec" text="Recusar"/>
-                                    <asp:Button runat="server" CssClass="btn-act" text="Aceitar"/>
+                                    <asp:Button runat="server" CssClass="btn-rec" text="Recusar" OnClick="Recusar_click"/>
+                                    <asp:Button runat="server" CssClass="btn-act" text="Aceitar" OnClick="Aceitar_click"/>
                                 </div>
                             </div>
                             </div>
