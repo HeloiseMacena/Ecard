@@ -13,6 +13,7 @@ namespace Ecard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            modalContainer.Style.Add("visibility", "hidden");
             if (Session["logged"] != null)
             {
                 if (Session["accesslevel"] == "instituicao") Response.Redirect("~/WebFormTelaPrincipalInstituicao.aspx");
@@ -27,7 +28,7 @@ namespace Ecard
             {
                 con.Open();
 
-                using (var cmd = new SqlCommand("Select * from Instituicao where status = 0", con))
+                using (var cmd = new SqlCommand("select * from solicitacao_instituicao where status=0", con))
                 {
                     Repeater1.DataSource = cmd.ExecuteReader();
                     Repeater1.DataBind();
@@ -42,24 +43,15 @@ namespace Ecard
 
         protected void getModalInfos_Click(object sender, EventArgs e)
         {
-            /*int id = int.Parse(((Button)sender).CommandArgument.ToString());
-            DAL.DALInstituicao i = new DAL.DALInstituicao();
-            Modelo.Instituicao instituicao = i.Select(id);
-            modalNome.Text = instituicao.Nome;
-            modalEmail.Text = instituicao.Email;
-            modalCodigo.Text = instituicao.Codigo_inep_mec;
+            int id = int.Parse(((Button)sender).CommandArgument.ToString());
+            DAL.DALInstituicao p = new DAL.DALInstituicao();
+            Modelo.Instituicao ponto = p.Select(id);
+            Modalnome.Text = ponto.Nome;
+            Modalemail.Text = ponto.Email;
+            Modalcodigo.Text = ponto.Codigo_inep_mec;
+            Modalcnpj.Text = ponto.cnpj;
 
-            modalContainer.Style.Add("visibility", "visible");*/
-        }
-
-        protected void Recusar_click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Aceitar_click(object sender, EventArgs e)
-        {
-
+            modalContainer.Style.Add("visibility", "visible");
         }
 
 
