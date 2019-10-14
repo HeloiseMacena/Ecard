@@ -31,7 +31,8 @@
                        <p>Estudantes</p>
                     </div>
                     <div class="box1-button">
-                        <asp:Button runat="server" CssClass="btnAdd" Text="Novo"/>
+                        <asp:FileUpload ID="FileUpload1" runat="server" />
+                        <asp:Button runat="server" CssClass="btnAdd" Text="Mandar"/>
                     </div>
                 </div>
                 <div class="hl"></div> <!-- horizontal line -->

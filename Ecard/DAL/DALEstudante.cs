@@ -36,8 +36,25 @@ namespace Ecard.DAL
             conn.Close();
             return a;
         }
-        
-        
+
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public double SelectSaldo(int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select carteira_saldo from Estudante where id =" + id;
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
+            double valor = double.Parse(dr["carteira_saldo"].ToString());
+
+            conn.Close();
+
+            return valor;
+        }
+
 
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void MudarSituacaoTrue(string cpf)
@@ -180,6 +197,24 @@ namespace Ecard.DAL
             return aListEstudante;
         }
 
+
+        ////[DataObjectMethod(DataObjectMethodType.Update)]
+        ///public void MudarValorPassagem(int id, double valor)
+        //{
+
+            //SqlConnection conn = new SqlConnection(connectionString);
+///conn.Open();
+           // SqlCommand com = conn.CreateCommand();
+           // SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_saldo = @valor where id = @id", conn);
+           // cmd.Parameters.AddWithValue("@id", id);
+            //cmd.Parameters.AddWithValue("@valor", valor);
+            //SqlDataReader dr = cmd.ExecuteReader();
+           // dr.Close();
+           // conn.Close();
+
+        //}
+
+
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void MudarSituacaoCarteira1(string cpf)
         {
@@ -250,7 +285,7 @@ namespace Ecard.DAL
         }
 
 
-
+        
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Estudante obj)
         {

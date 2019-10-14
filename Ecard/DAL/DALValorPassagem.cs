@@ -18,15 +18,35 @@ namespace Ecard.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public string SelectValor(int id)
+        public string SelectValorInteiro(string local)
         {
 
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from ValorPassagem where local_referencia = @id";
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.CommandText = "Select valor from ValorPassagem where local = @local";
+            cmd.Parameters.AddWithValue("@local", local);
             SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
+            double v = double.Parse(dr["valor"].ToString());
+
+            string valor = v.ToString();
+
+            return valor;
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public string SelectValor(string local)
+        {
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select valor from ValorPassagem where local = @local";
+            cmd.Parameters.AddWithValue("@local", local);
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
 
             double v = double.Parse(dr["valor"].ToString());
 
@@ -35,53 +55,24 @@ namespace Ecard.DAL
             return valor;
         }
 
-        [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(Modelo.ValorPassagem obj)
-        {
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-            SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("DELETE FROM ValorPassagem where rotas_id = @id", conn);
-            cmd.Parameters.AddWithValue("@id", obj.id);
-            cmd.ExecuteNonQuery();
-
-            cmd.ExecuteNonQuery();
-
-        }
-
-
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(double valor, int id)
+        public void Insert(double valor, string local)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("delete from ValorPassagem where local_referencia = @id", conn);
-            SqlCommand cmd2 = new SqlCommand("INSERT INTO ValorPassagem (valor, local_referencia) VALUES (@valor,@id)", conn);
+            SqlCommand cmd = new SqlCommand("delete from ValorPassagem where local = @local", conn);
+            SqlCommand cmd2 = new SqlCommand("insert into ValorPassagem (valor, local) VALUES (@valor,@local)", conn);
 
             cmd.Parameters.AddWithValue("@valor", valor);
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@local", local);
 
             cmd2.Parameters.AddWithValue("@valor", valor);
-            cmd2.Parameters.AddWithValue("@id", id);
+            cmd2.Parameters.AddWithValue("@local", local);
 
             cmd.ExecuteNonQuery();
             cmd2.ExecuteNonQuery();
         }
-
-
-
-        [DataObjectMethod(DataObjectMethodType.Update)]
-        public void Update(double valor, int id)
-        {
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-            SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE ValorPassagem SET valor = " + valor + " WHERE Id = " + id, conn);
-
-            cmd.ExecuteNonQuery();
-        }
-
     }
 }

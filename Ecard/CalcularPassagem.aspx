@@ -13,7 +13,7 @@
             </div>
             <div class="hl-2"></div><!--  horizontal line -->
             <div class="pesq">
-                <asp:DropDownList id="tipoPreco" CssClass="ddlist1" runat="server" OnSelectedIndexChanged="Unnamed3_Click">
+                <asp:DropDownList id="tipoPreco" CssClass="ddlist1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="tipoPreco_SelectedIndexChanged">
                     <asp:ListItem Value="Natal">Passagem de Natal</asp:ListItem>
                     <asp:ListItem Value="Parnamirim">Passagem de Parnamirim</asp:ListItem>
                     <asp:ListItem Value="Extremoz">Passagem de Extremoz</asp:ListItem>
@@ -22,11 +22,11 @@
                 </asp:DropDownList>
                 <div class="valores">
                     <div class="campos">
-                        <asp:Label id="Label2" CssClass="text-var" runat="server" Text="R$4,20"></asp:Label>
+                        <asp:Label id="Label2" CssClass="text-var" runat="server" Text="R$ 4,20"></asp:Label>
                         <asp:TextBox ID="TextBoxRecarga" CssClass="campo-qntPas" placeholder="0" runat="server"></asp:TextBox> 
                     </div>
                     <div class="campos">
-                        <asp:Label id="Label3" CssClass="text-var" runat="server" Text="R$6,30"></asp:Label>
+                        <asp:Label id="Label3" CssClass="text-var" runat="server" Text="R$ 6,30"></asp:Label>
                         <asp:TextBox ID="TextBox1" CssClass="campo-qntPas" placeholder="0" runat="server"></asp:TextBox> 
                     </div>
                     <div class="campos">
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                <asp:Button ID="ButtonCalc" class="calc-result" runat="server" Text="Calcular" />
+                <asp:Button ID="ButtonCalc" class="calc-result" runat="server" Text="Calcular" OnClick="ButtonCalc_Click" />
             </div>
         </div>
     </div>           
