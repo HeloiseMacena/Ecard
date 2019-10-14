@@ -42,14 +42,15 @@ namespace Ecard
 
         protected void getModalInfos_Click(object sender, EventArgs e)
         {
-            /*int id = int.Parse(((Button)sender).CommandArgument.ToString());
+            //modalContainer.Style.Add("visibility", "visible");
+            int id = int.Parse(((Button)sender).CommandArgument.ToString());
             DAL.DALInstituicao i = new DAL.DALInstituicao();
             Modelo.Instituicao instituicao = i.Select(id);
             modalNome.Text = instituicao.Nome;
             modalEmail.Text = instituicao.Email;
             modalCodigo.Text = instituicao.Codigo_inep_mec;
 
-            modalContainer.Style.Add("visibility", "visible");*/
+            //modalContainer.Style.Add("visibility", "visible");
         }
 
         protected void Recusar_click(object sender, EventArgs e)

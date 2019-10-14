@@ -80,10 +80,9 @@
 			            <article>
                           <div class="help-modal">                                
                             <div class="item-modal">
-                                <asp:Label runat="server" type="text" CssClass="imodal" ID="nome"></asp:Label>
-                                <asp:Label runat="server" type="text" CssClass="imodal" ID="email"></asp:Label>
-                                <asp:Label runat="server" type="text" CssClass="imodal" ID="código"></asp:Label>
-                                <asp:Label runat="server" type="text" CssClass="imodal" ID="cnpj"></asp:Label>
+                                <asp:Label runat="server" type="text" CssClass="imodal" ID="modalNome"></asp:Label>
+                                <asp:Label runat="server" type="text" CssClass="imodal" ID="modalEmail"></asp:Label>
+                                <asp:Label runat="server" type="text" CssClass="imodal" ID="modalCodigo"></asp:Label>
                                 <asp:DropDownList runat="server" CssClass="ddlist2">
                                     <asp:ListItem>Não há erro...</asp:ListItem>
                                     <asp:ListItem>Código INEP/MEC não identificado</asp:ListItem>
