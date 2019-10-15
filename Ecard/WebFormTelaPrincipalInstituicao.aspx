@@ -19,8 +19,8 @@
                 <div class="li">Menu</div>
                 <div class="li">Page 2</div>
                 <div class="li">Page 3</div>
-                <div class="li">Page 4</div> 
                 <div class="menu-user">Daniel Victor</div>
+                <div class="menu-logout" ><a href="TelaInicial.aspx"> <i class="fas fa-sign-out-alt"> </i></a></div>
             </div>
         </div>
         <div class="container">
@@ -40,7 +40,6 @@
                 <div class="pesq">
                     <asp:TextBox ID="TextBox1" CssClass="box1-mid" runat="server" placeholder="Pesquisar" ></asp:TextBox>
                 </div>
-
                  <div class="help">
                      <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
                          <ItemTemplate>
@@ -49,8 +48,7 @@
                                      <p class="ponto-nome"><%#Eval("nome_ponto")%></p>
                                      <p class="ponto-rua">Logradouro: <%#Eval("endereco_logradouro")%></p>
                                  </div>
-                                 <div class="vl"></div>
-                                 <!-- vertical line -->
+                                 <div class="vl"></div><!-- vertical line -->
                                  <div class="pontoItem-bairro">
                                      <p class="ponto-bairro-title">Bairro</p>
                                      <p><%#Eval("endereco_bairro")%></p>
@@ -60,7 +58,7 @@
                              </div>
                          </ItemTemplate>
                      </asp:Repeater>
-                     <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" DataObjectTypeName="Ecard.Modelo.Lista_alunos" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALLista_alunos" UpdateMethod="Update"></asp:ObjectDataSource> -->
+                     <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" DataObjectTypeName="Ecard.Modelo.Lista_alunos" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALLista_alunos" UpdateMethod="Update"></asp:ObjectDataSource>
                  </div>
             </div>
 

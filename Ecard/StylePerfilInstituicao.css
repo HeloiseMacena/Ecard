@@ -194,6 +194,7 @@ form#form1 {
             }
 
 
+
 /* CONTAINER */
 
 .container {
@@ -230,10 +231,9 @@ form#form1 {
 }
 
 .box1-title {
-    justify-content: space-between;
+    justify-content: flex-start;
     display: flex;
     flex-direction: row;
-    align-content: space-between;
     align-items: center;
 }
 
