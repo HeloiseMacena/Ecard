@@ -19,7 +19,7 @@ namespace Ecard
         {
             DALInstituicao dal = new DALInstituicao();
             Instituicao instituicao = dal.Login(TextEmail.Text, TextSenha.Text);
-            if (instituicao.Id != 0 && instituicao.Status == true)
+            if (instituicao.Id != 0 )
             {
                 Session["userid"] = instituicao.Id;
                 Session["username"] = instituicao.Nome;

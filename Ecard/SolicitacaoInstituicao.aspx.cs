@@ -46,10 +46,10 @@ namespace Ecard
             int id = int.Parse(((Button)sender).CommandArgument.ToString());
             DAL.DALInstituicao p = new DAL.DALInstituicao();
             Modelo.Instituicao ponto = p.Select(id);
-            Modalnome.Text = ponto.Nome;
-            Modalemail.Text = ponto.Email;
-            Modalcodigo.Text = ponto.Codigo_inep_mec;
-            Modalcnpj.Text = ponto.cnpj;
+            Modalnome1.Text = ponto.Nome;
+            Modalemail1.Text = ponto.Email;
+            Modalcodigo1.Text = ponto.Codigo_inep_mec;
+            Modalcnpj1.Text = ponto.cnpj;
 
             modalContainer.Style.Add("visibility", "visible");
         }

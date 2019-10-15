@@ -83,7 +83,7 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Instituicao (Nome, email, codigo_inep, status, senha, endereco_bairro, endereco_cep, endereco_municipio, endereco_logradouro, endereco_numero, cnpj) VALUES (@Nome, @Email, @Codigo_inep_mec, @Status, @Senha, @Endereco_bairro, @Endereco_CEP, @Endereco_municipio, @Endereco_logradouro, @Endereco_numero, @cnpj)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Instituicao (Nome, email, codigo_inep, status, senha, endereco_bairro, endereco_cep, endereco_municipio, endereco_logradouro, endereco_numero, cnpj, administrador_id) VALUES (@Nome, @Email, @Codigo_inep_mec, @Status, @Senha, @Endereco_bairro, @Endereco_CEP, @Endereco_municipio, @Endereco_logradouro, @Endereco_numero, @cnpj, 1)", conn);
 
             cmd.Parameters.AddWithValue("@Nome", obj.Nome);
             cmd.Parameters.AddWithValue("@Email", obj.Email);

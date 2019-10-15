@@ -67,39 +67,66 @@ namespace Ecard {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl closeModal;
         
         /// <summary>
-        /// Controle Modalnome.
+        /// Controle modalNome.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Modalnome;
+        protected global::System.Web.UI.WebControls.Label modalNome;
         
         /// <summary>
-        /// Controle Modalemail.
+        /// Controle modalEmail.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Modalemail;
+        protected global::System.Web.UI.WebControls.Label modalEmail;
         
         /// <summary>
-        /// Controle Modalcodigo.
+        /// Controle modalCodigo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Modalcodigo;
+        protected global::System.Web.UI.WebControls.Label modalCodigo;
         
         /// <summary>
-        /// Controle Modalcnpj.
+        /// Controle Modalnome1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Modalcnpj;
+        protected global::System.Web.UI.WebControls.Label Modalnome1;
+        
+        /// <summary>
+        /// Controle Modalemail1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Modalemail1;
+        
+        /// <summary>
+        /// Controle Modalcodigo1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Modalcodigo1;
+        
+        /// <summary>
+        /// Controle Modalcnpj1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Modalcnpj1;
     }
 }

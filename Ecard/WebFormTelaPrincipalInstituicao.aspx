@@ -1,4 +1,4 @@
-﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormTelaPrincipalInstituicao.aspx.cs" Inherits="Ecard.WebFormTelaPrincipalInstituicao" %>--%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormTelaPrincipalInstituicao.aspx.cs" Inherits="Ecard.WebFormTelaPrincipalInstituicao" %>
 
 <!DOCTYPE html>
 
@@ -19,8 +19,8 @@
                 <div class="li">Menu</div>
                 <div class="li">Page 2</div>
                 <div class="li">Page 3</div>
-                <div class="li">Page 4</div> 
                 <div class="menu-user">Daniel Victor</div>
+                <div class="menu-logout" ><a href="TelaInicial.aspx"> <i class="fas fa-sign-out-alt"> </i></a></div>
             </div>
         </div>
         <div class="container">
@@ -32,14 +32,14 @@
                     </div>
                     <div class="box1-button">
                         <asp:FileUpload ID="FileUpload1" runat="server" />
-                        <asp:Button runat="server" CssClass="btnAdd" Text="Mandar"/>
+                        <asp:Button runat="server" OnClick="Unnamed_Click" CssClass="btnAdd" Text="Mandar"/>
+                        <asp:Label ID="resposta" runat="server" Text="Label"></asp:Label>
                     </div>
                 </div>
                 <div class="hl"></div> <!-- horizontal line -->
                 <div class="pesq">
                     <asp:TextBox ID="TextBox1" CssClass="box1-mid" runat="server" placeholder="Pesquisar" ></asp:TextBox>
                 </div>
-
                  <div class="help">
                      <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
                          <ItemTemplate>
@@ -48,8 +48,7 @@
                                      <p class="ponto-nome"><%#Eval("nome_ponto")%></p>
                                      <p class="ponto-rua">Logradouro: <%#Eval("endereco_logradouro")%></p>
                                  </div>
-                                 <div class="vl"></div>
-                                 <!-- vertical line -->
+                                 <div class="vl"></div><!-- vertical line -->
                                  <div class="pontoItem-bairro">
                                      <p class="ponto-bairro-title">Bairro</p>
                                      <p><%#Eval("endereco_bairro")%></p>
@@ -59,7 +58,7 @@
                              </div>
                          </ItemTemplate>
                      </asp:Repeater>
-                     <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" DataObjectTypeName="Ecard.Modelo.Lista_alunos" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALLista_alunos" UpdateMethod="Update"></asp:ObjectDataSource> -->
+                     <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" DataObjectTypeName="Ecard.Modelo.Lista_alunos" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALLista_alunos" UpdateMethod="Update"></asp:ObjectDataSource>
                  </div>
             </div>
 
@@ -81,4 +80,3 @@
     </form>
 </body>
 </html>
-

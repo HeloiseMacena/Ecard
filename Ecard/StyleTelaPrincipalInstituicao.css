@@ -186,6 +186,25 @@ form#form1 {
                 background-color: #f4f4f4;
             }
 
+.menu-logout {
+    height: 100%;
+    padding-right: 30px !important;
+    font-weight: 600;
+    color: #C5303E;
+    margin: 0 !important;
+    background-color: #f2f2f2;
+    border: none !important;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.fa-sign-out-alt {
+    color: #C5303E;
+    text-decoration: none;
+    font-size: 20px;
+}
 
 /* CONTAINER */
 
