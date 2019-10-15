@@ -30,9 +30,18 @@
                        <i class="fas fa-bell"></i>
                        <p>Solicitações</p>
                     </div>
+                    <div class="vdc">
                     <div class="box1-button">
+                        <div class="conta">
                         <asp:Button runat="server" CssClass="btnAdd" Text="INSTITUIÇÃO" PostBackUrl="~/SolicitacaoInstituicao.aspx"  />
+                        <asp:Label ID="Continstituicao" CssClass="cont" runat="server" Text="0"></asp:Label>
+                        </div>
+                        <div class="conta">
+                       
                         <asp:Button runat="server" CssClass="btnAdd" Text=" CARTEIRA" PostBackUrl="~/SolicitacaoCarteira.aspx" />
+                        <asp:Label ID="ContCarteira" CssClass="cont" runat="server" Text="0" ></asp:Label>
+                     </div>
+                    </div>
                     </div>
                </div>
                <div class="princi">
