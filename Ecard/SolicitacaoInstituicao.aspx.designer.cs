@@ -59,10 +59,6 @@ namespace Ecard {
         
         /// <summary>
         /// Controle closeModal.
-        protected global::System.Web.UI.WebControls.Label modalNome;
-        
-        /// <summary>
-        /// Controle modalEmail.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
@@ -72,10 +68,6 @@ namespace Ecard {
         
         /// <summary>
         /// Controle Modalnome.
-        protected global::System.Web.UI.WebControls.Label modalEmail;
-        
-        /// <summary>
-        /// Controle modalCodigo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
@@ -109,6 +101,5 @@ namespace Ecard {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Modalcnpj;
-        protected global::System.Web.UI.WebControls.Label modalCodigo;
     }
 }

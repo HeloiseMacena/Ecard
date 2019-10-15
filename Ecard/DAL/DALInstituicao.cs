@@ -97,7 +97,14 @@ namespace Ecard.DAL
             cmd.Parameters.AddWithValue("@Endereco_numero", obj.Endereco_numero);
             cmd.Parameters.AddWithValue("@cnpj", obj.cnpj);
 
+            
+
             cmd.ExecuteNonQuery();
+            cmd = new SqlCommand("Select @@identity as id", conn);
+            int id = Convert.ToInt32(cmd.ExecuteScalar());
+            DALSolicitacao_instituicao dal = new DALSolicitacao_instituicao();
+            Modelo.Solicitacao_instituicao solicitacao = new Modelo.Solicitacao_instituicao();
+            dal.Insert(solicitacao, id);
 
         }
 

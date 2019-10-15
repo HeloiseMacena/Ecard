@@ -28,7 +28,7 @@ namespace Ecard
             {
                 con.Open();
 
-                using (var cmd = new SqlCommand("select * from solicitacao_instituicao where status=0", con))
+                using (var cmd = new SqlCommand("select * from instituicao where status=0", con))
                 {
                     Repeater1.DataSource = cmd.ExecuteReader();
                     Repeater1.DataBind();

@@ -70,7 +70,7 @@ namespace Ecard.DAL
             SqlCommand com = conn.CreateCommand();
             SqlCommand cmd = new SqlCommand("INSERT INTO Solicitacao_instituicao (data, status, instituicao_id) VALUES (@data, @status, @instituicao_id)", conn);
 
-            cmd.Parameters.AddWithValue("@data", obj.data);
+            cmd.Parameters.AddWithValue("@data", DateTime.Now.Date.ToString("yyyy-MM-dd"));
             cmd.Parameters.AddWithValue("@status", obj.status);
             cmd.Parameters.AddWithValue("@instituicao_id", instituicao_id);
 
@@ -89,7 +89,7 @@ namespace Ecard.DAL
             SqlCommand cmd = new SqlCommand("UPDATE Solicitacao_instituicao SET data = @data, status = @status, descricao_erro = @descricao_erro WHERE Id = @Id", conn);
 
             cmd.Parameters.AddWithValue("@Id", obj.id);
-            cmd.Parameters.AddWithValue("@data", obj.data);
+            cmd.Parameters.AddWithValue("@data", obj.data.Date.ToString("yyyy-MM-dd"));
             cmd.Parameters.AddWithValue("@status", obj.status);
             cmd.Parameters.AddWithValue("@descricao_erro", obj.descricao_erro);
 
