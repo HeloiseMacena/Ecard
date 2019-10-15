@@ -71,7 +71,6 @@
                          <asp:Button runat="server" CssClass="btn2"  Text="Ver Perfil" PostBackUrl="~/PerfilAdm.aspx" />
                     </div>
                 </div>
-<<<<<<< HEAD
                <!-- Modal -->
                 <div class="help-modal">
                     <div>
@@ -80,7 +79,6 @@
                                 <div class="modal-header">
                                    <h2>Mais Informações</h2>
                                     <i class="fas fa-times" id="closeModal" runat="server" onclick="document.querySelector('.modal-container').style.visibility = 'hidden';"></i>
-=======
                 <!-- Modal -->
                 <aside id="modal" class="modal">
 		            <div class="content-modal">
@@ -101,29 +99,28 @@
                                 <div class="btn-modal">
                                     <asp:Button runat="server" CssClass="btn-rec" text="Recusar" OnClick="Recusar_click"/>
                                     <asp:Button runat="server" CssClass="btn-act" text="Aceitar" OnClick="Aceitar_click"/>
->>>>>>> d5cc7a8e95d967c2e3e7180d05426bbbfed515d7
                                 </div>
                                 <div class="modal-body">
                                  <div class="help-modal">                                
                                         <div class="rota-modal">
                                             <div class="rota-modal-nome">
                                                 <p class="ponto-ref">Nome da Instituição:
-                                                    <asp:Label runat="server" type="text" CssClass="imodal" ID="Modalnome"></asp:Label>
+                                                    <asp:Label runat="server" type="text" CssClass="imodal" ID="Modalnome1"></asp:Label>
                                                </p>
                                                 </div>
                                             <div class="rota-modal-nome">
                                                 <p class="ponto-ref">Email:
-                                                   <asp:Label runat="server" type="text" CssClass="imodal" ID="Modalemail"></asp:Label>
+                                                   <asp:Label runat="server" type="text" CssClass="imodal" ID="Modalemail1"></asp:Label>
                                                 </p>
                                                 </div>
                                             <div class="rota-modal-nome">
                                                 <p class="ponto-ref">Código INEP/MEC:
-                                                    <asp:Label runat="server" type="text" CssClass="imodal" ID="Modalcodigo"></asp:Label>
+                                                    <asp:Label runat="server" type="text" CssClass="imodal" ID="Modalcodigo1"></asp:Label>
                                                 </p>
                                             </div>
                                              <div class="rota-modal-nome">
                                                 <p class="ponto-ref">CNPJ:
-                                                     <asp:Label runat="server" type="text" CssClass="imodal" ID="Modalcnpj"></asp:Label>
+                                                     <asp:Label runat="server" type="text" CssClass="imodal" ID="Modalcnpj1"></asp:Label>
                                                 </p>
                                             </div>
                                                 <asp:DropDownList runat="server" CssClass="ddlist2">

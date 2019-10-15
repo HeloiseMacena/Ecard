@@ -1,4 +1,4 @@
-﻿<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormTelaPrincipalInstituicao.aspx.cs" Inherits="Ecard.WebFormTelaPrincipalInstituicao" %>--%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebFormTelaPrincipalInstituicao.aspx.cs" Inherits="Ecard.WebFormTelaPrincipalInstituicao" %>
 
 <!DOCTYPE html>
 
@@ -32,7 +32,8 @@
                     </div>
                     <div class="box1-button">
                         <asp:FileUpload ID="FileUpload1" runat="server" />
-                        <asp:Button runat="server" CssClass="btnAdd" Text="Mandar"/>
+                        <asp:Button runat="server" OnClick="Unnamed_Click" CssClass="btnAdd" Text="Mandar"/>
+                        <asp:Label ID="resposta" runat="server" Text="Label"></asp:Label>
                     </div>
                 </div>
                 <div class="hl"></div> <!-- horizontal line -->
@@ -81,4 +82,3 @@
     </form>
 </body>
 </html>
-
