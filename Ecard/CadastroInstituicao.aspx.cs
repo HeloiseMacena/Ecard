@@ -10,7 +10,7 @@ using Ecard.Modelo;
 
 namespace Ecard
 {
-    public partial class CadastroInstituicao : System.Web.UI.Pagehttp://localhost:63693/CadastroInstituicao.aspx.cs
+    public partial class CadastroInstituicao : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

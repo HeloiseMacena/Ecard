@@ -51,6 +51,9 @@ namespace Ecard
                 case "PesquisarRota":
                     box2Card.Style.Add("display", "none");
                     break;
+                case "TelaSolicitacaoCarteira":
+                    box2Card.Style.Add("display", "none");
+                    break;
             }
             
         }
