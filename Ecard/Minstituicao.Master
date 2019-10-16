@@ -34,6 +34,9 @@
                             <p>Instituição</p>
                         </div>
                     </div>
+                    <div>
+                        <asp:Label ID="status" runat="server" Text="Label"></asp:Label>
+                    </div>
                     <div class="box2-button">
                          <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" PostBackUrl="~/PerfilInstituicao.aspx" />
                     </div>

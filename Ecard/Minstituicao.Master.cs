@@ -10,8 +10,25 @@ namespace Ecard
 {
     public partial class Minstituicao : System.Web.UI.MasterPage
     {
+        DAL.DALInstituicao aDALInstituicao = new DALInstituicao();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            int a = int.Parse((Session["userid"].ToString()));
+
+            if (aDALInstituicao.SelectStatus(a) == 0)
+            {
+                status.Text = "Solicitado";
+            }
+            if (aDALInstituicao.SelectStatus(a) == 1)
+            {
+                status.Text = "Reprovado";
+            }
+            if (aDALInstituicao.SelectStatus(a) == 2)
+            {
+                status.Text = "Aprovado";
+            }
+
             if (Session["logged"] != null)
             {
                 if (Session["accesslevel"] == "estudante") Response.Redirect("~/TelaPrincipalEstudante.aspx");
