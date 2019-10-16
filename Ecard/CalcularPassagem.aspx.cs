@@ -31,41 +31,59 @@ namespace Ecard
             {
                 Label2.Text = "R$ " + a.SelectValor("Natal");
                 Label3.Text = "R$ " + a.SelectValorInteiro("Natal");
-                valorbase1 = double.Parse(a.SelectValor("Natal"));
-                valorbase2 = double.Parse(a.SelectValorInteiro("Natal"));
             }
             if (tipoPreco.SelectedItem.Value == "Parnamirim")
             {
                 Label2.Text = "R$ " + a.SelectValor("Parnamirim");
                 Label3.Text = "R$ " + a.SelectValorInteiro("Parnamirim");
-                valorbase1 = double.Parse(a.SelectValor("Parnamirim"));
-                valorbase2 = double.Parse(a.SelectValorInteiro("Parnamirim"));
             }
             if (tipoPreco.SelectedItem.Value == "Extremoz")
             {
                 Label2.Text = "R$ " + a.SelectValor("Extremoz");
                 Label3.Text = "R$ " + a.SelectValorInteiro("Extremoz");
-                valorbase1 = double.Parse(a.SelectValor("Extremoz"));
-                valorbase2 = double.Parse(a.SelectValorInteiro("Extremoz"));
             }
             if (tipoPreco.SelectedItem.Value == "Ceará")
             {
                 Label2.Text = "R$ " + a.SelectValor("Ceará Mirim");
                 Label3.Text = "R$ " + a.SelectValorInteiro("Ceará Mirim");
-                valorbase1 = double.Parse(a.SelectValor("Ceará Mirim"));
-                valorbase2 = double.Parse(a.SelectValorInteiro("Ceará Mirim"));
             }
             if (tipoPreco.SelectedItem.Value == "Amarante")
             {
                 Label2.Text = "R$ " + a.SelectValor("São Gonçalo do Amarante");
                 Label3.Text = "R$ " + a.SelectValorInteiro("São Gonçalo do Amarante");
-                valorbase1 = double.Parse(a.SelectValor("São Gonçalo do Amarante"));
-                valorbase2 = double.Parse(a.SelectValorInteiro("São Gonçalo do Amarante"));
             }
         }
 
         protected void ButtonCalc_Click(object sender, EventArgs e)
         {
+            //Encontrando o valor de passagem correto
+            if (tipoPreco.SelectedItem.Value == "Natal")
+            {
+                valorbase1 = double.Parse(a.SelectValor("Natal"));
+                valorbase2 = double.Parse(a.SelectValorInteiro("Natal"));
+            }
+            if (tipoPreco.SelectedItem.Value == "Parnamirim")
+            {
+                valorbase1 = double.Parse(a.SelectValor("Parnamirim"));
+                valorbase2 = double.Parse(a.SelectValorInteiro("Parnamirim"));
+            }
+            if (tipoPreco.SelectedItem.Value == "Extremoz")
+            {
+                valorbase1 = double.Parse(a.SelectValor("Extremoz"));
+                valorbase2 = double.Parse(a.SelectValorInteiro("Extremoz"));
+            }
+            if (tipoPreco.SelectedItem.Value == "Ceará")
+            {
+                valorbase1 = double.Parse(a.SelectValor("Ceará Mirim"));
+                valorbase2 = double.Parse(a.SelectValorInteiro("Ceará Mirim"));
+            }
+            if (tipoPreco.SelectedItem.Value == "Amarante")
+            {
+                valorbase1 = double.Parse(a.SelectValor("São Gonçalo do Amarante"));
+                valorbase2 = double.Parse(a.SelectValorInteiro("São Gonçalo do Amarante"));
+            }
+
+            // Calculando o valor total
             int valor1 = int.Parse(TextBoxRecarga.Text);
             int valor2 = int.Parse(TextBox1.Text);
             int dias = int.Parse(TextBox2.Text);
