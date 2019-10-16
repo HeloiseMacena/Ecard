@@ -44,10 +44,15 @@ namespace Ecard
 
                 byte[] imageBytes = Convert.FromBase64String(base64String);
 
-                string filePath = Server.MapPath("~/Imagens/" + Path.GetFileName(FileUpload1.PostedFile.FileName));
+                int id = int.Parse(Session["userid"].ToString());
+                DALEstudante dal = new DALEstudante();
+                Modelo.Estudante estudante = dal.Select(id);
+                string nome_arquivo = estudante.cpf + ".jpg";
+                string filePath = Server.MapPath("~/Imagens/" + nome_arquivo);
                 File.WriteAllBytes(filePath, imageBytes);
-
-                userImage.ImageUrl = "Imagens/" + FileUpload1.FileName;
+                //userImage.ImageUrl = "Imagens/" + FileUpload1.FileName;
+                
+                userImage.ImageUrl = "Imagens/" + nome_arquivo;
             } catch {
                 
             }
