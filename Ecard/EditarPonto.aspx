@@ -38,7 +38,7 @@
                       <asp:TextBox ID="TextCEP" runat="server" CssClass="box1-mid" placeholder="CEP"></asp:TextBox>
                       <asp:TextBox ID="TextMunicipio" runat="server" CssClass="box1-mid" placeholder="Município"></asp:TextBox>
                     <div class="btn-b2">
-                        <asp:Button class="btn-close" runat="server" Text="Excluir" OnClick="Delete_Click" />
+                        <asp:Button class="btn-close" runat="server" Text="Excluir" OnClick="Delete_Click" OnClientClick="javascript:return ConfirmaExclusao();" />
                         <asp:Button class="btn-save" runat="server" Text="Atualizar" OnClick="Update_Click" />
                     </div>
                 </div>

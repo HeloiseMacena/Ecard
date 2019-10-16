@@ -116,13 +116,16 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("DELETE FROM Bairro WHERE Id = @Id", conn);
+            SqlCommand cmd = new SqlCommand("DELETE FROM Rotas_Bairro where bairro_id = @id",conn);
+            cmd.Parameters.AddWithValue("@id", obj.Id);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SqlCommand("DELETE FROM Bairro WHERE Id = @Id", conn);
             cmd.Parameters.AddWithValue("@Id", obj.Id);
             cmd.ExecuteNonQuery();
 
-            cmd = new SqlCommand("DELETE FROM Rotas_Bairro where rotas_id = @id");
-            cmd.Parameters.AddWithValue("@id", obj.Id);
-            cmd.ExecuteNonQuery();
+            
+
 
         }
 
