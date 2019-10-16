@@ -55,7 +55,7 @@
                     </div>
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/WebFormTelaPrincipalAdm.aspx" />
-                        <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed2_Click"/>
+                        <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed2_Click" ValidationGroup="validateGroup"/>
                     </div>
                 </div>
             </div>
@@ -75,6 +75,12 @@
                 </div>
             </div>
           </div>
+          <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Passagem de Ceará Mirim não informada." ValidationGroup="validateGroup" ControlToValidate="TextBox1"></asp:RequiredFieldValidator>
+          <asp:RequiredFieldValidator ID="RequiredFieldValidator9" CssClass="compare" runat="server" Display="none" ErrorMessage="Passagem de Extremoz não informada." ValidationGroup="validateGroup" ControlToValidate="TextBox2"></asp:RequiredFieldValidator>
+          <asp:RequiredFieldValidator ID="RequiredFieldValidator10" CssClass="compare" runat="server" Display="none" ErrorMessage="Passagem de Natal não informada." ValidationGroup="validateGroup" ControlToValidate="TextBox3"></asp:RequiredFieldValidator>
+          <asp:RequiredFieldValidator ID="RequiredFieldValidator11" CssClass="compare" runat="server" Display="none" ErrorMessage="Passagem de Parnamirim não informada." ValidationGroup="validateGroup" ControlToValidate="TextBox4"></asp:RequiredFieldValidator>
+          <asp:RequiredFieldValidator ID="RequiredFieldValidator12" CssClass="compare" runat="server" Display="none" ErrorMessage="Passagem de São Gonçalo não informada." ValidationGroup="validateGroup" ControlToValidate="TextBox5"></asp:RequiredFieldValidator>
+          <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true"/>
     </form>
 </body>
 </html>

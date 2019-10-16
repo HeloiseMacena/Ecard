@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="login">
-                <asp:Button ID="Button1" runat="server" Text="Cadastrar" type="submit" class="button" onclick="Button1_Click"/>
+                <asp:Button ID="Button1" runat="server" Text="Cadastrar" type="submit" class="button" onclick="Button1_Click"  ValidationGroup="validateGroup"/>
                 <p>Já possuo conta!<a class="link-open" href="LoginInstituicao.aspx">Entrar</a></p>
             </div>
              <div class="volt">
@@ -76,6 +76,22 @@
                 </div>
             </div>
         </div>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Nome não informado." ValidationGroup="validateGroup" ControlToValidate="TextBox1"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="Email não informado." ValidationGroup="validateGroup" ControlToValidate="TextEmail"></asp:RequiredFieldValidator>     
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" CssClass="compare" runat="server" Display="none" ErrorMessage="Confirmação de email não informado." ValidationGroup="validateGroup" ControlToValidate="TextConEmail"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" CssClass="compare" runat="server" Display="none" ErrorMessage="Codigo não informado." ValidationGroup="validateGroup" ControlToValidate="TextCodigo"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" CssClass="compare" runat="server" Display="none" ErrorMessage="CNPJ não informado." ValidationGroup="validateGroup" ControlToValidate="TextCNPJ"></asp:RequiredFieldValidator>     
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" CssClass="compare" runat="server" Display="none" ErrorMessage="Senha não informada." ValidationGroup="validateGroup" ControlToValidate="TextSenha"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" CssClass="compare" runat="server" Display="none" ErrorMessage="Confirmação da senha não informada." ValidationGroup="validateGroup" ControlToValidate="TextConSenha"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" CssClass="compare" runat="server" Display="none" ErrorMessage="Telefone não informado." ValidationGroup="validateGroup" ControlToValidate="TextTelefone"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" CssClass="compare" runat="server" Display="none" ErrorMessage="Logradouro não informado." ValidationGroup="validateGroup" ControlToValidate="TextLogradouro"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" CssClass="compare" runat="server" Display="none" ErrorMessage="Bairro não informado." ValidationGroup="validateGroup" ControlToValidate="TextBairro"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator11" CssClass="compare" runat="server" Display="none" ErrorMessage="CEP não informado." ValidationGroup="validateGroup" ControlToValidate="TextCEP"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator12" CssClass="compare" runat="server" Display="none" ErrorMessage="Município não informado." ValidationGroup="validateGroup" ControlToValidate="TextMunicipio"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator13" CssClass="compare" runat="server" Display="none" ErrorMessage="Número não informado." ValidationGroup="validateGroup" ControlToValidate="TextNumero"></asp:RequiredFieldValidator>
+        <asp:CompareValidator ID="CompareValidator1" CssClass="compare" runat="server" Display="none" ControlToValidate="TextEmail" ControlToCompare="TextConEmail" ErrorMessage="Verifique se os campos de email estão iguais." ValidationGroup="validateGroup"></asp:CompareValidator>
+        <asp:CompareValidator ID="CompareValidator3" CssClass="compare" runat="server" Display="none" controltovalidate="TextSenha" controltocompare="TextConSenha" ErrorMessage="Verifique se os campos de nova senha estão iguais." ValidationGroup="validateGroup"></asp:CompareValidator>           	            	
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true" />
     </form>
 </body>
 </html>

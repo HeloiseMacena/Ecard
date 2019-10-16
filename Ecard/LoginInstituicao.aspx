@@ -27,7 +27,7 @@
       
          <div class="login">
              <!-- PostBackUrl="~/WebFormTelaPrincipalInstituicao.aspx" -->
-             <asp:Button ID="Button1" runat="server" Text="Entrar" type="submit" class="button"  OnClick="Button_Click"/>
+             <asp:Button ID="Button1" runat="server" Text="Entrar" type="submit" class="button"  OnClick="Button_Click" ValidationGroup="validateGroup"/>
              <p>Instituição não cadastrada!<a class="link-open" href="CadastroInstituicao.aspx">Cadastre-a</a></p>
              <p class="link-rec">Esqueceu a senha?</p>
          </div>
@@ -38,6 +38,9 @@
                 </div>
             </div>
      </div>
+     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Email não informado." ValidationGroup="validateGroup" ControlToValidate="TextEmail"></asp:RequiredFieldValidator>
+     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="Senha não informada." ValidationGroup="validateGroup" ControlToValidate="TextSenha"></asp:RequiredFieldValidator>     
+     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true" />
 </form>
 </body>
 </html>

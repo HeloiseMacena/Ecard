@@ -23,8 +23,7 @@
                 <asp:TextBox ID="TextEmail" runat="server" CssClass="textbox1" type="email" placeholder="Email"></asp:TextBox>
             </div>
             <div class="textbox">
-            	<asp:TextBox ID="Textbox3" runat="server" CssClass="textbox1" type="email" placeholder="Confirmar Email"></asp:TextBox>
-                <asp:CompareValidator ID="CompareValidator1" CssClass="compare" runat="server" ErrorMessage="* Os campos de email devem ser iguais." ControlToValidate="Textbox3" ControlToCompare="TextEmail" Type="String" Display="Dynamic"></asp:CompareValidator>     	            
+            	<asp:TextBox ID="Textbox3" runat="server" CssClass="textbox1" type="email" placeholder="Confirmar Email"></asp:TextBox>                   	            
             </div>
         </div>
         <div class="v1"></div> <!-- vertical line -->
@@ -41,10 +40,9 @@
             </div>
             <div class="textbox">
                 <asp:TextBox ID="Textbox7" runat="server" CssClass="textbox1" type="password" placeholder="Confirmar Senha"></asp:TextBox>
-                <asp:CompareValidator ID="CompareValidator2" CssClass="compare" runat="server" Display="Dynamic" type="String" controltovalidate="TextSenha" controltocompare="Textbox7" enableclientscript="true" text="* Os campos de senha devem ser iguais."></asp:CompareValidator>           	
             </div>
             <div class="login">
-            	<asp:Button ID="Button1" class="button" type="submit" runat="server" Text="Cadastrar" OnClick="Unnamed1_Click"/>
+            	<asp:Button ID="Button1" class="button" type="submit" runat="server" Text="Cadastrar" OnClick="Unnamed1_Click" ValidationGroup="validateGroup"/>
                 <p class="p3">Já possuo uma conta!<a href="LoginEstudante.aspx" class="link-open">Entrar</a></p>
             </div>
              <div class="volt">
@@ -54,6 +52,16 @@
                 </div>
             </div>
          </div>
+         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Nome não informado." ValidationGroup="validateGroup" ControlToValidate="TextNome"></asp:RequiredFieldValidator>
+         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="Email não informado." ValidationGroup="validateGroup" ControlToValidate="TextEmail"></asp:RequiredFieldValidator>     
+         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" CssClass="compare" runat="server" Display="none" ErrorMessage="Confirmação de email não informado." ValidationGroup="validateGroup" ControlToValidate="Textbox3"></asp:RequiredFieldValidator>
+         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" CssClass="compare" runat="server" Display="none" ErrorMessage="CPF não informado." ValidationGroup="validateGroup" ControlToValidate="TextCPF"></asp:RequiredFieldValidator>
+         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" CssClass="compare" runat="server" Display="none" ErrorMessage="RG não informado." ValidationGroup="validateGroup" ControlToValidate="TextRG"></asp:RequiredFieldValidator>     
+         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" CssClass="compare" runat="server" Display="none" ErrorMessage="Senha não informada." ValidationGroup="validateGroup" ControlToValidate="TextSenha"></asp:RequiredFieldValidator> 
+         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" CssClass="compare" runat="server" Display="none" ErrorMessage="Confirmação da senha não informada." ValidationGroup="validateGroup" ControlToValidate="Textbox7"></asp:RequiredFieldValidator>
+         <asp:CompareValidator ID="CompareValidator1" CssClass="compare" runat="server" Display="none" ControlToValidate="TextEmail" ControlToCompare="Textbox3" ErrorMessage="Verifique se os campos de email estão iguais." ValidationGroup="validateGroup"></asp:CompareValidator>
+         <asp:CompareValidator ID="CompareValidator2" CssClass="compare" runat="server" Display="none" controltovalidate="TextSenha" controltocompare="Textbox7" ErrorMessage="Verifique se os campos de nova senha estão iguais." ValidationGroup="validateGroup"></asp:CompareValidator>           	            	
+         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true" />
     </form>
 </body>
 </html>
