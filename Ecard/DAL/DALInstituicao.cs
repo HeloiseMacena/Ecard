@@ -20,6 +20,43 @@ namespace Ecard.DAL
         }
 
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public double SelectStatus(int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select status from Instituicao where id =@id";
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
+            int status = int.Parse(dr["status"].ToString());
+
+            conn.Close();
+
+            return status;
+        }
+
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public bool StatusInstituicao(int id)
+        {
+            bool a = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select status from Instituicao where id =@id";
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
+            string b = dr["status"].ToString();
+
+            conn.Close();
+            return a;
+        }
+
 
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Instituicao> SelectAll()

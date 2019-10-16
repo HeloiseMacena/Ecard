@@ -26,6 +26,8 @@
          </div>   
             
          <div class="login">
+
+
              <asp:Button ID="Button1" runat="server" Text="Entrar"  type="submit" class="button" onclick="Button_click" ValidationGroup="validateGroup" />
              <p class="link-rec">Esqueceu a senha?</p>
          </div>

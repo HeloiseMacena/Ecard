@@ -79,7 +79,7 @@ namespace Ecard
             else
             {
                 dal.Update(pr);
-                dal.MudarSituacaoEstudante(2, TextCPF.Text);
+                dal.MudarSituacaoEstudante(0, TextCPF.Text);
             }
             Response.Redirect("~//TelaInicial.aspx");
         }

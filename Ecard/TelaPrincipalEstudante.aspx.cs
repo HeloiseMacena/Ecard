@@ -12,6 +12,7 @@ namespace Ecard
     public partial class TelaPrincipalEstudante : System.Web.UI.Page
     {
         DALEstudante dal;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["logged"] != null)

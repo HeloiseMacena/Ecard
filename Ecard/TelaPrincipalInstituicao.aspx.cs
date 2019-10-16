@@ -12,10 +12,11 @@ namespace Ecard
     {
         DAL.DALEstudante aDALEstudante = new DAL.DALEstudante();
         List<Modelo.Estudante> aListEstudante;
+        DAL.DALInstituicao aDALInstituicao = new DAL.DALInstituicao();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace Ecard
 
                 if (aListEstudante.Count > 0)
                 {
-                    aDALEstudante.MudarSituacaoFalse(id);
+                    aDALEstudante.MudarSituacaoFalse();
 
                     for (int i = 0; i < aListEstudante.Count; i++)
                     {
