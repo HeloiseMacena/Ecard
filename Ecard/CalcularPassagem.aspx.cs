@@ -11,12 +11,18 @@ namespace Ecard
     {
         DAL.DALValorPassagem a = new DAL.DALValorPassagem();
         DAL.DALEstudante b = new DAL.DALEstudante();
-        double valorbase1 = 4.2;
-        double valorbase2 = 6.3;
+        double valorbase1;
+        double valorbase2;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                Label2.Text = "R$ " + a.SelectValor("Natal");
+                Label3.Text = "R$ " + a.SelectValorInteiro("Natal");
+                valorbase1 = double.Parse(a.SelectValor("Natal"));
+                valorbase2 = double.Parse(a.SelectValorInteiro("Natal"));
+            }
         }
 
         protected void tipoPreco_SelectedIndexChanged(object sender, EventArgs e)
@@ -32,29 +38,29 @@ namespace Ecard
             {
                 Label2.Text = "R$ " + a.SelectValor("Parnamirim");
                 Label3.Text = "R$ " + a.SelectValorInteiro("Parnamirim");
-                valorbase1 = double.Parse(a.SelectValor("Natal"));
-                valorbase2 = double.Parse(a.SelectValorInteiro("Natal"));
+                valorbase1 = double.Parse(a.SelectValor("Parnamirim"));
+                valorbase2 = double.Parse(a.SelectValorInteiro("Parnamirim"));
             }
             if (tipoPreco.SelectedItem.Value == "Extremoz")
             {
                 Label2.Text = "R$ " + a.SelectValor("Extremoz");
                 Label3.Text = "R$ " + a.SelectValorInteiro("Extremoz");
-                valorbase1 = double.Parse(a.SelectValor("Natal"));
-                valorbase2 = double.Parse(a.SelectValorInteiro("Natal"));
+                valorbase1 = double.Parse(a.SelectValor("Extremoz"));
+                valorbase2 = double.Parse(a.SelectValorInteiro("Extremoz"));
             }
             if (tipoPreco.SelectedItem.Value == "Ceará")
             {
                 Label2.Text = "R$ " + a.SelectValor("Ceará Mirim");
                 Label3.Text = "R$ " + a.SelectValorInteiro("Ceará Mirim");
-                valorbase1 = double.Parse(a.SelectValor("Natal"));
-                valorbase2 = double.Parse(a.SelectValorInteiro("Natal"));
+                valorbase1 = double.Parse(a.SelectValor("Ceará Mirim"));
+                valorbase2 = double.Parse(a.SelectValorInteiro("Ceará Mirim"));
             }
             if (tipoPreco.SelectedItem.Value == "Amarante")
             {
                 Label2.Text = "R$ " + a.SelectValor("São Gonçalo do Amarante");
                 Label3.Text = "R$ " + a.SelectValorInteiro("São Gonçalo do Amarante");
-                valorbase1 = double.Parse(a.SelectValor("Natal"));
-                valorbase2 = double.Parse(a.SelectValorInteiro("Natal"));
+                valorbase1 = double.Parse(a.SelectValor("São Gonçalo do Amarante"));
+                valorbase2 = double.Parse(a.SelectValorInteiro("São Gonçalo do Amarante"));
             }
         }
 

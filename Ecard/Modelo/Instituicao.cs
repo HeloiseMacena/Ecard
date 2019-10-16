@@ -11,7 +11,13 @@ namespace Ecard.Modelo
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Codigo_inep_mec { get; set; }
-        public bool Status { get; set; }
+        public int Status { get; set; }
+        /* status: 
+            0: solicitado
+            1: reprovado
+            2: aprovado
+             
+        */
         public string Senha { get; set; }
         public string Endereco_bairro { get; set; }
         public string Endereco_CEP { get; set; }
@@ -27,7 +33,7 @@ namespace Ecard.Modelo
             this.Nome = "";
             this.Email = "";
             this.Codigo_inep_mec = "";
-            this.Status = false;
+            this.Status = 1;
             this.Senha = "";
             this.Endereco_bairro = "";
             this.Endereco_CEP = "";
@@ -36,7 +42,7 @@ namespace Ecard.Modelo
             this.Endereco_numero = "";
         }
 
-        public Instituicao(string nome, string email, string codigo, bool status, string senha, string endereco_bairro, string endereco_CEP, string endereco_municipio, string endereco_logradouro, string endereco_numero, string cnpj)
+        public Instituicao(string nome, string email, string codigo,int status, string senha, string endereco_bairro, string endereco_CEP, string endereco_municipio, string endereco_logradouro, string endereco_numero, string cnpj)
         {
             Nome = nome;
             Email = email;

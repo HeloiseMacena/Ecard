@@ -67,31 +67,13 @@ namespace Ecard {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl closeModal;
         
         /// <summary>
-        /// Controle modalNome.
+        /// Controle Id_instituicao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label modalNome;
-        
-        /// <summary>
-        /// Controle modalEmail.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label modalEmail;
-        
-        /// <summary>
-        /// Controle modalCodigo.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label modalCodigo;
+        protected global::System.Web.UI.WebControls.Label Id_instituicao;
         
         /// <summary>
         /// Controle Modalnome1.
@@ -128,5 +110,14 @@ namespace Ecard {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Modalcnpj1;
+        
+        /// <summary>
+        /// Controle erro.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList erro;
     }
 }

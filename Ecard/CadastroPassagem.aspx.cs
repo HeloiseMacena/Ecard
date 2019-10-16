@@ -20,6 +20,12 @@ namespace Ecard
             {
                 Response.Redirect("~/TelaInicial.aspx");
             }
+            DAL.DALValorPassagem a = new DAL.DALValorPassagem();
+            TextBox1.Text = a.SelectValor("Ceará Mirim");
+            TextBox2.Text = a.SelectValor("Extremoz");
+            TextBox3.Text = a.SelectValor("Natal");
+            TextBox4.Text = a.SelectValor("Parnamirim");
+            TextBox5.Text = a.SelectValor("São Gonçalo do Amarante");
         }
 
         protected void Unnamed2_Click(object sender, EventArgs e)

@@ -40,7 +40,7 @@ namespace Ecard.DAL
                         dr["Nome"].ToString(),
                         dr["Email"].ToString(),
                         dr["codigo_inep"].ToString(),
-                        Convert.ToBoolean(int.Parse(dr["Status"].ToString())),
+                        int.Parse(dr["Status"].ToString()),
                         dr["Senha"].ToString(),
                         dr["Endereco_bairro"].ToString(),
                         dr["Endereco_CEP"].ToString(),
@@ -136,12 +136,12 @@ namespace Ecard.DAL
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void AlterarStatus(Modelo.Instituicao obj)
         {
-            bool valor = !(obj.Status);
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
             SqlCommand cmd = new SqlCommand("UPDATE Instituicao SET status = @status WHERE Id = @Id", conn);
-            cmd.Parameters.AddWithValue("@Status", valor);
+            cmd.Parameters.AddWithValue("@id", obj.Id);
+            cmd.Parameters.AddWithValue("@Status", obj.Status);
             cmd.ExecuteNonQuery();
         }
 
@@ -165,7 +165,7 @@ namespace Ecard.DAL
                         dr["Nome"].ToString(),
                         dr["Email"].ToString(),
                         dr["codigo_inep"].ToString(),
-                        Convert.ToBoolean(int.Parse(dr["Status"].ToString())),
+                        int.Parse(dr["Status"].ToString()),
                         dr["Senha"].ToString(),
                         dr["Endereco_bairro"].ToString(),
                         dr["Endereco_CEP"].ToString(),
@@ -204,7 +204,7 @@ namespace Ecard.DAL
                       dr["nome"].ToString(),
                       dr["email"].ToString(),
                       dr["codigo_inep"].ToString(),
-                      Convert.ToBoolean(Convert.ToInt32(dr["status"].ToString())),
+                      Convert.ToInt32(dr["status"].ToString()),
                       dr["senha"].ToString(),
                       dr["endereco_bairro"].ToString(),
                       dr["endereco_cep"].ToString(),
