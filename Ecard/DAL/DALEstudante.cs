@@ -130,8 +130,8 @@ namespace Ecard.DAL
 
                         Modelo.Estudante aEstudante = new Modelo.Estudante(
                             linha[0],
-                            linha[1],
                             linha[2],
+                            linha[1],
                             "",
                             "",
                             2,

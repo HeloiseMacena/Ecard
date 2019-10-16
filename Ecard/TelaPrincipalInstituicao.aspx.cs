@@ -12,10 +12,11 @@ namespace Ecard
     {
         DAL.DALEstudante aDALEstudante = new DAL.DALEstudante();
         List<Modelo.Estudante> aListEstudante;
+        DAL.DALInstituicao aDALInstituicao = new DAL.DALInstituicao();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)

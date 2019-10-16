@@ -10,14 +10,14 @@
                        <p>Estudantes</p>
                     </div>
                     <div class="box1-button">
-                        <asp:FileUpload ID="FileUpload1" runat="server" />
-                        <asp:Button runat="server" OnClick="Unnamed_Click" CssClass="btnAdd" Text="Mandar"/>
-                        <asp:Label ID="resposta" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="status" runat="server" Text=""></asp:Label>
                     </div>
                 </div>
                 <div class="hl"></div> <!-- horizontal line -->
                 <div class="pesq">
-                    <asp:TextBox ID="TextBox1" CssClass="box1-mid" runat="server" placeholder="Pesquisar" ></asp:TextBox>
+                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                        <asp:Button runat="server" OnClick="Unnamed_Click" CssClass="btnAdd" Text="Mandar"/>
+                        <asp:Label ID="resposta" runat="server" Text="Label"></asp:Label>
                 </div>
                  <div class="help">
                      <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
