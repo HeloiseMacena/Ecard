@@ -35,23 +35,23 @@
                 <div class="box1-midi">
                     <div class="space">
                     <asp:Label ID="Label5" runat="server" class="text-p" Text="Passagem de Ceará Mirim"></asp:Label>
-                    <asp:TextBox ID="TextBox1" CssClass="box1-mid" placeholder="R$ 5,90" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" CssClass="box1-mid" runat="server"></asp:TextBox>
                     </div>
                     <div class="space">
                     <asp:Label ID="Label1" runat="server" class="text-p" Text="Passagem de Extremoz"></asp:Label>
-                    <asp:TextBox ID="TextBox2" CssClass="box1-mid" placeholder="R$ 4,45" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox2" CssClass="box1-mid"  runat="server"></asp:TextBox>
                     </div>
                     <div class="space">
                     <asp:Label ID="Label2" runat="server" class="text-p" Text="Passagem de Natal"></asp:Label>
-                    <asp:TextBox ID="TextBox3" CssClass="box1-mid" placeholder="R$ 4,00" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox3" CssClass="box1-mid"  runat="server"></asp:TextBox>
                     </div>
                     <div class="space">
                     <asp:Label ID="Label3" runat="server" class="text-p" Text="Passagem de Parnamirim"></asp:Label>
-                    <asp:TextBox ID="TextBox4" CssClass="box1-mid" placeholder="R$ 4,45" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox4" CssClass="box1-mid"  runat="server"></asp:TextBox>
                     </div>
                     <div class="space">
                     <asp:Label ID="Label4" runat="server" class="text-p" Text="Passagem de São Gonçalo do Amarante"></asp:Label>
-                    <asp:TextBox ID="TextBox5" CssClass="box1-mid" placeholder="R$ 4,20" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox5" CssClass="box1-mid"  runat="server"></asp:TextBox>
                     </div>
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/WebFormTelaPrincipalAdm.aspx" />
