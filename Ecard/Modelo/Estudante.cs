@@ -30,9 +30,9 @@ namespace Ecard.Modelo
         {
             id = 0;
         }
+
         public Estudante(string nome, string cpf, string rg, string email, string senha, string status, string carteira_foto, double carteira_saldo, int carteira_numero, DateTime carteira_validade)
         {
-            
             this.nome = nome;
             this.cpf = cpf;
             this.rg = rg;

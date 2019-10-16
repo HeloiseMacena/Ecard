@@ -10,6 +10,10 @@ namespace Ecard
 {
     public partial class WebFormTelaPrincipalInstituicao : System.Web.UI.Page
     {
+        DAL.DALEstudante aDALEstudante = new DAL.DALEstudante();
+        List<Modelo.Estudante> aListEstudante;
+        int id = int.Parse(Session["userid"].ToString());
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["logged"] != null)
@@ -21,24 +25,31 @@ namespace Ecard
             {
                 Response.Redirect("~/TelaInicial.aspx");
             }
+
+            if (!IsPostBack)
+            {
+                string caminhoArquivos = Directory.GetFiles(Server.MapPath("~/Lista_Alunos/"));
+                aListEstudante = aDALEstudante.SelectArquivoCsv(Arquivo);
+                foreach (string caminho in caminhoArquivos) 
+                {
+                    aListEstudante.Add(Path.GetFileName(caminho), caminho);
+                }
+
+            }
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)
-        {
-            DAL.DALEstudante aDALEstudante = new DAL.DALEstudante();
-            List<Modelo.Estudante> aListEstudante;
-            int id = int.Parse(Session["userid"].ToString());
-
+        {            
             string Arquivo = FileUpload1.FileName;
 
             if (FileUpload1.HasFile)
             {
-                string nomeArquivo = Path.GetFileName(FileUpload1.PostedFile.FileName);
-                FileUpload1.PostedFile.SaveAs(Server.MapPath("~/Lista_Alunos/" + nomeArquivo));
+                ///string nomeArquivo = Path.GetFileName(FileUpload1.PostedFile.FileName);
+                ///FileUpload1.PostedFile.SaveAs(Server.MapPath("~/Lista_Alunos/" + nomeArquivo));
 
                 resposta.Text = "Arquivo enviado com sucesso";
 
-                aListEstudante = aDALEstudante.SelectArquivoCsv(Arquivo);
+                ///aListEstudante = aDALEstudante.SelectArquivoCsv(Arquivo);
 
                 if (aListEstudante.Count > 0)
                 {
