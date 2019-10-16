@@ -28,7 +28,6 @@
          <div class="login">
              <asp:Button ID="Button1" runat="server" Text="Entrar" type="submit" class="button" OnClick="Button_click" />
              <p>Estudante não cadastrado?<a class="link-open" href="CadastroEstudante.aspx">Cadastre-se</a></p>
-             <p class="link-rec">Esqueceu a senha?</p>
          </div>
             <div class="volt">
              <a class="vol" href="TelaInicial.aspx"><i class="fas fa-arrow-left"></i></a>

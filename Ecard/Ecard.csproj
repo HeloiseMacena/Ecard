@@ -76,6 +76,7 @@
     <Content Include="CalcularPassagem.aspx" />
     <Content Include="ConsultaPontodeRecarga.aspx" />
     <Content Include="EditEstudante.aspx" />
+    <Content Include="Imagens\70023025407.jpg" />
     <Content Include="Imagens\default.png" />
     <Content Include="Imagens\fotocarteira.png" />
     <Content Include="JS\Events.js" />

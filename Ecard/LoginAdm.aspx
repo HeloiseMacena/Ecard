@@ -27,7 +27,6 @@
             
          <div class="login">
              <asp:Button ID="Button1" runat="server" Text="Entrar"  type="submit" class="button" onclick="Button_click" />
-             <p class="link-rec">Esqueceu a senha?</p>
          </div>
          <div class="volt">
              <a class="vol" href="TelaInicial.aspx"><i class="fas fa-arrow-left"></i></a>
