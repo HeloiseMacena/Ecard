@@ -14,7 +14,7 @@ namespace Ecard
             modalContainer.Style.Add("visibility", "hidden");
             if (Session["logged"] != null)
             {
-                if (Session["accesslevel"] == "instituicao") Response.Redirect("~/WebFormTelaPrincipalInstituicao.aspx");
+                if (Session["accesslevel"] == "instituicao") Response.Redirect("~/TelaPrincipalInstituicao.aspx");
                 if (Session["accesslevel"] == "administrador") Response.Redirect("~/WebFormTelaPrincipalAdm.aspx");
             }
             else

@@ -4,26 +4,27 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Ecard.DAL;
 
 namespace Ecard
 {
-    public partial class WebFormTelaPrincipalAdm : System.Web.UI.Page
+    public partial class Minstituicao : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["logged"] != null)
             {
-                if (Session["accesslevel"] == "instituicao") Response.Redirect("~/TelaPrincipalInstituicao.aspx");
                 if (Session["accesslevel"] == "estudante") Response.Redirect("~/TelaPrincipalEstudante.aspx");
+                if (Session["accesslevel"] == "administrador") Response.Redirect("~/WebFormTelaPrincipalAdm.aspx");
             }
             else
             {
                 Response.Redirect("~/TelaInicial.aspx");
             }
-            DAL.DALSolicitacao_carteira carteira = new DAL.DALSolicitacao_carteira();
-            ContCarteira.Text = carteira.CountSolicitacoes().ToString();
-            DAL.DALSolicitacao_instituicao instituicao = new DAL.DALSolicitacao_instituicao();
-            Continstituicao.Text = instituicao.CountSolicitacoes().ToString();
+            DALInstituicao dal = new DALInstituicao();
+            Modelo.Instituicao instituicao = dal.Select(int.Parse(Session["userid"].ToString()));
+            Label1.Text = instituicao.Nome;
+            nome_usuario.Text = instituicao.Nome;
         }
     }
 }
