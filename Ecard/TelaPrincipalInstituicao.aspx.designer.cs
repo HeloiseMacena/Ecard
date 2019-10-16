@@ -10,16 +10,16 @@
 namespace Ecard {
     
     
-    public partial class WebFormTelaPrincipalInstituicao {
+    public partial class TelaPrincipalInstituicao {
         
         /// <summary>
-        /// Controle form1.
+        /// Controle status.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label status;
         
         /// <summary>
         /// Controle FileUpload1.
@@ -38,15 +38,6 @@ namespace Ecard {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label resposta;
-        
-        /// <summary>
-        /// Controle TextBox1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
         /// Controle Repeater1.

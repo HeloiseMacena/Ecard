@@ -36,7 +36,7 @@
                       <asp:TextBox ID="txtNome" runat="server" CssClass="box1-mid" placeholder=""></asp:TextBox>
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Excluir"  OnClick="Delete_Click"  OnClientClick="javascript:return ConfirmaExclusao();"/>
-                        <asp:Button class="btn-save" runat="server" Text="Atualizar" OnClick="Update_Click" />
+                        <asp:Button class="btn-save" runat="server" Text="Atualizar" OnClick="Update_Click"  ValidationGroup="validateGroup"/>
                     </div>
                 </div>
             </div>
@@ -56,6 +56,8 @@
                 </div>
             </div>
           </div>
+          <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Novo nome não foi informado." ValidationGroup="validateGroup" ControlToValidate="txtNome"></asp:RequiredFieldValidator>
+          <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true"/>
     </form>
 </body>
 </html>

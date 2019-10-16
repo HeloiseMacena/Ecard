@@ -30,11 +30,11 @@
                     <asp:Button class="btn-close" runat="server" Text="Cancelar" PostBackUrl="~/TelaPrincipalEstudante.aspx"/>
                     <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed_Click" ValidationGroup="validateGroup"/>                                       
                 </div>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="* Senha atual não informada." ValidationGroup="validateGroup" ControlToValidate="TextAtual"></asp:RequiredFieldValidator>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="* Senha nova não informada." ValidationGroup="validateGroup" ControlToValidate="TextNova" EnableClientScript="false"></asp:RequiredFieldValidator>     
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" CssClass="compare" runat="server" Display="none" ErrorMessage="* Confirmação da senha não informada." ValidationGroup="validateGroup" ControlToValidate="TextConfirmacao"></asp:RequiredFieldValidator>
-            <asp:CompareValidator ID="CompareValidator1" CssClass="compare" runat="server" Display="none" type="String" controltovalidate="TextNova" controltocompare="TextConfirmacao" text="* Verifique se os campos de nova senha estão iguais." ValidationGroup="validateGroup"></asp:CompareValidator>           	
-            <asp:ValidationSummary ID="ValidationSummary1" runat="server" DisplayMode="List" ValidationGroup="validateGroup" ShowValidationErrors="true" ShowSummary="true" ShowMessageBox="true"/>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Senha atual não informada." ValidationGroup="validateGroup" ControlToValidate="TextAtual"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="Senha nova não informada." ValidationGroup="validateGroup" ControlToValidate="TextNova"></asp:RequiredFieldValidator>     
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" CssClass="compare" runat="server" Display="none" ErrorMessage="Confirmação da senha não informada." ValidationGroup="validateGroup" ControlToValidate="TextConfirmacao"></asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="CompareValidator1" CssClass="compare" runat="server" Display="none" controltovalidate="TextNova" controltocompare="TextConfirmacao" ErrorMessage="Verifique se os campos de nova senha estão iguais." ValidationGroup="validateGroup"></asp:CompareValidator>           	
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true" />
             </div>
         </div>
     </div>

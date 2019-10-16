@@ -14,9 +14,9 @@ namespace Ecard.Modelo
         public string email;
         public int status;
         /* status:  
-            0: sem carteira
+            0: apto
             1: carteira solicitada
-            2: carteira existente
+            2: inapto 
              
         */
         public int carteira_status;

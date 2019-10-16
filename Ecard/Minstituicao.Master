@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Minstituicao.master.cs" Inherits="Ecard.Minstituicao" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="JS/Events.js"></script>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head> 
+<body>
+    <form id="form1" runat="server">
+            <div class="header max">
+            <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
+                <div class="ol">
+                <div class="menu-user"><asp:Label ID="nome_usuario" CssClass="username" runat="server" Text="Daniel Victor"></asp:Label></div>
+                <div class="menu-logout" ><a href="TelaInicial.aspx"> <i class="fas fa-sign-out-alt"> </i></a></div>
+                </div>     
+            </div>
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <div class="box2">
+                <div class="box2-user-container">
+                    <div class="box2-user">
+                         <i class="fas fa-university"></i>
+                         <div class="user-name"> 
+                            <h1><asp:Label ID="Label1" CssClass="username" runat="server"></asp:Label></h1>
+                            <p>Instituição</p>
+                        </div>
+                    </div>
+                    <div class="box2-button">
+                         <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" PostBackUrl="~/PerfilInstituicao.aspx" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </form>
+</body>
+</html>
