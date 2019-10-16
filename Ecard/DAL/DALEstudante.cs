@@ -48,12 +48,16 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Estudante where cpf =" + cpf;
+            cmd.CommandText = "Select * from Estudante where cpf =@cpf";
+            cmd.Parameters.AddWithValue("@cpf", cpf);
             SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
             if (dr.HasRows)
             {
                 a = true;
             }
+
             conn.Close();
             return a;
         }
@@ -80,7 +84,6 @@ namespace Ecard.DAL
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void MudarSituacaoTrue(string cpf)
         {
-
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
@@ -93,13 +96,15 @@ namespace Ecard.DAL
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void MudarSituacaoFalse(int id)
         {
-
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = false where instituicao_id = " + id, conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = 0 where instituicao_id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", id);
+
 
         }
+
 
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Estudante> SelectArquivoCsv(string arquivo)
@@ -125,10 +130,10 @@ namespace Ecard.DAL
 
                         Modelo.Estudante aEstudante = new Modelo.Estudante(
                             linha[0],
-                            "",
                             linha[1],
                             linha[2],
-                           "Ecard2019",
+                            "",
+                            "",
                             2,
                             "",
                             0,
@@ -226,15 +231,15 @@ namespace Ecard.DAL
         ///public void MudarValorPassagem(int id, double valor)
         //{
 
-            //SqlConnection conn = new SqlConnection(connectionString);
-///conn.Open();
-           // SqlCommand com = conn.CreateCommand();
-           // SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_saldo = @valor where id = @id", conn);
-           // cmd.Parameters.AddWithValue("@id", id);
-            //cmd.Parameters.AddWithValue("@valor", valor);
-            //SqlDataReader dr = cmd.ExecuteReader();
-           // dr.Close();
-           // conn.Close();
+        //SqlConnection conn = new SqlConnection(connectionString);
+        ///conn.Open();
+        // SqlCommand com = conn.CreateCommand();
+        // SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_saldo = @valor where id = @id", conn);
+        // cmd.Parameters.AddWithValue("@id", id);
+        //cmd.Parameters.AddWithValue("@valor", valor);
+        //SqlDataReader dr = cmd.ExecuteReader();
+        // dr.Close();
+        // conn.Close();
 
         //}
 
@@ -309,7 +314,7 @@ namespace Ecard.DAL
         }
 
 
-        
+
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Estudante obj)
         {
@@ -459,8 +464,5 @@ namespace Ecard.DAL
 
             return aEstudante;
         }
-
-
-
     }
 }
