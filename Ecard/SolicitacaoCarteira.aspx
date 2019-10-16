@@ -87,6 +87,10 @@
                                  <div class="help-modal">                                
                                         <div class="rota-modal">
                                             <div class="rota-modal-nome">
+                                                <asp:Image ID="Image1" runat="server" Width="100" Height="100"/>
+                                             </div>
+                                            <div class="rota-modal-nome">
+                                            <div class="rota-modal-nome">
                                                 <p class="ponto-ref">id:
                                                     <asp:Label runat="server" type="text" CssClass="imodal" ID="Modal_id"></asp:Label>
                                                </p>
