@@ -60,11 +60,12 @@ namespace Ecard
                 int id = int.Parse(Session["userid"].ToString());
                 DALEstudante dal = new DALEstudante();
                 Modelo.Estudante estudante = dal.Select(id); 
-                if (estudante.carteira_status == 0)
+                if (estudante.status == 0)
                 {
+                    estudante.status = 1;
+                    dal.Update(estudante);
                     DALSolicitacao_carteira dals = new DALSolicitacao_carteira();
                     dals.Insert(id);
-                    dal.MudarSituacaoCarteira1(estudante.cpf);
                     Response.Redirect("~/TelaPrincipalEstudante.aspx");
                 }
                 

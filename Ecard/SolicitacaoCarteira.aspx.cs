@@ -14,6 +14,7 @@ namespace Ecard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            modalContainer.Style.Add("visibility", "hidden");
             if (Session["logged"] != null)
             {
                 if (Session["accesslevel"] == "instituicao") Response.Redirect("~/WebFormTelaPrincipalInstituicao.aspx");
@@ -37,8 +38,6 @@ namespace Ecard
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
                 int id = int.Parse(((Button)sender).CommandArgument.ToString());
                 DALSolicitacao_carteira dal = new DALSolicitacao_carteira();
                 DALEstudante dal_e = new DALEstudante();
@@ -47,9 +46,33 @@ namespace Ecard
                 Modal_id.Text = id.ToString();
                 Modal_data.Text = solicitacao.data.ToShortDateString();
                 Modal_estudante.Text = estudante.nome;
-                ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "ToggleModal", "ToggleModal()", true);
+                modalContainer.Style.Add("visibility", "visible");
+
+
+        }
+        protected void Aceitar_click(object sender, EventArgs e)
+        {
+            int id = int.Parse(Modal_id.Text);
+            DAL.DALSolicitacao_carteira dal_solicitacao = new DAL.DALSolicitacao_carteira();
+            Modelo.Solicitacao_carteira solicitacao = dal_solicitacao.Select(id);
+            solicitacao.descricao_erro = erro.SelectedItem.Text;
+            DAL.DALEstudante p = new DAL.DALEstudante();
+            Modelo.Estudante estudante = p.Select(dal_solicitacao.SelectEstudante(id));
+            if (erro.SelectedIndex == 0)
+            {
+                solicitacao.status = 2;
+                estudante.status = 2;
             }
-            
+            else
+            {
+                solicitacao.status = 1;
+                estudante.status = 1;
+
+            }
+            dal_solicitacao.Update(solicitacao);
+            p.Update(estudante);
+            Response.Redirect("~/SolicitacaoCarteira.aspx");
+
         }
     }
 }

@@ -99,7 +99,7 @@ namespace Ecard.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public Modelo.Solicitacao_instituicao Select(string Id)
+        public Modelo.Solicitacao_instituicao Select(int Id)
         {
             Modelo.Solicitacao_instituicao aSolicitacao_instituicao = new Modelo.Solicitacao_instituicao();
             SqlConnection conn = new SqlConnection(connectionString);
@@ -125,5 +125,50 @@ namespace Ecard.DAL
             return aSolicitacao_instituicao;
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public Modelo.Solicitacao_instituicao SelectInstituicao(int Id)
+        {
+            Modelo.Solicitacao_instituicao aSolicitacao_instituicao = new Modelo.Solicitacao_instituicao();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Solicitacao_instituicao Where instituicao_id = @Id";
+            cmd.Parameters.AddWithValue("@Id", Id);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    aSolicitacao_instituicao.id = int.Parse(dr["id"].ToString());
+                    aSolicitacao_instituicao.status = int.Parse(dr["status"].ToString());
+                    aSolicitacao_instituicao.descricao_erro = dr["descricao_erro"].ToString();
+                    aSolicitacao_instituicao.data = DateTime.Parse(dr["data"].ToString());
+                }
+            }
+
+            dr.Close();
+            conn.Close();
+
+            return aSolicitacao_instituicao;
+        }
+
+
+        public int CountSolicitacoes()
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "select count(*) from solicitacao_instituicao where status = 0";
+            SqlDataReader dr = cmd.ExecuteReader();
+            int count = 0;
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    count = dr.GetInt32(0);
+                }
+            }
+            return count;
+        }
     }
 }

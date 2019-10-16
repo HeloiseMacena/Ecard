@@ -12,14 +12,15 @@ namespace Ecard.Modelo
         public string cpf;
         public string rg;
         public string email;
-        public string status;
-        public int carteira_status;
-        /* status da carteira:  
+        public int status;
+        /* status:  
             0: sem carteira
             1: carteira solicitada
             2: carteira existente
              
         */
+        public int carteira_status;
+        /*  excluir carteira_status depois*/
         public string carteira_foto;
         public double carteira_saldo;
         public int carteira_numero;
@@ -30,7 +31,7 @@ namespace Ecard.Modelo
         {
             id = 0;
         }
-        public Estudante(string nome, string cpf, string rg, string email, string senha, string status, string carteira_foto, double carteira_saldo, int carteira_numero, DateTime carteira_validade)
+        public Estudante(string nome, string cpf, string rg, string email, string senha, int status, string carteira_foto, double carteira_saldo, int carteira_numero, DateTime carteira_validade)
         {
             
             this.nome = nome;

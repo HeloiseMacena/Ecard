@@ -20,7 +20,7 @@ namespace Ecard
         protected void Button1_Click(object sender, EventArgs e)
         {
             DALInstituicao dal = new DALInstituicao();
-            Instituicao instituicao = new Instituicao(TextBox1.Text, TextEmail.Text, TextCodigo.Text, false, TextSenha.Text, TextBairro.Text, TextCEP.Text, TextMunicipio.Text, TextLogradouro.Text, TextNumero.Text, TextCNPJ.Text);
+            Instituicao instituicao = new Instituicao(TextBox1.Text, TextEmail.Text, TextCodigo.Text, 1, TextSenha.Text, TextBairro.Text, TextCEP.Text, TextMunicipio.Text, TextLogradouro.Text, TextNumero.Text, TextCNPJ.Text);
             dal.Insert(instituicao);
             Response.Redirect("~//TelaInicial.aspx");
         }
