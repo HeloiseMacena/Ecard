@@ -11,10 +11,7 @@ namespace Ecard.Modelo
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Codigo_inep_mec { get; set; }
-<<<<<<< HEAD
-        public bool Status { get; set; }
         public int carteira_status { get; set; }
-=======
         public int Status { get; set; }
         /* status: 
             0: solicitado
@@ -22,7 +19,6 @@ namespace Ecard.Modelo
             2: aprovado
              
         */
->>>>>>> 0bb544a048a5c48ec2cda21c244cc63749781f3a
         public string Senha { get; set; }
         public string Endereco_bairro { get; set; }
         public string Endereco_CEP { get; set; }

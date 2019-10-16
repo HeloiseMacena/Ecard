@@ -89,27 +89,6 @@ namespace Ecard.DAL
         }
 
 
-        [DataObjectMethod(DataObjectMethodType.Update)]
-        public void MudarSituacaoEstudante(int a, string cpf)
-        {
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-            SqlCommand com = conn.CreateCommand();
-            if (a == 0) //Irregular
-            {
-                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 0 where cpf = @" + cpf, conn);
-            }
-            if (a == 1) //Aguardo
-            {
-                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 1  where cpf = @" + cpf, conn);
-            }
-            if (a == 2) //Regular
-            {
-                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 2 where cpf = @" + cpf, conn);
-            }
-
-        }
-
 
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void MudarSituacaoFalse(int id)

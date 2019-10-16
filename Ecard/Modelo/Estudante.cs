@@ -31,12 +31,8 @@ namespace Ecard.Modelo
         {
             id = 0;
         }
-<<<<<<< HEAD
 
-        public Estudante(string nome, string cpf, string rg, string email, string senha, string status, string carteira_foto, double carteira_saldo, int carteira_numero, DateTime carteira_validade)
-=======
         public Estudante(string nome, string cpf, string rg, string email, string senha, int status, string carteira_foto, double carteira_saldo, int carteira_numero, DateTime carteira_validade)
->>>>>>> 0bb544a048a5c48ec2cda21c244cc63749781f3a
         {
             this.nome = nome;
             this.cpf = cpf;
