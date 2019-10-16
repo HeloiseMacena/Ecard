@@ -20,6 +20,27 @@ namespace Ecard.DAL
             connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
         }
 
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void MudarSituacaoEstudante(int a, string cpf)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            if (a == 0) //Irregular
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 0 where cpf = @" + cpf, conn);
+            }
+            if (a == 1) //Aguardo
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 1  where cpf = @" + cpf, conn);
+            }
+            if (a == 2) //Regular
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 2 where cpf = @" + cpf, conn);
+            }
+
+        }
+
         [DataObjectMethod(DataObjectMethodType.Select)]
         public bool ExisteEstudante(string cpf)
         {
@@ -27,12 +48,16 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Estudante where cpf =" + cpf;
+            cmd.CommandText = "Select * from Estudante where cpf =@cpf";
+            cmd.Parameters.AddWithValue("@cpf", cpf);
             SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
             if (dr.HasRows)
             {
                 a = true;
             }
+
             conn.Close();
             return a;
         }
@@ -59,7 +84,6 @@ namespace Ecard.DAL
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void MudarSituacaoTrue(string cpf)
         {
-
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
@@ -67,16 +91,20 @@ namespace Ecard.DAL
 
         }
 
+
+
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void MudarSituacaoFalse(int id)
         {
-
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = false where instituicao_id = " + id, conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = 0 where instituicao_id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", id);
+
 
         }
+
 
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Estudante> SelectArquivoCsv(string arquivo)
@@ -102,10 +130,10 @@ namespace Ecard.DAL
 
                         Modelo.Estudante aEstudante = new Modelo.Estudante(
                             linha[0],
-                            "",
                             linha[1],
                             linha[2],
-                           "Ecard2019",
+                            "",
+                            "",
                             2,
                             "",
                             0,
@@ -161,6 +189,7 @@ namespace Ecard.DAL
             return aListEstudante;
         }
 
+
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Estudante> SelectSolicitacoes()
         {
@@ -202,15 +231,15 @@ namespace Ecard.DAL
         ///public void MudarValorPassagem(int id, double valor)
         //{
 
-            //SqlConnection conn = new SqlConnection(connectionString);
-///conn.Open();
-           // SqlCommand com = conn.CreateCommand();
-           // SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_saldo = @valor where id = @id", conn);
-           // cmd.Parameters.AddWithValue("@id", id);
-            //cmd.Parameters.AddWithValue("@valor", valor);
-            //SqlDataReader dr = cmd.ExecuteReader();
-           // dr.Close();
-           // conn.Close();
+        //SqlConnection conn = new SqlConnection(connectionString);
+        ///conn.Open();
+        // SqlCommand com = conn.CreateCommand();
+        // SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_saldo = @valor where id = @id", conn);
+        // cmd.Parameters.AddWithValue("@id", id);
+        //cmd.Parameters.AddWithValue("@valor", valor);
+        //SqlDataReader dr = cmd.ExecuteReader();
+        // dr.Close();
+        // conn.Close();
 
         //}
 
@@ -285,7 +314,7 @@ namespace Ecard.DAL
         }
 
 
-        
+
         [DataObjectMethod(DataObjectMethodType.Insert)]
         public void Insert(Modelo.Estudante obj)
         {
@@ -317,7 +346,7 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET Nome = @Nome, cpf = @cpf, senha = @senha, email = @email, status = @status, carteira_foto = @carteira_foto, carteira_saldo = @carteira_saldo, carteira_numero = @carteira_numero, carteira_validade = @carteira_validade, carteira_status = @carteira_status WHERE Id = @Id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET Nome = @Nome, cpf = @cpf, senha = @senha, email = @email, status = @status, carteira_foto = @carteira_foto, carteira_saldo = @carteira_saldo, carteira_numero = @carteira_numero, carteira_validade = @carteira_validade, carteira_status = @carteira_status WHERE cpf = @cpf", conn);
 
             cmd.Parameters.AddWithValue("@Id", obj.id);
             cmd.Parameters.AddWithValue("@Nome", obj.nome);
@@ -435,8 +464,5 @@ namespace Ecard.DAL
 
             return aEstudante;
         }
-
-
-
     }
 }

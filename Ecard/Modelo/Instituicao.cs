@@ -11,6 +11,7 @@ namespace Ecard.Modelo
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Codigo_inep_mec { get; set; }
+        public int carteira_status { get; set; }
         public int Status { get; set; }
         /* status: 
             0: solicitado

@@ -14,9 +14,9 @@ namespace Ecard.Modelo
         public string email;
         public int status;
         /* status:  
-            0: sem carteira
+            0: apto
             1: carteira solicitada
-            2: carteira existente
+            2: inapto 
              
         */
         public int carteira_status;
@@ -31,9 +31,9 @@ namespace Ecard.Modelo
         {
             id = 0;
         }
+
         public Estudante(string nome, string cpf, string rg, string email, string senha, int status, string carteira_foto, double carteira_saldo, int carteira_numero, DateTime carteira_validade)
         {
-            
             this.nome = nome;
             this.cpf = cpf;
             this.rg = rg;
