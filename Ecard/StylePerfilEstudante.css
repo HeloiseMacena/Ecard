@@ -64,7 +64,7 @@
 
 .btn-b2 {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     padding: 0px 156px;
     flex-direction: row;
@@ -129,6 +129,13 @@
     color: #a1a1a1;
     border-style: none;
     border-radius: 4px;
+}
+
+.compare {
+    clear:left;
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
 }
 
 .nov-header {

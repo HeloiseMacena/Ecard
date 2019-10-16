@@ -103,7 +103,7 @@
                                                 <ItemTemplate>
                                                     <div class="rota-modal-nome1">
                                                         <p class="ponto-ref">
-                                                            Bairros:
+                                                            Bairro:
                                                     <asp:Label runat="server" ID="modalBairro"><%#Eval("nome")%></asp:Label>
                                                         </p>
                                                     </div>

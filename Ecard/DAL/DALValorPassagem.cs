@@ -49,7 +49,7 @@ namespace Ecard.DAL
             dr.Read();
 
             double v = double.Parse(dr["valor"].ToString());
-
+            
             string valor = (v / 2).ToString();
 
             return valor;

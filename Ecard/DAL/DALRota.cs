@@ -65,6 +65,11 @@ namespace Ecard.DAL
             else { cmd.CommandText = "SELECT r.id, r.nome FROM Rotas_Bairro rb INNER JOIN Bairro b ON rb.bairro_id = b.id INNER JOIN rota r ON rb.rotas_id = r.id INNER JOIN rota_referencia rr ON r.id = rr.rota_id INNER JOIN Ponto_Referencia pr ON rr.ponto_referencia_id = pr.id WHERE pr.nome LIKE '%" + value + "%'"; }
             SqlDataReader dr = cmd.ExecuteReader();
 
+            /*if (option == "Nome") { cmd.CommandText = "SELECT r.id, r.nome FROM Rotas_Bairro rb INNER JOIN Bairro b ON rb.bairro_id = b.id INNER JOIN rota r ON rb.rotas_id = r.id INNER JOIN rota_referencia rr ON r.id = rr.rota_id INNER JOIN Ponto_Referencia pr ON rr.ponto_referencia_id = pr.id WHERE r.nome LIKE '" + value + "'"; }
+            else if (option == "Bairro") { cmd.CommandText = "SELECT r.id, r.nome FROM Rotas_Bairro rb INNER JOIN Bairro b ON rb.bairro_id = b.id INNER JOIN rota r ON rb.rotas_id = r.id INNER JOIN rota_referencia rr ON r.id = rr.rota_id INNER JOIN Ponto_Referencia pr ON rr.ponto_referencia_id = pr.id WHERE b.nome LIKE '%" + value + "%'"; }
+            else { cmd.CommandText = "SELECT r.id, r.nome FROM Rotas_Bairro rb INNER JOIN Bairro b ON rb.bairro_id = b.id INNER JOIN rota r ON rb.rotas_id = r.id INNER JOIN rota_referencia rr ON r.id = rr.rota_id INNER JOIN Ponto_Referencia pr ON rr.ponto_referencia_id = pr.id WHERE pr.nome LIKE '%" + value + "%'"; }
+            SqlDataReader dr = cmd.ExecuteReader();*/
+
             if (dr.HasRows)
             {
 

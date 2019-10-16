@@ -88,6 +88,29 @@ namespace Ecard.DAL
 
         }
 
+
+        [DataObjectMethod(DataObjectMethodType.Update)]
+        public void MudarSituacaoEstudante(int a, string cpf)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            if (a == 0) //Irregular
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 0 where cpf = @" + cpf, conn);
+            }
+            if (a == 1) //Aguardo
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 1  where cpf = @" + cpf, conn);
+            }
+            if (a == 2) //Regular
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 2 where cpf = @" + cpf, conn);
+            }
+
+        }
+
+
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void MudarSituacaoFalse(int id)
         {
@@ -127,7 +150,7 @@ namespace Ecard.DAL
                             linha[1],
                             linha[2],
                            "Ecard2019",
-                            "true",
+                            2,
                             "",
                             0,
                             0,
@@ -166,7 +189,7 @@ namespace Ecard.DAL
                         dr["rg"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
-                        dr["status"].ToString(),
+                        int.Parse(dr["status"].ToString()),
                         dr["carteira_foto"].ToString(),
                         double.Parse(dr["carteira_saldo"].ToString()),
                         int.Parse(dr["carteira_numero"].ToString()),
@@ -181,6 +204,7 @@ namespace Ecard.DAL
 
             return aListEstudante;
         }
+
 
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Estudante> SelectSolicitacoes()
@@ -201,7 +225,7 @@ namespace Ecard.DAL
                         dr["rg"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
-                        dr["status"].ToString(),
+                        int.Parse(dr["status"].ToString()),
                         dr["carteira_foto"].ToString(),
                         double.Parse(dr["carteira_saldo"].ToString()),
                         int.Parse(dr["carteira_numero"].ToString()),
@@ -272,7 +296,7 @@ namespace Ecard.DAL
                         dr["rg"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
-                        dr["status"].ToString(),
+                        int.Parse(dr["status"].ToString()),
                         dr["carteira_foto"].ToString(),
                         double.Parse(dr["carteira_saldo"].ToString()),
                         int.Parse(dr["carteira_numero"].ToString()),
@@ -378,7 +402,7 @@ namespace Ecard.DAL
                         dr["rg"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
-                        dr["status"].ToString(),
+                        int.Parse(dr["status"].ToString()),
                         dr["carteira_foto"].ToString(),
                         double.Parse(dr["carteira_saldo"].ToString()),
                         int.Parse(dr["carteira_numero"].ToString()),
@@ -440,7 +464,7 @@ namespace Ecard.DAL
                         dr["rg"].ToString(),
                         dr["email"].ToString(),
                         dr["senha"].ToString(),
-                        dr["status"].ToString(),
+                        int.Parse(dr["status"].ToString()),
                         dr["carteira_foto"].ToString(),
                         double.Parse(dr["carteira_saldo"].ToString()),
                         int.Parse(dr["carteira_numero"].ToString()),

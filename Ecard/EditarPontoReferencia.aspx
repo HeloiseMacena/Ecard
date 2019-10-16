@@ -35,7 +35,7 @@
                       <h1>Editar</h1>
                       <asp:TextBox ID="TextBox1" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>
                     <div class="btn-b2">
-                        <asp:Button class="btn-close" runat="server" Text="Excluir" OnClick="Unnamed1_Click"  />
+                        <asp:Button class="btn-close" runat="server" Text="Excluir" OnClick="Unnamed1_Click" OnClientClick="javascript:return ConfirmaExclusao();" />
                         <asp:Button class="btn-save" runat="server" Text="Atualizar" OnClick="Unnamed2_Click" />
                     </div>
                 </div>
