@@ -46,7 +46,9 @@ namespace Ecard
                 Modal_id.Text = id.ToString();
                 Modal_data.Text = solicitacao.data.ToShortDateString();
                 Modal_estudante.Text = estudante.nome;
-                modalContainer.Style.Add("visibility", "visible");
+                string nome_arquivo = estudante.cpf + ".jpg";
+                Image1.ImageUrl = "~/Imagens/" + nome_arquivo;
+            modalContainer.Style.Add("visibility", "visible");
 
 
         }
