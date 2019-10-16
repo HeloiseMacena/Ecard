@@ -20,28 +20,42 @@ namespace Ecard
             {
                 Response.Redirect("~/TelaInicial.aspx");
             }
+            DAL.DALValorPassagem a = new DAL.DALValorPassagem();
+            try
+            {
+                TextBox1.Text = a.SelectValor("Ceará Mirim");
+            }
+            catch{}
+            try { TextBox2.Text = a.SelectValor("Extremoz"); }
+            catch { }
+            try { TextBox3.Text = a.SelectValor("Natal"); }
+            catch { }
+            try { TextBox4.Text = a.SelectValor("Parnamirim"); }
+            catch { }
+            try { TextBox5.Text = a.SelectValor("São Gonçalo do Amarante"); }
+            catch { }
         }
 
         protected void Unnamed2_Click(object sender, EventArgs e)
         {
             DAL.DALValorPassagem a = new DAL.DALValorPassagem();
-            if (TextBox1.Text != "R$ 5,90")
+            if (TextBox1.Text != "")
             {
                 a.Insert(double.Parse(TextBox1.Text), "Ceará Mirim");
             }
-            if (TextBox2.Text != "R$ 4,45")
+            if (TextBox2.Text != "")
             {
                 a.Insert(double.Parse(TextBox2.Text), "Extremoz");
             }
-            if (TextBox3.Text != "R$ 4,00")
+            if (TextBox3.Text != "")
             {
                 a.Insert(double.Parse(TextBox3.Text), "Natal");
             }
-            if (TextBox4.Text != "R$ 4,45")
+            if (TextBox4.Text != "")
             {
                 a.Insert(double.Parse(TextBox4.Text), "Parnamirim");
             }
-            if (TextBox5.Text != "R$ 4,20")
+            if (TextBox5.Text != "")
             {
                 a.Insert(double.Parse(TextBox5.Text), "São Gonçalo do Amarante");
             }

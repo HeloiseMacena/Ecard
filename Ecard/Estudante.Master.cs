@@ -27,6 +27,7 @@ namespace Ecard
             dal = new DALEstudante();
             Modelo.Estudante estudante = dal.Select(int.Parse(Session["userid"].ToString()));
             usuario.Text = estudante.nome.ToString();
+            nome_usuario.Text = estudante.nome.ToString();
 
             string pageName = Path.GetFileNameWithoutExtension(Page.AppRelativeVirtualPath);
             switch(pageName)

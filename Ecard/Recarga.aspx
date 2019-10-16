@@ -34,13 +34,13 @@
                     <div class="azul">
                     <asp:Label ID="Label4" runat="server" Text="Total:"></asp:Label>
                     </div>
-                    <asp:Label ID="Label5" CssClass="campo-inf" runat="server" Text="R$ 9,43"></asp:Label>
+                    <asp:Label ID="Label5" CssClass="campo-inf" runat="server" Text="???"></asp:Label>
                     </div>
                 <div class="forma-4">
                     <div class="azul">
                     <asp:Label ID="Label6" runat="server" Text="Saldo de Recarga:"></asp:Label>
                     </div>
-                    <asp:Label ID="Label7" CssClass="campo-inf" runat="server" Text="R$ 9,43"></asp:Label>
+                    <asp:Label ID="LabelSaldo" CssClass="campo-inf" runat="server"></asp:Label>
                     </div>
                 </div>
                 <div class="forma-5">

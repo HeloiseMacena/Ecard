@@ -18,6 +18,12 @@
 });
 
 
+    function ConfirmaExclusao() {
+        return confirm('Deseja realmente excluir este registro?');
+}
+
+
+
 /* function ToggleModal() {
     console.log(document.getElementById('modal-container'))
     if (document.querySelector('.modal-container').classList == 'modal-container open') {

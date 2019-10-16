@@ -7,13 +7,11 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Ecard
-{
-
-
-    public partial class Estudante
-    {
-
+namespace Ecard {
+    
+    
+    public partial class Estudante {
+        
         /// <summary>
         /// Controle head.
         /// </summary>
@@ -22,7 +20,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-
+        
         /// <summary>
         /// Controle form1.
         /// </summary>
@@ -31,7 +29,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// Controle usuario.
         /// </summary>
@@ -40,7 +38,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label usuario;
-
+        
         /// <summary>
         /// Controle ContentPlaceHolder1.
         /// </summary>
@@ -49,7 +47,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
-
+        
         /// <summary>
         /// Controle box2.
         /// </summary>
@@ -58,7 +56,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl box2;
-
+        
         /// <summary>
         /// Controle nome_usuario.
         /// </summary>
@@ -67,7 +65,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label nome_usuario;
-
+        
         /// <summary>
         /// Controle box2Ponto.
         /// </summary>
@@ -76,7 +74,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl box2Ponto;
-
+        
         /// <summary>
         /// Controle saldo.
         /// </summary>
@@ -85,7 +83,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label saldo;
-
+        
         /// <summary>
         /// Controle box2Card.
         /// </summary>

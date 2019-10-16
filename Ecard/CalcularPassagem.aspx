@@ -23,15 +23,15 @@
                 <div class="valores">
                     <div class="campos">
                         <asp:Label id="Label2" CssClass="text-var" runat="server" Text="R$ 4,20"></asp:Label>
-                        <asp:TextBox ID="TextBoxRecarga" CssClass="campo-qntPas" placeholder="0" runat="server"></asp:TextBox> 
+                        <asp:TextBox ID="TextBoxRecarga" Enabled="true" CssClass="campo-qntPas" placeholder="0" runat="server"></asp:TextBox> 
                     </div>
                     <div class="campos">
                         <asp:Label id="Label3" CssClass="text-var" runat="server" Text="R$ 6,30"></asp:Label>
-                        <asp:TextBox ID="TextBox1" CssClass="campo-qntPas" placeholder="0" runat="server"></asp:TextBox> 
+                        <asp:TextBox ID="TextBox1" Enabled="true" CssClass="campo-qntPas" placeholder="0" runat="server"></asp:TextBox> 
                     </div>
                     <div class="campos">
                         <asp:Label id="Label4" CssClass="text-var" runat="server" Text="Dias"></asp:Label>
-                        <asp:TextBox ID="TextBox2" CssClass="campo-qntDia" placeholder="0" runat="server"></asp:TextBox>                    
+                        <asp:TextBox ID="TextBox2" Enabled="true" CssClass="campo-qntDia" placeholder="0" runat="server"></asp:TextBox>                    
                     </div>
                 </div>
                 <div class="resultados">
