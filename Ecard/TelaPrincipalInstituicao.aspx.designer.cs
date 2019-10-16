@@ -13,15 +13,6 @@ namespace Ecard {
     public partial class TelaPrincipalInstituicao {
         
         /// <summary>
-        /// Controle status.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label status;
-        
-        /// <summary>
         /// Controle FileUpload1.
         /// </summary>
         /// <remarks>

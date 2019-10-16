@@ -10,12 +10,11 @@
                        <p>Estudantes</p>
                     </div>
                     <div class="box1-button">
-                        <asp:Label ID="status" runat="server" Text=""></asp:Label>
                     </div>
                 </div>
                 <div class="hl"></div> <!-- horizontal line -->
                 <div class="pesq">
-                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                    <asp:FileUpload ID="FileUpload1" CssClass="multi" runat="server" BorderColor="White" />
                         <asp:Button runat="server" OnClick="Unnamed_Click" CssClass="btnAdd" Text="Mandar"/>
                         <asp:Label ID="resposta" runat="server" Text="Label"></asp:Label>
                 </div>

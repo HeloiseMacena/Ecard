@@ -35,7 +35,7 @@ namespace Ecard
 
                 if (aListEstudante.Count > 0)
                 {
-                    aDALEstudante.MudarSituacaoFalse(id);
+                    aDALEstudante.MudarSituacaoFalse();
 
                     for (int i = 0; i < aListEstudante.Count; i++)
                     {
@@ -50,7 +50,7 @@ namespace Ecard
                     }
                 }
             }
-            else resposta.Text = "Por favor, selecione um arquivo a enviar";
+            else resposta.Text = "Por favor, selecione um arquivo para enviar";
         }
     }
 }
