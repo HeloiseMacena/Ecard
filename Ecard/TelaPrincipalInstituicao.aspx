@@ -10,7 +10,6 @@
                        <p>Estudantes</p>
                     </div>
                     <div class="box1-button">
-                        <asp:Label ID="status" runat="server" Text=""></asp:Label>
                     </div>
                 </div>
                 <div class="hl"></div> <!-- horizontal line -->

@@ -20,6 +20,23 @@ namespace Ecard.DAL
             connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public double SelectStatus(int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select status from Estudante where id =" + id;
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
+            int status = int.Parse(dr["status"].ToString());
+
+            conn.Close();
+
+            return status;
+        }
+
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void MudarSituacaoEstudante(int a, string cpf)
         {
@@ -28,15 +45,15 @@ namespace Ecard.DAL
             SqlCommand com = conn.CreateCommand();
             if (a == 0) //Irregular
             {
-                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 0 where cpf = @" + cpf, conn);
+                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 0 where cpf = " + cpf, conn);
             }
             if (a == 1) //Aguardo
             {
-                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 1  where cpf = @" + cpf, conn);
+                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 1  where cpf = " + cpf, conn);
             }
             if (a == 2) //Regular
             {
-                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 2 where cpf = @" + cpf, conn);
+                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 2 where cpf = " + cpf, conn);
             }
 
         }
@@ -87,22 +104,20 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = true where cpf = @" + cpf, conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = 0 where cpf = @cpf", conn);
+            cmd.Parameters.AddWithValue("@cpf", cpf);
 
         }
 
 
 
         [DataObjectMethod(DataObjectMethodType.Update)]
-        public void MudarSituacaoFalse(int id)
+        public void MudarSituacaoFalse()
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = 0 where instituicao_id = @id", conn);
-            cmd.Parameters.AddWithValue("@id", id);
-
-
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = 0", conn);
         }
 
 
@@ -134,7 +149,7 @@ namespace Ecard.DAL
                             linha[1],
                             "",
                             "",
-                            2,
+                            0,
                             "",
                             0,
                             0,
@@ -295,22 +310,6 @@ namespace Ecard.DAL
             conn.Close();
 
             return aListEstudante;
-        }
-
-
-
-        [DataObjectMethod(DataObjectMethodType.Delete)]
-        public void Delete(Modelo.Estudante obj)
-        {
-            SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
-            SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("DELETE FROM Estudante WHERE Id = @Id", conn);
-
-            cmd.Parameters.AddWithValue("@Id", obj.id);
-
-            cmd.ExecuteNonQuery();
-
         }
 
 
