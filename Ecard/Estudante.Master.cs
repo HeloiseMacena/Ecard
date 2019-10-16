@@ -28,6 +28,7 @@ namespace Ecard
             Modelo.Estudante estudante = dal.Select(int.Parse(Session["userid"].ToString()));
             usuario.Text = estudante.nome.ToString();
             nome_usuario.Text = estudante.nome.ToString();
+            saldo.Text = "R$ " + estudante.carteira_saldo.ToString(); 
 
             string pageName = Path.GetFileNameWithoutExtension(Page.AppRelativeVirtualPath);
             switch(pageName)

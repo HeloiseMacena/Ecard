@@ -34,7 +34,7 @@
                       <h1>Cadastro</h1>
                       <asp:TextBox ID="TextBox1" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>
                     <div class="btn-b2">
-                        <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroPonto.aspx" />
+                        <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroPontoReferencia.aspx" />
                         <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed2_Click" ValidationGroup="validateGroup" />
 
                     </div>
