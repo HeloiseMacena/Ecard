@@ -16,7 +16,7 @@ namespace Ecard
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            Ecard.Modelo.Estudante pr = new Ecard.Modelo.Estudante(TextNome.Text, TextCPF.Text, Convert.ToString(TextRG.Text), TextEmail.Text, TextSenha.Text, "false", "roberta", 0, 55, DateTime.Now);
+            Ecard.Modelo.Estudante pr = new Ecard.Modelo.Estudante(TextNome.Text, TextCPF.Text, Convert.ToString(TextRG.Text), TextEmail.Text, TextSenha.Text, 0, "roberta", 0, 55, DateTime.Now);
             Ecard.DAL.DALEstudante dal = new Ecard.DAL.DALEstudante();
             dal.Insert(pr);
             Response.Redirect("~//TelaInicial.aspx");

@@ -178,6 +178,23 @@ namespace Ecard.DAL
             return estudante_id;
         }
 
+        public int CountSolicitacoes()
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "select count(*) from solicitacao_carteira where status = 0";
+            SqlDataReader dr = cmd.ExecuteReader();
+            int count = 0;
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    count = dr.GetInt32(0);
+                }
+            }
+            return count;
+        }
 
     }
 }

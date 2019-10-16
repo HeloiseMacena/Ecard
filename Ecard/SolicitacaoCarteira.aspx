@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SolicitacaoCarteira.aspx.cs" Inherits="Ecard.SolicitacaoEstudante" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SolicitacaoCarteira.aspx.cs" Inherits="Ecard.SolicitacaoEstudante" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -74,7 +74,7 @@
                     </div>
                 </div>
             </div>
-             <div>   <!-- Modal -->
+            <!-- Modal -->
                 <div class="help-modal">
                     <div>
                         <div class="modal-container" id="modalContainer" runat="server">
@@ -87,19 +87,26 @@
                                  <div class="help-modal">                                
                                         <div class="rota-modal">
                                             <div class="rota-modal-nome">
-                                                <p class="ponto-ref">Nº:
-                                                    <asp:Label runat="server" ID="Modal_id"></asp:Label>
+                                                <p class="ponto-ref">id:
+                                                    <asp:Label runat="server" type="text" CssClass="imodal" ID="Modal_id"></asp:Label>
                                                </p>
                                                 </div>
                                             <div class="rota-modal-nome">
-                                                <p class="ponto-ref">CEP:
-                                                    <asp:Label runat="server" ID="Modal_data"></asp:Label>
+                                                <p class="ponto-ref">Data:
+                                                   <asp:Label runat="server" type="text" CssClass="imodal" ID="Modal_data"></asp:Label>
                                                 </p>
                                                 </div>
                                             <div class="rota-modal-nome">
-                                                <p class="ponto-ref">Município:
-                                                    <asp:Label runat="server" ID="Modal_estudante"></asp:Label>
+                                                <p class="ponto-ref">Nome:
+                                                    <asp:Label runat="server" type="text" CssClass="imodal" ID="Modal_estudante"></asp:Label>
                                                 </p>
+                                            </div>  
+                                                <asp:DropDownList runat="server" CssClass="ddlist2" ID="erro">
+                                                <asp:ListItem>Não há erro...</asp:ListItem>
+                                                <asp:ListItem>Foto irregular</asp:ListItem>
+                                                </asp:DropDownList>
+                                            <div class="btn-modal">
+                                                <asp:Button runat="server" CssClass="btn-act" text="Aceitar" OnClick="Aceitar_click"/>
                                             </div>
                                         </div>
                                     </div> 
@@ -109,7 +116,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </form>
 </body>
