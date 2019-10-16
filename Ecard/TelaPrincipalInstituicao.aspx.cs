@@ -35,7 +35,7 @@ namespace Ecard
 
                 if (aListEstudante.Count > 0)
                 {
-                    aDALEstudante.MudarSituacaoFalse(id);
+                    aDALEstudante.MudarSituacaoFalse();
 
                     for (int i = 0; i < aListEstudante.Count; i++)
                     {

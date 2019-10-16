@@ -13,8 +13,25 @@ namespace Ecard
     public partial class Estudante : System.Web.UI.MasterPage
     {
         DALEstudante dal;
+        DAL.DALEstudante aDALEstudante = new DAL.DALEstudante();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            int a = int.Parse((Session["userid"].ToString()));
+
+            if (aDALEstudante.SelectStatus(a) == 0)
+            {
+                status.Text = "Regular";
+            }
+            if (aDALEstudante.SelectStatus(a) == 2)
+            {
+                status.Text = "Irregular";
+            }
+            if (aDALEstudante.SelectStatus(a) == 1)
+            {
+                status.Text = "Aguardando Aprovação da Carteira";
+            }
+
             if (Session["logged"] != null)
             {
                 if (Session["accesslevel"] == "instituicao") Response.Redirect("~/TelaPrincipalInstituicao.aspx");
