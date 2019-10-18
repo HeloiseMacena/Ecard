@@ -4,9 +4,9 @@
 
 <html>
 <head runat="server">
+<link rel="stylesheet" type="text/css" href="StyleMinstituicao.css"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
-    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="JS/Events.js"></script>
     <title></title>
@@ -30,12 +30,14 @@
                     <div class="box2-user">
                          <i class="fas fa-university"></i>
                          <div class="user-name"> 
-                            <h1><asp:Label ID="Label1" CssClass="username" runat="server"></asp:Label></h1>
+                            <asp:Label ID="Label1" CssClass="username" runat="server"></asp:Label>
                             <p>Instituição</p>
                         </div>
                     </div>
-                    <div>
-                        <asp:Label ID="status" runat="server" Text="Label"></asp:Label>
+                    <div class="alert">
+                        <asp:Label ID="status" runat="server" CssClass="status" Text=""></asp:Label>
+                        <asp:Label ID="statusaprovado" runat="server" CssClass="statusAprovado" Text=""></asp:Label>
+                        <asp:Label ID="statusnegado" runat="server" CssClass="statusNegado" Text=""></asp:Label>
                     </div>
                     <div class="box2-button">
                          <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" PostBackUrl="~/PerfilInstituicao.aspx" />

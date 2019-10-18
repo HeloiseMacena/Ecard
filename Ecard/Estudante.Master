@@ -37,7 +37,11 @@
                              <div class="user-name"> 
                                <asp:Label ID="nome_usuario" CssClass="username" runat="server" Text="Daniel Victor"></asp:Label>
                                <p>Estudante</p>
-                               <asp:Label ID="status" runat="server" Text="Label"></asp:Label>
+                              <div class="alert">
+                                <asp:Label ID="status" runat="server" CssClass="status" Text=""></asp:Label>
+                                <asp:Label ID="statusaprovado" runat="server" CssClass="statusAprovado" Text=""></asp:Label>
+                                <asp:Label ID="statusnegado" runat="server" CssClass="statusNegado" Text=""></asp:Label>
+                            </div>
                             </div>
                         </div>
                         <div class="box2-button">

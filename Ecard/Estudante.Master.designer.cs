@@ -76,6 +76,24 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.Label status;
         
         /// <summary>
+        /// Controle statusaprovado.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label statusaprovado;
+        
+        /// <summary>
+        /// Controle statusnegado.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label statusnegado;
+        
+        /// <summary>
         /// Controle box2Ponto.
         /// </summary>
         /// <remarks>

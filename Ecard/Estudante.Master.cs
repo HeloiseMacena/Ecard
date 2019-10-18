@@ -17,19 +17,35 @@ namespace Ecard
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                status.Style["display"] = "none";
+                statusaprovado.Style["display"] = "none";
+                statusnegado.Style["display"] = "none";
+            }
+
             int a = int.Parse((Session["userid"].ToString()));
 
             if (aDALEstudante.SelectStatus(a) == 0)
             {
-                status.Text = "Regular";
+                statusaprovado.Text = "Regular";
+                status.Style["display"] = "none";
+                statusaprovado.Style["display"] = "block";
+                statusnegado.Style["display"] = "none";
             }
             if (aDALEstudante.SelectStatus(a) == 2)
             {
-                status.Text = "Irregular";
+                statusnegado.Text = "Irregular";
+                status.Style["display"] = "none";
+                statusaprovado.Style["display"] = "none";
+                statusnegado.Style["display"] = "block";
             }
             if (aDALEstudante.SelectStatus(a) == 1)
             {
                 status.Text = "Aguardando Aprovação da Carteira";
+                status.Style["display"] = "block";
+                statusaprovado.Style["display"] = "none";
+                statusnegado.Style["display"] = "none";
             }
 
             if (Session["logged"] != null)

@@ -10,23 +10,41 @@ namespace Ecard
 {
     public partial class Minstituicao : System.Web.UI.MasterPage
     {
+
         DAL.DALInstituicao aDALInstituicao = new DALInstituicao();
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                status.Style["display"] = "none";
+                statusaprovado.Style["display"] = "none";
+                statusnegado.Style["display"] = "none";
+            }
+
             int a = int.Parse((Session["userid"].ToString()));
 
             if (aDALInstituicao.SelectStatus(a) == 0)
             {
-                status.Text = "Solicitado";
+                status.Text = "Aguardando aprovação";
+                status.Style["display"] = "block";
+                statusaprovado.Style["display"] = "none";
+                statusnegado.Style["display"] = "none";
             }
             if (aDALInstituicao.SelectStatus(a) == 1)
             {
-                status.Text = "Reprovado";
+                statusnegado.Text = "Reprovado";
+                status.Style["display"] = "none";
+                statusaprovado.Style["display"] = "none";
+                statusnegado.Style["display"] = "block";
             }
             if (aDALInstituicao.SelectStatus(a) == 2)
             {
-                status.Text = "Aprovado";
+                statusaprovado.Text = "Aprovado";
+                status.Style["display"] = "none";
+                statusaprovado.Style["display"] = "block";
+                statusnegado.Style["display"] = "none";
             }
 
             if (Session["logged"] != null)

@@ -37,25 +37,6 @@
                      <asp:Label ID="respostaError" CssClass="msg1" runat="server" Text="Por favor, selecione um arquivo *.txt para enviar" style="display: none"></asp:Label>
                         </div>
                 </div>
-                 <div class="help">
-                     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource2">
-                         <ItemTemplate>
-                             <div class="pontoItem">
-                                 <div class="pontoItem-nome">
-                                     <p class="ponto-nome"><%#Eval("nome_ponto")%></p>
-                                     <p class="ponto-rua">Logradouro: <%#Eval("endereco_logradouro")%></p>
-                                 </div>
-                                 <div class="vl"></div><!-- vertical line -->
-                                 <div class="pontoItem-bairro">
-                                     <p class="ponto-bairro-title">Bairro</p>
-                                     <p><%#Eval("endereco_bairro")%></p>
-                                 </div>
-                                 <div class="ponto-but">
-                                 </div>
-                             </div>
-                         </ItemTemplate>
-                     </asp:Repeater>
-                     <asp:ObjectDataSource runat="server" ID="ObjectDataSource2" DataObjectTypeName="Ecard.Modelo.Lista_alunos" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="Ecard.DAL.DALLista_alunos" UpdateMethod="Update"></asp:ObjectDataSource>
-                 </div>
+            
             </div>
 </asp:Content>
