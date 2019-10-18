@@ -26,7 +26,7 @@ namespace Ecard
             if (FileUpload1.HasFile)
             {
                 string nomeArquivo = Path.GetFileName(FileUpload1.PostedFile.FileName);
-                string Arquivo = Server.MapPath("~/Lista_Alunos/" + nomeArquivo);
+                string Arquivo = Server.MapPath("Lista_Alunos/" + nomeArquivo);
                 FileUpload1.PostedFile.SaveAs(Arquivo);
 
                 resposta.Text = "Arquivo enviado com sucesso";
@@ -50,7 +50,7 @@ namespace Ecard
                     }
                 }
             }
-            else resposta.Text = "Por favor, selecione um arquivo para enviar";
+            else respostaError.Text = "Por favor, selecione um arquivo para enviar";
         }
     }
 }
