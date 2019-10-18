@@ -315,12 +315,12 @@ namespace Ecard.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(Modelo.Estudante obj)
+        public void Insert(Modelo.Estudante obj, int instituicao_id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, rg, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, instituicao_id, administrador_id, carteira_status) VALUES (@Nome, @cpf, @rg, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 1, 1, 0)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, rg, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, instituicao_id, administrador_id, carteira_status) VALUES (@Nome, @cpf, @rg, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, @instituicao_id, 1, 0)", conn);
 
             cmd.Parameters.AddWithValue("@Nome", obj.nome);
             cmd.Parameters.AddWithValue("@cpf", obj.cpf);
@@ -332,6 +332,7 @@ namespace Ecard.DAL
             cmd.Parameters.AddWithValue("@carteira_numero", obj.carteira_numero);
             cmd.Parameters.AddWithValue("@carteira_validade", obj.carteira_validade);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
+            cmd.Parameters.AddWithValue("@instituicao_id", instituicao_id);
 
             cmd.ExecuteNonQuery();
 

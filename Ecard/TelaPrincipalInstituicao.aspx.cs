@@ -16,41 +16,49 @@ namespace Ecard
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!IsPostBack)
+            {
+                resposta.Style["display"] = "none";
+                respostaError.Style["display"] = "none";
+            }
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
             int id = int.Parse(Session["userid"].ToString());
+            string nomeArquivo = Path.GetFileName(FileUpload1.PostedFile.FileName);
 
-            if (FileUpload1.HasFile)
+            if (nomeArquivo.EndsWith(".txt"))
             {
-                string nomeArquivo = Path.GetFileName(FileUpload1.PostedFile.FileName);
-                string Arquivo = Server.MapPath("Lista_Alunos/" + nomeArquivo);
-                FileUpload1.PostedFile.SaveAs(Arquivo);
-
-                resposta.Text = "Arquivo enviado com sucesso";
-
-                aListEstudante = aDALEstudante.SelectArquivoCsv(Arquivo);
-
-                if (aListEstudante.Count > 0)
+                if (FileUpload1.HasFile)
                 {
-                    aDALEstudante.MudarSituacaoFalse();
+                    string Arquivo = Server.MapPath("Lista_Alunos/" + nomeArquivo);
+                    FileUpload1.PostedFile.SaveAs(Arquivo);
+                    
+                    resposta.Style["display"] = "block";
+                    respostaError.Style["display"] = "none";
 
-                    for (int i = 0; i < aListEstudante.Count; i++)
+                    aListEstudante = aDALEstudante.SelectArquivoCsv(Arquivo);
+
+                    if (aListEstudante.Count > 0)
                     {
-                        if (aDALEstudante.ExisteEstudante(aListEstudante[i].cpf) == true)
+                        aDALEstudante.MudarSituacaoFalse();
+
+                        for (int i = 0; i < aListEstudante.Count; i++)
                         {
-                            aDALEstudante.MudarSituacaoTrue(aListEstudante[i].cpf);
-                        }
-                        else
-                        {
-                            aDALEstudante.Insert(aListEstudante[i]);
+                            if (aDALEstudante.ExisteEstudante(aListEstudante[i].cpf) == true)
+                            {
+                                aDALEstudante.MudarSituacaoTrue(aListEstudante[i].cpf);
+                            }
+                            else
+                            {
+                                aDALEstudante.Insert(aListEstudante[i], int.Parse(Session["userid"].ToString()));
+                            }
                         }
                     }
                 }
-            }
-            else respostaError.Text = "Por favor, selecione um arquivo para enviar";
+            }                
+            else { respostaError.Style["display"] = "block"; resposta.Style["display"] = "none";  }
         }
     }
 }

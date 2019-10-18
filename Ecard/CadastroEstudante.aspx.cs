@@ -74,7 +74,8 @@ namespace Ecard
             Ecard.DAL.DALEstudante dal = new Ecard.DAL.DALEstudante();
             if (dal.ExisteEstudante(TextCPF.Text) == false)
             {
-                dal.Insert(pr);
+                //lembrar de fazer um código novo
+               // dal.Insert(pr);
             }
             else
             {
