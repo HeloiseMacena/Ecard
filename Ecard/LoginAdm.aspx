@@ -29,12 +29,12 @@
 
 
              <asp:Button ID="Button1" runat="server" Text="Entrar"  type="submit" class="button" onclick="Button_click" ValidationGroup="validateGroup" />
-             <p class="link-rec">Esqueceu a senha?</p>
+           
          </div>
          <div class="volt">
              <a class="vol" href="TelaInicial.aspx"><i class="fas fa-arrow-left"></i></a>
                 <div class="vol-1">
-                    <p >Voltar</p>
+                    <a class="vol-1" href="TelaInicial.aspx"><p >Voltar</p></a>
                 </div>
             </div>
     </div>

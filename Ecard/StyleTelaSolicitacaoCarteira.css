@@ -110,6 +110,10 @@ form#form1 {
     align-items: center;
 }
 
+.value{
+    margin-left:10px;
+}
+
 .box1-title {
     justify-content: space-between;
     display: flex;
@@ -124,12 +128,19 @@ form#form1 {
     margin-right: 10px;
 }
 
+.box1-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .box1-header > .box1-button > .btnAdd {
     padding: 10px 20px;
     border: none;
     border-radius: 1px;
     cursor: pointer;
     color: #2BB21F;
+    background-color: white;
 }
 
 /* REPEATER */

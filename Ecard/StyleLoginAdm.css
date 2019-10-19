@@ -143,18 +143,19 @@ p {
     align-content: center;
     justify-content: center;
     display: flex;
-    align-items: baseline;
+    align-items: center;
 }
 
 .vol {
-    color: #5FB741;
+    color: #2EBFD6 !important;
     font-size: 15px;
     text-decoration: none;
+    margin-right: 10px;
 }
 
 .vol-1 {
-    margin-left: 10px;
-    color: #5FB741;
+    text-decoration: none;
+    color: #2EBFD6 !important;
     font-size: 15px;
 }
 

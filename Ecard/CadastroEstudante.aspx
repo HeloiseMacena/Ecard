@@ -48,7 +48,7 @@
              <div class="volt">
              <a class="vol" href="LoginEstudante.aspx"><i class="fas fa-arrow-left"></i></a>
                 <div class="vol-1">
-                    <p >Voltar</p>
+                    <a class="vol-1" href="LoginInstituicao.aspx"><p >Voltar</p></a>
                 </div>
             </div>
          </div>

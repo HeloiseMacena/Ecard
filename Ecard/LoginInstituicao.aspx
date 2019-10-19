@@ -28,12 +28,12 @@
          <div class="login">
              <!-- PostBackUrl="~/WebFormTelaPrincipalInstituicao.aspx" -->
              <asp:Button ID="Button1" runat="server" Text="Entrar" type="submit" class="button"  OnClick="Button_Click" ValidationGroup="validateGroup"/>
-             <p>Instituição não cadastrada!<a class="link-open" href="CadastroInstituicao.aspx">Cadastre-a</a></p>
+             <p>Instituição não cadastrada?<a class="link-open" href="CadastroInstituicao.aspx">Cadastre-a</a></p>
          </div>
                <div class="volt">
              <a class="vol" href="TelaInicial.aspx"><i class="fas fa-arrow-left"></i></a>
                 <div class="vol-1">
-                    <p >Voltar</p>
+                    <a class="vol-1" href="TelaInicial.aspx"><p >Voltar</p></a>
                 </div>
             </div>
      </div>
