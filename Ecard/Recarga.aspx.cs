@@ -36,7 +36,7 @@ namespace Ecard
             Modelo.Estudante estudante = dal.Select(id);
             DALRecarga dalrec = new DALRecarga();
             Modelo.Recarga r = new Modelo.Recarga(valor);
-            dalrec.Insert(r, estudante.id, 1);
+            dalrec.Insert(r, estudante.id);
             estudante.carteira_saldo += valor;
             dal.Update(estudante);
             LabelSaldo.Text = estudante.carteira_saldo.ToString();

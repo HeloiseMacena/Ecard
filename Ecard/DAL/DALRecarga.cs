@@ -68,17 +68,16 @@ namespace Ecard.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(Modelo.Recarga obj, int estudante_id, int ponto_recarga_id)
+        public void Insert(Modelo.Recarga obj, int estudante_id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Recarga (data_recarga, valor, estudante_id, ponto_recarga_id) VALUES (@data, @valor, @estudante_id, @ponto_recarga_id)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Recarga (data_recarga, valor, estudante_id) VALUES (@data, @valor, @estudante_id)", conn);
 
             cmd.Parameters.AddWithValue("@data", obj.data);
             cmd.Parameters.AddWithValue("@valor", obj.valor);
             cmd.Parameters.AddWithValue("@estudante_id",estudante_id);
-            cmd.Parameters.AddWithValue("@ponto_recarga_id", ponto_recarga_id);
 
             cmd.ExecuteNonQuery();
 
