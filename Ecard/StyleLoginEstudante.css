@@ -103,6 +103,16 @@ p {
     border-radius: 2px;
 }
 
+.textbox2 {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    color: #a1a1a1;
+    border-style: none;
+    border-radius: 2px;
+}
+
 .image {
     max-width: 40%;
     margin: auto;
@@ -169,6 +179,98 @@ p {
     color: #5FB741;
     font-size: 15px;
 }
+
+/* APARIÇÃO DO FORM */
+form {
+    overflow: hidden;
+    animation: fade 0.2s;
+}
+
+    form .textbox1 {
+        animation: move 500ms;
+    }
+
+    form .textbox2 {
+        animation: move 400ms;
+        animation-delay: 100ms;
+        animation-fill-mode: backwards;
+    }
+
+    form .button {
+        animation: move 400ms;
+        animation-delay: 250ms;
+        animation-fill-mode: backwards;
+    }
+
+    form .button {
+        animation: move 500ms;
+    }
+/*APARIÇÃO DO FORM*/
+form {
+    overflow: hidden;
+    animation: fade 0.2s;
+}
+
+    form .textbox1 {
+        animation-duration: 500ms;
+    }
+
+    form .textbox2 {
+        animation-duration: 500ms;
+        animation-delay: 250ms;
+        animation-fill-mode: backwards; /*ficar na posição iniciao do from */
+    }
+
+@keyframes move {
+    from {
+        opacity: 0;
+        transform: translateX(-35%); /*mexendo no eixo X do elemento(os campos)*/
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+form {
+    animation-name: fade;
+    animation-duration: 500ms;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+/*FORM NO-NO
+form.validate-error {
+    animation: nono 200ms linear, fade paused;
+    animation-iteration-count: 2;
+}
+
+@keyframes nono {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    35% {
+        transform: translateX(-15%);
+    }
+
+    70% {
+        transform: translateX(15%);
+    }
+}*/
 
 @media(min-width:768px) {
     .formulario {

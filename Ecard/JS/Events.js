@@ -24,11 +24,65 @@
 
 
 
-/* function ToggleModal() {
-    console.log(document.getElementById('modal-container'))
-    if (document.querySelector('.modal-container').classList == 'modal-container open') {
-        document.querySelector('.modal-container').classList.remove('open')
+/*const Button1 = document.querySelector(".Button1");
+const form = document.querySelector("form");
+
+Button1.addEventListener("click", event => {
+    event.preventDefault();
+
+    const fields = [...document.querySelectorAll(".textbox1 .textbox")];
+
+    fields.forEach(field => {
+        if (field.value === "") form.classList.add("validate-error");
+    });
+
+    const formError = document.querySelector(".validate-error");
+    if (formError) {
+        formError.addEventListener("animationend", event => {
+            if (event.animationName === "nono") {
+                formError.classList.remove("validate-error");
+            }
+        });
     } else {
-        document.querySelector('.modal-container').classList.add('open')
+        form.classList.add("form-hide");
     }
-}*/
+});
+
+form.addEventListener("animationstart", event => {
+    if (event.animationName === "down") {
+        document.querySelector("body").style.overflow = "hidden";
+    }
+});
+
+form.addEventListener("animationend", event => {
+    if (event.animationName === "down") {
+        form.style.display = "none";
+        document.querySelector("body").style.overflow = "none";
+    }
+});*/
+
+
+
+
+    /*const button = document.querySelector(".button");
+    const form = document.querySelector("form");
+    button.addEventListener("click", event => {
+        event.preventDefault();
+
+        const fields = [...document.querySelectorAll(".textbox textbox1")];
+
+        fields.forEach(field => {
+            if (field.value === "") form.classList.add("validate-error");
+        });
+
+        const formError = document.querySelector(".validate-error");
+        if (formError) {
+            formError.addEventListener("animationend", event => {
+                if (event.animationName === "nono") {
+                    formError.classList.remove("validate-error");
+                }
+            });
+        } else {
+            form.classList.add("form-hide");
+        }
+    });*/

@@ -22,7 +22,7 @@
             </div>   
          
             <div class="textbox">
-                <asp:TextBox ID="TextSenha" CssClass="textbox1" runat="server" type="password" placeholder="Senha"></asp:TextBox>               
+                <asp:TextBox ID="TextSenha" CssClass="textbox2 " runat="server" type="password"   placeholder="Senha"></asp:TextBox>               
             </div>   
             
          <div class="login">
