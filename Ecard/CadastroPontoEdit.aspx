@@ -36,7 +36,7 @@
                       <asp:TextBox ID="TextRua" runat="server" CssClass="box1-mid" placeholder="Logradouro"></asp:TextBox>
                       <asp:TextBox ID="TextBairro" runat="server" CssClass="box1-mid" placeholder="Bairro"></asp:TextBox>
                       <asp:TextBox ID="TextNumero" runat="server" CssClass="box1-mid" placeholder="Número"></asp:TextBox>
-                      <asp:TextBox ID="TextCEP" runat="server" CssClass="box1-mid" placeholder="CEP"></asp:TextBox>
+                      <asp:TextBox ID="TextCEP" runat="server" CssClass="box1-mid" placeholder="CEP" MaxLength="10"></asp:TextBox>
                       <asp:TextBox ID="TextMunicipio" runat="server" CssClass="box1-mid" placeholder="Município"></asp:TextBox>
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroPonto.aspx" ValidationGroup="validateGroup"/>
@@ -61,6 +61,8 @@
                 </div>
             </div>
           </div>
+          <asp:RegularExpressionValidator ID="RegularExpressionValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="CEP inválido" ValidationGroup="validateGroup" ControlToValidate="TextCEP" ValidationExpression="^(\d{5}-\d{3})|(\d{8})$"></asp:RegularExpressionValidator>
+          <asp:RegularExpressionValidator ID="RegularExpressionValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="Número inválido" ValidationGroup="validateGroup" ControlToValidate="TextNumero" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
           <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Nome não informado." ValidationGroup="validateGroup" ControlToValidate="TextPonto"></asp:RequiredFieldValidator>
           <asp:RequiredFieldValidator ID="RequiredFieldValidator9" CssClass="compare" runat="server" Display="none" ErrorMessage="Logradouro não informado." ValidationGroup="validateGroup" ControlToValidate="TextRua"></asp:RequiredFieldValidator>
           <asp:RequiredFieldValidator ID="RequiredFieldValidator10" CssClass="compare" runat="server" Display="none" ErrorMessage="Bairro não informado." ValidationGroup="validateGroup" ControlToValidate="TextBairro"></asp:RequiredFieldValidator>

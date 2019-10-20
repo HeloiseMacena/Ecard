@@ -30,10 +30,10 @@
         <div class="coluna2">
             <div class="login-1">Informações avançadas</div>
             <div class="textbox">
-                <asp:TextBox ID="TextCPF" runat="server" CssClass="textbox1" type="text" placeholder="CPF (Apenas números)"></asp:TextBox>                            
+                <asp:TextBox ID="TextCPF" runat="server" CssClass="textbox1" type="text" placeholder="CPF (Apenas números)" MaxLength="14"></asp:TextBox>                            
             </div>
             <div class="textbox">
-                <asp:TextBox ID="TextRG" runat="server" CssClass="textbox1" type="text" placeholder="RG"></asp:TextBox>
+                <asp:TextBox ID="TextRG" runat="server" CssClass="textbox1" type="text" placeholder="RG" MaxLength="14"></asp:TextBox>
             </div>
             <div class="textbox">
                 <asp:TextBox ID="TextSenha" runat="server" CssClass="textbox1" type="password" placeholder="Senha"></asp:TextBox>
@@ -52,7 +52,8 @@
                 </div>
             </div>
          </div>
-         <asp:CustomValidator ID="CustomValidator1"  CssClass="compare" runat="server"  Display="none" ErrorMessage="O CPF informado é inválido" ValidationGroup="validateGroup" ControlToValidate="TextCPF" OnServerValidate="ValidateCPF"></asp:CustomValidator>
+         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="CPF inválido" ValidationGroup="validateGroup" ControlToValidate="TextCPF" ValidationExpression="^(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})$"></asp:RegularExpressionValidator>
+         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="RG inválido" ValidationGroup="validateGroup" ControlToValidate="TextRG" ValidationExpression="^(\d{6})|(\d{9})$"></asp:RegularExpressionValidator>
          <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Nome não informado." ValidationGroup="validateGroup" ControlToValidate="TextNome"></asp:RequiredFieldValidator>
          <asp:RequiredFieldValidator ID="RequiredFieldValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="Email não informado." ValidationGroup="validateGroup" ControlToValidate="TextEmail"></asp:RequiredFieldValidator>     
          <asp:RequiredFieldValidator ID="RequiredFieldValidator3" CssClass="compare" runat="server" Display="none" ErrorMessage="Confirmação de email não informado." ValidationGroup="validateGroup" ControlToValidate="Textbox3"></asp:RequiredFieldValidator>

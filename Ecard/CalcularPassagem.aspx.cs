@@ -85,7 +85,7 @@ namespace Ecard
 
             // Calculando o valor total
             int valor1 = int.Parse(TextBoxRecarga.Text);
-            int valor2 = int.Parse(TextBox1.Text);
+            int valor2 = int.Parse(TextBoxRecarga1.Text);
             int dias = int.Parse(TextBox2.Text);
             double saldo = b.SelectSaldo(int.Parse(Session["userid"].ToString()));
             double sobra = 0;

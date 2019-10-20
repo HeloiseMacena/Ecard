@@ -27,7 +27,7 @@
                     </div>
                     <div class="campos">
                         <asp:Label id="Label3" CssClass="text-var" runat="server" Text="R$ 6,30"></asp:Label>
-                        <asp:TextBox ID="TextBox1" Enabled="true" CssClass="campo-qntPas" placeholder="0" runat="server"></asp:TextBox> 
+                        <asp:TextBox ID="TextBoxRecarga1" Enabled="true" CssClass="campo-qntPas" placeholder="0" runat="server"></asp:TextBox> 
                     </div>
                     <div class="campos">
                         <asp:Label id="Label4" CssClass="text-var" runat="server" Text="Dias"></asp:Label>
@@ -56,8 +56,12 @@
                         </div>
                     </div>
                 </div>
-                <asp:Button ID="ButtonCalc" class="calc-result" runat="server" Text="Calcular" OnClick="ButtonCalc_Click" />
+                <asp:Button ID="ButtonCalc" class="calc-result" runat="server" Text="Calcular" OnClick="ButtonCalc_Click" ValidationGroup="validateGroup"/>
             </div>
         </div>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Valor inválido" ValidationGroup="validateGroup" ControlToValidate="TextBoxRecarga" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="Valor inválido" ValidationGroup="validateGroup" ControlToValidate="TextBoxRecarga1" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Quantidade de dias não informado não informado." ValidationGroup="validateGroup" ControlToValidate="TextBox2"></asp:RequiredFieldValidator>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true"/>
     </div>           
 </asp:Content>

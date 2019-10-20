@@ -27,7 +27,7 @@
                          <asp:ListItem>Boleto</asp:ListItem>
  
                     </asp:DropDownList>
-                    <asp:Button ID="Button3"  OnClick="Unnamed_Click" class="reca" runat="server" Text="Recarregar" />
+                    <asp:Button ID="Button3"  OnClick="Unnamed_Click" class="reca" runat="server" Text="Recarregar" ValidationGroup="validateGroup"/>
                 </div>
                 <div class="forma-2">
                 <div class="forma-3">
@@ -49,4 +49,7 @@
             <div>  
                 </div>
            </div>
+          <asp:RegularExpressionValidator ID="RegularExpressionValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Valor inválido" ValidationGroup="validateGroup" ControlToValidate="TextBoxRecarga" ValidationExpression="^(\d+(\.\d\d)?)$"></asp:RegularExpressionValidator>
+          <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Valor da Recarga não informado não informado." ValidationGroup="validateGroup" ControlToValidate="TextBoxRecarga"></asp:RequiredFieldValidator>
+          <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true"/>
 </asp:Content>
