@@ -202,6 +202,24 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator5;
         
         /// <summary>
+        /// Controle RegularExpressionValidator6.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator6;
+        
+        /// <summary>
+        /// Controle RegularExpressionValidator7.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator7;
+        
+        /// <summary>
         /// Controle RequiredFieldValidator1.
         /// </summary>
         /// <remarks>

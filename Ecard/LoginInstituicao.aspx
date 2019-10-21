@@ -18,7 +18,7 @@
             </div>
        
             <div class="textbox">             
-                <asp:TextBox ID="TextEmail" CssClass="textbox1" runat="server" type="text" placeholder="Email"></asp:TextBox>
+                <asp:TextBox ID="TextEmail" CssClass="textbox1" runat="server" type="email" placeholder="Email"></asp:TextBox>
             </div>
          
             <div class="textbox">            
@@ -37,6 +37,7 @@
                 </div>
             </div>
      </div>
+     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Email inválido" ValidationGroup="validateGroup" ControlToValidate="TextEmail" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Email não informado." ValidationGroup="validateGroup" ControlToValidate="TextEmail"></asp:RequiredFieldValidator>
      <asp:RequiredFieldValidator ID="RequiredFieldValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="Senha não informada." ValidationGroup="validateGroup" ControlToValidate="TextSenha"></asp:RequiredFieldValidator>     
      <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true" />

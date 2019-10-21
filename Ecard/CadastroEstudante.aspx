@@ -33,7 +33,7 @@
                 <asp:TextBox ID="TextCPF" runat="server" CssClass="textbox1" type="text" placeholder="CPF (Apenas números)" MaxLength="14"></asp:TextBox>                            
             </div>
             <div class="textbox">
-                <asp:TextBox ID="TextRG" runat="server" CssClass="textbox1" type="text" placeholder="RG" MaxLength="14"></asp:TextBox>
+                <asp:TextBox ID="TextRG" runat="server" CssClass="textbox1" type="text" placeholder="RG (Apenas números)" MaxLength="9"></asp:TextBox>
             </div>
             <div class="textbox">
                 <asp:TextBox ID="TextSenha" runat="server" CssClass="textbox1" type="password" placeholder="Senha"></asp:TextBox>
@@ -53,7 +53,9 @@
             </div>
          </div>
          <asp:RegularExpressionValidator ID="RegularExpressionValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="CPF inválido" ValidationGroup="validateGroup" ControlToValidate="TextCPF" ValidationExpression="^(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})$"></asp:RegularExpressionValidator>
-         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="RG inválido" ValidationGroup="validateGroup" ControlToValidate="TextRG" ValidationExpression="^(\d{6})|(\d{9})$"></asp:RegularExpressionValidator>
+         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="RG inválido" ValidationGroup="validateGroup" ControlToValidate="TextRG" ValidationExpression="^(\d{9})|(\d{6})$"></asp:RegularExpressionValidator>
+         <asp:RegularExpressionValidator ID="RegularExpressionValidator3" CssClass="compare" runat="server" Display="none" ErrorMessage="Email inválido" ValidationGroup="validateGroup" ControlToValidate="TextEmail" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" CssClass="compare" runat="server" Display="none" ErrorMessage="Email inválido" ValidationGroup="validateGroup" ControlToValidate="Textbox3" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
          <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Nome não informado." ValidationGroup="validateGroup" ControlToValidate="TextNome"></asp:RequiredFieldValidator>
          <asp:RequiredFieldValidator ID="RequiredFieldValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="Email não informado." ValidationGroup="validateGroup" ControlToValidate="TextEmail"></asp:RequiredFieldValidator>     
          <asp:RequiredFieldValidator ID="RequiredFieldValidator3" CssClass="compare" runat="server" Display="none" ErrorMessage="Confirmação de email não informado." ValidationGroup="validateGroup" ControlToValidate="Textbox3"></asp:RequiredFieldValidator>
@@ -63,8 +65,7 @@
          <asp:RequiredFieldValidator ID="RequiredFieldValidator6" CssClass="compare" runat="server" Display="none" ErrorMessage="Confirmação da senha não informada." ValidationGroup="validateGroup" ControlToValidate="Textbox7"></asp:RequiredFieldValidator>
          <asp:CompareValidator ID="CompareValidator1" CssClass="compare" runat="server" Display="none" ControlToValidate="TextEmail" ControlToCompare="Textbox3" ErrorMessage="Verifique se os campos de email estão iguais." ValidationGroup="validateGroup"></asp:CompareValidator>
          <asp:CompareValidator ID="CompareValidator2" CssClass="compare" runat="server" Display="none" controltovalidate="TextSenha" controltocompare="Textbox7" ErrorMessage="Verifique se os campos de nova senha estão iguais." ValidationGroup="validateGroup"></asp:CompareValidator>           	            	
-         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true"/>
-    
+         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true"/>    
     </form>
 </body>
 </html>

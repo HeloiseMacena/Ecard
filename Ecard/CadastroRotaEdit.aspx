@@ -50,7 +50,7 @@
                     </div>
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroRota.aspx" />
-                        <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed2_Click" />
+                        <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed2_Click" ValidationGroup="validateGroup"/>
 
                     </div>
                 </div>

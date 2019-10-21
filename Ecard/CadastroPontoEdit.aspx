@@ -39,8 +39,8 @@
                       <asp:TextBox ID="TextCEP" runat="server" CssClass="box1-mid" placeholder="CEP" MaxLength="10"></asp:TextBox>
                       <asp:TextBox ID="TextMunicipio" runat="server" CssClass="box1-mid" placeholder="Município"></asp:TextBox>
                     <div class="btn-b2">
-                        <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroPonto.aspx" ValidationGroup="validateGroup"/>
-                        <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed2_Click" />
+                        <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroPonto.aspx"/>
+                        <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed2_Click" ValidationGroup="validateGroup"/>
 
                     </div>
                 </div>
