@@ -23,9 +23,9 @@ function ConfirmaExclusao() {
         return confirm('Deseja realmente excluir este registro?');
 }
 
-function CpfNaoCadastrado() {
+/*function CpfNaoCadastrado() {
     return confirm('Seu CPF não foi cadastrado por nenhuma instituição de ensino.');
-}
+}*/
 
     
 
