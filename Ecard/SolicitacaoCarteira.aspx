@@ -110,7 +110,7 @@
                                                 <asp:ListItem>Foto irregular</asp:ListItem>
                                                 </asp:DropDownList>
                                             <div class="btn-modal">
-                                                <asp:Button runat="server" CssClass="btn-act" text="Aceitar" OnClick="Aceitar_click"/>
+                                                <asp:Button runat="server" CssClass="btn-act" text="Enviar" OnClick="Aceitar_click"/>
                                             </div>
                                         </div>
                                     </div> 

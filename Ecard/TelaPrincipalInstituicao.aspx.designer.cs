@@ -13,6 +13,33 @@ namespace Ecard {
     public partial class TelaPrincipalInstituicao {
         
         /// <summary>
+        /// Controle TextSituacao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TextSituacao;
+        
+        /// <summary>
+        /// Controle TextBoxSituacao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxSituacao;
+        
+        /// <summary>
+        /// Controle ButtonSituacao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonSituacao;
+        
+        /// <summary>
         /// Controle FileUpload1.
         /// </summary>
         /// <remarks>

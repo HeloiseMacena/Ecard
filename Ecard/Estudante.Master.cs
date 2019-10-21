@@ -33,20 +33,15 @@ namespace Ecard
                 statusaprovado.Style["display"] = "block";
                 statusnegado.Style["display"] = "none";
             }
-            if (aDALEstudante.SelectStatus(a) == 2)
+
+            if (aDALEstudante.SelectStatus(a) == 1)
             {
                 statusnegado.Text = "Irregular";
                 status.Style["display"] = "none";
                 statusaprovado.Style["display"] = "none";
                 statusnegado.Style["display"] = "block";
             }
-            if (aDALEstudante.SelectStatus(a) == 1)
-            {
-                status.Text = "Aguardando Aprovação da Carteira";
-                status.Style["display"] = "block";
-                statusaprovado.Style["display"] = "none";
-                statusnegado.Style["display"] = "none";
-            }
+           
 
             if (Session["logged"] != null)
             {
@@ -57,6 +52,7 @@ namespace Ecard
             {
                 Response.Redirect("~/TelaInicial.aspx");
             }
+
             dal = new DALEstudante();
             Modelo.Estudante estudante = dal.Select(int.Parse(Session["userid"].ToString()));
             usuario.Text = estudante.nome.ToString();
@@ -64,6 +60,7 @@ namespace Ecard
             saldo.Text = "R$ " + estudante.carteira_saldo.ToString(); 
 
             string pageName = Path.GetFileNameWithoutExtension(Page.AppRelativeVirtualPath);
+
             switch(pageName)
             {
                 case "TelaPrincipalEstudante":

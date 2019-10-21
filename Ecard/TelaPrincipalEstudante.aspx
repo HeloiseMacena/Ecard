@@ -4,8 +4,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" type="text/css" href="StyleTelaPrincipalEstudante.css"/>
     <div class="container">
-            <div class="box1">      
-                
+            <div class="box1"> 
+                <div>
+                    <asp:Label ID="welcome" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="solicitado" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="deferido" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="indeferido" runat="server" Text=""></asp:Label>
+                </div>
                <div class="princi">
                    <div class="princi-icon">
                         <div class="org-1"><i class="fas fa-calculator"></i> <asp:HyperLink CssClass="org" runat="server" NavigateUrl="~/CalcularPassagem.aspx" >Calcular Passagem</asp:HyperLink></div>

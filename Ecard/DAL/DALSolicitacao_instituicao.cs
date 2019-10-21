@@ -63,7 +63,7 @@ namespace Ecard.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(Modelo.Solicitacao_instituicao obj, int instituicao_id)
+        public void Insert(int instituicao_id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -71,7 +71,7 @@ namespace Ecard.DAL
             SqlCommand cmd = new SqlCommand("INSERT INTO Solicitacao_instituicao (data, status, instituicao_id) VALUES (@data, @status, @instituicao_id)", conn);
 
             cmd.Parameters.AddWithValue("@data", DateTime.Now.Date.ToString("yyyy-MM-dd"));
-            cmd.Parameters.AddWithValue("@status", obj.status);
+            cmd.Parameters.AddWithValue("@status", 0);
             cmd.Parameters.AddWithValue("@instituicao_id", instituicao_id);
 
             cmd.ExecuteNonQuery();

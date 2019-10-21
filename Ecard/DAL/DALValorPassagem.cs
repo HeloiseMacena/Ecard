@@ -62,14 +62,12 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("delete from ValorPassagem where local = @local", conn);
-            SqlCommand cmd2 = new SqlCommand("insert into ValorPassagem (valor, local) VALUES (@valor,@local)", conn);
+            SqlCommand cmd = new SqlCommand("delete from ValorPassagem where local = '"+ local + "'", conn);
+            SqlCommand cmd2 = new SqlCommand("insert into ValorPassagem(valor, local) VALUES (@valor,'"+ local +"')", conn);
 
             cmd.Parameters.AddWithValue("@valor", valor);
-            cmd.Parameters.AddWithValue("@local", local);
 
             cmd2.Parameters.AddWithValue("@valor", valor);
-            cmd2.Parameters.AddWithValue("@local", local);
 
             cmd.ExecuteNonQuery();
             cmd2.ExecuteNonQuery();

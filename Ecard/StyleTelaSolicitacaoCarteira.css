@@ -138,7 +138,7 @@ form#form1 {
     padding: 10px 20px;
     border: none;
     border-radius: 1px;
-    cursor: pointer;
+    cursor: initial;
     color: #2BB21F;
     background-color: white;
 }

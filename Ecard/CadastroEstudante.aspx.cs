@@ -32,17 +32,18 @@ namespace Ecard
         {
             Ecard.Modelo.Estudante pr = new Ecard.Modelo.Estudante(TextNome.Text, TextCPF.Text, Convert.ToString(TextRG.Text), TextEmail.Text, TextSenha.Text, 0, "roberta", 0, 55, DateTime.Now);
             Ecard.DAL.DALEstudante dal = new Ecard.DAL.DALEstudante();
+
             if (dal.ExisteEstudante(TextCPF.Text) == false)
             {
-                //lembrar de fazer um código novo
-               // dal.Insert(pr);
+                dal.Insert(pr);
+                CustomValidator1.IsValid = false;
             }
             else
             {
                 dal.Update(pr);
                 dal.MudarSituacaoEstudante(0, TextCPF.Text);
+                Response.Redirect("~//TelaInicial.aspx");
             }
-            Response.Redirect("~//TelaInicial.aspx");
         }
     }
 }

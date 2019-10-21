@@ -23,7 +23,7 @@
                        <p>Solicite sua carteira</p>
                     </div>
                     <div class="box1-button">
-                        <asp:Label runat="server" CssClass="btnAdd" Text="R$ 25,00"></asp:Label>
+                        <asp:Label runat="server" CssClass="btnAdd" Text="Valor da carteira: R$ 25,00"></asp:Label>
                         
                     </div>
                 </div>  
