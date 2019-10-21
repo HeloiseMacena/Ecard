@@ -17,7 +17,7 @@ namespace Ecard
         {
             if (!IsPostBack)
             {
-                welcome.Style["display"] = "none";
+                welcome.Style["display"] = "block";
                 solicitado.Style["display"] = "none";
                 deferido.Style["display"] = "none";
                 indeferido.Style["display"] = "none";
@@ -45,7 +45,7 @@ namespace Ecard
 
             if (aDALEstudante.SelectStatusCarteira(a) == 2)
             {
-                deferido.Text = "Carteira Deferida";
+                deferido.Text = "Solicitação deferida.Você deverá pegar a sua carteira de estudante no NatalCard zona sul Av.Sen.Salgado filho(Próximo à Agaé) -Candelária, Natal / RN ";
                 welcome.Style["display"] = "none";
                 solicitado.Style["display"] = "none";
                 deferido.Style["display"] = "block";
@@ -54,7 +54,7 @@ namespace Ecard
 
             if (aDALEstudante.SelectStatusCarteira(a) == 3)
             {
-                indeferido.Text = "Carteira Indeferida";
+                indeferido.Text = "Solicitação Indeferida. Por favor verifique se a foto que foi enviada condiz com os critérios";
                 welcome.Style["display"] = "none";
                 solicitado.Style["display"] = "none";
                 deferido.Style["display"] = "none";

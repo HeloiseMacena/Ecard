@@ -5,11 +5,11 @@
     <link rel="stylesheet" type="text/css" href="StyleTelaPrincipalEstudante.css"/>
     <div class="container">
             <div class="box1"> 
-                <div>
-                    <asp:Label ID="welcome" runat="server" Text=""></asp:Label>
-                    <asp:Label ID="solicitado" runat="server" Text=""></asp:Label>
-                    <asp:Label ID="deferido" runat="server" Text=""></asp:Label>
-                    <asp:Label ID="indeferido" runat="server" Text=""></asp:Label>
+                <div class="alerta">
+                    <asp:Label ID="welcome" runat="server" class="neutro" Text=""></asp:Label>
+                    <asp:Label ID="solicitado" runat="server" class="status" Text=""></asp:Label>
+                    <asp:Label ID="deferido" runat="server" CssClass="statusAprovado" Text=""></asp:Label>
+                    <asp:Label ID="indeferido" runat="server" CssClass="statusNegado" Text=""></asp:Label>
                 </div>
                <div class="princi">
                    <div class="princi-icon">

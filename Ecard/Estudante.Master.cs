@@ -19,7 +19,6 @@ namespace Ecard
         {
             if (!IsPostBack)
             {
-                status.Style["display"] = "none";
                 statusaprovado.Style["display"] = "none";
                 statusnegado.Style["display"] = "none";
             }
@@ -29,7 +28,6 @@ namespace Ecard
             if (aDALEstudante.SelectStatus(a) == 0)
             {
                 statusaprovado.Text = "Regular";
-                status.Style["display"] = "none";
                 statusaprovado.Style["display"] = "block";
                 statusnegado.Style["display"] = "none";
             }
@@ -37,7 +35,6 @@ namespace Ecard
             if (aDALEstudante.SelectStatus(a) == 1)
             {
                 statusnegado.Text = "Irregular";
-                status.Style["display"] = "none";
                 statusaprovado.Style["display"] = "none";
                 statusnegado.Style["display"] = "block";
             }

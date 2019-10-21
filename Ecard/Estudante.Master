@@ -40,12 +40,9 @@
                             </div>
                         </div>
                         <div class="box2-button">
-                                <asp:Label ID="status" runat="server" CssClass="status" Text=""></asp:Label>
                                 <asp:Label ID="statusaprovado" runat="server" CssClass="statusAprovado" Text=""></asp:Label>
                                 <asp:Label ID="statusnegado" runat="server" CssClass="statusNegado" Text=""></asp:Label>
-                            
-                             <asp:Button runat="server" CssClass="btn2"  Text="Ver Perfil" PostBackUrl="~/PerfilEstudante.aspx"/>
-                           
+                             <asp:Button runat="server" CssClass="btn2"  Text="Ver Perfil" PostBackUrl="~/PerfilEstudante.aspx"/> 
                         </div>
 
                     </div>

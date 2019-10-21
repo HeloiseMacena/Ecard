@@ -82,6 +82,46 @@
     color: #555555;
 }
 
+.alert {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center;
+    width: 100%;
+}
+
+.status {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    padding: 20px;
+    margin-top: 2px;
+    display: none;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.statusAprovado {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    padding: 6px 12px 6px 12px;
+    padding: 10px;
+    margin-top: 2px;
+    display: none;
+    margin-left: 75px;
+    border-radius: 2px;
+}
+
+.statusNegado {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    padding: 10px;
+    margin-top: 2px;
+    display: none;
+    border-radius: 2px;
+}
+
 /* RESPONSIVIDADE */
 
 @media only screen and (max-width: 1000px) {

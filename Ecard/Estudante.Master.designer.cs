@@ -67,15 +67,6 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.Label nome_usuario;
         
         /// <summary>
-        /// Controle status.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label status;
-        
-        /// <summary>
         /// Controle statusaprovado.
         /// </summary>
         /// <remarks>
