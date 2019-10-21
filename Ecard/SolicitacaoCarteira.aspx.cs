@@ -48,13 +48,14 @@ namespace Ecard
                 Modal_estudante.Text = estudante.nome;
                 string nome_arquivo = estudante.cpf + ".jpg";
                 Image1.ImageUrl = "~/Imagens/" + nome_arquivo;
-            modalContainer.Style.Add("visibility", "visible");
+                modalContainer.Style.Add("visibility", "visible");
 
 
         }
         protected void Aceitar_click(object sender, EventArgs e)
         {
             int id = int.Parse(Modal_id.Text);
+
             DAL.DALSolicitacao_carteira dal_solicitacao = new DAL.DALSolicitacao_carteira();
             Modelo.Solicitacao_carteira solicitacao = dal_solicitacao.Select(id);
             solicitacao.descricao_erro = erro.SelectedItem.Text;
@@ -63,12 +64,12 @@ namespace Ecard
             if (erro.SelectedIndex == 0)
             {
                 solicitacao.status = 2;
-                estudante.status = 2;
+                estudante.carteira_status = 2;
             }
             else
             {
                 solicitacao.status = 1;
-                estudante.status = 1;
+                estudante.carteira_status = 3;
 
             }
             dal_solicitacao.Update(solicitacao);

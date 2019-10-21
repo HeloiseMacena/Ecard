@@ -60,7 +60,7 @@
                     <div class="box2-user">
                          <i class="fas fa-user-circle"></i>
                          <div class="user-name"> 
-                            <h1>Daniel Victor</h1>
+                            <h1>Paulo Honório</h1>
                             <p>Administrador</p>
                         </div>
                     </div>

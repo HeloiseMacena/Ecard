@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Web;
+using Ecard.Modelo;
 
 namespace Ecard.DAL
 {
@@ -20,13 +21,33 @@ namespace Ecard.DAL
             connectionString = ConfigurationManager.ConnectionStrings["ecard"].ConnectionString;
         }
 
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public double SelectStatusCarteira(int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select carteira_status from Estudante where id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
+            int status = int.Parse(dr["carteira_status"].ToString());
+
+            conn.Close();
+
+            return status;
+        }
+
         [DataObjectMethod(DataObjectMethodType.Select)]
         public double SelectStatus(int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select status from Estudante where id =" + id;
+            cmd.CommandText = "Select status from Estudante where id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
             SqlDataReader dr = cmd.ExecuteReader();
             dr.Read();
 
@@ -43,19 +64,14 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            if (a == 0) //Irregular
+            if (a == 0) //Apto
             {
-                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 0 where cpf = " + cpf, conn);
+                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = 0 where cpf = " + cpf, conn);
             }
-            if (a == 1) //Aguardo
+            if (a == 1) //Inapto
             {
-                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 1  where cpf = " + cpf, conn);
+                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = 1  where cpf = " + cpf, conn);
             }
-            if (a == 2) //Regular
-            {
-                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET carteira_status = 2 where cpf = " + cpf, conn);
-            }
-
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
@@ -65,7 +81,7 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Estudante where cpf =@cpf";
+            cmd.CommandText = "Select * from Estudante where cpf = @cpf";
             cmd.Parameters.AddWithValue("@cpf", cpf);
             SqlDataReader dr = cmd.ExecuteReader();
             dr.Read();
@@ -99,13 +115,15 @@ namespace Ecard.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Update)]
-        public void MudarSituacaoTrue(string cpf)
+        public void MudarSituacaoTrue(string cpf, int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = 0 where cpf = @cpf", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = 0, instituicao_id = @id where cpf = @cpf", conn);
             cmd.Parameters.AddWithValue("@cpf", cpf);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
 
         }
 
@@ -117,7 +135,8 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = 0", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = 1", conn);
+            cmd.ExecuteNonQuery();
         }
 
 
@@ -312,15 +331,13 @@ namespace Ecard.DAL
             return aListEstudante;
         }
 
-
-
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(Modelo.Estudante obj, int instituicao_id)
+        public void InsertPreCadastrado(Modelo.Estudante obj, int instituicao_id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, rg, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, instituicao_id, administrador_id, carteira_status) VALUES (@Nome, @cpf, @rg, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, @instituicao_id, 1, 0)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, rg, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, administrador_id, carteira_status, instituicao_id) VALUES (@Nome, @cpf, @rg, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 1, 0, @instituicao_id)", conn);
 
             cmd.Parameters.AddWithValue("@Nome", obj.nome);
             cmd.Parameters.AddWithValue("@cpf", obj.cpf);
@@ -333,6 +350,29 @@ namespace Ecard.DAL
             cmd.Parameters.AddWithValue("@carteira_validade", obj.carteira_validade);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@instituicao_id", instituicao_id);
+
+            cmd.ExecuteNonQuery();
+
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Insert)]
+        public void Insert(Modelo.Estudante obj)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, rg, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, administrador_id, carteira_status) VALUES (@Nome, @cpf, @rg, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 1, 0)", conn);
+
+            cmd.Parameters.AddWithValue("@Nome", obj.nome);
+            cmd.Parameters.AddWithValue("@cpf", obj.cpf);
+            cmd.Parameters.AddWithValue("@rg", obj.rg);
+            cmd.Parameters.AddWithValue("@email", obj.email);
+            cmd.Parameters.AddWithValue("@status", obj.status);
+            cmd.Parameters.AddWithValue("@carteira_foto", obj.carteira_foto);
+            cmd.Parameters.AddWithValue("@carteira_saldo", obj.carteira_saldo);
+            cmd.Parameters.AddWithValue("@carteira_numero", obj.carteira_numero);
+            cmd.Parameters.AddWithValue("@carteira_validade", obj.carteira_validade);
+            cmd.Parameters.AddWithValue("@senha", obj.senha);
 
             cmd.ExecuteNonQuery();
 
