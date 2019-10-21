@@ -36,13 +36,14 @@ namespace Ecard
             if (dal.ExisteEstudante(TextCPF.Text) == false)
             {
                 dal.Insert(pr);
+                CustomValidator1.IsValid = false;
             }
             else
             {
                 dal.Update(pr);
                 dal.MudarSituacaoEstudante(0, TextCPF.Text);
+                Response.Redirect("~//TelaInicial.aspx");
             }
-            Response.Redirect("~//TelaInicial.aspx");
         }
     }
 }
