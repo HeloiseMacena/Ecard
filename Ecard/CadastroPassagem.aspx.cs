@@ -20,20 +20,37 @@ namespace Ecard
             {
                 Response.Redirect("~/TelaInicial.aspx");
             }
+
             DAL.DALValorPassagem a = new DAL.DALValorPassagem();
-            try
+
+            if (!IsPostBack)
             {
-                TextBox1.Text = a.SelectValor("Ceará Mirim");
+                try
+                {
+                    TextBox1.Text = a.SelectValorInteiro("Ceará Mirim");
+                }
+                catch { }
+                try
+                {
+                    TextBox2.Text = a.SelectValorInteiro("Extremoz");
+                }
+                catch { }
+                try
+                {
+                    TextBox3.Text = a.SelectValorInteiro("Natal");
+                }
+                catch { }
+                try
+                {
+                    TextBox4.Text = a.SelectValorInteiro("Parnamirim");
+                }
+                catch { }
+                try
+                {
+                    TextBox5.Text = a.SelectValorInteiro("São Gonçalo do Amarante");
+                }
+                catch { }
             }
-            catch{}
-            try { TextBox2.Text = a.SelectValor("Extremoz"); }
-            catch { }
-            try { TextBox3.Text = a.SelectValor("Natal"); }
-            catch { }
-            try { TextBox4.Text = a.SelectValor("Parnamirim"); }
-            catch { }
-            try { TextBox5.Text = a.SelectValor("São Gonçalo do Amarante"); }
-            catch { }
         }
 
         protected void Unnamed2_Click(object sender, EventArgs e)
