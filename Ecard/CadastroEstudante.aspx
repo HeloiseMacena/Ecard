@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
+<script src="JS/Events.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="StyleCadastroEstudante.css"/>
     <title></title>
@@ -65,7 +66,8 @@
          <asp:RequiredFieldValidator ID="RequiredFieldValidator6" CssClass="compare" runat="server" Display="none" ErrorMessage="Confirmação da senha não informada." ValidationGroup="validateGroup" ControlToValidate="Textbox7"></asp:RequiredFieldValidator>
          <asp:CompareValidator ID="CompareValidator1" CssClass="compare" runat="server" Display="none" ControlToValidate="TextEmail" ControlToCompare="Textbox3" ErrorMessage="Verifique se os campos de email estão iguais." ValidationGroup="validateGroup"></asp:CompareValidator>
          <asp:CompareValidator ID="CompareValidator2" CssClass="compare" runat="server" Display="none" controltovalidate="TextSenha" controltocompare="Textbox7" ErrorMessage="Verifique se os campos de nova senha estão iguais." ValidationGroup="validateGroup"></asp:CompareValidator>           	            	
-         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true"/>    
+         <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="O seu CPF não foi cadastrado pela sua escola." ValidationGroup="validateGroup"></asp:CustomValidator>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true"/>    
     </form>
 </body>
 </html>

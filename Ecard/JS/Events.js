@@ -14,13 +14,22 @@
                 document.querySelector('.header').classList.add('max');
             }
         }
+
     });
 });
 
 
-    function ConfirmaExclusao() {
+function ConfirmaExclusao() {
         return confirm('Deseja realmente excluir este registro?');
 }
+
+function CpfNaoCadastrado() {
+    return confirm('Seu CPF não foi cadastrado por nenhuma instituição de ensino.');
+}
+
+    
+
+    
 
 
 

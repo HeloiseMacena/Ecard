@@ -34,15 +34,15 @@ namespace Ecard
             Ecard.DAL.DALEstudante dal = new Ecard.DAL.DALEstudante();
             if (dal.ExisteEstudante(TextCPF.Text) == false)
             {
-                //lembrar de fazer um código novo
-               // dal.Insert(pr);
+                CustomValidator1.IsValid = false;
+                //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "mensagem", "CpfNaoCadastrado()", true);
             }
             else
             {
                 dal.Update(pr);
                 dal.MudarSituacaoEstudante(0, TextCPF.Text);
+                Response.Redirect("~//TelaInicial.aspx");
             }
-            Response.Redirect("~//TelaInicial.aspx");
         }
     }
 }
