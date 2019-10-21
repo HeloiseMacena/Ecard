@@ -140,8 +140,7 @@ namespace Ecard.DAL
             cmd = new SqlCommand("Select @@identity as id", conn);
             int id = Convert.ToInt32(cmd.ExecuteScalar());
             DALSolicitacao_instituicao dal = new DALSolicitacao_instituicao();
-            Modelo.Solicitacao_instituicao solicitacao = new Modelo.Solicitacao_instituicao();
-            dal.Insert(solicitacao, id);
+            dal.Insert(id);
 
         }
 
