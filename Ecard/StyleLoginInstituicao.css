@@ -97,11 +97,12 @@ p {
 .textbox1 {
     margin-bottom: 15px;
     width: 100%;
-    padding: 20px;
+    padding: 12px;
     background-color: white;
     color: #a1a1a1;
     border-style: none;
     border-radius: 2px;
+    font-size:15px;
 }
 
 .image {

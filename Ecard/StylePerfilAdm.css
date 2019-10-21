@@ -419,23 +419,24 @@ form#form1 {
 
 .nov-header {
     width: 100%;
-    padding: 15px 20px;
     background-color: white;
     border-radius: 2px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 52px;
 }
 
 .nov-text {
     margin-top: 20px;
     width: 75%;
-    padding: 15px 20px;
-    background-color: white;
+    padding: 12px 20px;
+    background-color: rgba(235, 235, 235, 0.46);
     color: black;
     border-style: none;
-    border-radius: 4px;
+    border-radius: 2px;
 }
+
 
 .space {
     display: flex;
