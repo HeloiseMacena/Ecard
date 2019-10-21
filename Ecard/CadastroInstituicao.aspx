@@ -35,7 +35,7 @@
                     <asp:TextBox ID="TextCodigo" CssClass="textbox1" runat="server" type="String" placeholder="Código do INEP/MEC" MaxLength="8"></asp:TextBox>
                  </div> 
                  <div class="textbox">
-                    <asp:TextBox ID="TextCNPJ" CssClass="textbox1" runat="server" type="String" placeholder="CNPJ" MaxLength="18"></asp:TextBox>
+                    <asp:TextBox ID="TextCNPJ" CssClass="textbox1" runat="server" type="String" placeholder="CNPJ" MaxLength="14"></asp:TextBox>
                  </div>    
                  <div class="textbox">
                     <asp:TextBox ID="TextSenha" CssClass="textbox1" runat="server" type="Password" placeholder="Senha"></asp:TextBox>
@@ -45,7 +45,7 @@
                     <asp:CompareValidator ID="CompareValidator2" CssClass="compare" runat="server" Display="Dynamic" type="String" controltovalidate="TextConSenha" controltocompare="TextSenha" enableclientscript="true" text="* Os campos de senha devem ser iguais."></asp:CompareValidator>           	           
                  </div> 
                  <div class="textbox">
-                     <asp:TextBox ID="TextTelefone" CssClass="textbox1" runat="server" type="String" placeholder="Telefone" MaxLength="14"></asp:TextBox>
+                     <asp:TextBox ID="TextTelefone" CssClass="textbox1" runat="server" type="String" placeholder="Telefone" MaxLength="11"></asp:TextBox>
                  </div> 
             </div>
             <div class="coluna-3">
@@ -56,7 +56,7 @@
                     <asp:TextBox ID="TextBairro" CssClass="textbox1" runat="server" type="text" placeholder="Bairro"></asp:TextBox>
                 </div>
                 <div class="textbox">
-                    <asp:TextBox ID="TextCEP" CssClass="textbox1" runat="server" type="text" placeholder="CEP" MaxLength="10"></asp:TextBox>
+                    <asp:TextBox ID="TextCEP" CssClass="textbox1" runat="server" type="text" placeholder="CEP" MaxLength="8"></asp:TextBox>
                 </div>
                 <div class="textbox">
                     <asp:TextBox ID="TextMunicipio" CssClass="textbox1" runat="server" type="text" placeholder="Municipio"></asp:TextBox>
@@ -77,9 +77,9 @@
             </div>
         </div>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Código INEP/MEC inválido" ValidationGroup="validateGroup" ControlToValidate="TextCodigo" ValidationExpression="^\d{8}$"></asp:RegularExpressionValidator>
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="CNPJ inválido" ValidationGroup="validateGroup" ControlToValidate="TextCNPJ" ValidationExpression="^(\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2})|(\d{14})$"></asp:RegularExpressionValidator>        
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" CssClass="compare" runat="server" Display="none" ErrorMessage="CEP inválido" ValidationGroup="validateGroup" ControlToValidate="TextCEP" ValidationExpression="^(\d{5}-\d{3})|(\d{8})$"></asp:RegularExpressionValidator>
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" CssClass="compare" runat="server" Display="none" ErrorMessage="Telefone inválido" ValidationGroup="validateGroup" ControlToValidate="TextTelefone" ValidationExpression="^(\(\d{2}\)\d{5}-\d{4})|(\d{2}\d{5}\d{4})$"></asp:RegularExpressionValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="CNPJ inválido" ValidationGroup="validateGroup" ControlToValidate="TextCNPJ" ValidationExpression="^\d{14}$"></asp:RegularExpressionValidator>        
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" CssClass="compare" runat="server" Display="none" ErrorMessage="CEP inválido" ValidationGroup="validateGroup" ControlToValidate="TextCEP" ValidationExpression="^\d{8}$"></asp:RegularExpressionValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" CssClass="compare" runat="server" Display="none" ErrorMessage="Telefone inválido" ValidationGroup="validateGroup" ControlToValidate="TextTelefone" ValidationExpression="^\d{2}\d{5}\d{4}$"></asp:RegularExpressionValidator>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator5" CssClass="compare" runat="server" Display="none" ErrorMessage="Número inválido" ValidationGroup="validateGroup" ControlToValidate="TextNumero" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator6" CssClass="compare" runat="server" Display="none" ErrorMessage="Email inválido" ValidationGroup="validateGroup" ControlToValidate="TextEmail" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator7" CssClass="compare" runat="server" Display="none" ErrorMessage="Email inválido" ValidationGroup="validateGroup" ControlToValidate="TextConEmail" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>

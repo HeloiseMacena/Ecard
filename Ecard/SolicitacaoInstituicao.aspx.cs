@@ -56,7 +56,7 @@ namespace Ecard
         }
 
 
-        protected void Aceitar_click(object sender, EventArgs e)
+        protected void Enviar_click(object sender, EventArgs e)
         {
             id = int.Parse(Id_instituicao.Text);
             DAL.DALSolicitacao_instituicao dal_solicitacao = new DAL.DALSolicitacao_instituicao();
