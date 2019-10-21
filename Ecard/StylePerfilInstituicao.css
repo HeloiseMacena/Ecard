@@ -231,7 +231,7 @@ form#form1 {
 }
 
 .box1-title {
-    justify-content: flex-start;
+    justify-content: unset;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -433,7 +433,7 @@ form#form1 {
     margin-top: 20px;
     width: 75%;
     padding: 12px 20px;
-    background-color: #ebebeb;
+    background-color: rgba(235, 235, 235, 0.46);
     color: black;
     border-style: none;
     border-radius: 2px;

@@ -73,11 +73,11 @@ namespace Ecard
                         {
                             if (aDALEstudante.ExisteEstudante(aListEstudante[i].cpf) == true)
                             {
-                                aDALEstudante.MudarSituacaoTrue(aListEstudante[i].cpf);
+                                aDALEstudante.MudarSituacaoTrue(aListEstudante[i].cpf, int.Parse(Session["userid"].ToString()));
                             }
                             else
                             {
-                                aDALEstudante.Insert(aListEstudante[i], int.Parse(Session["userid"].ToString()));
+                                aDALEstudante.InsertPreCadastrado(aListEstudante[i], int.Parse(Session["userid"].ToString()));
                             }
                         }
                     }

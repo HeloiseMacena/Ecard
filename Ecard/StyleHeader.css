@@ -183,7 +183,7 @@ form#form1 {
 
 .box2-button {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
     width: 100%;
@@ -197,6 +197,7 @@ form#form1 {
         background-color: #17A2B8;
         color: white;
         border-bottom-color: #13899C;
+        margin-left: 87px;
         cursor: pointer;
     }
 
@@ -323,8 +324,6 @@ form#form1 {
     }
 
 .alert {
-    padding: 10px;
-    margin-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 4px;
     text-align: center;
@@ -346,9 +345,11 @@ form#form1 {
     color: #3c763d;
     background-color: #dff0d8;
     border-color: #d6e9c6;
+    padding: 6px 12px 6px 12px;
     padding: 10px;
     margin-top: 2px;
     display: none;
+    margin-left: 75px;
     border-radius: 2px;
 }
 

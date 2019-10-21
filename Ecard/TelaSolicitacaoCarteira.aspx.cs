@@ -18,6 +18,7 @@ namespace Ecard
             {
                 Response.Redirect("~/TelaInicial.aspx");
             }
+
             int id = int.Parse(Session["userid"].ToString());
             DALEstudante dal = new DALEstudante();
             DALInstituicao dal_instituicao = new DALInstituicao();
@@ -28,8 +29,6 @@ namespace Ecard
             LabelCPF.Text = estudante.cpf;
             LabelInstituicao.Text = instituicao.Nome;
             Termo.Text = "Eu, " + estudante.nome +", CPF: "+ estudante.cpf + ", RG: " + estudante.rg;
-
-
         }
 
         protected void btnUpload_Click(object sender, EventArgs e)
@@ -53,6 +52,7 @@ namespace Ecard
                 //userImage.ImageUrl = "Imagens/" + FileUpload1.FileName;
                 
                 userImage.ImageUrl = "Imagens/" + nome_arquivo;
+
             } catch {
                 
             }
@@ -67,7 +67,7 @@ namespace Ecard
                 Modelo.Estudante estudante = dal.Select(id); 
                 if (estudante.status == 0)
                 {
-                    estudante.status = 1;
+                    estudante.carteira_status = 1;
                     dal.Update(estudante);
                     DALSolicitacao_carteira dals = new DALSolicitacao_carteira();
                     dals.Insert(id);

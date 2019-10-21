@@ -1,3 +1,14 @@
+<<<<<<< HEAD
 querolaine;quero@gmail.com;11498580440
 piter parque;parquinho@gmail.com;123456789
 meurijeiny;pretorosa@gmail.com;987654321
+=======
+Aurora Marli Larissa Melo;273541845;08031743495
+Breno Bernardo Brito;03421936439;48260604611
+Alícia Simone Heloisa Duarte;01224853431;44477106211
+Cláudia Débora Valentina Carvalho;82289382418;12154861211
+Sophie Liz Alves;05336075400;13468492811
+Caleb André Lima;35439597433;48010077911
+Heloise Vitoria Macena;70023025409;00331228211
+João Paulo Honório;125469832;12979187461
+>>>>>>> 580027aa2a8fd7928fda49b573833165d798a416
