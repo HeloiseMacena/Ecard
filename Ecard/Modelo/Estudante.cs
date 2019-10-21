@@ -15,12 +15,14 @@ namespace Ecard.Modelo
         public int status;
         /* status:  
             0: apto
-            1: carteira solicitada
-            2: inapto 
-             
+            1: inapto              
         */
         public int carteira_status;
-        /*  excluir carteira_status depois*/
+        /*  0: não tem carteira
+            1: solicitou
+            2: deferido
+            3: indeferido
+        */
         public string carteira_foto;
         public double carteira_saldo;
         public int carteira_numero;
