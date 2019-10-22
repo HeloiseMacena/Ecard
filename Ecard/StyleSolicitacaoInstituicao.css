@@ -386,7 +386,7 @@ form#form1 {
 
 .modal-content {
     width: 600px;
-    height: 350px;
+    height: 450px;
     background: transparent;
     display: flex;
     flex-direction: column;
@@ -424,7 +424,7 @@ form#form1 {
 .item-campo {
     width: 100%;
     display: flex;
-    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .item-campo-nome{
@@ -458,6 +458,25 @@ form#form1 {
     font: 16px Arial;
 }
 
+.btn-modal {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.btn-modal > .btn-act{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 1px;
+    background-color: #17A2B8;
+    color: white;
+    border-bottom-color: #13899C;
+    cursor: pointer;
+}
+
 .action-button {
     position: relative;
     padding: 5px 10px;
@@ -470,6 +489,16 @@ form#form1 {
     transition: all 0.15s linear;
     text-align: center;
     z-index: 0;
+}
+
+.blue {
+    background-color: #17A2B8;
+    border: none;
+    border-radius: 1px;
+    color: white;
+    border-bottom-color: #13899C;
+    text-shadow: 0px 0px #848786;
+    cursor: pointer;
 }
 
 #show-modal:hover {
