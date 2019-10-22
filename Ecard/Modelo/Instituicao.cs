@@ -16,8 +16,7 @@ namespace Ecard.Modelo
         /* status: 
             0: solicitado
             1: reprovado
-            2: aprovado
-             
+            2: aprovado          
         */
         public string Senha { get; set; }
         public string Endereco_bairro { get; set; }
