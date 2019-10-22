@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Administrador.master.cs" Inherits="Ecard.Administrador" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
+    <script src="JS/Events.js"></script>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header max">
+            <a style="width:100px;" href="TelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
+            <div class="ol">
+                <div class="li">Menu</div>
+                <div class="li">Page 2</div>
+                <div class="li">Page 3</div>
+                <div class="menu-user"><asp:Label ID="username" runat="server" Text="Label"></asp:Label></div>
+                <div class="menu-logout" ><a href="TelaInicial.aspx"> <i class="fas fa-sign-out-alt"> </i></a></div>
+            </div>
+        </div>
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <div class="box2">
+                <div class="box2-user-container">
+                    <div class="box2-user">
+                         <i class="fas fa-user-circle"></i>
+                         <div class="user-name"> 
+                            <h1>
+                                <asp:Label ID="username2" runat="server" Text="Label"></asp:Label>
+
+                            </h1>
+                            <p>Administrador</p>
+                        </div>
+                    </div>
+                    <div class="box2-button">
+                         <asp:Button runat="server" CssClass="btn2"  Text="Ver Perfil" PostBackUrl="~/PerfilAdm.aspx" />
+                    </div>
+                </div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

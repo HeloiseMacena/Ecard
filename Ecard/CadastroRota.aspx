@@ -14,7 +14,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="header max">
-            <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
+            <a style="width:100px;" href="TelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
             <div class="ol">
                 <div class="li">Menu</div>
                 <div class="li">Page 2</div>
@@ -27,7 +27,7 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
-                        <a class="ai" href="WebFormTelaPrincipalAdm.aspx"><i class="fas fa-arrow-left"></i></a>
+                        <a class="ai" href="TelaPrincipalAdm.aspx"><i class="fas fa-arrow-left"></i></a>
                        <p>Rotas</p>
                     </div>
                     <div class="box1-button">

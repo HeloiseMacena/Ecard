@@ -7,10 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Ecard
 {
-    public partial class WebFormTelaPrincipalAdm : System.Web.UI.Page
+    public partial class Administrador : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (Session["logged"] != null)
             {
                 if (Session["accesslevel"] == "instituicao") Response.Redirect("~/TelaPrincipalInstituicao.aspx");
@@ -20,10 +21,9 @@ namespace Ecard
             {
                 Response.Redirect("~/TelaInicial.aspx");
             }
-            DAL.DALSolicitacao_carteira carteira = new DAL.DALSolicitacao_carteira();
-            ContCarteira.Text = carteira.CountSolicitacoes().ToString();
-            DAL.DALSolicitacao_instituicao instituicao = new DAL.DALSolicitacao_instituicao();
-            Continstituicao.Text = instituicao.CountSolicitacoes().ToString();
+            username.Text = "Godofredo Lopes";
+            username2.Text = "Godofredo Lopes";
+            
         }
     }
 }

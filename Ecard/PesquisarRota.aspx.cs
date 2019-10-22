@@ -15,7 +15,7 @@ namespace Ecard
             if (Session["logged"] != null)
             {
                 if (Session["accesslevel"] == "instituicao") Response.Redirect("~/TelaPrincipalInstituicao.aspx");
-                if (Session["accesslevel"] == "administrador") Response.Redirect("~/WebFormTelaPrincipalAdm.aspx");
+                if (Session["accesslevel"] == "administrador") Response.Redirect("~/TelaPrincipalAdm.aspx");
             }
             else
             {

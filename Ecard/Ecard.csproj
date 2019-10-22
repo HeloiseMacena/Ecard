@@ -132,15 +132,22 @@
     <Content Include="StyleTelaPrincipalInstituicao.css" />
     <Content Include="StyleTelaSolicitacaoCarteira.css" />
     <Content Include="TelaInicial.aspx" />
+    <Content Include="TelaPrincipalAdm.aspx" />
     <Content Include="TelaPrincipalEstudante.aspx" />
     <Content Include="TelaPrincipalInstituicao.aspx" />
     <Content Include="TelaSolicitacaoCarteira.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="WebFormTelaPrincipalAdm.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador.Master.cs">
+      <DependentUpon>Administrador.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador.Master.designer.cs">
+      <DependentUpon>Administrador.Master</DependentUpon>
+    </Compile>
     <Compile Include="CadastroBairro.aspx.cs">
       <DependentUpon>CadastroBairro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -385,6 +392,13 @@
     <Compile Include="TelaInicial.aspx.designer.cs">
       <DependentUpon>TelaInicial.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TelaPrincipalAdm.aspx.cs">
+      <DependentUpon>TelaPrincipalAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TelaPrincipalAdm.aspx.designer.cs">
+      <DependentUpon>TelaPrincipalAdm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TelaPrincipalEstudante.aspx.cs">
       <DependentUpon>TelaPrincipalEstudante.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -406,17 +420,11 @@
     <Compile Include="TelaSolicitacaoCarteira.aspx.designer.cs">
       <DependentUpon>TelaSolicitacaoCarteira.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebFormTelaPrincipalAdm.aspx.cs">
-      <DependentUpon>WebFormTelaPrincipalAdm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebFormTelaPrincipalAdm.aspx.designer.cs">
-      <DependentUpon>WebFormTelaPrincipalAdm.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Estudante.Master" />
     <Content Include="Minstituicao.Master" />
+    <Content Include="Administrador.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
