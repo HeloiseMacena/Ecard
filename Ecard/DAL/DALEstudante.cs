@@ -41,7 +41,7 @@ namespace Ecard.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public double SelectStatus(int id)
+        public int SelectStatus(int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();

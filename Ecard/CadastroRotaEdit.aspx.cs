@@ -65,7 +65,10 @@ namespace Ecard
                     referencias.Add(int.Parse(item.Value.ToString()));
                 }
             }
-            d.Insert(rota,referencias,bairros);
+            if (referencias.Count != 0 || bairros.Count != 0)
+            {
+                d.Insert(rota, referencias, bairros);
+            }
             Response.Redirect("~//CadastroRota.aspx"); 
         }
     }

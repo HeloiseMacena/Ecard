@@ -27,7 +27,7 @@ namespace Ecard
 
             if (aDALEstudante.SelectStatusCarteira(a) == 0)
             {
-                welcome.Text = "Bem Vindo! Adquira a sua carteira";
+                welcome.Text = "Bem Vindo ao Ecard! Adquira a sua carteira";
                 welcome.Style["display"] = "block";
                 solicitado.Style["display"] = "none";
                 deferido.Style["display"] = "none";
@@ -45,7 +45,7 @@ namespace Ecard
 
             if (aDALEstudante.SelectStatusCarteira(a) == 2)
             {
-                deferido.Text = "Solicitação deferida.Você deverá pegar a sua carteira de estudante no NatalCard zona sul Av.Sen.Salgado filho(Próximo à Agaé) -Candelária, Natal / RN ";
+                deferido.Text = "Solicitação deferida. Você deverá pegar a sua carteira de estudante no NatalCard zona sul Av.Sen.Salgado filho (Próximo à Agaé) - Candelária, Natal / RN ";
                 welcome.Style["display"] = "none";
                 solicitado.Style["display"] = "none";
                 deferido.Style["display"] = "block";

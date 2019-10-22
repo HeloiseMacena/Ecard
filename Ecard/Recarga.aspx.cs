@@ -29,18 +29,22 @@ namespace Ecard
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
-            
-            double valor = double.Parse(TextBoxRecarga.Text);
-            int id = int.Parse(Session["userid"].ToString());
-            DALEstudante dal = new DALEstudante();
-            Modelo.Estudante estudante = dal.Select(id);
-            DALRecarga dalrec = new DALRecarga();
-            Modelo.Recarga r = new Modelo.Recarga(valor);
-            dalrec.Insert(r, estudante.id);
-            estudante.carteira_saldo += valor;
-            dal.Update(estudante);
-            LabelSaldo.Text = estudante.carteira_saldo.ToString();
-            Response.Redirect("~/TelaPrincipalEstudante.aspx");
+            DAL.DALEstudante aEstudante = new DAL.DALEstudante();
+            int a = int.Parse(Session["userid"].ToString());
+            if (aEstudante.SelectStatus(a) != 1)
+            {
+                double valor = double.Parse(TextBoxRecarga.Text);
+                int id = int.Parse(Session["userid"].ToString());
+                DALEstudante dal = new DALEstudante();
+                Modelo.Estudante estudante = dal.Select(id);
+                DALRecarga dalrec = new DALRecarga();
+                Modelo.Recarga r = new Modelo.Recarga(valor);
+                dalrec.Insert(r, estudante.id);
+                estudante.carteira_saldo += valor;
+                dal.Update(estudante);
+                LabelSaldo.Text = estudante.carteira_saldo.ToString();
+                Response.Redirect("~/TelaPrincipalEstudante.aspx");
+            }
         }
     }
 }
