@@ -13,15 +13,6 @@ namespace Ecard
         int id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["logged"] != null)
-            {
-                if (Session["accesslevel"] == "instituicao") Response.Redirect("~/TelaPrincipalInstituicao.aspx");
-                if (Session["accesslevel"] == "administrador") Response.Redirect("~/WebFormTelaPrincipalAdm.aspx");
-            }
-            else
-            {
-                Response.Redirect("~/TelaInicial.aspx");
-            }
             if (!IsPostBack)
             {
                 id = int.Parse(Session["userid"].ToString());
@@ -39,11 +30,14 @@ namespace Ecard
             int id = int.Parse(Session["userid"].ToString());
             DALEstudante dal = new DALEstudante();
             Modelo.Estudante estudante = dal.Select(id);
-            if (TextAtual.Text == estudante.senha && TextConfirmacao.Text == TextNova.Text)
+            if (TextAtual.Text == estudante.senha)
             {
                 estudante.senha = TextNova.Text;
                 dal.Update(estudante);
                 Response.Redirect("~/PerfilEstudante.aspx");
+            }
+            {
+                CustomValidator1.IsValid = false;
             }
         }
 

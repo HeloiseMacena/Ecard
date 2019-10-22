@@ -58,6 +58,15 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.TextBox TextAtual;
         
         /// <summary>
+        /// Controle CustomValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
+        
+        /// <summary>
         /// Controle TextNova.
         /// </summary>
         /// <remarks>

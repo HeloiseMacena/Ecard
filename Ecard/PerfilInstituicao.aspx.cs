@@ -28,11 +28,15 @@ namespace Ecard
             id = int.Parse(Session["userid"].ToString());
             DALInstituicao dal = new DALInstituicao();
             Modelo.Instituicao instituicao = dal.Select(id);
-            if (TextAtual.Text == instituicao.Senha && TextConfirmacao.Text == TextNova.Text)
+            if (TextAtual.Text == instituicao.Senha)
             {
                 instituicao.Senha = TextNova.Text;
                 dal.Update(instituicao);
                 Response.Redirect("~/PerfilInstituicao.aspx");
+            }
+            else
+            {
+                CustomValidator1.IsValid = false;
             }
         }
 

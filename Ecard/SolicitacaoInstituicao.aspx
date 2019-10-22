@@ -121,7 +121,7 @@
                                                 <asp:ListItem>Não há erro...</asp:ListItem>
                                                 <asp:ListItem>Código INEP/MEC não identificado</asp:ListItem>
                                                 <asp:ListItem>CNPJ não identificado</asp:ListItem>
-                                                <asp:ListItem>Código INEP/MEC e CNPJ não identificado</asp:ListItem>
+                                                <asp:ListItem>Código INEP/MEC e CNPJ não identificados</asp:ListItem>
                                             </asp:DropDownList>                                               
                                        </div>                                   
                                        <div class="btn-modal">

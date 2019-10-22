@@ -22,13 +22,22 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.Label TextSituacao;
         
         /// <summary>
-        /// Controle TextBoxSituacao.
+        /// Controle TextBoxCNPJ.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxSituacao;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxCNPJ;
+        
+        /// <summary>
+        /// Controle TextBoxCodigo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxCodigo;
         
         /// <summary>
         /// Controle ButtonSituacao.

@@ -24,6 +24,7 @@
             <div class="box1-midi">
                 <h1 class="title-1">Mudar Senha</h1>
                 <asp:TextBox ID="TextAtual" runat="server" CssClass="box1-mid" placeholder="Senha atual" type="password"></asp:TextBox>
+                <asp:CustomValidator ID="CustomValidator1" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="A sua senha atual não foi informada corretamente"></asp:CustomValidator>
                 <asp:TextBox ID="TextNova" runat="server" CssClass="box1-mid" placeholder="Nova senha" type="password"></asp:TextBox>
                 <asp:TextBox ID="TextConfirmacao" runat="server" CssClass="box1-mid" placeholder="Confirmar nova senha" type="password"></asp:TextBox>                             
                 <div class="btn-b2">

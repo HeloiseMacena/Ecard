@@ -26,7 +26,8 @@
                 <asp:Label ID="TextSituacao" runat="server" class="status1" Text=""></asp:Label>
                 </div>
                 <div class="alert3">
-                <asp:TextBox ID="TextBoxSituacao" CssClass="textAlert" runat="server" style="display:none"></asp:TextBox>
+                <asp:TextBox ID="TextBoxCNPJ" CssClass="textAlert" runat="server" style="display:none" PlaceHolder="CNPJ..."></asp:TextBox>
+                <asp:TextBox ID="TextBoxCodigo" CssClass="textAlert" runat="server" style="display:none" PlaceHolder="Codigo..."></asp:TextBox>
                 <asp:Button ID="ButtonSituacao" class="btnAlert" runat="server" Text="Button" style="display:none" OnClick="ButtonSituacao_Click"/>
                 </div>
                 <div class="hl"></div> <!-- horizontal line -->
