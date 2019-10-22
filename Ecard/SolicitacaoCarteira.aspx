@@ -84,43 +84,50 @@
                                     <i class="fas fa-times" id="closeModal" runat="server" onclick="document.querySelector('.modal-container').style.visibility = 'hidden';"></i>
                                 </div>
                                 <div class="modal-body">
-                                 <div class="help-modal">                                
-                                        <div class="rota-modal">
-                                            <div class="rota-modal-nome">
+                                 <div class="campos">                                
+                                        <div class="item-campo">
+                                            <div class="item-campo-nome">
                                                 <asp:Image ID="Image1" runat="server" Width="100" Height="100"/>
-                                             </div>
-                                            <div class="rota-modal-nome">
-                                            <div class="rota-modal-nome">
-                                                <p class="ponto-ref">id:
-                                                    <asp:Label runat="server" type="text" CssClass="imodal" ID="Modal_id"></asp:Label>
-                                               </p>
-                                                </div>
-                                            <div class="rota-modal-nome">
-                                                <p class="ponto-ref">Data:
-                                                   <asp:Label runat="server" type="text" CssClass="imodal" ID="Modal_data"></asp:Label>
-                                                </p>
-                                                </div>
-                                            <div class="rota-modal-nome">
-                                                <p class="ponto-ref">Nome:
-                                                    <asp:Label runat="server" type="text" CssClass="imodal" ID="Modal_estudante"></asp:Label>
-                                                </p>
-                                            </div>  
-                                                <asp:DropDownList runat="server" CssClass="ddlist2" ID="erro">
-                                                <asp:ListItem>Não há erro...</asp:ListItem>
-                                                <asp:ListItem>Foto irregular</asp:ListItem>
+                                            </div>
+                                        </div>
+
+                                            <div class="item-campo">
+                                                <div class="item-campo-nome">
+                                                    <asp:Label runat="server" Cssclass="categoria" Text="ID:"></asp:Label>
+                                                </div>       
+                                                <asp:Label runat="server" type="text" CssClass="imodal" ID="Modal_id"></asp:Label>                                                
+                                            </div>
+
+                                            <div class="item-campo">
+                                                <div class="rota-modal-nome">
+                                                    <asp:Label runat="server" Cssclass="categoria" Text="Data da solicitação:"></asp:Label>
+                                                </div>       
+                                                <asp:Label runat="server" type="text" CssClass="imodal" ID="Modal_data"></asp:Label>
+                                            </div>
+
+                                            <div class="item-campo">
+                                                <div class="rota-modal-nome">
+                                                    <asp:Label runat="server" Cssclass="categoria" Text="Nome:"></asp:Label>
+                                                </div>       
+                                                <asp:Label runat="server" type="text" CssClass="imodal" ID="Modal_estudante"></asp:Label>
+                                            </div>
+                                            
+                                            <div class="item-campo">
+                                                <asp:DropDownList runat="server" CssClass="ddlist" ID="erro">
+                                                    <asp:ListItem>Não há erro...</asp:ListItem>
+                                                    <asp:ListItem>Foto irregular</asp:ListItem>
                                                 </asp:DropDownList>
+                                            </div>                                                                                                                                                                                                                                       
                                             <div class="btn-modal">
                                                 <asp:Button runat="server" CssClass="btn-act" text="Enviar" OnClick="Aceitar_click"/>
                                             </div>
                                         </div>
                                     </div> 
-                                </div>
-                                <div class="modal-footer"></div>
+                                </div>            
                             </div>
                         </div>
                     </div>
                 </div>
-        </div>
     </form>
 </body>
 </html>
