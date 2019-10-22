@@ -16,7 +16,7 @@ namespace Ecard
 
         }
 
-        public static class ValidaCPF
+        /*public static class ValidaCPF
         {
             public static string FormatCPF(string CPF)
             {
@@ -26,7 +26,7 @@ namespace Ecard
             {
                 return Codigo.Replace(".", string.Empty).Replace("-", string.Empty);
             }
-        }
+        }*/
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
