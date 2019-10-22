@@ -77,7 +77,7 @@ namespace Ecard
                             }
                             else
                             {
-                                aDALEstudante.InsertPreCadastrado(aListEstudante[i], int.Parse(Session["userid"].ToString()));
+                                aDALEstudante.Insert(aListEstudante[i], int.Parse(Session["userid"].ToString()));
                             }
                         }
                     }

@@ -35,14 +35,22 @@ namespace Ecard
 
             if (dal.ExisteEstudante(TextCPF.Text) == false)
             {
-                dal.Insert(pr);
                 CustomValidator1.IsValid = false;
             }
             else
             {
-                dal.Update(pr);
-                dal.MudarSituacaoEstudante(0, TextCPF.Text);
-                Response.Redirect("~//TelaInicial.aspx");
+                int id = dal.estudante_id(TextCPF.Text);
+                if (dal.SelectStatus(id) != 2)
+                {
+                    CustomValidator2.IsValid = false;
+                }
+                else
+                {
+                    pr.id = id;
+                    dal.Update(pr);
+                    dal.MudarSituacaoEstudante(0, TextCPF.Text);
+                    Response.Redirect("~//TelaInicial.aspx");
+                }    
             }
         }
     }

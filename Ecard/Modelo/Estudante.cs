@@ -15,7 +15,8 @@ namespace Ecard.Modelo
         public int status;
         /* status:  
             0: apto
-            1: inapto              
+            1: inapto
+            2: cadastrado apenas (pela instituição)
         */
         public int carteira_status;
         /*  0: não tem carteira

@@ -33,6 +33,7 @@
             <div class="textbox">
                 <asp:TextBox ID="TextCPF" runat="server" CssClass="textbox1" type="text" placeholder="CPF (Apenas números)" MaxLength="14"></asp:TextBox>
                 <asp:CustomValidator ID="CustomValidator1" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="* O seu CPF não foi cadastrado pela sua escola."></asp:CustomValidator>
+                <asp:CustomValidator ID="CustomValidator2" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="* O seu CPF já foi cadastrado por você."></asp:CustomValidator>
             </div>
             <div class="textbox">
                 <asp:TextBox ID="TextRG" runat="server" CssClass="textbox1" type="text" placeholder="RG (Apenas números)" MaxLength="9"></asp:TextBox>
