@@ -33,7 +33,7 @@
     display: flex;
     justify-content: space-between;
     align-content: space-between;
-    margin-top: 90px;
+    margin-top: 10px;
 }
 
 .org-1 {
@@ -82,48 +82,140 @@
     color: #555555;
 }
 
-.alert {
+.al {
     border: 1px solid transparent;
     border-radius: 4px;
     text-align: center;
     width: 100%;
 }
 
-.status {
+.neutro {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    border-radius: 2px;
+    padding: 10px;
+    width: 100%;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.statusAviso {
     color: #8a6d3b;
     background-color: #fcf8e3;
     border-color: #faebcc;
     padding: 20px;
-    margin-top: 2px;
     display: none;
     padding: 10px;
     border-radius: 2px;
+    animation: pulseAguarde 1.5s infinite;
 }
 
-.statusAprovado {
+.statusAprov {
     color: #3c763d;
     background-color: #dff0d8;
     border-color: #d6e9c6;
-    padding: 6px 12px 6px 12px;
     padding: 10px;
-    margin-top: 2px;
     display: none;
-    margin-left: 75px;
     border-radius: 2px;
+    margin: auto;
+    margin: 0 auto;
+    animation: pulseDeferido 1.5s infinite;
 }
 
-.statusNegado {
+.statusIndeferido {
     color: #a94442;
     background-color: #f2dede;
     border-color: #ebccd1;
     padding: 10px;
-    margin-top: 2px;
     display: none;
     border-radius: 2px;
+    animation: pulseIndeferido 1.5s infinite;
+}
+/*NEUTRO*/
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
 }
 
-/* RESPONSIVIDADE */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
 
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+
+/*AGUARDE*/
+@keyframes pulseAguarde {
+    0% {
+        transform: scale(.9);
+    }
+
+    70% {
+        transform: scale(.9);
+        box-shadow: 0 0 0 5px rgba(252, 248, 227, 0.8);
+    }
+
+    100% {
+        transform: scale(.9);
+        box-shadow: 0 0 0 0 rgba(252, 248, 227, 0.8);
+    }
+}
+/*INDEFERIDO*/
+@keyframes pulseIndeferido {
+    0% {
+        transform: scale(.9);
+    }
+
+    70% {
+        transform: scale(.9);
+        box-shadow: 0 0 0 5px rgba(242, 222, 222, 0.78);
+    }
+
+    100% {
+        transform: scale(.9);
+        box-shadow: 0 0 0 0 rgba(242, 222, 222, 0.78);
+    }
+}
+/*DEFERIDO*/
+@keyframes pulseDeferido {
+    0% {
+        transform: scale(.9);
+    }
+
+    70% {
+        transform: scale(.9);
+        box-shadow: 0 0 0 5px rgba(223, 240, 216, 0.6);
+    }
+
+    100% {
+        transform: scale(.9);
+        box-shadow: 0 0 0 0 rgba(223, 240, 216, 0.6);
+    }
+}
+/* RESPONSIVIDADE */
 @media only screen and (max-width: 1000px) {
     .header {
         margin: 0;

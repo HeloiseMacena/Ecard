@@ -22,9 +22,13 @@
                     <div class="box1-button">
                     </div>
                 </div>
-                <asp:Label ID="TextSituacao" runat="server" Text="Label"></asp:Label>
-                <asp:TextBox ID="TextBoxSituacao" runat="server" style="display:none"></asp:TextBox>
-                <asp:Button ID="ButtonSituacao" runat="server" Text="Button" style="display:none" OnClick="ButtonSituacao_Click"/>
+                <div class="alert2">
+                <asp:Label ID="TextSituacao" runat="server" class="status1" Text=""></asp:Label>
+                </div>
+                <div class="alert3">
+                <asp:TextBox ID="TextBoxSituacao" CssClass="textAlert" runat="server" style="display:none"></asp:TextBox>
+                <asp:Button ID="ButtonSituacao" class="btnAlert" runat="server" Text="Button" style="display:none" OnClick="ButtonSituacao_Click"/>
+                </div>
                 <div class="hl"></div> <!-- horizontal line -->
                 <div class="alerta">
                   <p class="attention">  <i class="fas fa-exclamation-circle"></i> Aviso: Somente enviar arquivos de texto (*.txt). 

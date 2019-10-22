@@ -36,7 +36,7 @@ namespace Ecard
 
             if (aDALEstudante.SelectStatusCarteira(a) == 1)
             {
-                solicitado.Text = "Aguardando Aprovação";
+                solicitado.Text = "Aguardando Aprovação. Espere o deferimento de sua carteira.";
                 welcome.Style["display"] = "none";
                 solicitado.Style["display"] = "block";
                 deferido.Style["display"] = "none";

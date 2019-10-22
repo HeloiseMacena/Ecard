@@ -477,6 +477,26 @@ form#form1 {
     width: 100%;
 }
 
+.alert2 {
+    margin-top: 20px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    text-align: center;
+    width: 100%;
+    display:flex;
+}
+
+
+.alert3 {
+    margin-top: 10px;
+    border-radius: 2px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    justify-content:center;
+}
+
 
 .btnUpload {
     background-color: #17A2B8;
@@ -514,6 +534,35 @@ form#form1 {
     margin-top: 24px;
     display: none;
     border-radius: 2px;
+}
+
+.status1 {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    border-radius: 2px;
+    padding: 10px;
+    width:100%;
+}
+
+.textAlert {
+    width: 50%;
+    padding: 12px 20px;
+    background-color: rgba(235, 235, 235, 0.46);
+    color: black;
+    border-style: none;
+    border-radius: 2px;
+}
+
+.btnAlert {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 2px;
+    background-color: #17A2B8;
+    color: #EBEBEB;
+    border-bottom-color: #13899C;
+    cursor: pointer;
+    margin-left: 15px;
 }
 
 /* RESPONSIVIDADE */
