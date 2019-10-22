@@ -258,5 +258,45 @@ namespace Ecard.DAL
  
             return Instituicao;
         }
+
+        public bool ExisteCNPJ(string cnpj)
+        {
+            bool a = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Instituicao where cnpj = @cnpj";
+            cmd.Parameters.AddWithValue("@cnpj", cnpj);
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
+            if (dr.HasRows)
+            {
+                a = true;
+            }
+
+            conn.Close();
+            return a;
+        }
+
+        public bool ExisteCodigo(string codigo)
+        {
+            bool a = false;
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Instituicao where codigo_inep = @codigo";
+            cmd.Parameters.AddWithValue("@codigo",codigo);
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
+            if (dr.HasRows)
+            {
+                a = true;
+            }
+
+            conn.Close();
+            return a;
+        }
     }
 }

@@ -19,10 +19,20 @@ namespace Ecard
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
             DALInstituicao dal = new DALInstituicao();
-            Instituicao instituicao = new Instituicao(TextBox1.Text, TextEmail.Text, TextCodigo.Text, 0, TextSenha.Text, TextBairro.Text, TextCEP.Text, TextMunicipio.Text, TextLogradouro.Text, TextNumero.Text, TextCNPJ.Text);
-            dal.Insert(instituicao);
-            Response.Redirect("~//TelaInicial.aspx");
+            if (dal.ExisteCNPJ(TextCNPJ.Text) || dal.ExisteCodigo(TextCodigo.Text))
+            {
+                if (dal.ExisteCNPJ(TextCNPJ.Text)) CustomValidator2.IsValid = false;
+                if (dal.ExisteCodigo(TextCodigo.Text)) CustomValidator1.IsValid = false;
+            }
+            else
+            {
+                Instituicao instituicao = new Instituicao(TextBox1.Text, TextEmail.Text, TextCodigo.Text, 0, TextSenha.Text, TextBairro.Text, TextCEP.Text, TextMunicipio.Text, TextLogradouro.Text, TextNumero.Text, TextCNPJ.Text);
+                dal.Insert(instituicao);
+                Response.Redirect("~//TelaInicial.aspx");
+            }
+            
         }
     }
 }

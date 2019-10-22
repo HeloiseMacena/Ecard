@@ -58,6 +58,15 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.TextBox TextCodigo;
         
         /// <summary>
+        /// Controle CustomValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
+        
+        /// <summary>
         /// Controle TextCNPJ.
         /// </summary>
         /// <remarks>
@@ -67,13 +76,13 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.TextBox TextCNPJ;
         
         /// <summary>
-        /// Controle CustomValidator1.
+        /// Controle CustomValidator2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator2;
         
         /// <summary>
         /// Controle TextSenha.

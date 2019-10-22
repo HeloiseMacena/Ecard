@@ -33,10 +33,11 @@
             <div class ="coluna-3">
                  <div class="textbox">
                     <asp:TextBox ID="TextCodigo" CssClass="textbox1" runat="server" type="String" placeholder="Código do INEP/MEC" MaxLength="8"></asp:TextBox>
+                     <asp:CustomValidator ID="CustomValidator1" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="* Já existe uma conta com esse Código INEP / MEC"></asp:CustomValidator>
                  </div> 
                  <div class="textbox">
                     <asp:TextBox ID="TextCNPJ" CssClass="textbox1" runat="server" type="String" placeholder="CNPJ" MaxLength="14"></asp:TextBox>
-                    <asp:CustomValidator ID="CustomValidator1" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="* Já existe uma conta com esse CNPJ."></asp:CustomValidator>
+                    <asp:CustomValidator ID="CustomValidator2" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="* Já existe uma conta com esse CNPJ."></asp:CustomValidator>
                  </div>    
                  <div class="textbox">
                     <asp:TextBox ID="TextSenha" CssClass="textbox1" runat="server" type="Password" placeholder="Senha"></asp:TextBox>
