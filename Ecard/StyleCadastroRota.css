@@ -298,7 +298,10 @@ input[type=checkbox] {
     margin-right: 5px;
 }
 
-
+.compare {
+    color: red;
+    font-size: 12px;
+}
 
 
 .btn-add-1 {

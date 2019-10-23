@@ -28,8 +28,6 @@ namespace Ecard
                 Session["accesslevel"] = "estudante";
                 Response.Redirect("~/TelaPrincipalEstudante.aspx");
             }
-
-
         }
     }
 }

@@ -84,29 +84,29 @@
                                     <i class="fas fa-times" id="closeModal" runat="server" onclick="document.querySelector('.modal-container').style.visibility = 'hidden';"></i>
                                 </div>
                                 <div class="modal-body">
-                                 <div class="campos">                                
-                                        <div class="item-campo">
-                                            <div class="item-campo-nome">
-                                                <asp:Image ID="Image1" runat="server" Width="100" Height="100"/>
+                                 <div class="campos">
+                                        <div class="row1">
+                                            <div class="row1-coluna1">                                                
+                                                <asp:Image ID="Image1" runat="server" Width="150" Height="150"/>                                                                     
                                             </div>
-                                        </div>
-
+                                            <div class="row1-coluna2">
+                                                <div class="item-campo">
+                                                    <div class="item-campo-nome">
+                                                        <asp:Label runat="server" Cssclass="categoria" Text="Data da solicitação:"></asp:Label>
+                                                    </div>       
+                                                    <asp:Label runat="server" type="text" CssClass="imodal" ID="Modal_data"></asp:Label>
+                                                </div>
+                                                <div class="item-campo">
+                                                    <div class="item-campo-nome">
+                                                        <asp:Label runat="server" Cssclass="categoria" Text="ID:"></asp:Label>
+                                                    </div>       
+                                                    <asp:Label runat="server" type="text" CssClass="imodal" ID="Modal_id"></asp:Label>                                                
+                                                </div>
+                                            </div>
+                                        </div>                                      
+                                        <div class="row2">
                                             <div class="item-campo">
                                                 <div class="item-campo-nome">
-                                                    <asp:Label runat="server" Cssclass="categoria" Text="ID:"></asp:Label>
-                                                </div>       
-                                                <asp:Label runat="server" type="text" CssClass="imodal" ID="Modal_id"></asp:Label>                                                
-                                            </div>
-
-                                            <div class="item-campo">
-                                                <div class="rota-modal-nome">
-                                                    <asp:Label runat="server" Cssclass="categoria" Text="Data da solicitação:"></asp:Label>
-                                                </div>       
-                                                <asp:Label runat="server" type="text" CssClass="imodal" ID="Modal_data"></asp:Label>
-                                            </div>
-
-                                            <div class="item-campo">
-                                                <div class="rota-modal-nome">
                                                     <asp:Label runat="server" Cssclass="categoria" Text="Nome:"></asp:Label>
                                                 </div>       
                                                 <asp:Label runat="server" type="text" CssClass="imodal" ID="Modal_estudante"></asp:Label>
@@ -121,6 +121,8 @@
                                             <div class="btn-modal">
                                                 <asp:Button runat="server" CssClass="btn-act" text="Enviar" OnClick="Aceitar_click"/>
                                             </div>
+                                        </div>
+                                            
                                         </div>
                                     </div> 
                                 </div>            

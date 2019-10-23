@@ -49,7 +49,7 @@
             <div>  
                 </div>
            </div>
-          <asp:RegularExpressionValidator ID="RegularExpressionValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Valor inválido" ValidationGroup="validateGroup" ControlToValidate="TextBoxRecarga" ValidationExpression="^(\d+(\.\d\d)?)$"></asp:RegularExpressionValidator>
+          <asp:RegularExpressionValidator ID="RegularExpressionValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Valor inválido" ValidationGroup="validateGroup" ControlToValidate="TextBoxRecarga" ValidationExpression="^(\d+(\,\d\d)?)$"></asp:RegularExpressionValidator>
           <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Valor da Recarga não informado não informado." ValidationGroup="validateGroup" ControlToValidate="TextBoxRecarga"></asp:RequiredFieldValidator>
           <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true"/>
 </asp:Content>

@@ -110,6 +110,11 @@ p {
     border-radius: 2px;
 }
 
+.compare {
+    color: red;
+    font-size: 12px;
+}
+
 .image {
     max-width:40%;
     margin:auto;

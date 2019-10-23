@@ -517,21 +517,55 @@ form#form1 {
     padding: 15px 20px;
     display: flex;
     flex-direction: column;
+}
+
+.row1, .row2 {
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.item-campo {
+.row1 {
+    flex-direction: row;
+}
+
+.row2 {
+    flex-direction: column;
+}
+
+.row1-coluna1{
+    width:60%;
+}
+
+.row1-coluna2 {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row1-coluna2 > .item-campo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     margin-bottom: 15px;
 }
 
-.item-campo-nome {
+.row1-coluna2 > .item-campo > .item-campo-nome {
+    margin-bottom: 5px;
+}
+
+.row2 > .item-campo {
+    width: 100%;
     display: flex;
-    min-width: 150px;
+    flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items:center;
+    min-width: 150px;
+    margin-bottom: 15px;
 }
 
 .categoria {
@@ -546,6 +580,10 @@ form#form1 {
     border-radius: 2px;
     color: #7a7a7a;
     font: 16px Arial;
+}
+
+.row2 > .item-campo > .imodal {
+    margin-left: 10px;
 }
 
 .ddlist {

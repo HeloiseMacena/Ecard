@@ -12,6 +12,11 @@ body {
     justify-content: center;
 }
 
+.compare {
+    color: red;
+    font-size: 12px;
+}
+
 form#form1 {
     width: 100%;
     display: flex;

@@ -39,12 +39,12 @@
                     <div class="org-1">
                         <div class="org-2">
                         <asp:Label ID="Label1" CssClass="label" runat="server" Text="Bairros"></asp:Label>
-                        <asp:CheckBoxList ID="CheckBoxListBairro" CssClass="check" runat="server"></asp:CheckBoxList>
+                        <asp:CheckBoxList ID="CheckBoxListBairro" CssClass="check" runat="server" CausesValidation="true" ValidationGroup="validateGroup"></asp:CheckBoxList>
                         <!-- <asp:TextBox ID="TextBoxBairro" runat="server" CssClass="box1-mid-1" placeholder="Bairro"></asp:TextBox> -->
                         </div>
                         <div class="org-3">                    
                         <asp:Label ID="Label2" CssClass="label" runat="server" Text="Pontos de referência"></asp:Label>
-                        <asp:CheckBoxList ID="CheckBoxListReferencia"  CssClass="check" runat="server"></asp:CheckBoxList>
+                        <asp:CheckBoxList ID="CheckBoxListReferencia"  CssClass="check" runat="server" CausesValidation="true" ValidationGroup="validateGroup"></asp:CheckBoxList>
                         <!--<asp:TextBox ID="TextBoxReferencia" runat="server" CssClass="box1-mid-1" placeholder="Ponto de Referência"></asp:TextBox> -->
                     </div>
                     </div>
@@ -71,6 +71,8 @@
                 </div>
             </div>
           </div>
+          <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Nome da Rota não informado." ValidationGroup="validateGroup" ControlToValidate="TextBoxNome"></asp:RequiredFieldValidator>
+          <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true"/>   
     </form>
 </body>
 </html>

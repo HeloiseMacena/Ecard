@@ -198,6 +198,11 @@
     font: 16px Arial;
 }
 
+.compare {
+    color: red;
+    font-size: 12px;
+}
+
 /*Modal*/
 
 

@@ -76,15 +76,6 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.Image Image1;
         
         /// <summary>
-        /// Controle Modal_id.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Modal_id;
-        
-        /// <summary>
         /// Controle Modal_data.
         /// </summary>
         /// <remarks>
@@ -92,6 +83,15 @@ namespace Ecard {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Modal_data;
+        
+        /// <summary>
+        /// Controle Modal_id.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Modal_id;
         
         /// <summary>
         /// Controle Modal_estudante.

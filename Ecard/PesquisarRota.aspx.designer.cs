@@ -7,13 +7,11 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Ecard
-{
-
-
-    public partial class PesquisarRota
-    {
-
+namespace Ecard {
+    
+    
+    public partial class PesquisarRota {
+        
         /// <summary>
         /// Controle valueSearch.
         /// </summary>
@@ -22,7 +20,16 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox valueSearch;
-
+        
+        /// <summary>
+        /// Controle RequiredFieldValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
         /// <summary>
         /// Controle DDLSearch.
         /// </summary>
@@ -31,7 +38,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DDLSearch;
-
+        
         /// <summary>
         /// Controle btnSearch.
         /// </summary>
@@ -40,7 +47,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
-
+        
         /// <summary>
         /// Controle modalContainer.
         /// </summary>
@@ -49,7 +56,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl modalContainer;
-
+        
         /// <summary>
         /// Controle closeModal.
         /// </summary>
@@ -58,7 +65,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl closeModal;
-
+        
         /// <summary>
         /// Controle Repeater2.
         /// </summary>
@@ -67,7 +74,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Repeater2;
-
+        
         /// <summary>
         /// Controle ObjectDataSource2.
         /// </summary>
@@ -76,7 +83,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource2;
-
+        
         /// <summary>
         /// Controle Repeater3.
         /// </summary>
@@ -85,7 +92,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Repeater3;
-
+        
         /// <summary>
         /// Controle ObjectDataSource3.
         /// </summary>
@@ -94,7 +101,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource3;
-
+        
         /// <summary>
         /// Controle Repeater1.
         /// </summary>
@@ -103,7 +110,7 @@ namespace Ecard
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Repeater1;
-
+        
         /// <summary>
         /// Controle ObjectDataSource1.
         /// </summary>
