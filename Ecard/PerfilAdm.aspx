@@ -24,7 +24,7 @@
             <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
-                        <a class="ai" href="WebFormTelaPrincipalAdm.aspx"><i class="fas fa-arrow-left"></i></a>
+                        <a class="ai" href="TelaPrincipalAdm.aspx"><i class="fas fa-arrow-left"></i></a>
                        <h3>Perfil</h3>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                       <asp:TextBox ID="TextNova" runat="server" CssClass="box1-mid" placeholder="Nova senha"></asp:TextBox>
                       <asp:TextBox ID="TextConfirmacao" runat="server" CssClass="box1-mid" placeholder="Confirmar nova senha"></asp:TextBox>
                     <div class="btn-b2">
-                        <asp:Button class="btn-close" runat="server" Text="Cancelar" PostBackUrl="~/WebFormTelaPrincipalAdm.aspx" />
+                        <asp:Button class="btn-close" runat="server" Text="Cancelar" PostBackUrl="~/TelaPrincipalAdm.aspx" />
                         <asp:Button class="btn-save" runat="server" Text="Salvar" ValidationGroup="validateGroup"/>
                     </div>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Senha atual não informada." ValidationGroup="validateGroup" ControlToValidate="TextAtual"></asp:RequiredFieldValidator>

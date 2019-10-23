@@ -11,16 +11,6 @@ namespace Ecard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["logged"] != null)
-            {
-                if (Session["accesslevel"] == "instituicao") Response.Redirect("~/TelaPrincipalInstituicao.aspx");
-                if (Session["accesslevel"] == "estudante") Response.Redirect("~/TelaPrincipalEstudante.aspx");
-            }
-            else
-            {
-                Response.Redirect("~/TelaInicial.aspx");
-            }
-
             DAL.DALValorPassagem a = new DAL.DALValorPassagem();
 
             if (!IsPostBack)
@@ -77,5 +67,7 @@ namespace Ecard
                 a.Insert(double.Parse(TextBox5.Text), "São Gonçalo do Amarante");
             }
         }
+
+
     }
 }

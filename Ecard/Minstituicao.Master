@@ -16,7 +16,7 @@
 <body>
     <form id="form1" runat="server">
             <div class="header max">
-            <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
+            <a style="width:100px;" href="TelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
                 <div class="ol">
                 <div class="menu-user"><asp:Label ID="nome_usuario" CssClass="username" runat="server" Text="Daniel Victor"></asp:Label></div>
                 <div class="menu-logout" ><a href="TelaInicial.aspx"> <i class="fas fa-sign-out-alt"> </i></a></div>

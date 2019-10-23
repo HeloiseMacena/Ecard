@@ -14,7 +14,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="header max">
-            <a style="width:100px;" href="WebFormTelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
+            <a style="width:100px;" href="TelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
             <div class="ol">
                 <div class="li">Menu</div>
                 <div class="li">Page 2</div>
