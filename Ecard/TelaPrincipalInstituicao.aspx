@@ -27,8 +27,8 @@
                 </div>
                 <div class="alert3">
                 <asp:TextBox ID="TextBoxCNPJ" CssClass="textAlert" runat="server" style="display:none" PlaceHolder="CNPJ..."></asp:TextBox>
-                <asp:TextBox ID="TextBoxCodigo" CssClass="textAlert" runat="server" style="display:none" PlaceHolder="Codigo..."></asp:TextBox>
-                <asp:Button ID="ButtonSituacao" class="btnAlert" runat="server" Text="Button" style="display:none" OnClick="ButtonSituacao_Click"/>
+                <asp:TextBox ID="TextBoxCodigo" CssClass="textAlert" runat="server" style="display:none;" PlaceHolder="Codigo..."></asp:TextBox>
+                <asp:Button ID="ButtonSituacao" class="btnAlert" runat="server" Text="Enviar" style="display:none" OnClick="ButtonSituacao_Click" ValidationGroup="validateGroup"/>
                 </div>
                 <div class="hl"></div> <!-- horizontal line -->
                 <div class="alerta">
@@ -47,4 +47,10 @@
                 </div>
             
             </div>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Código INEP/MEC inválido" ValidationGroup="validateGroup" ControlToValidate="TextBoxCodigo" ValidationExpression="^\d{8}$"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="CNPJ inválido" ValidationGroup="validateGroup" ControlToValidate="TextBoxCNPJ" ValidationExpression="^\d{14}$"></asp:RegularExpressionValidator>        
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Codigo não informado." ValidationGroup="validateGroup" ControlToValidate="TextBoxCodigo"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="CNPJ não informado." ValidationGroup="validateGroup" ControlToValidate="TextBoxCNPJ"></asp:RequiredFieldValidator>     
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true" />
+    
 </asp:Content>
