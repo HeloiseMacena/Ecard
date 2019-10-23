@@ -43,14 +43,13 @@
                     </div>
                     <div class=" pesq">
                     <asp:TextBox ID="valueSearch" CssClass="textbox1" runat="server" placeholder="Pesquisar"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="* Nome do ponto não informado." ValidationGroup="validateGroup" ControlToValidate="valueSearch"></asp:RequiredFieldValidator>
                     <div class="pesq-2">
                         <asp:DropDownList id="DDLSearch" CssClass="ddlist1" runat="server">
                         <asp:ListItem>Nome</asp:ListItem>
                         <asp:ListItem>Bairro</asp:ListItem>
                         <asp:ListItem>Ponto de Referência</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:Button ID="btnSearch" OnClick="btnSearch_Click"  CssClass="btn-loc" runat="server" Text="Localizar" ValidationGroup="validateGroup" />
+                    <asp:Button ID="btnSearch" OnClick="btnSearch_Click"  CssClass="btn-loc" runat="server" Text="Localizar"/>
                     </div>
                 </div>
                 </div>

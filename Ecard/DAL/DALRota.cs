@@ -60,7 +60,7 @@ namespace Ecard.DAL
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
 
-            if (option == "Nome") { cmd.CommandText = "SELECT r.id, r.nome From rota r WHERE r.nome LIKE '" + value + "'"; }
+            if (option == "Nome") { cmd.CommandText = "SELECT r.id, r.nome From rota r WHERE r.nome LIKE '%" + value + "%'"; }
             else if (option == "Bairro") { cmd.CommandText = "SELECT r.id, r.nome FROM Rotas_Bairro rb INNER JOIN Bairro b ON rb.bairro_id = b.id INNER JOIN rota r ON rb.rotas_id = r.id WHERE b.nome LIKE '%" + value + "%'";}
             else
             {

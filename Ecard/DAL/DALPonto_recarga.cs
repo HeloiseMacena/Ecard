@@ -63,10 +63,10 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            if (option == "Nome") cmd.CommandText = "SELECT * FROM Ponto_Recarga WHERE nome_ponto LIKE '" + value + "'";
-            else if (option == "Logradouro") cmd.CommandText = "SELECT * FROM Ponto_Recarga WHERE endereco_logradouro LIKE '" + value + "'";
-            else if (option == "Bairro") cmd.CommandText = "SELECT * FROM Ponto_Recarga WHERE endereco_bairro LIKE '" + value + "'";
-            else if (option == "CEP") cmd.CommandText = "SELECT * FROM Ponto_Recarga WHERE endereco_cep LIKE '" + value + "'";
+            if (option == "Nome") cmd.CommandText = "SELECT * FROM Ponto_Recarga WHERE nome_ponto LIKE '%" + value + "%'";
+            else if (option == "Logradouro") cmd.CommandText = "SELECT * FROM Ponto_Recarga WHERE endereco_logradouro LIKE '%" + value + "%'";
+            else if (option == "Bairro") cmd.CommandText = "SELECT * FROM Ponto_Recarga WHERE endereco_bairro LIKE '%" + value + "%'";
+            else if (option == "CEP") cmd.CommandText = "SELECT * FROM Ponto_Recarga WHERE endereco_cep LIKE '%" + value + "%'";
 
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)

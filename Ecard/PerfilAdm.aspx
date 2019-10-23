@@ -23,12 +23,12 @@
                 <div class="box1-midi">
                     <h1 class="title-1">Mudar Senha</h1>
                       <asp:TextBox ID="TextAtual" TextMode="Password" runat="server" CssClass="box1-mid" placeholder="Senha atual"></asp:TextBox>
-                      <asp:CustomValidator ID="CustomValidator2" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="A sua senha atual não foi informada corretamente"></asp:CustomValidator>                      
+                      <asp:CustomValidator ID="CustomValidator1" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="A sua senha atual não foi informada corretamente"></asp:CustomValidator>                      
                       <asp:TextBox ID="TextNova" TextMode="password" runat="server" CssClass="box1-mid" placeholder="Nova senha"></asp:TextBox>
                       <asp:TextBox ID="TextConfirmacao" TextMode="Password" runat="server" CssClass="box1-mid" placeholder="Confirmar nova senha"></asp:TextBox>
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Cancelar" PostBackUrl="~/TelaPrincipalAdm.aspx" />
-                        <asp:Button class="btn-save" runat="server" Text="Salvar" ValidationGroup="validateGroup"/>
+                        <asp:Button class="btn-save" runat="server" Text="Salvar" ValidationGroup="validateGroup" OnClick="Unnamed_Click"/>
                     </div>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Senha atual não informada." ValidationGroup="validateGroup" ControlToValidate="TextAtual"></asp:RequiredFieldValidator>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" CssClass="compare" runat="server" Display="none" ErrorMessage="Senha nova não informada." ValidationGroup="validateGroup" ControlToValidate="TextNova"></asp:RequiredFieldValidator>     
