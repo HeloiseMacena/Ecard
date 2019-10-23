@@ -45,8 +45,12 @@ namespace Ecard
             id = int.Parse(Session["userid"].ToString());
             DALInstituicao dal = new DALInstituicao();
             Modelo.Instituicao instituicao = dal.Select(id);
-            instituicao.Nome = Nome.Text;
-            dal.Update(instituicao);
+            if (instituicao.Nome != Nome.Text)
+            {
+                instituicao.Nome = Nome.Text;
+                dal.Update(instituicao);
+                Response.Redirect("~/PerfilInstituicao.aspx");
+            }
         }
 
         protected void LinkButton2_Click(object sender, EventArgs e)
@@ -54,8 +58,12 @@ namespace Ecard
             id = int.Parse(Session["userid"].ToString());
             DALInstituicao dal = new DALInstituicao();
             Modelo.Instituicao instituicao = dal.Select(id);
-            instituicao.Email = Email.Text;
-            dal.Update(instituicao);
+            if (instituicao.Email != Email.Text)
+            {
+                instituicao.Email = Email.Text;
+                dal.Update(instituicao);
+                Response.Redirect("~/PerfilInstituicao.aspx");
+            } 
         }
 
     }

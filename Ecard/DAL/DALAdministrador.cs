@@ -106,10 +106,9 @@ namespace Ecard.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public List<Modelo.Administrador> Select(string Id)
+        public Modelo.Administrador Select(int Id)
         {
-            Modelo.Administrador aAdministrador;
-            List<Modelo.Administrador> aListAdministrador = new List<Modelo.Administrador>();
+            Modelo.Administrador aAdministrador = new Modelo.Administrador();
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
@@ -127,14 +126,13 @@ namespace Ecard.DAL
                         dr["senha"].ToString(),
                         dr["cpf"].ToString()
                         );
-                    aListAdministrador.Add(aAdministrador);
                 }
             }
 
             dr.Close();
             conn.Close();
 
-            return aListAdministrador;
+            return aAdministrador;
         }
 
     }
