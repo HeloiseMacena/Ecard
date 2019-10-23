@@ -15,16 +15,6 @@ namespace Ecard
         protected void Page_Load(object sender, EventArgs e)
         {
             modalContainer.Style.Add("visibility", "hidden");
-            if (Session["logged"] != null)
-            {
-                if (Session["accesslevel"] == "instituicao") Response.Redirect("~/TelaPrincipalInstituicao.aspx");
-                if (Session["accesslevel"] == "estudante") Response.Redirect("~/TelaPrincipalEstudante.aspx");
-            }
-            else
-            {
-                Response.Redirect("~/TelaInicial.aspx");
-            }
-
             using (var con = new SqlConnection(WebConfigurationManager.ConnectionStrings["ecard"].ConnectionString))
             {
                 con.Open();
@@ -36,7 +26,6 @@ namespace Ecard
                 }
             }
         }
-
         protected void ToggleModal_Click(object sender, EventArgs e)
         {
             ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "ToggleModal", "ToggleModal()", true);
@@ -73,12 +62,13 @@ namespace Ecard
             {
                 solicitacao.status = 1;
                 instituicao.Status = 1;
-               
+
             }
             dal_solicitacao.Update(solicitacao);
             p.AlterarStatus(instituicao);
             Response.Redirect("~/SolicitacaoInstituicao.aspx");
 
         }
+
     }
 }

@@ -7,23 +7,15 @@ using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Ecard.DAL;
+using Ecard.Modelo;
 
 namespace Ecard
 {
-    public partial class SolicitacaoEstudante : System.Web.UI.Page
+    public partial class SolicitacaoCarteira : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             modalContainer.Style.Add("visibility", "hidden");
-            if (Session["logged"] != null)
-            {
-                if (Session["accesslevel"] == "instituicao") Response.Redirect("~/TelaPrincipalInstituicao.aspx");
-                if (Session["accesslevel"] == "estudante") Response.Redirect("~/TelaPrincipalEstudante.aspx");
-            }
-            else
-            {
-                Response.Redirect("~/TelaInicial.aspx");
-            }
             using (var con = new SqlConnection(WebConfigurationManager.ConnectionStrings["ecard"].ConnectionString))
             {
                 con.Open();
@@ -35,20 +27,19 @@ namespace Ecard
                 }
             }
         }
-
         protected void Unnamed_Click(object sender, EventArgs e)
         {
-                int id = int.Parse(((Button)sender).CommandArgument.ToString());
-                DALSolicitacao_carteira dal = new DALSolicitacao_carteira();
-                DALEstudante dal_e = new DALEstudante();
-                Modelo.Solicitacao_carteira solicitacao = dal.Select(id);
-                Modelo.Estudante estudante = dal_e.Select(dal.SelectEstudante(solicitacao.id));
-                Modal_id.Text = id.ToString();
-                Modal_data.Text = solicitacao.data.ToShortDateString();
-                Modal_estudante.Text = estudante.nome;
-                string nome_arquivo = estudante.cpf + ".jpg";
-                Image1.ImageUrl = "~/Imagens/" + nome_arquivo;
-                modalContainer.Style.Add("visibility", "visible");
+            int id = int.Parse(((Button)sender).CommandArgument.ToString());
+            DALSolicitacao_carteira dal = new DALSolicitacao_carteira();
+            DALEstudante dal_e = new DALEstudante();
+            Modelo.Solicitacao_carteira solicitacao = dal.Select(id);
+            Modelo.Estudante estudante = dal_e.Select(dal.SelectEstudante(solicitacao.id));
+            Modal_id.Text = id.ToString();
+            Modal_data.Text = solicitacao.data.ToShortDateString();
+            Modal_estudante.Text = estudante.nome;
+            string nome_arquivo = estudante.cpf + ".jpg";
+            Image1.ImageUrl = "~/Imagens/" + nome_arquivo;
+            modalContainer.Style.Add("visibility", "visible");
 
 
         }
@@ -77,5 +68,6 @@ namespace Ecard
             Response.Redirect("~/SolicitacaoCarteira.aspx");
 
         }
+
     }
 }

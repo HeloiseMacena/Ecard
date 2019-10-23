@@ -1,30 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SolicitacaoInstituicao.aspx.cs" Inherits="Ecard.SolicitacaoInstituicao" EnableEventValidation="false" %>
-
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="StyleSolicitacaoInstituicao.css"/>    
- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="JS/Events.js"></script>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div class="header max">
-            <a style="width:100px;" href="TelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
-            <div class="ol">
-                <div class="li">Menu</div>
-                <div class="li">Page 2</div>
-                <div class="li">Page 3</div>
-                <div class="li">Page 4</div> 
-                <div class="menu-user">Daniel Victor</div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="box1">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administrador.Master" AutoEventWireup="true" CodeBehind="SolicitacaoInstituicao.aspx.cs" Inherits="Ecard.SolicitacaoInstituicao" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="StyleSolicitacaoInstituicao.css"/>  
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
                         <a class="ai" href="TelaPrincipalAdm.aspx"><i class="fas fa-arrow-left"></i></a>
@@ -57,20 +36,9 @@
                   </div>
               
             </div>
-            <div class="box2">
-                <div class="box2-user-container">
-                    <div class="box2-user">
-                         <i class="fas fa-user-circle"></i>
-                         <div class="user-name"> 
-                            <h1>User</h1>
-                            <p>Administrador</p>
-                        </div>
-                    </div>
-                    <div class="box2-button">
-                         <asp:Button runat="server" CssClass="btn2"  Text="Ver Perfil" PostBackUrl="~/PerfilAdm.aspx" />
-                    </div>
-                </div>
-               <!-- Modal -->
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <!-- Modal -->
                 <div class="help-modal">
                     <div>
                         <div class="modal-container" id="modalContainer" runat="server">
@@ -133,8 +101,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-                </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+</asp:Content>

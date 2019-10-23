@@ -1,27 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PerfilAdm.aspx.cs" Inherits="Ecard.PerfilAdm" %>
-
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="StylePerfilAdm.css"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div class="header">
-            <img src="Imagens/ECard.png" />
-            <ol>
-                <li>Menu</li>
-                <li>Page 2</li>
-                <li>Page 3</li>
-                <li>Page 4</li> 
-                <li class="menu-user">Heloise</li>
-            </ol>
-        </div>
-        <div class="container">
-            <div class="box1">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administrador.Master" AutoEventWireup="true" CodeBehind="PerfilAdm.aspx.cs" Inherits="Ecard.PerfilAdm" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="StylePerfilAdm.css"/>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
                         <a class="ai" href="TelaPrincipalAdm.aspx"><i class="fas fa-arrow-left"></i></a>
@@ -54,19 +36,8 @@
                     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="validateGroup" ShowSummary="false" ShowMessageBox="true" />
                 </div>
             </div>
-
-            <div class="box2">
-                <div class="box2-user-container">
-                    <div class="box2-user">
-                           <i class="fas fa-user-circle"></i>
-                         <div class="user-name"> 
-                            <h1>Heloise</h1>
-                            <p>Administrador</p>
-                        </div>
-                    </div>   
-                </div>
-            </div>
-          </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+</asp:Content>
