@@ -11,16 +11,7 @@ namespace Ecard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            modalContainer.Style.Add("visibility", "hidden");
-            if (Session["logged"] != null)
-            {
-                if (Session["accesslevel"] == "instituicao") Response.Redirect("~/TelaPrincipalInstituicao.aspx");
-                if (Session["accesslevel"] == "estudante") Response.Redirect("~/TelaPrincipalEstudante.aspx");
-            }
-            else
-            {
-                Response.Redirect("~/TelaInicial.aspx");
-            }
+
         }
         protected void ToggleModal_Click(object sender, EventArgs e)
         {

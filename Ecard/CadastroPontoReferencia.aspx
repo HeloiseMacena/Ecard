@@ -1,30 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroPontoReferencia.aspx.cs" Inherits="Ecard.CadastroPontoReferencia" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<script src="https://kit.fontawesome.com/4bb70b9eaa.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="StylePontoBairro.css"/>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="JS/Events.js"></script>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div class="header max">
-            <a style="width:100px;" href="TelaPrincipalAdm.aspx"><img src="Imagens/ECard.png" style="width:100px;" /></a>
-            <div class="ol">
-                <div class="li">Menu</div>
-                <div class="li">Page 2</div>
-                <div class="li">Page 3</div>
-                <div class="li">Page 4</div> 
-                <div class="menu-user">Daniel Victor</div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="box1">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Administrador.Master" AutoEventWireup="true" CodeBehind="CadastroPontoReferencia.aspx.cs" Inherits="Ecard.CadastroPontoReferencia" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="StylePontoBairro.css"/>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="box1">
                 <div class="box1-header">
                     <div class="box1-title">
                         <a class="ai" href="TelaPrincipalAdm.aspx"><i class="fas fa-arrow-left"></i></a>
@@ -55,22 +34,10 @@
                     
                     
                 </div>
-              </div>
-            <div class="box2">
-                <div class="box2-user-container">
-                    <div class="box2-user">
-                         <i class="fas fa-user-circle"></i>
-                         <div class="user-name"> 
-                            <h1>User</h1>
-                            <p>Administrador</p>
-                        </div>
-                    </div>
-                    <div class="box2-button">
-                         <asp:Button runat="server" CssClass="btn2" Text="Ver Perfil" />
-                    </div>
-                </div>
-
-                <div class="box2-ponto">
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <div class="box2-ponto">
                     <div class="ponto">
                         <p>Ponto de Referência</p>
                     </div>
@@ -84,12 +51,7 @@
                     <asp:Button ID="btnSearch" OnClick="btnSearch_Click"  CssClass="btn-loc" runat="server" Text="Localizar" ValidationGroup="validateGroup" />
                     </div>
                 </div>
-                </div>
-            </div>
-            <div>  
-                </div>
-           </div>
-    </form>
-</body>
-
-</html>
+   </div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+</asp:Content>

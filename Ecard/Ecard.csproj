@@ -72,6 +72,10 @@
     <Content Include="CadastroEstudante.aspx" />
     <Content Include="CadastroInstituicao.aspx" />
     <Content Include="CadastroPassagem.aspx" />
+    <Content Include="CadastroPonto.aspx" />
+    <Content Include="CadastroPontoEdit.aspx" />
+    <Content Include="CadastroPontoReferencia.aspx" />
+    <Content Include="CadastroPontoReferenciaEdit.aspx" />
     <Content Include="CadastroRota.aspx" />
     <Content Include="CalcularPassagem.aspx" />
     <Content Include="ConsultaPontodeRecarga.aspx" />
@@ -91,10 +95,6 @@
     <Content Include="SolicitacaoCarteira.aspx" />
     <Content Include="SolicitacaoInstituicao.aspx" />
     <Content Include="StyleCadastroEstudante.css" />
-    <Content Include="CadastroPonto.aspx" />
-    <Content Include="CadastroPontoEdit.aspx" />
-    <Content Include="CadastroPontoReferencia.aspx" />
-    <Content Include="CadastroPontoReferenciaEdit.aspx" />
     <Content Include="CadastroRotaEdit.aspx" />
     <Content Include="EditarBairro.aspx" />
     <Content Include="EditarPonto.aspx" />
