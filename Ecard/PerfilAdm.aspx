@@ -12,17 +12,18 @@
                 </div>
                 <div class="nov-header">
                     <div class="space">
-                         <asp:TextBox ID="Nome" runat="server" CssClass="nov-text" placeholder="Heloise" ></asp:TextBox> 
-                        <asp:LinkButton ID="LinkButton1" CssClass="link-alt" runat="server">Alterar</asp:LinkButton>
+                         <asp:TextBox ID="Nome" runat="server" CssClass="nov-text"></asp:TextBox> 
+                        <asp:LinkButton ID="LinkButton1" CssClass="link-alt" runat="server" OnClick="LinkButton1_Click">Alterar</asp:LinkButton>
                    </div>
                     <div class="space-2">
-                        <asp:TextBox ID="Email" runat="server" CssClass="nov-text" placeholder="Heloise@outlook.edu.br"></asp:TextBox>
-                        <asp:LinkButton ID="LinkButton2" CssClass="link-alt" runat="server">Alterar</asp:LinkButton>
+                        <asp:TextBox ID="Email" runat="server" CssClass="nov-text"></asp:TextBox>
+                        <asp:LinkButton ID="LinkButton2" CssClass="link-alt" runat="server" OnClick="LinkButton2_Click">Alterar</asp:LinkButton>
                     </div>
                         </div>
                 <div class="box1-midi">
                     <h1 class="title-1">Mudar Senha</h1>
                       <asp:TextBox ID="TextAtual" TextMode="Password" runat="server" CssClass="box1-mid" placeholder="Senha atual"></asp:TextBox>
+                      <asp:CustomValidator ID="CustomValidator2" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="A sua senha atual não foi informada corretamente"></asp:CustomValidator>                      
                       <asp:TextBox ID="TextNova" TextMode="password" runat="server" CssClass="box1-mid" placeholder="Nova senha"></asp:TextBox>
                       <asp:TextBox ID="TextConfirmacao" TextMode="Password" runat="server" CssClass="box1-mid" placeholder="Confirmar nova senha"></asp:TextBox>
                     <div class="btn-b2">

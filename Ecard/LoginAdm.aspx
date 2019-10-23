@@ -24,7 +24,7 @@
          <div class="textbox">
              <asp:TextBox ID="TextSenha" CssClass="textbox1" runat="server" type="password" placeholder="Senha"></asp:TextBox>               
          </div>   
-            
+         <asp:CustomValidator ID="CustomValidator1" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="* Nome de usuário e/ou senha incorretos."></asp:CustomValidator>
          <div class="login">
 
 

@@ -13,6 +13,10 @@ namespace Ecard.Modelo
         public string senha;
         public string cpf;
 
+        public Administrador()
+        {
+            id = 0;
+        }
         public Administrador(int id, string nome, string email, string senha, string cpf)
         {
             this.id = id;

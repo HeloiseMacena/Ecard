@@ -17,18 +17,19 @@
                         <div class="org-2">
                         <asp:Label ID="Label1" CssClass="label" runat="server" Text="Bairros"></asp:Label>
                         <asp:CheckBoxList ID="CheckBoxListBairro" CssClass="check" runat="server" CausesValidation="true" ValidationGroup="validateGroup"></asp:CheckBoxList>
+                        <asp:CustomValidator ID="CustomValidator1" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="* Por favor, selecione ao menos um bairro"></asp:CustomValidator>
                         <!-- <asp:TextBox ID="TextBoxBairro" runat="server" CssClass="box1-mid-1" placeholder="Bairro"></asp:TextBox> -->
                         </div>
                         <div class="org-3">                    
                         <asp:Label ID="Label2" CssClass="label" runat="server" Text="Pontos de referência"></asp:Label>
                         <asp:CheckBoxList ID="CheckBoxListReferencia"  CssClass="check" runat="server" CausesValidation="true" ValidationGroup="validateGroup"></asp:CheckBoxList>
+                         <asp:CustomValidator ID="CustomValidator2" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="* Por favor, selecione ao menos um ponto de referência"></asp:CustomValidator>
                         <!--<asp:TextBox ID="TextBoxReferencia" runat="server" CssClass="box1-mid-1" placeholder="Ponto de Referência"></asp:TextBox> -->
                     </div>
                     </div>
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Fechar" PostBackUrl="~/CadastroRota.aspx" />
                         <asp:Button class="btn-save" runat="server" Text="Salvar" OnClick="Unnamed2_Click" ValidationGroup="validateGroup"/>
-
                     </div>
                 </div>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="compare" runat="server" Display="none" ErrorMessage="Nome da Rota não informado." ValidationGroup="validateGroup" ControlToValidate="TextBoxNome"></asp:RequiredFieldValidator>

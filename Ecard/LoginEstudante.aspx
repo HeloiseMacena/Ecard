@@ -24,7 +24,7 @@
             <div class="textbox">
                 <asp:TextBox ID="TextSenha" CssClass="textbox2 " runat="server" type="password" placeholder="Senha"></asp:TextBox>               
             </div>   
-            
+            <asp:CustomValidator ID="CustomValidator1" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="* CPF e/ou senha incorretos."></asp:CustomValidator>
          <div class="login">
              <asp:Button ID="Button1" runat="server" Text="Entrar" type="submit" class="button" OnClick="Button_click" ValidationGroup="validateGroup" />
              <p>Estudante não cadastrado?<a class="link-open" href="CadastroEstudante.aspx">Cadastre-se</a></p>
