@@ -12,15 +12,6 @@ namespace Ecard
         int id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["logged"] != null)
-            {
-                if (Session["accesslevel"] == "instituicao") Response.Redirect("~/TelaPrincipalInstituicao.aspx");
-                if (Session["accesslevel"] == "estudante") Response.Redirect("~/TelaPrincipalEstudante.aspx");
-            }
-            else
-            {
-                Response.Redirect("~/TelaInicial.aspx");
-            }
             if (!IsPostBack)
             {
                 id = int.Parse(Request.QueryString["id"]);
@@ -28,9 +19,7 @@ namespace Ecard
                 Ecard.Modelo.Bairro bairro = p.Select(id);
                 txtNome.Text = bairro.Nome;
             }
-            
         }
-
         protected void Update_Click(object sender, EventArgs e)
         {
             id = int.Parse(Request.QueryString["id"]);

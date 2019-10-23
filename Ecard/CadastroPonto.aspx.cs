@@ -11,7 +11,7 @@ namespace Ecard
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            modalContainer.Style.Add("visibility", "hidden");
         }
         protected void ToggleModal_Click(object sender, EventArgs e)
         {

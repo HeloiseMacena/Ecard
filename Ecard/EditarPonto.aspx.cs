@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,16 +12,6 @@ namespace Ecard
         int id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["logged"] != null)
-            {
-                if (Session["accesslevel"] == "instituicao") Response.Redirect("~/TelaPrincipalInstituicao.aspx");
-                if (Session["accesslevel"] == "estudante") Response.Redirect("~/TelaPrincipalEstudante.aspx");
-            }
-            else
-            {
-                Response.Redirect("~/TelaInicial.aspx");
-            }
-
             if (!IsPostBack)
             {
                 id = int.Parse(Request.QueryString["id"]);
@@ -34,7 +24,6 @@ namespace Ecard
                 TextCEP.Text = ponto.endereco_cep;
                 TextMunicipio.Text = ponto.endereco_municipio;
             }
-
         }
         protected void Update_Click(object sender, EventArgs e)
         {
@@ -59,5 +48,6 @@ namespace Ecard
             p.Delete(ponto);
             Response.Redirect("~//CadastroPonto.aspx");
         }
+
     }
 }

@@ -12,16 +12,6 @@ namespace Ecard
         int id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["logged"] != null)
-            {
-                if (Session["accesslevel"] == "instituicao") Response.Redirect("~/TelaPrincipalInstituicao.aspx");
-                if (Session["accesslevel"] == "estudante") Response.Redirect("~/TelaPrincipalEstudante.aspx");
-            }
-            else
-            {
-                Response.Redirect("~/TelaInicial.aspx");
-            }
-
             id = int.Parse(Request.QueryString["id"].ToString());
             DAL.DALRota p = new DAL.DALRota();
             Modelo.Rota rota = p.Select(id);
@@ -46,5 +36,7 @@ namespace Ecard
             p.Delete(ponto);
             Response.Redirect("~//CadastroRota.aspx");
         }
+
+
     }
 }
