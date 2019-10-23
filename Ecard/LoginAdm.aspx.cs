@@ -23,6 +23,10 @@ namespace Ecard
                 Session["accesslevel"] = "administrador";
                 Response.Redirect("~/TelaPrincipalAdm.aspx");
             }
+            else
+            {
+                CustomValidator1.IsValid = false;
+            }
         }
     }
 }

@@ -28,6 +28,10 @@ namespace Ecard
                 Session["accesslevel"] = "estudante";
                 Response.Redirect("~/TelaPrincipalEstudante.aspx");
             }
+            else
+            {
+                CustomValidator1.IsValid = false;
+            }
         }
     }
 }
