@@ -147,16 +147,99 @@ namespace Ecard.DAL
 
 
         [DataObjectMethod(DataObjectMethodType.Update)]
-        public void Update(Modelo.Rota obj)
+        public void Update(Modelo.Rota obj, List<int> referencias_add, List<int> bairros_add)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE rota SET nome = @nome WHERE id = @id", conn);
 
+            SqlCommand cmd = new SqlCommand("UPDATE rota SET nome = @nome WHERE id = @id", conn);
             cmd.Parameters.AddWithValue("@id", obj.id);
             cmd.Parameters.AddWithValue("@nome", obj.nome);
             cmd.ExecuteNonQuery();
+
+            List<int> bairros_update = new List<int>();
+            List<int> referencias_update = new List<int>();
+
+            // Bairros antigos
+            
+            cmd = new SqlCommand("select * from rotas_bairro", conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            List<int> bairros = new List<int>();
+            List<int> referencias = new List<int>();
+            if (dr.HasRows)
+            {
+
+                while (dr.Read())
+                {
+                    bairros.Add(Convert.ToInt32(dr["bairro_id"].ToString()));
+                }
+            }
+            dr.Close();
+            cmd = new SqlCommand("select * from rota_referencia", conn);
+            dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+
+                while (dr.Read())
+                {
+                    referencias.Add(Convert.ToInt32(dr["ponto_referencia_id"].ToString()));
+                }
+            }
+            dr.Close();
+
+            // Inserir novos
+            for (int i = 0; i < bairros_add.Count(); i++)
+            {
+                if (!HasBairro(bairros_add[i], obj.id))
+                {
+                    cmd = new SqlCommand("INSERT INTO Rotas_Bairro(rotas_id,bairro_id) VALUES (@rota_id,@bairro_id)", conn);
+                    cmd.Parameters.AddWithValue("@bairro_id", bairros_add[i]);
+                    cmd.Parameters.AddWithValue("@rota_id", obj.id);
+                    cmd.ExecuteNonQuery();
+                }
+                else bairros_update.Add(bairros_add[i]);
+            }
+
+            for (int i = 0; i < referencias_add.Count(); i++)
+            {
+                if (!HasReferencia(referencias_add[i], obj.id))
+                {
+                    cmd = new SqlCommand("insert into rota_referencia(rota_id, ponto_referencia_id) values(@rota_id, @referencia_id)", conn);
+                    cmd.Parameters.AddWithValue("@rota_id", obj.id);
+                    cmd.Parameters.AddWithValue("@referencia_id", referencias_add[i]);
+                    cmd.ExecuteNonQuery();
+                }
+                else referencias_update.Add(referencias_add[i]);
+                
+            }
+
+            // Excluir
+
+            
+            for (int i = 0;i < bairros.Count(); i++)
+            {
+                if (bairros_update.IndexOf(bairros[i]) == -1)
+                {
+                    cmd = new SqlCommand("delete from rotas_bairro where rotas_id = @rota_id and bairro_id = @bairro_id", conn);
+                    cmd.Parameters.AddWithValue("@rota_id", obj.id);
+                    cmd.Parameters.AddWithValue("@bairro_id", bairros[i]);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            for (int i=0;i < referencias.Count(); i++)
+            {
+                if (referencias_update.IndexOf(referencias[i]) == -1)
+                {
+                    cmd = new SqlCommand("delete from rota_referencia where rota_id = @rota_id and ponto_referencia_id = @referencia_id", conn);
+                    cmd.Parameters.AddWithValue("@rota_id", obj.id);
+                    cmd.Parameters.AddWithValue("@referencia_id", referencias[i]);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+
         }
 
 
@@ -188,5 +271,32 @@ namespace Ecard.DAL
             conn.Close();
             return aListRota;
         }
+
+        public bool HasReferencia(int referencia_id, int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from rota_referencia Where ponto_referencia_id = @referencia_id and rota_id = @id";
+            cmd.Parameters.AddWithValue("@referencia_id", referencia_id);
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows) return true;
+            return false;
+        }
+
+        public bool HasBairro(int bairro_id, int id)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from rotas_bairro Where bairro_id = @bairro_id and rotas_id = @id";
+            cmd.Parameters.AddWithValue("@bairro_id", bairro_id);
+            cmd.Parameters.AddWithValue("@id", id);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows) return true;
+            return false;
+        }
+
     }
 }
