@@ -21,12 +21,12 @@ namespace Ecard
                 resposta.Style["display"] = "none";
                 respostaError.Style["display"] = "none";
             }
+
             int id = int.Parse(Session["userid"].ToString());
             Modelo.Instituicao instituicao = aDALInstituicao.Select(id);
             if (instituicao.Status == 2) TextSituacao.Text = "Bem-vindo ao sistema!";
             else
             {
-                btnUpload.Style["display"] = "none";
                 if (instituicao.Status == 0) TextSituacao.Text = "O cadastro da instituição será verificado em breve. Por favor, aguarde!";
                 else
                 {
@@ -124,6 +124,23 @@ namespace Ecard
             DAL.DALSolicitacao_instituicao dal_solicitacao = new DAL.DALSolicitacao_instituicao();
             dal_solicitacao.Insert(id);
             Response.Redirect("~/TelaPrincipalInstituicao.aspx");
+        }
+
+        protected void btnUpload2_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(Session["userid"].ToString());
+            string nomeArquivo = Path.GetFileName(FileUpload1.PostedFile.FileName);
+            if (nomeArquivo.EndsWith(".txt"))
+            {
+                if (FileUpload1.HasFile)
+                {
+                    string Arquivo = Server.MapPath("Lista_Alunos/" + nomeArquivo);
+                    FileUpload1.PostedFile.SaveAs(Arquivo);
+
+                    Repeater1.DataSource = aDALEstudante.SelectArquivoCsv(Arquivo);
+                    Repeater1.DataBind();
+                }
+            }
         }
     }
 }
