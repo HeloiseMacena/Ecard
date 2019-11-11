@@ -125,22 +125,5 @@ namespace Ecard
             dal_solicitacao.Insert(id);
             Response.Redirect("~/TelaPrincipalInstituicao.aspx");
         }
-
-        protected void btnUpload2_Click(object sender, EventArgs e)
-        {
-            int id = int.Parse(Session["userid"].ToString());
-            string nomeArquivo = Path.GetFileName(FileUpload1.PostedFile.FileName);
-            if (nomeArquivo.EndsWith(".txt"))
-            {
-                if (FileUpload1.HasFile)
-                {
-                    string Arquivo = Server.MapPath("Lista_Alunos/" + nomeArquivo);
-                    FileUpload1.PostedFile.SaveAs(Arquivo);
-
-                    Repeater1.DataSource = aDALEstudante.SelectArquivoCsv(Arquivo);
-                    Repeater1.DataBind();
-                }
-            }
-        }
     }
 }

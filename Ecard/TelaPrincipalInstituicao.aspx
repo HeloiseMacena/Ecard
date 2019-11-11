@@ -38,8 +38,6 @@
                 </div>
                 <div class="list" >
                     <asp:FileUpload ID="FileUpload1" CssClass="multi" runat="server" AllowMultiple="true" onchange="uploadLista()" />
-                    <asp:Button ID="btnUpload2" style="display:none" runat="server" Text="Button" OnClick="btnUpload2_Click"/>
-                    <asp:Repeater ID="Repeater1" runat="server"></asp:Repeater>
                     <asp:Button ID="btnUpload1" runat="server" OnClick="Unnamed_Click" style="display:block" /> <asp:Label ID="userImage" runat="server" Text=""></asp:Label>
                     <div class="alert">
                     <asp:Label ID="resposta" CssClass="msg" runat="server" Text="Arquivo enviado com sucesso" style="display: none"></asp:Label>
