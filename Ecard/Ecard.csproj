@@ -85,6 +85,7 @@
     <Content Include="EditarPontoReferencia.aspx" />
     <Content Include="EditarRota.aspx" />
     <Content Include="EditEstudante.aspx" />
+    <Content Include="Extratorecarga.aspx" />
     <Content Include="Imagens\70023025407.jpg" />
     <Content Include="Imagens\default.png" />
     <Content Include="Imagens\fotocarteira.png" />
@@ -242,6 +243,7 @@
     <Compile Include="DAL\DALAdministrador.cs" />
     <Compile Include="DAL\DALBairro.cs" />
     <Compile Include="DAL\DALEstudante.cs" />
+    <Compile Include="DAL\DALExtrato.cs" />
     <Compile Include="DAL\DALInstituicao.cs" />
     <Compile Include="DAL\DALLista_alunos.cs" />
     <Compile Include="DAL\DALPonto_recarga.cs" />
@@ -294,6 +296,13 @@
     <Compile Include="Estudante.Master.designer.cs">
       <DependentUpon>Estudante.Master</DependentUpon>
     </Compile>
+    <Compile Include="Extratorecarga.aspx.cs">
+      <DependentUpon>Extratorecarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Extratorecarga.aspx.designer.cs">
+      <DependentUpon>Extratorecarga.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LoginAdm.aspx.cs">
       <DependentUpon>LoginAdm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -325,6 +334,7 @@
     <Compile Include="Modelo\Administrador.cs" />
     <Compile Include="Modelo\Bairro.cs" />
     <Compile Include="Modelo\Estudante.cs" />
+    <Compile Include="Modelo\Extrato.cs" />
     <Compile Include="Modelo\Instituicao.cs" />
     <Compile Include="Modelo\Lista_alunos.cs" />
     <Compile Include="Modelo\Ponto_recarga.cs" />
