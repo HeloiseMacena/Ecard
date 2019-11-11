@@ -26,7 +26,7 @@ namespace Ecard
                     li.Text = b.Nome;
                     li.Value = (b.Id).ToString();
                     if (p.HasBairro(b.Id, rota.id)) li.Selected = true;
-                    CheckBoxListBairro.Items.Add(li);
+                    ListBoxBairro.Items.Add(li);
                 }
                 DAL.DALPonto_referencia dal_referencia = new DAL.DALPonto_referencia();
                 foreach (Modelo.Ponto_referencia ponto in dal_referencia.SelectAll())
@@ -34,8 +34,8 @@ namespace Ecard
                     li = new ListItem();
                     li.Text = ponto.Nome;
                     li.Value = (ponto.Id).ToString();
-                    if (p.HasReferencia(ponto.Id, rota.id)) li.Selected = true; 
-                    CheckBoxListReferencia.Items.Add(li);
+                    if (p.HasReferencia(ponto.Id, rota.id)) li.Selected = true;
+                    ListBoxReferencia.Items.Add(li);
                 }
             }
 
@@ -48,17 +48,28 @@ namespace Ecard
             Modelo.Rota ponto = p.Select(id);
             ponto.nome = TextBox1.Text;
             List<int> bairros = new List<int>();
-            foreach (ListItem b in CheckBoxListBairro.Items)
+            foreach (ListItem b in ListBoxBairro.Items)
             {
                 if (b.Selected) bairros.Add(int.Parse(b.Value.ToString()));
             }
             List<int> referencias = new List<int>();
-            foreach (ListItem r in CheckBoxListReferencia.Items)
+            foreach (ListItem r in ListBoxReferencia.Items)
             {
-                if (r.Selected) referencias.Add(int.Parse(r.Value.ToString()));
+                if (r.Selected)
+                {
+                    referencias.Add(int.Parse(r.Value.ToString()));
+                }
             }
-            p.Update(ponto, referencias, bairros);
-            Response.Redirect("~//CadastroRota.aspx");
+            if (referencias.Count != 0 && bairros.Count != 0)
+            {
+                p.Update(ponto, referencias, bairros);
+                Response.Redirect("~//CadastroRota.aspx");
+            }
+            else
+            {
+                if (bairros.Count == 0) CustomValidator1.IsValid = false;
+                if (referencias.Count == 0) CustomValidator2.IsValid = false;
+            }
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)

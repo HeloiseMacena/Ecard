@@ -14,17 +14,18 @@
                      <h1>Editar</h1>
                      <asp:TextBox ID="TextBox1" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>
                      <div class="org-1">
-                        <div class="org-2">
-                            <asp:Label ID="Label1" CssClass="label" runat="server" Text="Bairros"></asp:Label>
-                            <asp:CheckBoxList ID="CheckBoxListBairro" CssClass="check" runat="server" CausesValidation="true" ValidationGroup="validateGroup"></asp:CheckBoxList>
-                            <asp:CustomValidator ID="CustomValidator1" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="* Por favor, selecione ao menos um bairro"></asp:CustomValidator>
+                        <asp:Label ID="Label1" CssClass="label" runat="server" Text="Bairros"></asp:Label>
+                        <div class="">                                                                                   
+                            <asp:ListBox ID="ListBoxBairro" runat="server" CssClass="org-2" SelectionMode="Multiple" CausesValidation="true" ValidationGroup="validateGroup"></asp:ListBox>
+                            <asp:CustomValidator ID="CustomValidator1" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="* Por favor, selecione ao menos um bairro" ValidationGroup="validateGroup"></asp:CustomValidator>
                         </div>
-                        <div class="org-3">                    
-                            <asp:Label ID="Label2" CssClass="label" runat="server" Text="Pontos de referência"></asp:Label>
-                            <asp:CheckBoxList ID="CheckBoxListReferencia"  CssClass="check" runat="server" CausesValidation="true" ValidationGroup="validateGroup"></asp:CheckBoxList>
-                            <asp:CustomValidator ID="CustomValidator2" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="* Por favor, selecione ao menos um ponto de referência"></asp:CustomValidator>
+                        <div class="ponto-ref">
+                            <asp:Label ID="Label2" CssClass="label" runat="server" Text="Pontos de referência"></asp:Label>                                                                                                  
+                            <asp:ListBox ID="ListBoxReferencia" runat="server" CssClass="org-3" SelectionMode="Multiple" CausesValidation="true" ValidationGroup="validateGroup"></asp:ListBox>
+                            <asp:CustomValidator ID="CustomValidator2" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="* Por favor, selecione ao menos um ponto de referência" ValidationGroup="validateGroup"></asp:CustomValidator>                            
                         </div>
                     </div>
+                    <asp:Label ID="LabelHelp" CssClass="labelHelp" runat="server" Text="Para selecionar ou descelecionar uma opção pressione a tecla Ctrl!"></asp:Label>
                     <div class="btn-b2">
                         <asp:Button class="btn-close" runat="server" Text="Excluir" OnClick="Unnamed1_Click" OnClientClick="javascript:return ConfirmaExclusao();"  />
                         <asp:Button class="btn-save" runat="server" Text="Atualizar" OnClick="Unnamed2_Click" />
