@@ -68,7 +68,7 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Solicitacao_instituicao (data, status, instituicao_id) VALUES (@data, @status, @instituicao_id)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO SolicitacaoIinstituicao (data, status, instituicao_id) VALUES (@data, @status, @instituicao_id)", conn);
 
             cmd.Parameters.AddWithValue("@data", DateTime.Now.Date.ToString("yyyy-MM-dd"));
             cmd.Parameters.AddWithValue("@status", 0);
@@ -158,7 +158,7 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "select count(*) from solicitacao_instituicao where status = 0";
+            cmd.CommandText = "select count(*) from SolicitacaoInstituicao where status = 0";
             SqlDataReader dr = cmd.ExecuteReader();
             int count = 0;
             if (dr.HasRows)

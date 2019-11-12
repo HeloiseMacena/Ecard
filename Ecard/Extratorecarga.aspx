@@ -12,7 +12,7 @@
                 </div>
                 <div class="hl-2"></div><!--  horizontal line -->
                 <div class=" pesq">
-                    <asp:Label ID="Label2" CssClass="text-men" runat="server" Text="Consulte as suas recargas!"></asp:Label>       
+                    <asp:Label ID="Label2" CssClass="text-men" runat="server" Text="Consulte suas recargas!"></asp:Label>       
                 </div>
                 <div class="help">
                     <asp:Repeater ID="Repeater1" runat="server" DataSourceID="ObjectDataSource1">

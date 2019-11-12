@@ -37,15 +37,18 @@ namespace Ecard
                 int id = int.Parse(Session["userid"].ToString());
                 DALEstudante dal = new DALEstudante();
                 Modelo.Estudante estudante = dal.Select(id);
+
                 DALRecarga dalrec = new DALRecarga();
                 Modelo.Recarga r = new Modelo.Recarga(valor);
                 dalrec.Insert(r, estudante.id);
                 estudante.carteira_saldo += valor;
                 dal.Update(estudante);
+
                 DALExtrato c = new DALExtrato();
                 Modelo.Extrato d = new Modelo.Extrato();
                 d.valor = valor;
-                d.data = DateTime.Now;
+                d.data = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+
                 c.Insert(d, a);
                 LabelSaldo.Text = estudante.carteira_saldo.ToString();
                 Response.Redirect("~/TelaPrincipalEstudante.aspx");

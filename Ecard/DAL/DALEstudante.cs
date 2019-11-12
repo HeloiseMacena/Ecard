@@ -41,7 +41,7 @@ namespace Ecard.DAL
         }
 
         [DataObjectMethod(DataObjectMethodType.Select)]
-        public int SelectStatus(int id)
+        public double SelectStatus(int id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
@@ -71,10 +71,6 @@ namespace Ecard.DAL
             if (a == 1) //Inapto
             {
                 SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = 1  where cpf = " + cpf, conn);
-            }
-            if (a == 2) //Cadastrado pela instituição
-            {
-                SqlCommand cmd = new SqlCommand("UPDATE Estudante SET status = 2  where cpf = " + cpf, conn);
             }
         }
 
@@ -335,14 +331,13 @@ namespace Ecard.DAL
             return aListEstudante;
         }
 
-
         [DataObjectMethod(DataObjectMethodType.Insert)]
-        public void Insert(Modelo.Estudante obj, int instituicao_id)
+        public void InsertPreCadastrado(Modelo.Estudante obj, int instituicao_id)
         {
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, rg, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, administrador_id, carteira_status, instituicao_id) VALUES (@Nome, @cpf, @rg, @email, 2, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 1, 0, @instituicao_id)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, rg, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, administrador_id, carteira_status, instituicao_id) VALUES (@Nome, @cpf, @rg, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 1, 0, @instituicao_id)", conn);
 
             cmd.Parameters.AddWithValue("@Nome", obj.nome);
             cmd.Parameters.AddWithValue("@cpf", obj.cpf);
@@ -355,6 +350,29 @@ namespace Ecard.DAL
             cmd.Parameters.AddWithValue("@carteira_validade", obj.carteira_validade);
             cmd.Parameters.AddWithValue("@senha", obj.senha);
             cmd.Parameters.AddWithValue("@instituicao_id", instituicao_id);
+
+            cmd.ExecuteNonQuery();
+
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Insert)]
+        public void Insert(Modelo.Estudante obj)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand com = conn.CreateCommand();
+            SqlCommand cmd = new SqlCommand("INSERT INTO Estudante (Nome, cpf, rg, email, status, carteira_foto, carteira_saldo, carteira_numero, carteira_validade, senha, administrador_id, carteira_status) VALUES (@Nome, @cpf, @rg, @email, @status, @carteira_foto, @carteira_saldo, @carteira_numero, @carteira_validade, @senha, 1, 0)", conn);
+
+            cmd.Parameters.AddWithValue("@Nome", obj.nome);
+            cmd.Parameters.AddWithValue("@cpf", obj.cpf);
+            cmd.Parameters.AddWithValue("@rg", obj.rg);
+            cmd.Parameters.AddWithValue("@email", obj.email);
+            cmd.Parameters.AddWithValue("@status", obj.status);
+            cmd.Parameters.AddWithValue("@carteira_foto", obj.carteira_foto);
+            cmd.Parameters.AddWithValue("@carteira_saldo", obj.carteira_saldo);
+            cmd.Parameters.AddWithValue("@carteira_numero", obj.carteira_numero);
+            cmd.Parameters.AddWithValue("@carteira_validade", obj.carteira_validade);
+            cmd.Parameters.AddWithValue("@senha", obj.senha);
 
             cmd.ExecuteNonQuery();
 

@@ -9,17 +9,18 @@ namespace Ecard.Modelo
     {
         public int id { get; set; }
         public double valor { get; set; }
-        public DateTime data { get; set; }
-
+        public string data { get; set; }
 
         public Extrato()
         {
             this.id = 0;
+            this.valor = 0;
+            this.data = "";
         }
 
-        public Extrato(double valor)
+        public Extrato(string data, double valor)
         {
-            data = DateTime.Now;
+            this.data = data;
             this.valor = valor;
         }
     }

@@ -29,17 +29,16 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "Select * from Extrato where estudante_id = " + estudante_id;
+            cmd.CommandText = "Select * from Extrato where estudante_id = " + estudante_id + " ORDER BY id DESC";
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
                 while (dr.Read())
                 {
                     Modelo.Extrato aExtrato = new Modelo.Extrato(
+                        dr["data"].ToString(),
                         Convert.ToDouble(dr["valor"].ToString())
-                        );
-                    aExtrato.id = Convert.ToInt32(dr["id"].ToString());
-                    aExtrato.data = Convert.ToDateTime(dr["data"].ToString());
+                    );
                     aListExtrato.Add(aExtrato);
                 }
             }
@@ -80,10 +79,10 @@ namespace Ecard.DAL
                 while (dr.Read())
                 {
                     aExtrato = new Modelo.Extrato(
-                         Convert.ToDouble(dr["valor"].ToString())
-                        );
+                        dr["data"].ToString(),
+                        Convert.ToDouble(dr["valor"].ToString())
+                    );
                     aExtrato.id = Convert.ToInt32(dr["id"].ToString());
-                    aExtrato.data = Convert.ToDateTime(dr["data"].ToString());
                 }
             }
 
