@@ -158,7 +158,7 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "select count(*) from SolicitacaoInstituicao where status = 0";
+            cmd.CommandText = "select count(*) from solicitacao_instituicao where status = 0";
             SqlDataReader dr = cmd.ExecuteReader();
             int count = 0;
             if (dr.HasRows)

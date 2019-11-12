@@ -76,6 +76,7 @@
     flex-direction: column;
     width: 80%;
     margin-top: 50px;
+    align-items: center;
 }
 
 .campos, .campo, .campo-2 {
@@ -89,8 +90,19 @@
 .campo-2{
     margin-left: 55px;
 }
-
-.campo-qntPas, .campo-qntDia {
+.campo-qntPas {
+    width: 20%;
+    padding: 10px 20px;
+    background-color: #EBEBEB;
+    border-radius: 2px;
+    border: none;
+    color: #313131;
+    font: 16px Arial;
+    margin-left: 20px;
+    cursor: text;
+    text-align: center;
+}
+.campo-qntDia {
     width: 20%;
     padding: 10px 20px;
     background-color: #EBEBEB;

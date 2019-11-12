@@ -64,6 +64,13 @@
     text-decoration: none;
 }
 
+.org1 {
+    color: #777777;
+    font-size: 22px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
 .org-1 > i {
     font-size: 35px;
     padding: 38px;

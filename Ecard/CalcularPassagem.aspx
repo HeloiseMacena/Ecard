@@ -31,7 +31,7 @@
                     </div>
                     <div class="campos">
                         <asp:Label id="Label4" CssClass="text-var" runat="server" Text="Dias"></asp:Label>
-                        <asp:TextBox ID="TextBox2" Enabled="true" CssClass="campo-qntDia" placeholder="0" runat="server"></asp:TextBox>                    
+                        <asp:TextBox ID="TextBox2" Enabled="true" CssClass="campo-qntDia" placeholder="0" runat="server" style="margin-left: 24px;"></asp:TextBox>                    
                     </div>
                 </div>
                 <div class="resultados">
