@@ -79,6 +79,12 @@ namespace Ecard.DAL
             cmd.Parameters.AddWithValue("@valor", obj.valor);
             cmd.Parameters.AddWithValue("@estudante_id",estudante_id);
 
+            DALExtrato c = new DALExtrato();
+            Modelo.Extrato d = new Modelo.Extrato();
+            d.valor = obj.valor;
+            d.data = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            c.Insert(d, estudante_id);
+
             cmd.ExecuteNonQuery();
 
         }

@@ -168,7 +168,7 @@ namespace Ecard.DAL
                             linha[1],
                             "",
                             "",
-                            0,
+                            2,
                             "",
                             0,
                             0,

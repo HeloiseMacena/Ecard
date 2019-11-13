@@ -68,7 +68,7 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("INSERT INTO SolicitacaoIinstituicao (data, status, instituicao_id) VALUES (@data, @status, @instituicao_id)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Solicitacao_instituicao (data, status, instituicao_id) VALUES (@data, @status, @instituicao_id)", conn);
 
             cmd.Parameters.AddWithValue("@data", DateTime.Now.Date.ToString("yyyy-MM-dd"));
             cmd.Parameters.AddWithValue("@status", 0);

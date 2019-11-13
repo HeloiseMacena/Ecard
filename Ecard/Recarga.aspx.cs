@@ -44,12 +44,6 @@ namespace Ecard
                 estudante.carteira_saldo += valor;
                 dal.Update(estudante);
 
-                DALExtrato c = new DALExtrato();
-                Modelo.Extrato d = new Modelo.Extrato();
-                d.valor = valor;
-                d.data = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
-
-                c.Insert(d, a);
                 LabelSaldo.Text = estudante.carteira_saldo.ToString();
                 Response.Redirect("~/TelaPrincipalEstudante.aspx");
             }
