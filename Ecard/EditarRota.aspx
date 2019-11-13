@@ -13,9 +13,9 @@
                 <div class="box1-midi">
                      <h1>Editar</h1>
                      <asp:TextBox ID="TextBox1" runat="server" CssClass="box1-mid" placeholder="Nome"></asp:TextBox>
-                     <div class="org-1">
-                        <asp:Label ID="Label1" CssClass="label" runat="server" Text="Bairros"></asp:Label>
-                        <div class="">                                                                                   
+                     <div class="org">                        
+                        <div class="">
+                            <asp:Label ID="Label1" CssClass="label" runat="server" Text="Bairros"></asp:Label>
                             <asp:ListBox ID="ListBoxBairro" runat="server" CssClass="org-2" SelectionMode="Multiple" CausesValidation="true" ValidationGroup="validateGroup"></asp:ListBox>
                             <asp:CustomValidator ID="CustomValidator1" CssClass="compare" runat="server" Display="dynamic" ErrorMessage="* Por favor, selecione ao menos um bairro" ValidationGroup="validateGroup"></asp:CustomValidator>
                         </div>
