@@ -19,7 +19,7 @@
                         <ItemTemplate>
                             <div class="pontoItem">
                                 <div class="pontoItem-nome">
-                                    <p class="ponto-nome">Valor: <%#Eval("valor")%></p>
+                                    <p class="ponto-nome">R$ <%#Eval("valor")%></p>
                                     <p class="ponto-rua">Data: <%#Eval("data")%></p>
                                 </div>
 
