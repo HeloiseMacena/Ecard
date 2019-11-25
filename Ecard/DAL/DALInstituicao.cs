@@ -152,12 +152,13 @@ namespace Ecard.DAL
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand com = conn.CreateCommand();
-            SqlCommand cmd = new SqlCommand("UPDATE Instituicao SET Nome = @Nome, Email=@Email, codigo_inep = @Codigo_inep_mec, Status = @Status, Senha = @Senha, Endereco_bairro = @Endereco_bairro, Endereco_CEP = @Endereco_CEP, Endereco_municipio = @Endereco_municipio, Endereco_logradouro = @Endereco_logradouro, Endereco_numero = @Endereco_numero  WHERE Id = @Id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Instituicao SET Nome = @Nome, Email=@Email, codigo_inep = @Codigo_inep_mec, Status = @Status, Senha = @Senha, Endereco_bairro = @Endereco_bairro, Endereco_CEP = @Endereco_CEP, Endereco_municipio = @Endereco_municipio, Endereco_logradouro = @Endereco_logradouro, Endereco_numero = @Endereco_numero, cnpj = @cnpj  WHERE Id = @Id", conn);
 
             cmd.Parameters.AddWithValue("@Id", obj.Id);
             cmd.Parameters.AddWithValue("@Nome", obj.Nome);
             cmd.Parameters.AddWithValue("@Email", obj.Email);
             cmd.Parameters.AddWithValue("@Codigo_inep_mec", obj.Codigo_inep_mec);
+            cmd.Parameters.AddWithValue("@cnpj", obj.cnpj);
             cmd.Parameters.AddWithValue("@Status", obj.Status);
             cmd.Parameters.AddWithValue("@Senha", obj.Senha);
             cmd.Parameters.AddWithValue("@Endereco_bairro", obj.Endereco_bairro);
