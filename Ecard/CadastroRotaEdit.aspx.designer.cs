@@ -31,13 +31,13 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Controle CheckBoxListBairro.
+        /// Controle ListBoxBairro.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListBairro;
+        protected global::System.Web.UI.WebControls.ListBox ListBoxBairro;
         
         /// <summary>
         /// Controle CustomValidator1.
@@ -49,15 +49,6 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
         
         /// <summary>
-        /// Controle TextBoxBairro.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxBairro;
-        
-        /// <summary>
         /// Controle Label2.
         /// </summary>
         /// <remarks>
@@ -67,13 +58,13 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Controle CheckBoxListReferencia.
+        /// Controle ListBoxReferencia.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListReferencia;
+        protected global::System.Web.UI.WebControls.ListBox ListBoxReferencia;
         
         /// <summary>
         /// Controle CustomValidator2.
@@ -85,13 +76,13 @@ namespace Ecard {
         protected global::System.Web.UI.WebControls.CustomValidator CustomValidator2;
         
         /// <summary>
-        /// Controle TextBoxReferencia.
+        /// Controle LabelHelp.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxReferencia;
+        protected global::System.Web.UI.WebControls.Label LabelHelp;
         
         /// <summary>
         /// Controle RequiredFieldValidator1.

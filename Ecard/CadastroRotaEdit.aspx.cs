@@ -15,7 +15,7 @@ namespace Ecard
         {
             if (!IsPostBack)
             {
-                DALBairro dal_bairro = new DALBairro();
+                /*DALBairro dal_bairro = new DALBairro();
                 ListItem li;
                 foreach (Bairro b in dal_bairro.SelectAll())
                 {
@@ -31,6 +31,23 @@ namespace Ecard
                     li.Text = p.Nome;
                     li.Value = (p.Id).ToString();
                     CheckBoxListReferencia.Items.Add(li);
+                }*/
+                DAL.DALBairro dal_bairro = new DAL.DALBairro();
+                ListItem li;
+                foreach (Modelo.Bairro b in dal_bairro.SelectAll())
+                {
+                    li = new ListItem();
+                    li.Text = b.Nome;
+                    li.Value = (b.Id).ToString();
+                    ListBoxBairro.Items.Add(li);
+                }
+                DAL.DALPonto_referencia dal_referencia = new DAL.DALPonto_referencia();
+                foreach (Modelo.Ponto_referencia ponto in dal_referencia.SelectAll())
+                {
+                    li = new ListItem();
+                    li.Text = ponto.Nome;
+                    li.Value = (ponto.Id).ToString();
+                    ListBoxReferencia.Items.Add(li);
                 }
             }
             
@@ -41,7 +58,7 @@ namespace Ecard
             Rota rota = new Rota(nome);
             DALRota d = new DALRota();
             List<int> bairros = new List<int>();
-            foreach (ListItem item in CheckBoxListBairro.Items)
+            foreach (ListItem item in ListBoxBairro.Items)
             {
                 if (item.Selected)
                 {
@@ -49,7 +66,7 @@ namespace Ecard
                 }
             }
             List<int> referencias = new List<int>();
-            foreach (ListItem item in CheckBoxListReferencia.Items)
+            foreach (ListItem item in ListBoxReferencia.Items)
             {
                 if (item.Selected)
                 {
